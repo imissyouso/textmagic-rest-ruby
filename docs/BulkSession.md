@@ -1,4 +1,4 @@
-# SwaggerClient::BulkSession
+# TextMagic::BulkSession
 
 ## Properties
 Name | Type | Description | Notes

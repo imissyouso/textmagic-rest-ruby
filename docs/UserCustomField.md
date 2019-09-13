@@ -1,4 +1,4 @@
-# SwaggerClient::UserCustomField
+# TextMagic::UserCustomField
 
 ## Properties
 Name | Type | Description | Notes

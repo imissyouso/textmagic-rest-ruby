@@ -1,4 +1,4 @@
-# SwaggerClient::CreatePushTokenInputObject
+# TextMagic::CreatePushTokenInputObject
 
 ## Properties
 Name | Type | Description | Notes

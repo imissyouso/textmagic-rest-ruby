@@ -1,4 +1,4 @@
-# SwaggerClient::GetMessageSessionStatResponse
+# TextMagic::GetMessageSessionStatResponse
 
 ## Properties
 Name | Type | Description | Notes

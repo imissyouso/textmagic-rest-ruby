@@ -1,4 +1,4 @@
-# SwaggerClient::GetSubaccountsWithTokensResponse
+# TextMagic::GetSubaccountsWithTokensResponse
 
 ## Properties
 Name | Type | Description | Notes

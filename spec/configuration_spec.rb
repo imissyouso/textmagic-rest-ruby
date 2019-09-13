@@ -12,14 +12,14 @@ Swagger Codegen version: 2.4.8
 
 require 'spec_helper'
 
-describe SwaggerClient::Configuration do
-  let(:config) { SwaggerClient::Configuration.default }
+describe TextMagic::Configuration do
+  let(:config) { TextMagic::Configuration.default }
 
   before(:each) do
     # uncomment below to setup host and base_path
     # require 'URI'
     # uri = URI.parse("http://my.textmagic.com")
-    # SwaggerClient.configure do |c|
+    # TextMagic.configure do |c|
     #   c.host = uri.host
     #   c.base_path = uri.path
     # end

@@ -1,4 +1,4 @@
-# SwaggerClient::CloseChatsBulkInputObject
+# TextMagic::CloseChatsBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

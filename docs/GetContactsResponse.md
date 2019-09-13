@@ -1,4 +1,4 @@
-# SwaggerClient::GetContactsResponse
+# TextMagic::GetContactsResponse
 
 ## Properties
 Name | Type | Description | Notes

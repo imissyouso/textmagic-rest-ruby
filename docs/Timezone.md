@@ -1,4 +1,4 @@
-# SwaggerClient::Timezone
+# TextMagic::Timezone
 
 ## Properties
 Name | Type | Description | Notes

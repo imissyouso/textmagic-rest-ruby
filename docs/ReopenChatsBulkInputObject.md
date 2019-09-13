@@ -1,4 +1,4 @@
-# SwaggerClient::ReopenChatsBulkInputObject
+# TextMagic::ReopenChatsBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

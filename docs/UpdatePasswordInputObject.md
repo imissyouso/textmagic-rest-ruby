@@ -1,4 +1,4 @@
-# SwaggerClient::UpdatePasswordInputObject
+# TextMagic::UpdatePasswordInputObject
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::GetBlockedContactsResponse
+# TextMagic::GetBlockedContactsResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::Conversation
+# TextMagic::Conversation
 
 ## Properties
 Name | Type | Description | Notes

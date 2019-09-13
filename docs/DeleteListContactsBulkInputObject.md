@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteListContactsBulkInputObject
+# TextMagic::DeleteListContactsBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

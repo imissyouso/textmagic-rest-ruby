@@ -1,4 +1,4 @@
-# SwaggerClient::NotFoundResponse
+# TextMagic::NotFoundResponse
 
 ## Properties
 Name | Type | Description | Notes

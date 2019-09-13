@@ -1,4 +1,4 @@
-# SwaggerClient::GetChatMessagesResponse
+# TextMagic::GetChatMessagesResponse
 
 ## Properties
 Name | Type | Description | Notes

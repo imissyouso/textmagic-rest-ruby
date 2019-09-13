@@ -1,4 +1,4 @@
-# SwaggerClient::ForwardedCall
+# TextMagic::ForwardedCall
 
 ## Properties
 Name | Type | Description | Notes

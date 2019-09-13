@@ -1,4 +1,4 @@
-# SwaggerClient::DoCarrierLookupResponse
+# TextMagic::DoCarrierLookupResponse
 
 ## Properties
 Name | Type | Description | Notes

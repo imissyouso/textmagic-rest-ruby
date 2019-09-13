@@ -1,4 +1,4 @@
-# SwaggerClient::BuyDedicatedNumberInputObject
+# TextMagic::BuyDedicatedNumberInputObject
 
 ## Properties
 Name | Type | Description | Notes

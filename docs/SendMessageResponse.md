@@ -1,4 +1,4 @@
-# SwaggerClient::SendMessageResponse
+# TextMagic::SendMessageResponse
 
 ## Properties
 Name | Type | Description | Notes

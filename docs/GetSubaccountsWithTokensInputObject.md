@@ -1,4 +1,4 @@
-# SwaggerClient::GetSubaccountsWithTokensInputObject
+# TextMagic::GetSubaccountsWithTokensInputObject
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::Survey
+# TextMagic::Survey
 
 ## Properties
 Name | Type | Description | Notes

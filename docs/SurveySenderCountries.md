@@ -1,4 +1,4 @@
-# SwaggerClient::SurveySenderCountries
+# TextMagic::SurveySenderCountries
 
 ## Properties
 Name | Type | Description | Notes

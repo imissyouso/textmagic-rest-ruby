@@ -1,4 +1,4 @@
-# SwaggerClient::Group
+# TextMagic::Group
 
 ## Properties
 Name | Type | Description | Notes

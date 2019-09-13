@@ -1,4 +1,4 @@
-# SwaggerClient::ResourceLinkResponse
+# TextMagic::ResourceLinkResponse
 
 ## Properties
 Name | Type | Description | Notes

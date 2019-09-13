@@ -1,4 +1,4 @@
-# SwaggerClient::GetContactImportSessionProgressResponse
+# TextMagic::GetContactImportSessionProgressResponse
 
 ## Properties
 Name | Type | Description | Notes

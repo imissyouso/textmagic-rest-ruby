@@ -1,4 +1,4 @@
-# SwaggerClient::UnsubscribedContact
+# TextMagic::UnsubscribedContact
 
 ## Properties
 Name | Type | Description | Notes

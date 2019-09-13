@@ -1,4 +1,4 @@
-# SwaggerClient::GetSenderIdsResponse
+# TextMagic::GetSenderIdsResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::GetUnreadMessagesTotalResponse
+# TextMagic::GetUnreadMessagesTotalResponse
 
 ## Properties
 Name | Type | Description | Notes

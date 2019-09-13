@@ -1,4 +1,4 @@
-# SwaggerClient::MessagesIcsTextParameters
+# TextMagic::MessagesIcsTextParameters
 
 ## Properties
 Name | Type | Description | Notes

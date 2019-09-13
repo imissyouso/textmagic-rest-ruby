@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateCallbackSettingsInputObject
+# TextMagic::UpdateCallbackSettingsInputObject
 
 ## Properties
 Name | Type | Description | Notes

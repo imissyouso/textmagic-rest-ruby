@@ -1,4 +1,4 @@
-# SwaggerClient::ClearAndAssignContactsToListInputObject
+# TextMagic::ClearAndAssignContactsToListInputObject
 
 ## Properties
 Name | Type | Description | Notes

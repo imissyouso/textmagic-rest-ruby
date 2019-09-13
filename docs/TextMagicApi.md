@@ -1,4 +1,4 @@
-# SwaggerClient::TextMagicApi
+# TextMagic::TextMagicApi
 
 All URIs are relative to *http://my.textmagic.com*
 
@@ -187,17 +187,17 @@ Assign contacts to the specified list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-assign_contacts_to_list_input_object = SwaggerClient::AssignContactsToListInputObject.new # AssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
+assign_contacts_to_list_input_object = TextMagic::AssignContactsToListInputObject.new # AssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
 
 id = 1 # Integer | 
 
@@ -206,7 +206,7 @@ begin
   #Assign contacts to the specified list.
   result = api_instance.assign_contacts_to_list(assign_contacts_to_list_input_object, id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->assign_contacts_to_list: #{e}"
 end
 ```
@@ -241,17 +241,17 @@ Block contact from inbound and outbound communication by phone number.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-block_contact_input_object = SwaggerClient::BlockContactInputObject.new # BlockContactInputObject | 
+block_contact_input_object = TextMagic::BlockContactInputObject.new # BlockContactInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -261,7 +261,7 @@ begin
   #Block contact from inbound and outbound communication by phone number.
   result = api_instance.block_contact(block_contact_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->block_contact: #{e}"
 end
 ```
@@ -296,17 +296,17 @@ Buy a dedicated number and assign it to the specified account.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-buy_dedicated_number_input_object = SwaggerClient::BuyDedicatedNumberInputObject.new # BuyDedicatedNumberInputObject | 
+buy_dedicated_number_input_object = TextMagic::BuyDedicatedNumberInputObject.new # BuyDedicatedNumberInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -315,7 +315,7 @@ opts = {
 begin
   #Buy a dedicated number and assign it to the specified account.
   api_instance.buy_dedicated_number(buy_dedicated_number_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->buy_dedicated_number: #{e}"
 end
 ```
@@ -350,15 +350,15 @@ Cancel a survey.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -367,7 +367,7 @@ begin
   #Cancel a survey.
   result = api_instance.cancel_survey(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->cancel_survey: #{e}"
 end
 ```
@@ -401,17 +401,17 @@ Check user phone verification code
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-check_phone_verification_code_input_object = SwaggerClient::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
+check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -420,7 +420,7 @@ opts = {
 begin
   #Check user phone verification code
   api_instance.check_phone_verification_code(check_phone_verification_code_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->check_phone_verification_code: #{e}"
 end
 ```
@@ -455,17 +455,17 @@ Reset list members to the specified contacts.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-clear_and_assign_contacts_to_list_input_object = SwaggerClient::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
+clear_and_assign_contacts_to_list_input_object = TextMagic::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
 
 id = 1 # Integer | 
 
@@ -474,7 +474,7 @@ begin
   #Reset list members to the specified contacts.
   result = api_instance.clear_and_assign_contacts_to_list(clear_and_assign_contacts_to_list_input_object, id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->clear_and_assign_contacts_to_list: #{e}"
 end
 ```
@@ -509,17 +509,17 @@ Close chats by chat ids or close all chats
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-close_chats_bulk_input_object = SwaggerClient::CloseChatsBulkInputObject.new # CloseChatsBulkInputObject | 
+close_chats_bulk_input_object = TextMagic::CloseChatsBulkInputObject.new # CloseChatsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -528,7 +528,7 @@ opts = {
 begin
   #Close chats by chat ids or close all chats
   api_instance.close_chats_bulk(close_chats_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_chats_bulk: #{e}"
 end
 ```
@@ -563,20 +563,20 @@ Close all chats that have no unread messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Close all chats that have no unread messages.
   api_instance.close_read_chats
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_read_chats: #{e}"
 end
 ```
@@ -607,15 +607,15 @@ Close subaccount.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -623,7 +623,7 @@ id = 1 # Integer |
 begin
   #Close subaccount.
   api_instance.close_subaccount(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_subaccount: #{e}"
 end
 ```
@@ -657,17 +657,17 @@ Create a new contact from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_contact_input_object = SwaggerClient::CreateContactInputObject.new # CreateContactInputObject | 
+create_contact_input_object = TextMagic::CreateContactInputObject.new # CreateContactInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -677,7 +677,7 @@ begin
   #Create a new contact from the submitted data.
   result = api_instance.create_contact(create_contact_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_contact: #{e}"
 end
 ```
@@ -712,17 +712,17 @@ Create a new contact note.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_contact_note_input_object = SwaggerClient::CreateContactNoteInputObject.new # CreateContactNoteInputObject | 
+create_contact_note_input_object = TextMagic::CreateContactNoteInputObject.new # CreateContactNoteInputObject | 
 
 id = 56 # Integer | 
 
@@ -734,7 +734,7 @@ begin
   #Create a new contact note.
   result = api_instance.create_contact_note(create_contact_note_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_contact_note: #{e}"
 end
 ```
@@ -770,17 +770,17 @@ Create a new custom field from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_custom_field_input_object = SwaggerClient::CreateCustomFieldInputObject.new # CreateCustomFieldInputObject | 
+create_custom_field_input_object = TextMagic::CreateCustomFieldInputObject.new # CreateCustomFieldInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -790,7 +790,7 @@ begin
   #Create a new custom field from the submitted data.
   result = api_instance.create_custom_field(create_custom_field_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_custom_field: #{e}"
 end
 ```
@@ -825,17 +825,17 @@ Create a new list from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_list_input_object = SwaggerClient::CreateListInputObject.new # CreateListInputObject | 
+create_list_input_object = TextMagic::CreateListInputObject.new # CreateListInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -845,7 +845,7 @@ begin
   #Create a new list from the submitted data.
   result = api_instance.create_list(create_list_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_list: #{e}"
 end
 ```
@@ -880,17 +880,17 @@ Add or update a device token.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_push_token_input_object = SwaggerClient::CreatePushTokenInputObject.new # CreatePushTokenInputObject | 
+create_push_token_input_object = TextMagic::CreatePushTokenInputObject.new # CreatePushTokenInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -899,7 +899,7 @@ opts = {
 begin
   #Add or update a device token.
   api_instance.create_push_token(create_push_token_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_push_token: #{e}"
 end
 ```
@@ -934,17 +934,17 @@ Create a new survey from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_survey_input_object = SwaggerClient::CreateSurveyInputObject.new # CreateSurveyInputObject | 
+create_survey_input_object = TextMagic::CreateSurveyInputObject.new # CreateSurveyInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -954,7 +954,7 @@ begin
   #Create a new survey from the submitted data.
   result = api_instance.create_survey(create_survey_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_survey: #{e}"
 end
 ```
@@ -989,17 +989,17 @@ Create a new node from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_survey_node_input_object = SwaggerClient::CreateSurveyNodeInputObject.new # CreateSurveyNodeInputObject | 
+create_survey_node_input_object = TextMagic::CreateSurveyNodeInputObject.new # CreateSurveyNodeInputObject | 
 
 id = 1 # Integer | 
 
@@ -1011,7 +1011,7 @@ begin
   #Create a new node from the submitted data.
   result = api_instance.create_survey_node(create_survey_node_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_survey_node: #{e}"
 end
 ```
@@ -1047,17 +1047,17 @@ Create a new template from the submitted data.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-create_template_input_object = SwaggerClient::CreateTemplateInputObject.new # CreateTemplateInputObject | 
+create_template_input_object = TextMagic::CreateTemplateInputObject.new # CreateTemplateInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -1067,7 +1067,7 @@ begin
   #Create a new template from the submitted data.
   result = api_instance.create_template(create_template_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_template: #{e}"
 end
 ```
@@ -1102,20 +1102,20 @@ Delete all contacts.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Delete all contacts.
   api_instance.delete_all_contacts
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_all_contacts: #{e}"
 end
 ```
@@ -1148,20 +1148,20 @@ Delete all messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Delete all messages
   api_instance.delete_all_outbound_messages
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_all_outbound_messages: #{e}"
 end
 ```
@@ -1192,20 +1192,20 @@ Delete an avatar for the current user.\\
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Delete an avatar for the current user.\\
   api_instance.delete_avatar
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_avatar: #{e}"
 end
 ```
@@ -1236,17 +1236,17 @@ Delete messages from chat by given messages ID(s).
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_chat_messages_bulk_input_object = SwaggerClient::DeleteChatMessagesBulkInputObject.new # DeleteChatMessagesBulkInputObject | 
+delete_chat_messages_bulk_input_object = TextMagic::DeleteChatMessagesBulkInputObject.new # DeleteChatMessagesBulkInputObject | 
 
 id = 1 # Integer | 
 
@@ -1257,7 +1257,7 @@ opts = {
 begin
   #Delete messages from chat by given messages ID(s).
   api_instance.delete_chat_messages(delete_chat_messages_bulk_input_object, id, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chat_messages: #{e}"
 end
 ```
@@ -1293,17 +1293,17 @@ Delete chats by given ID(s) or delete all chats.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_chats_bulk_input_object = SwaggerClient::DeleteChatsBulkInputObject.new # DeleteChatsBulkInputObject | 
+delete_chats_bulk_input_object = TextMagic::DeleteChatsBulkInputObject.new # DeleteChatsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -1312,7 +1312,7 @@ opts = {
 begin
   #Delete chats by given ID(s) or delete all chats.
   api_instance.delete_chats_bulk(delete_chats_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chats_bulk: #{e}"
 end
 ```
@@ -1347,15 +1347,15 @@ Delete a single contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1363,7 +1363,7 @@ id = 1 # Integer |
 begin
   #Delete a single contact.
   api_instance.delete_contact(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact: #{e}"
 end
 ```
@@ -1397,15 +1397,15 @@ Delete an avatar for the contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 56 # Integer | 
 
@@ -1413,7 +1413,7 @@ id = 56 # Integer |
 begin
   #Delete an avatar for the contact.
   api_instance.delete_contact_avatar(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_avatar: #{e}"
 end
 ```
@@ -1447,15 +1447,15 @@ Delete a single contact note.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1463,7 +1463,7 @@ id = 1 # Integer |
 begin
   #Delete a single contact note.
   api_instance.delete_contact_note(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_note: #{e}"
 end
 ```
@@ -1497,19 +1497,19 @@ Delete contact note by given ID(s) or delete all contact notes.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
-delete_contact_notes_bulk_input_object = SwaggerClient::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
+delete_contact_notes_bulk_input_object = TextMagic::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -1518,7 +1518,7 @@ opts = {
 begin
   #Delete contact note by given ID(s) or delete all contact notes.
   api_instance.delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_notes_bulk: #{e}"
 end
 ```
@@ -1554,17 +1554,17 @@ Delete contact by given ID(s) or delete all contacts.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_contacts_by_ids_input_object = SwaggerClient::DeleteContactsByIdsInputObject.new # DeleteContactsByIdsInputObject | 
+delete_contacts_by_ids_input_object = TextMagic::DeleteContactsByIdsInputObject.new # DeleteContactsByIdsInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -1573,7 +1573,7 @@ opts = {
 begin
   #Delete contact by given ID(s) or delete all contacts.
   api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contacts_by_ids: #{e}"
 end
 ```
@@ -1608,17 +1608,17 @@ Unassign contacts from the specified list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_contacs_from_list_object = SwaggerClient::DeleteContacsFromListObject.new # DeleteContacsFromListObject | Contact ID(s), separated by comma
+delete_contacs_from_list_object = TextMagic::DeleteContacsFromListObject.new # DeleteContacsFromListObject | Contact ID(s), separated by comma
 
 id = 1 # Integer | 
 
@@ -1626,7 +1626,7 @@ id = 1 # Integer |
 begin
   #Unassign contacts from the specified list.
   api_instance.delete_contacts_from_list(delete_contacs_from_list_object, id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contacts_from_list: #{e}"
 end
 ```
@@ -1661,15 +1661,15 @@ Delete a single custom field.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1677,7 +1677,7 @@ id = 1 # Integer |
 begin
   #Delete a single custom field.
   api_instance.delete_custom_field(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_custom_field: #{e}"
 end
 ```
@@ -1711,15 +1711,15 @@ Cancel dedicated number subscription.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1727,7 +1727,7 @@ id = 1 # Integer |
 begin
   #Cancel dedicated number subscription.
   api_instance.delete_dedicated_number(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_dedicated_number: #{e}"
 end
 ```
@@ -1761,15 +1761,15 @@ Delete the incoming message.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1777,7 +1777,7 @@ id = 1 # Integer |
 begin
   #Delete the incoming message.
   api_instance.delete_inbound_message(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_inbound_message: #{e}"
 end
 ```
@@ -1811,17 +1811,17 @@ Delete inbound messages by given ID(s) or delete all inbound messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_inbound_messages_bulk_input_object = SwaggerClient::DeleteInboundMessagesBulkInputObject.new # DeleteInboundMessagesBulkInputObject | 
+delete_inbound_messages_bulk_input_object = TextMagic::DeleteInboundMessagesBulkInputObject.new # DeleteInboundMessagesBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -1830,7 +1830,7 @@ opts = {
 begin
   #Delete inbound messages by given ID(s) or delete all inbound messages.
   api_instance.delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_inbound_messages_bulk: #{e}"
 end
 ```
@@ -1865,15 +1865,15 @@ Delete a single list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1881,7 +1881,7 @@ id = 1 # Integer |
 begin
   #Delete a single list.
   api_instance.delete_list(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list: #{e}"
 end
 ```
@@ -1915,15 +1915,15 @@ Delete an avatar for the list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -1931,7 +1931,7 @@ id = 1 # Integer |
 begin
   #Delete an avatar for the list.
   api_instance.delete_list_avatar(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list_avatar: #{e}"
 end
 ```
@@ -1965,17 +1965,17 @@ Delete contact from list by given ID(s) or all contacts from list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_list_contacts_bulk_input_object = SwaggerClient::DeleteListContactsBulkInputObject.new # DeleteListContactsBulkInputObject | 
+delete_list_contacts_bulk_input_object = TextMagic::DeleteListContactsBulkInputObject.new # DeleteListContactsBulkInputObject | 
 
 id = 1 # Integer | 
 
@@ -1986,7 +1986,7 @@ opts = {
 begin
   #Delete contact from list by given ID(s) or all contacts from list.
   api_instance.delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list_contacts_bulk: #{e}"
 end
 ```
@@ -2022,17 +2022,17 @@ Delete list by given ID(s) or delete all lists.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_lists_bulk_input_object = SwaggerClient::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
+delete_lists_bulk_input_object = TextMagic::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2041,7 +2041,7 @@ opts = {
 begin
   #Delete list by given ID(s) or delete all lists.
   api_instance.delete_lists_bulk(delete_lists_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_lists_bulk: #{e}"
 end
 ```
@@ -2076,15 +2076,15 @@ Delete a message session, together with all nested messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2092,7 +2092,7 @@ id = 1 # Integer |
 begin
   #Delete a message session, together with all nested messages.
   api_instance.delete_message_session(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_message_session: #{e}"
 end
 ```
@@ -2126,17 +2126,17 @@ Delete messages sessions, together with all nested messages, by given ID(s) or d
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_message_sessions_bulk_input_object = SwaggerClient::DeleteMessageSessionsBulkInputObject.new # DeleteMessageSessionsBulkInputObject | 
+delete_message_sessions_bulk_input_object = TextMagic::DeleteMessageSessionsBulkInputObject.new # DeleteMessageSessionsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2145,7 +2145,7 @@ opts = {
 begin
   #Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
   api_instance.delete_message_sessions_bulk(delete_message_sessions_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_message_sessions_bulk: #{e}"
 end
 ```
@@ -2182,15 +2182,15 @@ Delete a single message.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2198,7 +2198,7 @@ id = 1 # Integer |
 begin
   #Delete message
   api_instance.delete_outbound_message(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_outbound_message: #{e}"
 end
 ```
@@ -2234,17 +2234,17 @@ Delete outbound messages by given ID(s) or delete all outbound messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_outbound_messages_bulk_input_object = SwaggerClient::DeleteOutboundMessagesBulkInputObject.new # DeleteOutboundMessagesBulkInputObject | 
+delete_outbound_messages_bulk_input_object = TextMagic::DeleteOutboundMessagesBulkInputObject.new # DeleteOutboundMessagesBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2253,7 +2253,7 @@ opts = {
 begin
   #Delete messages by IDs
   api_instance.delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_outbound_messages_bulk: #{e}"
 end
 ```
@@ -2288,15 +2288,15 @@ Delete a push notification device token.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 type = 'type_example' # String | 
 
@@ -2306,7 +2306,7 @@ device_id = 56 # Integer |
 begin
   #Delete a push notification device token.
   api_instance.delete_push_token(type, device_id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_push_token: #{e}"
 end
 ```
@@ -2341,15 +2341,15 @@ Delete a message session, together with all nested messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2357,7 +2357,7 @@ id = 1 # Integer |
 begin
   #Delete a message session, together with all nested messages.
   api_instance.delete_scheduled_message(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_scheduled_message: #{e}"
 end
 ```
@@ -2391,17 +2391,17 @@ Delete scheduled messages by given ID(s) or delete all scheduled messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_scheduled_messages_bulk_input_object = SwaggerClient::DeleteScheduledMessagesBulkInputObject.new # DeleteScheduledMessagesBulkInputObject | 
+delete_scheduled_messages_bulk_input_object = TextMagic::DeleteScheduledMessagesBulkInputObject.new # DeleteScheduledMessagesBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2410,7 +2410,7 @@ opts = {
 begin
   #Delete scheduled messages by given ID(s) or delete all scheduled messages.
   api_instance.delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_scheduled_messages_bulk: #{e}"
 end
 ```
@@ -2445,15 +2445,15 @@ Delete a Sender ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2461,7 +2461,7 @@ id = 1 # Integer |
 begin
   #Delete a Sender ID.
   api_instance.delete_sender_id(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_sender_id: #{e}"
 end
 ```
@@ -2495,15 +2495,15 @@ Delete a survey.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2511,7 +2511,7 @@ id = 1 # Integer |
 begin
   #Delete a survey.
   api_instance.delete_survey(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_survey: #{e}"
 end
 ```
@@ -2545,15 +2545,15 @@ Delete a node.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2561,7 +2561,7 @@ id = 1 # Integer |
 begin
   #Delete a node.
   api_instance.delete_survey_node(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_survey_node: #{e}"
 end
 ```
@@ -2595,15 +2595,15 @@ Delete a single template.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2611,7 +2611,7 @@ id = 1 # Integer |
 begin
   #Delete a single template.
   api_instance.delete_template(id)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_template: #{e}"
 end
 ```
@@ -2645,17 +2645,17 @@ Delete template by given ID(s) or delete all templates.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-delete_templates_bulk_input_object = SwaggerClient::DeleteTemplatesBulkInputObject.new # DeleteTemplatesBulkInputObject | 
+delete_templates_bulk_input_object = TextMagic::DeleteTemplatesBulkInputObject.new # DeleteTemplatesBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2664,7 +2664,7 @@ opts = {
 begin
   #Delete template by given ID(s) or delete all templates.
   api_instance.delete_templates_bulk(delete_templates_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_templates_bulk: #{e}"
 end
 ```
@@ -2701,11 +2701,11 @@ Returning a username and token that you should pass to the all requests (in X-TM
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-do_auth_input_object = SwaggerClient::DoAuthInputObject.new # DoAuthInputObject | 
+do_auth_input_object = TextMagic::DoAuthInputObject.new # DoAuthInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -2715,7 +2715,7 @@ begin
   #Authenticate user by given username and password.
   result = api_instance.do_auth(do_auth_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->do_auth: #{e}"
 end
 ```
@@ -2750,15 +2750,15 @@ Carrier Lookup
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 phone = '\"1-541-754-3010\"' # String | 
 
@@ -2770,7 +2770,7 @@ begin
   #Carrier Lookup
   result = api_instance.do_carrier_lookup(phone, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->do_carrier_lookup: #{e}"
 end
 ```
@@ -2805,15 +2805,15 @@ Validate Email address using Email Lookup tool
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 email = '\"andrey.v@textmagic.biz\"' # String | 
 
@@ -2822,7 +2822,7 @@ begin
   #Validate Email address using Email Lookup tool
   result = api_instance.do_email_lookup(email)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->do_email_lookup: #{e}"
 end
 ```
@@ -2856,15 +2856,15 @@ Duplicate a survey.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -2873,7 +2873,7 @@ begin
   #Duplicate a survey.
   result = api_instance.duplicate_survey(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->duplicate_survey: #{e}"
 end
 ```
@@ -2907,15 +2907,15 @@ Get all bulk sending sessions.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -2926,7 +2926,7 @@ begin
   #Get all bulk sending sessions.
   result = api_instance.get_all_bulk_sessions(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_bulk_sessions: #{e}"
 end
 ```
@@ -2961,15 +2961,15 @@ Get all user chats.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   status: 'status_example', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats
@@ -2984,7 +2984,7 @@ begin
   #Get all user chats.
   result = api_instance.get_all_chats(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_chats: #{e}"
 end
 ```
@@ -3023,15 +3023,15 @@ Get all inbox messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3044,7 +3044,7 @@ begin
   #Get all inbox messages.
   result = api_instance.get_all_inbound_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_inbound_messages: #{e}"
 end
 ```
@@ -3081,15 +3081,15 @@ Get all message sending sessions.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3100,7 +3100,7 @@ begin
   #Get all message sending sessions.
   result = api_instance.get_all_message_sessions(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_message_sessions: #{e}"
 end
 ```
@@ -3137,15 +3137,15 @@ Get all user oubound messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3157,7 +3157,7 @@ begin
   #Get all messages
   result = api_instance.get_all_outbound_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_outbound_messages: #{e}"
 end
 ```
@@ -3193,15 +3193,15 @@ Get all scheduled messages.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3215,7 +3215,7 @@ begin
   #Get all scheduled messages.
   result = api_instance.get_all_scheduled_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_scheduled_messages: #{e}"
 end
 ```
@@ -3253,15 +3253,15 @@ Get all user templates.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3272,7 +3272,7 @@ begin
   #Get all user templates.
   result = api_instance.get_all_templates(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_all_templates: #{e}"
 end
 ```
@@ -3307,15 +3307,15 @@ Find available dedicated numbers to buy.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 country = '\"GB\"' # String | Dedicated number country. Two letters in upper case
 
@@ -3328,7 +3328,7 @@ begin
   #Find available dedicated numbers to buy.
   result = api_instance.get_available_dedicated_numbers(country, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_available_dedicated_numbers: #{e}"
 end
 ```
@@ -3364,15 +3364,15 @@ Get all available sender setting options which could be used in \"from\" paramet
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   country: 'country_example' # String | Return sender setting options available in specific country only. Two upper case characters
@@ -3382,7 +3382,7 @@ begin
   #Get all available sender setting options which could be used in \"from\" parameter of POST messages method.
   result = api_instance.get_available_sender_setting_options(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_available_sender_setting_options: #{e}"
 end
 ```
@@ -3416,21 +3416,21 @@ Returns the list of available balance options which can be used as a bound to de
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
   result = api_instance.get_balance_notification_options
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_balance_notification_options: #{e}"
 end
 ```
@@ -3461,21 +3461,21 @@ Get balance notification settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get balance notification settings
   result = api_instance.get_balance_notification_settings
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_balance_notification_settings: #{e}"
 end
 ```
@@ -3506,15 +3506,15 @@ Get blocked contacts.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -3528,7 +3528,7 @@ begin
   #Get blocked contacts.
   result = api_instance.get_blocked_contacts(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_blocked_contacts: #{e}"
 end
 ```
@@ -3566,15 +3566,15 @@ Get bulk message session status.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -3583,7 +3583,7 @@ begin
   #Get bulk message session status.
   result = api_instance.get_bulk_session(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_bulk_session: #{e}"
 end
 ```
@@ -3617,21 +3617,21 @@ Fetch callback URL settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Fetch callback URL settings
   result = api_instance.get_callback_settings
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_callback_settings: #{e}"
 end
 ```
@@ -3662,21 +3662,21 @@ Check pricing for a inbound/outbound call.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Check pricing for a inbound/outbound call.
   result = api_instance.get_calls_prices
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_calls_prices: #{e}"
 end
 ```
@@ -3707,15 +3707,15 @@ Get a single chat.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -3724,7 +3724,7 @@ begin
   #Get a single chat.
   result = api_instance.get_chat(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_chat: #{e}"
 end
 ```
@@ -3758,15 +3758,15 @@ Find chats by phone.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 phone = 'phone_example' # String | 
 
@@ -3779,7 +3779,7 @@ begin
   #Find chats by phone.
   result = api_instance.get_chat_by_phone(phone, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_chat_by_phone: #{e}"
 end
 ```
@@ -3815,15 +3815,15 @@ Fetch messages from chat with specified chat id.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -3841,7 +3841,7 @@ begin
   #Fetch messages from chat with specified chat id.
   result = api_instance.get_chat_messages(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_chat_messages: #{e}"
 end
 ```
@@ -3882,15 +3882,15 @@ Get a single contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | The contact id
 
@@ -3899,7 +3899,7 @@ begin
   #Get a single contact.
   result = api_instance.get_contact(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact: #{e}"
 end
 ```
@@ -3933,15 +3933,15 @@ Get a single contact by phone number.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 phone = 'phone_example' # String | 
 
@@ -3950,7 +3950,7 @@ begin
   #Get a single contact by phone number.
   result = api_instance.get_contact_by_phone(phone)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact_by_phone: #{e}"
 end
 ```
@@ -3984,15 +3984,15 @@ Check is that phone number blocked
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 phone = '9997339956475' # String | Phone number to check
 
@@ -4001,7 +4001,7 @@ begin
   #Check is that phone number blocked
   result = api_instance.get_contact_if_blocked(phone)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact_if_blocked: #{e}"
 end
 ```
@@ -4035,15 +4035,15 @@ Get contact import session progress.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 56 # Integer | 
 
@@ -4052,7 +4052,7 @@ begin
   #Get contact import session progress.
   result = api_instance.get_contact_import_session_progress(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact_import_session_progress: #{e}"
 end
 ```
@@ -4086,15 +4086,15 @@ Get a single contact note.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 56 # Integer | 
 
@@ -4103,7 +4103,7 @@ begin
   #Get a single contact note.
   result = api_instance.get_contact_note(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact_note: #{e}"
 end
 ```
@@ -4137,15 +4137,15 @@ Fetch notes assigned to the given contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4158,7 +4158,7 @@ begin
   #Fetch notes assigned to the given contact.
   result = api_instance.get_contact_notes(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contact_notes: #{e}"
 end
 ```
@@ -4194,15 +4194,15 @@ Get all user contacts.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -4216,7 +4216,7 @@ begin
   #Get all user contacts.
   result = api_instance.get_contacts(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contacts: #{e}"
 end
 ```
@@ -4254,15 +4254,15 @@ Get contacts autocomplete suggestions by given search term.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 query = '\"A\"' # String | Find recipients by specified search query
 
@@ -4275,7 +4275,7 @@ begin
   #Get contacts autocomplete suggestions by given search term.
   result = api_instance.get_contacts_autocomplete(query, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contacts_autocomplete: #{e}"
 end
 ```
@@ -4313,15 +4313,15 @@ A useful synonym for \"contacts/search\" command with provided \"listId\" parame
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | Given group Id.
 
@@ -4336,7 +4336,7 @@ begin
   #Fetch user contacts by given group id.
   result = api_instance.get_contacts_by_list_id(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_contacts_by_list_id: #{e}"
 end
 ```
@@ -4374,21 +4374,21 @@ Return list of countries.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Return list of countries.
   result = api_instance.get_countries
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_countries: #{e}"
 end
 ```
@@ -4419,21 +4419,21 @@ Get current user info.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get current user info.
   result = api_instance.get_current_user
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_current_user: #{e}"
 end
 ```
@@ -4464,15 +4464,15 @@ Get a single custom field.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4481,7 +4481,7 @@ begin
   #Get a single custom field.
   result = api_instance.get_custom_field(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_custom_field: #{e}"
 end
 ```
@@ -4515,15 +4515,15 @@ Get all contact custom fields.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -4534,7 +4534,7 @@ begin
   #Get all contact custom fields.
   result = api_instance.get_custom_fields(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_custom_fields: #{e}"
 end
 ```
@@ -4569,15 +4569,15 @@ Get a single dedicated number.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4586,7 +4586,7 @@ begin
   #Get a single dedicated number.
   result = api_instance.get_dedicated_number(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_dedicated_number: #{e}"
 end
 ```
@@ -4620,21 +4620,21 @@ Get an array of all rules that are disallowed to the current account.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get an array of all rules that are disallowed to the current account.
   result = api_instance.get_disallowed_rules
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_disallowed_rules: #{e}"
 end
 ```
@@ -4665,15 +4665,15 @@ Get favorite contacts and lists.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -4685,7 +4685,7 @@ begin
   #Get favorite contacts and lists.
   result = api_instance.get_favourites(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_favourites: #{e}"
 end
 ```
@@ -4721,15 +4721,15 @@ Get all forwarded calls.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -4740,7 +4740,7 @@ begin
   #Get all forwarded calls.
   result = api_instance.get_forwarded_calls(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_forwarded_calls: #{e}"
 end
 ```
@@ -4775,15 +4775,15 @@ Get a single inbox message.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4792,7 +4792,7 @@ begin
   #Get a single inbox message.
   result = api_instance.get_inbound_message(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_inbound_message: #{e}"
 end
 ```
@@ -4826,21 +4826,21 @@ Get inbound messages notification settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get inbound messages notification settings
   result = api_instance.get_inbound_messages_notification_settings
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_inbound_messages_notification_settings: #{e}"
 end
 ```
@@ -4871,15 +4871,15 @@ Return account invoices.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -4890,7 +4890,7 @@ begin
   #Return account invoices.
   result = api_instance.get_invoices(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_invoices: #{e}"
 end
 ```
@@ -4925,15 +4925,15 @@ Get a single list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4942,7 +4942,7 @@ begin
   #Get a single list.
   result = api_instance.get_list(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_list: #{e}"
 end
 ```
@@ -4976,15 +4976,15 @@ Fetch all contacts IDs belonging to the list with ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -4993,7 +4993,7 @@ begin
   #Fetch all contacts IDs belonging to the list with ID.
   result = api_instance.get_list_contacts_ids(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_list_contacts_ids: #{e}"
 end
 ```
@@ -5027,15 +5027,15 @@ Return lists which contact belongs to.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5048,7 +5048,7 @@ begin
   #Return lists which contact belongs to.
   result = api_instance.get_lists_of_contact(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_lists_of_contact: #{e}"
 end
 ```
@@ -5086,15 +5086,15 @@ Get messages preview (with tags merged) up to 100 messages per session.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   text: '\"Test message test\"', # String | Message text. Required if template_id is not set
@@ -5120,7 +5120,7 @@ begin
   #Preview message
   result = api_instance.get_message_preview(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_message_preview: #{e}"
 end
 ```
@@ -5172,15 +5172,15 @@ Check pricing for a new outbound message.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   include_blocked: 0, # Integer | Should we show pricing for the blocked contacts.
@@ -5207,7 +5207,7 @@ begin
   #Check price
   result = api_instance.get_message_price(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_message_price: #{e}"
 end
 ```
@@ -5260,21 +5260,21 @@ Get message prices for all countries.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get pricing
   result = api_instance.get_message_prices
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_message_prices: #{e}"
 end
 ```
@@ -5305,15 +5305,15 @@ Get a message session.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5322,7 +5322,7 @@ begin
   #Get a message session.
   result = api_instance.get_message_session(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_message_session: #{e}"
 end
 ```
@@ -5356,15 +5356,15 @@ Get sending session statistics.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5376,7 +5376,7 @@ begin
   #Get sending session statistics.
   result = api_instance.get_message_session_stat(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_message_session_stat: #{e}"
 end
 ```
@@ -5413,15 +5413,15 @@ A useful synonym for \"messages/search\" command with provided \"sessionId\" par
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5436,7 +5436,7 @@ begin
   #Fetch messages by given session id.
   result = api_instance.get_messages_by_session_id(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_messages_by_session_id: #{e}"
 end
 ```
@@ -5474,21 +5474,21 @@ Return counters for messaging data views.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Return counters for messaging data views.
   result = api_instance.get_messaging_counters
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_messaging_counters: #{e}"
 end
 ```
@@ -5519,15 +5519,15 @@ Return messaging statistics.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   by: 'off', # String | Group results by specified period: off, day, month or year. Default is off
@@ -5539,7 +5539,7 @@ begin
   #Return messaging statistics.
   result = api_instance.get_messaging_stat(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_messaging_stat: #{e}"
 end
 ```
@@ -5577,15 +5577,15 @@ Get a single outgoing message.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5594,7 +5594,7 @@ begin
   #Get a single message
   result = api_instance.get_outbound_message(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_outbound_message: #{e}"
 end
 ```
@@ -5630,15 +5630,15 @@ Get outbound messages history.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   limit: 10, # Integer | How many results to return
@@ -5652,7 +5652,7 @@ begin
   #Get history
   result = api_instance.get_outbound_messages_history(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_outbound_messages_history: #{e}"
 end
 ```
@@ -5690,21 +5690,21 @@ Get all device tokens assigned to the current account
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get all device tokens assigned to the current account
   result = api_instance.get_push_tokens
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_push_tokens: #{e}"
 end
 ```
@@ -5735,15 +5735,15 @@ Get message schedule.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5752,7 +5752,7 @@ begin
   #Get message schedule.
   result = api_instance.get_scheduled_message(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_scheduled_message: #{e}"
 end
 ```
@@ -5786,15 +5786,15 @@ Get a single Sender ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -5803,7 +5803,7 @@ begin
   #Get a single Sender ID.
   result = api_instance.get_sender_id(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_sender_id: #{e}"
 end
 ```
@@ -5837,15 +5837,15 @@ Get all sender IDs of current user.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -5856,7 +5856,7 @@ begin
   #Get all sender IDs of current user.
   result = api_instance.get_sender_ids(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_sender_ids: #{e}"
 end
 ```
@@ -5891,15 +5891,15 @@ Get current user sender settings.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   country: 'country_example' # String | Return sender settings enabled for sending to specified country. Two upper case characters
@@ -5909,7 +5909,7 @@ begin
   #Get current user sender settings.
   result = api_instance.get_sender_settings(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_sender_settings: #{e}"
 end
 ```
@@ -5943,15 +5943,15 @@ Return account spending statistics.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -5964,7 +5964,7 @@ begin
   #Return account spending statistics.
   result = api_instance.get_spending_stat(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_spending_stat: #{e}"
 end
 ```
@@ -6001,21 +6001,21 @@ Get current entities state
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get current entities state
   result = api_instance.get_state
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_state: #{e}"
 end
 ```
@@ -6046,15 +6046,15 @@ Get a single subaccount.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6063,7 +6063,7 @@ begin
   #Get a single subaccount.
   result = api_instance.get_subaccount(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_subaccount: #{e}"
 end
 ```
@@ -6097,15 +6097,15 @@ Get all subaccounts of current user.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -6116,7 +6116,7 @@ begin
   #Get all subaccounts of current user.
   result = api_instance.get_subaccounts(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_subaccounts: #{e}"
 end
 ```
@@ -6153,17 +6153,17 @@ When more than one token related to app name, last key will be returned.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-get_subaccounts_with_tokens_input_object = SwaggerClient::GetSubaccountsWithTokensInputObject.new # GetSubaccountsWithTokensInputObject | 
+get_subaccounts_with_tokens_input_object = TextMagic::GetSubaccountsWithTokensInputObject.new # GetSubaccountsWithTokensInputObject | 
 
 opts = { 
   page: 1, # Float | Fetch specified results page
@@ -6175,7 +6175,7 @@ begin
   #Get all subaccounts with their REST API tokens associated with specified app name.
   result = api_instance.get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_subaccounts_with_tokens: #{e}"
 end
 ```
@@ -6212,15 +6212,15 @@ Get a survey by id.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6229,7 +6229,7 @@ begin
   #Get a survey by id.
   result = api_instance.get_survey(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_survey: #{e}"
 end
 ```
@@ -6263,15 +6263,15 @@ Get a node by id.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6280,7 +6280,7 @@ begin
   #Get a node by id.
   result = api_instance.get_survey_node(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_survey_node: #{e}"
 end
 ```
@@ -6314,15 +6314,15 @@ Fetch nodes by given survey id.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6331,7 +6331,7 @@ begin
   #Fetch nodes by given survey id.
   result = api_instance.get_survey_nodes(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_survey_nodes: #{e}"
 end
 ```
@@ -6365,15 +6365,15 @@ Get all user surveys.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -6384,7 +6384,7 @@ begin
   #Get all user surveys.
   result = api_instance.get_surveys(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_surveys: #{e}"
 end
 ```
@@ -6419,15 +6419,15 @@ Get a single template.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6436,7 +6436,7 @@ begin
   #Get a single template.
   result = api_instance.get_template(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_template: #{e}"
 end
 ```
@@ -6470,15 +6470,15 @@ Return all available timezone IDs.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   full: 0 # Integer | Return full info about timezones in array (0 or 1). Default is 0
@@ -6488,7 +6488,7 @@ begin
   #Return all available timezone IDs.
   result = api_instance.get_timezones(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_timezones: #{e}"
 end
 ```
@@ -6522,21 +6522,21 @@ Get total amount of unread messages in the current user chats.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get total amount of unread messages in the current user chats.
   result = api_instance.get_unread_messages_total
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_unread_messages_total: #{e}"
 end
 ```
@@ -6567,15 +6567,15 @@ Get a single unsubscribed contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -6584,7 +6584,7 @@ begin
   #Get a single unsubscribed contact.
   result = api_instance.get_unsubscribed_contact(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_unsubscribed_contact: #{e}"
 end
 ```
@@ -6618,15 +6618,15 @@ Get all contact have unsubscribed from your communication.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -6637,7 +6637,7 @@ begin
   #Get all contact have unsubscribed from your communication.
   result = api_instance.get_unsubscribers(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_unsubscribers: #{e}"
 end
 ```
@@ -6672,15 +6672,15 @@ Get user's dedicated numbers.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -6692,7 +6692,7 @@ begin
   #Get user's dedicated numbers.
   result = api_instance.get_user_dedicated_numbers(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_user_dedicated_numbers: #{e}"
 end
 ```
@@ -6728,15 +6728,15 @@ Get all user lists.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -6751,7 +6751,7 @@ begin
   #Get all user lists.
   result = api_instance.get_user_lists(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_user_lists: #{e}"
 end
 ```
@@ -6790,21 +6790,21 @@ Get minimal valid apps versions
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Get minimal valid apps versions
   result = api_instance.get_versions
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->get_versions: #{e}"
 end
 ```
@@ -6835,17 +6835,17 @@ Invite new subaccount.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-invite_subaccount_input_object = SwaggerClient::InviteSubaccountInputObject.new # InviteSubaccountInputObject | 
+invite_subaccount_input_object = TextMagic::InviteSubaccountInputObject.new # InviteSubaccountInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -6854,7 +6854,7 @@ opts = {
 begin
   #Invite new subaccount.
   api_instance.invite_subaccount(invite_subaccount_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->invite_subaccount: #{e}"
 end
 ```
@@ -6889,17 +6889,17 @@ Mark several chats as read by chat ids or mark all chats as read
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-mark_chats_read_bulk_input_object = SwaggerClient::MarkChatsReadBulkInputObject.new # MarkChatsReadBulkInputObject | 
+mark_chats_read_bulk_input_object = TextMagic::MarkChatsReadBulkInputObject.new # MarkChatsReadBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -6908,7 +6908,7 @@ opts = {
 begin
   #Mark several chats as read by chat ids or mark all chats as read
   api_instance.mark_chats_read_bulk(mark_chats_read_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_read_bulk: #{e}"
 end
 ```
@@ -6943,17 +6943,17 @@ Mark several chats as UNread by chat ids or mark all chats as UNread
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-mark_chats_unread_bulk_input_object = SwaggerClient::MarkChatsUnreadBulkInputObject.new # MarkChatsUnreadBulkInputObject | 
+mark_chats_unread_bulk_input_object = TextMagic::MarkChatsUnreadBulkInputObject.new # MarkChatsUnreadBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -6962,7 +6962,7 @@ opts = {
 begin
   #Mark several chats as UNread by chat ids or mark all chats as UNread
   api_instance.mark_chats_unread_bulk(mark_chats_unread_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_unread_bulk: #{e}"
 end
 ```
@@ -6997,17 +6997,17 @@ Merge two question nodes.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-merge_survey_nodes_input_object = SwaggerClient::MergeSurveyNodesInputObject.new # MergeSurveyNodesInputObject | 
+merge_survey_nodes_input_object = TextMagic::MergeSurveyNodesInputObject.new # MergeSurveyNodesInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7016,7 +7016,7 @@ opts = {
 begin
   #Merge two question nodes.
   api_instance.merge_survey_nodes(merge_survey_nodes_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->merge_survey_nodes: #{e}"
 end
 ```
@@ -7051,17 +7051,17 @@ Set mute mode.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-mute_chat_input_object = SwaggerClient::MuteChatInputObject.new # MuteChatInputObject | 
+mute_chat_input_object = TextMagic::MuteChatInputObject.new # MuteChatInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7071,7 +7071,7 @@ begin
   #Set mute mode.
   result = api_instance.mute_chat(mute_chat_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mute_chat: #{e}"
 end
 ```
@@ -7106,17 +7106,17 @@ Mute several chats by chat ids or mute all chats
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-mute_chats_bulk_input_object = SwaggerClient::MuteChatsBulkInputObject.new # MuteChatsBulkInputObject | 
+mute_chats_bulk_input_object = TextMagic::MuteChatsBulkInputObject.new # MuteChatsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7125,7 +7125,7 @@ opts = {
 begin
   #Mute several chats by chat ids or mute all chats
   api_instance.mute_chats_bulk(mute_chats_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mute_chats_bulk: #{e}"
 end
 ```
@@ -7160,21 +7160,21 @@ Just does a pong.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Just does a pong.
   result = api_instance.ping
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->ping: #{e}"
 end
 ```
@@ -7205,17 +7205,17 @@ Reopen chats by chat ids or reopen all chats
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-reopen_chats_bulk_input_object = SwaggerClient::ReopenChatsBulkInputObject.new # ReopenChatsBulkInputObject | 
+reopen_chats_bulk_input_object = TextMagic::ReopenChatsBulkInputObject.new # ReopenChatsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7224,7 +7224,7 @@ opts = {
 begin
   #Reopen chats by chat ids or reopen all chats
   api_instance.reopen_chats_bulk(reopen_chats_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->reopen_chats_bulk: #{e}"
 end
 ```
@@ -7261,17 +7261,17 @@ Returning user object, key and app name.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-request_new_subaccount_token_input_object = SwaggerClient::RequestNewSubaccountTokenInputObject.new # RequestNewSubaccountTokenInputObject | 
+request_new_subaccount_token_input_object = TextMagic::RequestNewSubaccountTokenInputObject.new # RequestNewSubaccountTokenInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7281,7 +7281,7 @@ begin
   #Request a new REST API token for subaccount.
   result = api_instance.request_new_subaccount_token(request_new_subaccount_token_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->request_new_subaccount_token: #{e}"
 end
 ```
@@ -7316,17 +7316,17 @@ Request for a new Sender ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-request_sender_id_input_object = SwaggerClient::RequestSenderIdInputObject.new # RequestSenderIdInputObject | 
+request_sender_id_input_object = TextMagic::RequestSenderIdInputObject.new # RequestSenderIdInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -7336,7 +7336,7 @@ begin
   #Request for a new Sender ID.
   result = api_instance.request_sender_id(request_sender_id_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->request_sender_id: #{e}"
 end
 ```
@@ -7371,15 +7371,15 @@ Reset a survey flow.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -7388,7 +7388,7 @@ begin
   #Reset a survey flow.
   result = api_instance.reset_survey(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->reset_survey: #{e}"
 end
 ```
@@ -7422,15 +7422,15 @@ Find chats by inbound or outbound messages text.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7442,7 +7442,7 @@ begin
   #Find chats by inbound or outbound messages text.
   result = api_instance.search_chats(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_chats: #{e}"
 end
 ```
@@ -7478,15 +7478,15 @@ Find chats by IDs.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7498,7 +7498,7 @@ begin
   #Find chats by IDs.
   result = api_instance.search_chats_by_ids(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_chats_by_ids: #{e}"
 end
 ```
@@ -7534,15 +7534,15 @@ Find chats by recipient (contact, list name or phone number).
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7555,7 +7555,7 @@ begin
   #Find chats by recipient (contact, list name or phone number).
   result = api_instance.search_chats_by_receipent(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_chats_by_receipent: #{e}"
 end
 ```
@@ -7592,15 +7592,15 @@ Find user contacts by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7620,7 +7620,7 @@ begin
   #Find user contacts by given parameters.
   result = api_instance.search_contacts(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_contacts: #{e}"
 end
 ```
@@ -7664,15 +7664,15 @@ Find inbound messages by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7688,7 +7688,7 @@ begin
   #Find inbound messages by given parameters.
   result = api_instance.search_inbound_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_inbound_messages: #{e}"
 end
 ```
@@ -7728,15 +7728,15 @@ Find contact lists by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7753,7 +7753,7 @@ begin
   #Find contact lists by given parameters.
   result = api_instance.search_lists(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_lists: #{e}"
 end
 ```
@@ -7796,15 +7796,15 @@ Find outbound messages by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7821,7 +7821,7 @@ begin
   #Find messages
   result = api_instance.search_outbound_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_outbound_messages: #{e}"
 end
 ```
@@ -7862,15 +7862,15 @@ Find scheduled messages by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7886,7 +7886,7 @@ begin
   #Find scheduled messages by given parameters.
   result = api_instance.search_scheduled_messages(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_scheduled_messages: #{e}"
 end
 ```
@@ -7926,15 +7926,15 @@ Find user templates by given parameters.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   page: 1, # Integer | Fetch specified results page
@@ -7948,7 +7948,7 @@ begin
   #Find user templates by given parameters.
   result = api_instance.search_templates(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->search_templates: #{e}"
 end
 ```
@@ -7986,20 +7986,20 @@ Send user email verification
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Send user email verification
   api_instance.send_email_verification_code
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->send_email_verification_code: #{e}"
 end
 ```
@@ -8032,17 +8032,17 @@ The main entrypoint to send messages. See examples above for the reference.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-send_message_input_object = SwaggerClient::SendMessageInputObject.new # SendMessageInputObject | 
+send_message_input_object = TextMagic::SendMessageInputObject.new # SendMessageInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8052,7 +8052,7 @@ begin
   #Send message
   result = api_instance.send_message(send_message_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->send_message: #{e}"
 end
 ```
@@ -8087,20 +8087,20 @@ Send user phone verification
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 begin
   #Send user phone verification
   api_instance.send_phone_verification_code
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->send_phone_verification_code: #{e}"
 end
 ```
@@ -8131,17 +8131,17 @@ Set status of the chat given by ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-set_chat_status_input_object = SwaggerClient::SetChatStatusInputObject.new # SetChatStatusInputObject | 
+set_chat_status_input_object = TextMagic::SetChatStatusInputObject.new # SetChatStatusInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8151,7 +8151,7 @@ begin
   #Set status of the chat given by ID.
   result = api_instance.set_chat_status(set_chat_status_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->set_chat_status: #{e}"
 end
 ```
@@ -8186,15 +8186,15 @@ Start a survey.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
@@ -8203,7 +8203,7 @@ begin
   #Start a survey.
   result = api_instance.start_survey(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->start_survey: #{e}"
 end
 ```
@@ -8237,17 +8237,17 @@ Unblock contact by phone number.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-unblock_contact_input_object = SwaggerClient::UnblockContactInputObject.new # UnblockContactInputObject | 
+unblock_contact_input_object = TextMagic::UnblockContactInputObject.new # UnblockContactInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8256,7 +8256,7 @@ opts = {
 begin
   #Unblock contact by phone number.
   api_instance.unblock_contact(unblock_contact_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unblock_contact: #{e}"
 end
 ```
@@ -8291,17 +8291,17 @@ Unblock several contacts by blocked contact ids or unblock all contacts
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-unblock_contacts_bulk_input_object = SwaggerClient::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
+unblock_contacts_bulk_input_object = TextMagic::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8310,7 +8310,7 @@ opts = {
 begin
   #Unblock several contacts by blocked contact ids or unblock all contacts
   api_instance.unblock_contacts_bulk(unblock_contacts_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unblock_contacts_bulk: #{e}"
 end
 ```
@@ -8345,17 +8345,17 @@ Unmute several chats by chat ids or unmute all chats
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-unmute_chats_bulk_input_object = SwaggerClient::UnmuteChatsBulkInputObject.new # UnmuteChatsBulkInputObject | 
+unmute_chats_bulk_input_object = TextMagic::UnmuteChatsBulkInputObject.new # UnmuteChatsBulkInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8364,7 +8364,7 @@ opts = {
 begin
   #Unmute several chats by chat ids or unmute all chats
   api_instance.unmute_chats_bulk(unmute_chats_bulk_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unmute_chats_bulk: #{e}"
 end
 ```
@@ -8399,17 +8399,17 @@ Unsubscribe contact from your communication by phone number.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-unsubscribe_contact_input_object = SwaggerClient::UnsubscribeContactInputObject.new # UnsubscribeContactInputObject | 
+unsubscribe_contact_input_object = TextMagic::UnsubscribeContactInputObject.new # UnsubscribeContactInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8419,7 +8419,7 @@ begin
   #Unsubscribe contact from your communication by phone number.
   result = api_instance.unsubscribe_contact(unsubscribe_contact_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unsubscribe_contact: #{e}"
 end
 ```
@@ -8454,17 +8454,17 @@ Update balance notification settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_balance_notification_settings_input_object = SwaggerClient::UpdateBalanceNotificationSettingsInputObject.new # UpdateBalanceNotificationSettingsInputObject | 
+update_balance_notification_settings_input_object = TextMagic::UpdateBalanceNotificationSettingsInputObject.new # UpdateBalanceNotificationSettingsInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8473,7 +8473,7 @@ opts = {
 begin
   #Update balance notification settings
   api_instance.update_balance_notification_settings(update_balance_notification_settings_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_balance_notification_settings: #{e}"
 end
 ```
@@ -8508,17 +8508,17 @@ Update callback URL settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_callback_settings_input_object = SwaggerClient::UpdateCallbackSettingsInputObject.new # UpdateCallbackSettingsInputObject | 
+update_callback_settings_input_object = TextMagic::UpdateCallbackSettingsInputObject.new # UpdateCallbackSettingsInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8527,7 +8527,7 @@ opts = {
 begin
   #Update callback URL settings
   api_instance.update_callback_settings(update_callback_settings_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_callback_settings: #{e}"
 end
 ```
@@ -8562,17 +8562,17 @@ Update chat desktop notification settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_chat_desktop_notification_settings_input_object = SwaggerClient::UpdateChatDesktopNotificationSettingsInputObject.new # UpdateChatDesktopNotificationSettingsInputObject | 
+update_chat_desktop_notification_settings_input_object = TextMagic::UpdateChatDesktopNotificationSettingsInputObject.new # UpdateChatDesktopNotificationSettingsInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8581,7 +8581,7 @@ opts = {
 begin
   #Update chat desktop notification settings
   api_instance.update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_chat_desktop_notification_settings: #{e}"
 end
 ```
@@ -8616,17 +8616,17 @@ Update existing contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_contact_input_object = SwaggerClient::UpdateContactInputObject.new # UpdateContactInputObject | 
+update_contact_input_object = TextMagic::UpdateContactInputObject.new # UpdateContactInputObject | 
 
 id = 1 # Integer | 
 
@@ -8638,7 +8638,7 @@ begin
   #Update existing contact.
   result = api_instance.update_contact(update_contact_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_contact: #{e}"
 end
 ```
@@ -8674,17 +8674,17 @@ Update existing contact note.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_contact_note_input_object = SwaggerClient::UpdateContactNoteInputObject.new # UpdateContactNoteInputObject | 
+update_contact_note_input_object = TextMagic::UpdateContactNoteInputObject.new # UpdateContactNoteInputObject | 
 
 id = 1 # Integer | 
 
@@ -8696,7 +8696,7 @@ begin
   #Update existing contact note.
   result = api_instance.update_contact_note(update_contact_note_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_contact_note: #{e}"
 end
 ```
@@ -8732,17 +8732,17 @@ Update current user info.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_current_user_input_object = SwaggerClient::UpdateCurrentUserInputObject.new # UpdateCurrentUserInputObject | 
+update_current_user_input_object = TextMagic::UpdateCurrentUserInputObject.new # UpdateCurrentUserInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8752,7 +8752,7 @@ begin
   #Update current user info.
   result = api_instance.update_current_user(update_current_user_input_object, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_current_user: #{e}"
 end
 ```
@@ -8787,17 +8787,17 @@ Update existing custom field.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_custom_field_input_object = SwaggerClient::UpdateCustomFieldInputObject.new # UpdateCustomFieldInputObject | 
+update_custom_field_input_object = TextMagic::UpdateCustomFieldInputObject.new # UpdateCustomFieldInputObject | 
 
 id = 1 # Integer | 
 
@@ -8809,7 +8809,7 @@ begin
   #Update existing custom field.
   result = api_instance.update_custom_field(update_custom_field_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_custom_field: #{e}"
 end
 ```
@@ -8845,17 +8845,17 @@ Update contact's custom field value.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_custom_field_value_input_object = SwaggerClient::UpdateCustomFieldValueInputObject.new # UpdateCustomFieldValueInputObject | 
+update_custom_field_value_input_object = TextMagic::UpdateCustomFieldValueInputObject.new # UpdateCustomFieldValueInputObject | 
 
 id = 'id_example' # String | 
 
@@ -8867,7 +8867,7 @@ begin
   #Update contact's custom field value.
   result = api_instance.update_custom_field_value(update_custom_field_value_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_custom_field_value: #{e}"
 end
 ```
@@ -8903,17 +8903,17 @@ Update inbound messages notification settings
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_inbound_messages_notification_settings_input_object = SwaggerClient::UpdateInboundMessagesNotificationSettingsInputObject.new # UpdateInboundMessagesNotificationSettingsInputObject | 
+update_inbound_messages_notification_settings_input_object = TextMagic::UpdateInboundMessagesNotificationSettingsInputObject.new # UpdateInboundMessagesNotificationSettingsInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -8922,7 +8922,7 @@ opts = {
 begin
   #Update inbound messages notification settings
   api_instance.update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_inbound_messages_notification_settings: #{e}"
 end
 ```
@@ -8957,27 +8957,27 @@ Update existing list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 id = 1 # Integer | 
 
 opts = { 
-  update_list_object: SwaggerClient::UpdateListObject.new # UpdateListObject | 
+  update_list_object: TextMagic::UpdateListObject.new # UpdateListObject | 
 }
 
 begin
   #Update existing list.
   result = api_instance.update_list(id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_list: #{e}"
 end
 ```
@@ -9012,17 +9012,17 @@ Change user password.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_password_input_object = SwaggerClient::UpdatePasswordInputObject.new # UpdatePasswordInputObject | 
+update_password_input_object = TextMagic::UpdatePasswordInputObject.new # UpdatePasswordInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -9031,7 +9031,7 @@ opts = {
 begin
   #Change user password.
   api_instance.update_password(update_password_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_password: #{e}"
 end
 ```
@@ -9066,17 +9066,17 @@ Change sender settings for specified country.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_sender_setting_input_object = SwaggerClient::UpdateSenderSettingInputObject.new # UpdateSenderSettingInputObject | 
+update_sender_setting_input_object = TextMagic::UpdateSenderSettingInputObject.new # UpdateSenderSettingInputObject | 
 
 opts = { 
   x_ignore_null_values: true # BOOLEAN | 
@@ -9085,7 +9085,7 @@ opts = {
 begin
   #Change sender settings for specified country.
   api_instance.update_sender_setting(update_sender_setting_input_object, opts)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_sender_setting: #{e}"
 end
 ```
@@ -9120,17 +9120,17 @@ Update existing survey.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_survey_input_object = SwaggerClient::UpdateSurveyInputObject.new # UpdateSurveyInputObject | 
+update_survey_input_object = TextMagic::UpdateSurveyInputObject.new # UpdateSurveyInputObject | 
 
 id = 1 # Integer | 
 
@@ -9142,7 +9142,7 @@ begin
   #Update existing survey.
   result = api_instance.update_survey(update_survey_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_survey: #{e}"
 end
 ```
@@ -9178,17 +9178,17 @@ Update existing node.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_survey_node_input_object = SwaggerClient::UpdateSurveyNodeInputObject.new # UpdateSurveyNodeInputObject | 
+update_survey_node_input_object = TextMagic::UpdateSurveyNodeInputObject.new # UpdateSurveyNodeInputObject | 
 
 id = 1 # Integer | 
 
@@ -9200,7 +9200,7 @@ begin
   #Update existing node.
   result = api_instance.update_survey_node(update_survey_node_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_survey_node: #{e}"
 end
 ```
@@ -9236,17 +9236,17 @@ Update existing template.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
-update_template_input_object = SwaggerClient::UpdateTemplateInputObject.new # UpdateTemplateInputObject | 
+update_template_input_object = TextMagic::UpdateTemplateInputObject.new # UpdateTemplateInputObject | 
 
 id = 1 # Integer | 
 
@@ -9258,7 +9258,7 @@ begin
   #Update existing template.
   result = api_instance.update_template(update_template_input_object, id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_template: #{e}"
 end
 ```
@@ -9294,15 +9294,15 @@ Add an avatar for the current user.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 image = File.new('/path/to/file.txt') # File | User avatar. Should be PNG or JPG file not more than 10 MB
 
@@ -9310,7 +9310,7 @@ image = File.new('/path/to/file.txt') # File | User avatar. Should be PNG or JPG
 begin
   #Add an avatar for the current user.
   api_instance.upload_avatar(image)
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->upload_avatar: #{e}"
 end
 ```
@@ -9344,15 +9344,15 @@ Add an avatar for the contact.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 image = File.new('/path/to/file.txt') # File | Contact avatar. Should be PNG or JPG file not more than 10 MB
 
@@ -9363,7 +9363,7 @@ begin
   #Add an avatar for the contact.
   result = api_instance.upload_contact_avatar(image, id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->upload_contact_avatar: #{e}"
 end
 ```
@@ -9398,15 +9398,15 @@ Add an avatar for the list.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 image = File.new('/path/to/file.txt') # File | List avatar. Should be PNG or JPG file not more than 10 MB
 
@@ -9417,7 +9417,7 @@ begin
   #Add an avatar for the list.
   result = api_instance.upload_list_avatar(image, id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->upload_list_avatar: #{e}"
 end
 ```
@@ -9454,15 +9454,15 @@ Upload a new file to insert it as a link.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'textmagic_rest_client'
 # setup authorization
-SwaggerClient.configure do |config|
+TextMagic.configure do |config|
   # Configure HTTP basic authorization: BasicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = SwaggerClient::TextMagicApi.new
+api_instance = TextMagic::TextMagicApi.new
 
 file = File.new('/path/to/file.txt') # File | Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf file formats
 
@@ -9471,7 +9471,7 @@ begin
   #Upload message attachment
   result = api_instance.upload_message_attachment(file)
   p result
-rescue SwaggerClient::ApiError => e
+rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->upload_message_attachment: #{e}"
 end
 ```

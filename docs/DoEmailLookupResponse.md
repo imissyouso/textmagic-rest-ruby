@@ -1,4 +1,4 @@
-# SwaggerClient::DoEmailLookupResponse
+# TextMagic::DoEmailLookupResponse
 
 ## Properties
 Name | Type | Description | Notes

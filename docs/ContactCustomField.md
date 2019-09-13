@@ -1,4 +1,4 @@
-# SwaggerClient::ContactCustomField
+# TextMagic::ContactCustomField
 
 ## Properties
 Name | Type | Description | Notes

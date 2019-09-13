@@ -1,4 +1,4 @@
-# SwaggerClient::SearchOutboundMessagesResponse
+# TextMagic::SearchOutboundMessagesResponse
 
 ## Properties
 Name | Type | Description | Notes

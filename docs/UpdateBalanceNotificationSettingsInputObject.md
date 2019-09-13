@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateBalanceNotificationSettingsInputObject
+# TextMagic::UpdateBalanceNotificationSettingsInputObject
 
 ## Properties
 Name | Type | Description | Notes

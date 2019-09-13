@@ -1,4 +1,4 @@
-# SwaggerClient::GetSurveysResponse
+# TextMagic::GetSurveysResponse
 
 ## Properties
 Name | Type | Description | Notes

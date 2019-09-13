@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateSurveyNodeInputObject
+# TextMagic::UpdateSurveyNodeInputObject
 
 ## Properties
 Name | Type | Description | Notes

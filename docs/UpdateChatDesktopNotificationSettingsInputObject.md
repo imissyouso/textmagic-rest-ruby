@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateChatDesktopNotificationSettingsInputObject
+# TextMagic::UpdateChatDesktopNotificationSettingsInputObject
 
 ## Properties
 Name | Type | Description | Notes

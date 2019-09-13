@@ -1,4 +1,4 @@
-# SwaggerClient::GetMessagingCountersResponse
+# TextMagic::GetMessagingCountersResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::GetAllOutboundMessagesResponse
+# TextMagic::GetAllOutboundMessagesResponse
 
 ## Properties
 Name | Type | Description | Notes

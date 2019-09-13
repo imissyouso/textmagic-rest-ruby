@@ -1,4 +1,4 @@
-# SwaggerClient::UserImage
+# TextMagic::UserImage
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::SearchListsResponse
+# TextMagic::SearchListsResponse
 
 ## Properties
 Name | Type | Description | Notes

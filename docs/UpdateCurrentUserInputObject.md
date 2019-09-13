@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateCurrentUserInputObject
+# TextMagic::UpdateCurrentUserInputObject
 
 ## Properties
 Name | Type | Description | Notes

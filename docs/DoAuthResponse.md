@@ -1,4 +1,4 @@
-# SwaggerClient::DoAuthResponse
+# TextMagic::DoAuthResponse
 
 ## Properties
 Name | Type | Description | Notes

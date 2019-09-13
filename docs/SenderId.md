@@ -1,4 +1,4 @@
-# SwaggerClient::SenderId
+# TextMagic::SenderId
 
 ## Properties
 Name | Type | Description | Notes

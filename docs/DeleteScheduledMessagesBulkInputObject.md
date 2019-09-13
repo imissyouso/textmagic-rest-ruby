@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteScheduledMessagesBulkInputObject
+# TextMagic::DeleteScheduledMessagesBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

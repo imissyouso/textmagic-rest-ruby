@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateInboundMessagesNotificationSettingsInputObject
+# TextMagic::UpdateInboundMessagesNotificationSettingsInputObject
 
 ## Properties
 Name | Type | Description | Notes

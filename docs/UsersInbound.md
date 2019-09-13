@@ -1,4 +1,4 @@
-# SwaggerClient::UsersInbound
+# TextMagic::UsersInbound
 
 ## Properties
 Name | Type | Description | Notes

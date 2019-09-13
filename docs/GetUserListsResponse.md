@@ -1,4 +1,4 @@
-# SwaggerClient::GetUserListsResponse
+# TextMagic::GetUserListsResponse
 
 ## Properties
 Name | Type | Description | Notes

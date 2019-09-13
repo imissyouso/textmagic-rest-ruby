@@ -1,4 +1,4 @@
-# SwaggerClient::GetMessagePricesResponse
+# TextMagic::GetMessagePricesResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::CreateContactNoteInputObject
+# TextMagic::CreateContactNoteInputObject
 
 ## Properties
 Name | Type | Description | Notes

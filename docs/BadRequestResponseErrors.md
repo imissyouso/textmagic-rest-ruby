@@ -1,4 +1,4 @@
-# SwaggerClient::BadRequestResponseErrors
+# TextMagic::BadRequestResponseErrors
 
 ## Properties
 Name | Type | Description | Notes

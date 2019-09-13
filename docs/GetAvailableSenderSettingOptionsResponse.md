@@ -1,4 +1,4 @@
-# SwaggerClient::GetAvailableSenderSettingOptionsResponse
+# TextMagic::GetAvailableSenderSettingOptionsResponse
 
 ## Properties
 Name | Type | Description | Notes

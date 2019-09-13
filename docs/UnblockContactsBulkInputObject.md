@@ -1,4 +1,4 @@
-# SwaggerClient::UnblockContactsBulkInputObject
+# TextMagic::UnblockContactsBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

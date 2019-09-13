@@ -1,4 +1,4 @@
-# SwaggerClient::SearchTemplatesResponse
+# TextMagic::SearchTemplatesResponse
 
 ## Properties
 Name | Type | Description | Notes

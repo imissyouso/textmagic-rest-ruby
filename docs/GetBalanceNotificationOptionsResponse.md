@@ -1,4 +1,4 @@
-# SwaggerClient::GetBalanceNotificationOptionsResponse
+# TextMagic::GetBalanceNotificationOptionsResponse
 
 ## Properties
 Name | Type | Description | Notes

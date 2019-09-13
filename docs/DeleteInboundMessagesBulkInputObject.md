@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteInboundMessagesBulkInputObject
+# TextMagic::DeleteInboundMessagesBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

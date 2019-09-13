@@ -1,4 +1,4 @@
-# SwaggerClient::Invoice
+# TextMagic::Invoice
 
 ## Properties
 Name | Type | Description | Notes

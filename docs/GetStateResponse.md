@@ -1,4 +1,4 @@
-# SwaggerClient::GetStateResponse
+# TextMagic::GetStateResponse
 
 ## Properties
 Name | Type | Description | Notes

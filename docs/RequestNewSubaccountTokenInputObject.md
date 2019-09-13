@@ -1,4 +1,4 @@
-# SwaggerClient::RequestNewSubaccountTokenInputObject
+# TextMagic::RequestNewSubaccountTokenInputObject
 
 ## Properties
 Name | Type | Description | Notes

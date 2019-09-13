@@ -1,4 +1,4 @@
-# SwaggerClient::GetFavouritesResponse
+# TextMagic::GetFavouritesResponse
 
 ## Properties
 Name | Type | Description | Notes

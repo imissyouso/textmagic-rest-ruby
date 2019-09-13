@@ -1,4 +1,4 @@
-# SwaggerClient::MarkChatsReadBulkInputObject
+# TextMagic::MarkChatsReadBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

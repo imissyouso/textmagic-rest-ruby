@@ -1,4 +1,4 @@
-# SwaggerClient::GetAllBulkSessionsResponse
+# TextMagic::GetAllBulkSessionsResponse
 
 ## Properties
 Name | Type | Description | Notes

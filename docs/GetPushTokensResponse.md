@@ -1,4 +1,4 @@
-# SwaggerClient::GetPushTokensResponse
+# TextMagic::GetPushTokensResponse
 
 ## Properties
 Name | Type | Description | Notes

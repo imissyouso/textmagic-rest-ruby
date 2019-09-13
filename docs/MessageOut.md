@@ -1,4 +1,4 @@
-# SwaggerClient::MessageOut
+# TextMagic::MessageOut
 
 ## Properties
 Name | Type | Description | Notes

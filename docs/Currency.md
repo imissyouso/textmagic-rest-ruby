@@ -1,4 +1,4 @@
-# SwaggerClient::Currency
+# TextMagic::Currency
 
 ## Properties
 Name | Type | Description | Notes

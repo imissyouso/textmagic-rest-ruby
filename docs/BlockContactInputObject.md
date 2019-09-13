@@ -1,4 +1,4 @@
-# SwaggerClient::BlockContactInputObject
+# TextMagic::BlockContactInputObject
 
 ## Properties
 Name | Type | Description | Notes

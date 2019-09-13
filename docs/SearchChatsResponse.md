@@ -1,4 +1,4 @@
-# SwaggerClient::SearchChatsResponse
+# TextMagic::SearchChatsResponse
 
 ## Properties
 Name | Type | Description | Notes

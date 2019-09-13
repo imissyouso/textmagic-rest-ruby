@@ -1,4 +1,4 @@
-# SwaggerClient::InviteSubaccountInputObject
+# TextMagic::InviteSubaccountInputObject
 
 ## Properties
 Name | Type | Description | Notes

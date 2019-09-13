@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateSenderSettingInputObject
+# TextMagic::UpdateSenderSettingInputObject
 
 ## Properties
 Name | Type | Description | Notes

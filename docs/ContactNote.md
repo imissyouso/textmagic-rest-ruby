@@ -1,4 +1,4 @@
-# SwaggerClient::ContactNote
+# TextMagic::ContactNote
 
 ## Properties
 Name | Type | Description | Notes

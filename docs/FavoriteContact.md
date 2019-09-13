@@ -1,4 +1,4 @@
-# SwaggerClient::FavoriteContact
+# TextMagic::FavoriteContact
 
 ## Properties
 Name | Type | Description | Notes

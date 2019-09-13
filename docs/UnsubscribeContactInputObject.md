@@ -1,4 +1,4 @@
-# SwaggerClient::UnsubscribeContactInputObject
+# TextMagic::UnsubscribeContactInputObject
 
 ## Properties
 Name | Type | Description | Notes

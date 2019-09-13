@@ -1,4 +1,4 @@
-# SwaggerClient::GroupImage
+# TextMagic::GroupImage
 
 ## Properties
 Name | Type | Description | Notes

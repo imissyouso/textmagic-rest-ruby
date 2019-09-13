@@ -1,4 +1,4 @@
-# SwaggerClient::UnmuteChatsBulkInputObject
+# TextMagic::UnmuteChatsBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

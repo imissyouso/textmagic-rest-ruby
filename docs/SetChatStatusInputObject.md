@@ -1,4 +1,4 @@
-# SwaggerClient::SetChatStatusInputObject
+# TextMagic::SetChatStatusInputObject
 
 ## Properties
 Name | Type | Description | Notes

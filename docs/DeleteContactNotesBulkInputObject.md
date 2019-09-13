@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteContactNotesBulkInputObject
+# TextMagic::DeleteContactNotesBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

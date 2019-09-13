@@ -1,4 +1,4 @@
-# SwaggerClient::GetSpendingStatResponse
+# TextMagic::GetSpendingStatResponse
 
 ## Properties
 Name | Type | Description | Notes

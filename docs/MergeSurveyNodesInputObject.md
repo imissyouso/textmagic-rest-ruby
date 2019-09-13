@@ -1,4 +1,4 @@
-# SwaggerClient::MergeSurveyNodesInputObject
+# TextMagic::MergeSurveyNodesInputObject
 
 ## Properties
 Name | Type | Description | Notes

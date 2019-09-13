@@ -1,4 +1,4 @@
-# SwaggerClient::DoAuthInputObject
+# TextMagic::DoAuthInputObject
 
 ## Properties
 Name | Type | Description | Notes

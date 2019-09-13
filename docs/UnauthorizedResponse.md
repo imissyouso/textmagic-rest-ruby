@@ -1,4 +1,4 @@
-# SwaggerClient::UnauthorizedResponse
+# TextMagic::UnauthorizedResponse
 
 ## Properties
 Name | Type | Description | Notes

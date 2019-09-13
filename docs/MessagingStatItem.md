@@ -1,4 +1,4 @@
-# SwaggerClient::MessagingStatItem
+# TextMagic::MessagingStatItem
 
 ## Properties
 Name | Type | Description | Notes

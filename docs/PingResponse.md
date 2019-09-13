@@ -1,4 +1,4 @@
-# SwaggerClient::PingResponse
+# TextMagic::PingResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::SubaccountWithToken
+# TextMagic::SubaccountWithToken
 
 ## Properties
 Name | Type | Description | Notes

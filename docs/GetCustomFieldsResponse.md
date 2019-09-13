@@ -1,4 +1,4 @@
-# SwaggerClient::GetCustomFieldsResponse
+# TextMagic::GetCustomFieldsResponse
 
 ## Properties
 Name | Type | Description | Notes

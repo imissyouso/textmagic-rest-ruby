@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteContacsFromListObject
+# TextMagic::DeleteContacsFromListObject
 
 ## Properties
 Name | Type | Description | Notes

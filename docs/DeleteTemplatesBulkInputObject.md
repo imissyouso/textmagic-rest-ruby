@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteTemplatesBulkInputObject
+# TextMagic::DeleteTemplatesBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

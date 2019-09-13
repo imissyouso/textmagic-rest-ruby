@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteChatMessagesBulkInputObject
+# TextMagic::DeleteChatMessagesBulkInputObject
 
 ## Properties
 Name | Type | Description | Notes

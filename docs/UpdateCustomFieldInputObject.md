@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateCustomFieldInputObject
+# TextMagic::UpdateCustomFieldInputObject
 
 ## Properties
 Name | Type | Description | Notes

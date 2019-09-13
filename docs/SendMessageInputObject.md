@@ -1,4 +1,4 @@
-# SwaggerClient::SendMessageInputObject
+# TextMagic::SendMessageInputObject
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::GetUserDedicatedNumbersResponse
+# TextMagic::GetUserDedicatedNumbersResponse
 
 ## Properties
 Name | Type | Description | Notes

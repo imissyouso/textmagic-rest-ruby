@@ -1,4 +1,4 @@
-# SwaggerClient::CreateSurveyInputObject
+# TextMagic::CreateSurveyInputObject
 
 ## Properties
 Name | Type | Description | Notes

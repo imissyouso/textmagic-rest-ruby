@@ -1,4 +1,4 @@
-# SwaggerClient::Chat
+# TextMagic::Chat
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::MuteChatInputObject
+# TextMagic::MuteChatInputObject
 
 ## Properties
 Name | Type | Description | Notes

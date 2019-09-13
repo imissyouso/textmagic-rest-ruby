@@ -1,4 +1,4 @@
-# SwaggerClient::GetUnsubscribersResponse
+# TextMagic::GetUnsubscribersResponse
 
 ## Properties
 Name | Type | Description | Notes

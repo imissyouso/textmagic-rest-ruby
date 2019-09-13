@@ -1,4 +1,4 @@
-# SwaggerClient::SearchChatsByReceipentResponse
+# TextMagic::SearchChatsByReceipentResponse
 
 ## Properties
 Name | Type | Description | Notes

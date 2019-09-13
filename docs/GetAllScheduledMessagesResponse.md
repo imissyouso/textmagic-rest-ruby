@@ -1,4 +1,4 @@
-# SwaggerClient::GetAllScheduledMessagesResponse
+# TextMagic::GetAllScheduledMessagesResponse
 
 ## Properties
 Name | Type | Description | Notes

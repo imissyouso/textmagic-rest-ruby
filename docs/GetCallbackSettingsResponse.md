@@ -1,4 +1,4 @@
-# SwaggerClient::GetCallbackSettingsResponse
+# TextMagic::GetCallbackSettingsResponse
 
 ## Properties
 Name | Type | Description | Notes

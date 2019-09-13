@@ -1,4 +1,4 @@
-# SwaggerClient::GetInvoicesResponse
+# TextMagic::GetInvoicesResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::UploadMessageAttachmentResponse
+# TextMagic::UploadMessageAttachmentResponse
 
 ## Properties
 Name | Type | Description | Notes

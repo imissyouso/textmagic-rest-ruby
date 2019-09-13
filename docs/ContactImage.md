@@ -1,4 +1,4 @@
-# SwaggerClient::ContactImage
+# TextMagic::ContactImage
 
 ## Properties
 Name | Type | Description | Notes

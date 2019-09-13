@@ -1,4 +1,4 @@
-# SwaggerClient::RequestSenderIdInputObject
+# TextMagic::RequestSenderIdInputObject
 
 ## Properties
 Name | Type | Description | Notes

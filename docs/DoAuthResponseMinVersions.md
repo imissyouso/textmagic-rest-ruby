@@ -1,4 +1,4 @@
-# SwaggerClient::DoAuthResponseMinVersions
+# TextMagic::DoAuthResponseMinVersions
 
 ## Properties
 Name | Type | Description | Notes

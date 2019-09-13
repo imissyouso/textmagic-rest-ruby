@@ -1,4 +1,4 @@
-# SwaggerClient::GetMessagePreviewResponse
+# TextMagic::GetMessagePreviewResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::UserStatement
+# TextMagic::UserStatement
 
 ## Properties
 Name | Type | Description | Notes

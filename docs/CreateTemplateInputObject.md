@@ -1,4 +1,4 @@
-# SwaggerClient::CreateTemplateInputObject
+# TextMagic::CreateTemplateInputObject
 
 ## Properties
 Name | Type | Description | Notes

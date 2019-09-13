@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateContactNoteInputObject
+# TextMagic::UpdateContactNoteInputObject
 
 ## Properties
 Name | Type | Description | Notes

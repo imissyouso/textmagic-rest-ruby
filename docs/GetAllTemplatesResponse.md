@@ -1,4 +1,4 @@
-# SwaggerClient::GetAllTemplatesResponse
+# TextMagic::GetAllTemplatesResponse
 
 ## Properties
 Name | Type | Description | Notes

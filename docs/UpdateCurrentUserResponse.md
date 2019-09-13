@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateCurrentUserResponse
+# TextMagic::UpdateCurrentUserResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::CheckPhoneVerificationCodeInputObject
+# TextMagic::CheckPhoneVerificationCodeInputObject
 
 ## Properties
 Name | Type | Description | Notes

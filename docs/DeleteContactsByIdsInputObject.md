@@ -1,4 +1,4 @@
-# SwaggerClient::DeleteContactsByIdsInputObject
+# TextMagic::DeleteContactsByIdsInputObject
 
 ## Properties
 Name | Type | Description | Notes

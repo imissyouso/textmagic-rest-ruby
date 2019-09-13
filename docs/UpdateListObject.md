@@ -1,4 +1,4 @@
-# SwaggerClient::UpdateListObject
+# TextMagic::UpdateListObject
 
 ## Properties
 Name | Type | Description | Notes

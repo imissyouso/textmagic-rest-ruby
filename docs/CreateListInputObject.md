@@ -1,4 +1,4 @@
-# SwaggerClient::CreateListInputObject
+# TextMagic::CreateListInputObject
 
 ## Properties
 Name | Type | Description | Notes

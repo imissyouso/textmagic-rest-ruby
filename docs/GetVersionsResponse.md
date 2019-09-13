@@ -1,4 +1,4 @@
-# SwaggerClient::GetVersionsResponse
+# TextMagic::GetVersionsResponse
 
 ## Properties
 Name | Type | Description | Notes
