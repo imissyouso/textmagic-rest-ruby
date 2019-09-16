@@ -29,8 +29,8 @@ module TextMagic
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'nodes' => :'Array<SurveyNode>',
-        :'rows' => :'Array<Array<Integer>>'
+        :'nodes' => :'Object',
+        :'rows' => :'Object'
       }
     end
 
@@ -43,15 +43,11 @@ module TextMagic
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
       if attributes.has_key?(:'nodes')
-        if (value = attributes[:'nodes']).is_a?(Array)
-          self.nodes = value
-        end
+        self.nodes = attributes[:'nodes']
       end
 
       if attributes.has_key?(:'rows')
-        if (value = attributes[:'rows']).is_a?(Array)
-          self.rows = value
-        end
+        self.rows = attributes[:'rows']
       end
     end
 
