@@ -6,7 +6,7 @@ For detailed documentation, please visit [http://docs.textmagictesting.com/](htt
 
 ## Installation
 
-Add these files into your Gemfile
+Add these lines into your Gemfile
 ```shell
 gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git'
 ```
