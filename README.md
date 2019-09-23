@@ -8,7 +8,7 @@ For detailed documentation, please visit [http://docs.textmagictesting.com/](htt
 
 Add these lines into your Gemfile
 ```shell
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.328'
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.329'
 ```
 
 ## Usage Example
