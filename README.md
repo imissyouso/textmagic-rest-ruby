@@ -1,18 +1,26 @@
 # TextMagic Ruby SDK
+This library provides you with an easy solution to send SMS and receive replies by integrating TextMagic SMS Gateway to your Ruby application.
 
-Ruby client for TextMagic API
+## What is TextMagic?
+TextMagic's application programming interface (API) provides the communication link between your application and TextMagic’s SMS Gateway, allowing you to send and receive text messages and to check the delivery status of text messages you’ve already sent.
 
 For detailed documentation, please visit [http://docs.textmagictesting.com/](http://docs.textmagictesting.com/)
 
 ## Installation
 
 Add these lines into your Gemfile
-```shell
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.375'
+```ruby
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.392'
+```
+
+Run bundler install command
+``` shell
+bundle install
 ```
 
 ## Usage Example
 
+Create test file `test.rb` and put following code
 ```ruby
 # Load the gem
 require 'textmagic_rest_client'
@@ -26,14 +34,48 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
+# Simple ping request example
+begin
+    result = api_instance.ping
+    puts result.ping
+rescue TextMagic::ApiError => e
+    puts "Exception when calling TextMagicApi->ping: #{e}"
+end
+
+# Send a new message request example
 send_message_input_object = TextMagic::SendMessageInputObject.new
 send_message_input_object.text = 'I love TextMagic!'
 send_message_input_object.phones = '+19998887766'
 
 begin
     result = api_instance.send_message(send_message_input_object)
-    puts result
+    puts result.id
 rescue TextMagic::ApiError => e
     puts "Exception when calling TextMagicApi->send_message: #{e}"
 end
+
+# Get all outgoing messages request example
+begin
+    result = api_instance.get_all_outbound_messages(page: 1, limit: 10)
+    puts result.resources[0].text
+rescue TextMagic::ApiError => e
+    puts "Exception when calling TextMagicApi->get_all_outbound_messages: #{e}"
+end
+
+# Upload new avatar for contacts list (group) with Id 3223 example
+file = File.open('test.png', 'r')
+begin
+    result = api_instance.upload_list_avatar(file, 3223)
+    puts result.id
+rescue TextMagic::ApiError => e
+    puts "Exception when calling TextMagicApi->upload_list_avatar: #{e}"
+end
 ```
+
+Run script
+```
+bundle exec ruby test.rb
+```
+
+## License
+The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
