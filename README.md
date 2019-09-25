@@ -10,7 +10,7 @@ For detailed documentation, please visit [http://docs.textmagictesting.com/](htt
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.392'
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.393'
 ```
 
 Run bundler install command
