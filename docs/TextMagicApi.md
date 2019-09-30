@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 
 # **block_contact**
-> ResourceLinkResponse block_contact(block_contact_input_object, opts)
+> ResourceLinkResponse block_contact(block_contact_input_object)
 
 Block contact from inbound and outbound communication by phone number.
 
@@ -253,13 +253,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 block_contact_input_object = TextMagic::BlockContactInputObject.new # BlockContactInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Block contact from inbound and outbound communication by phone number.
-  result = api_instance.block_contact(block_contact_input_object, opts)
+  result = api_instance.block_contact(block_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->block_contact: #{e}"
@@ -271,7 +268,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **block_contact_input_object** | [**BlockContactInputObject**](BlockContactInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -289,7 +285,7 @@ Name | Type | Description  | Notes
 
 
 # **buy_dedicated_number**
-> buy_dedicated_number(buy_dedicated_number_input_object, opts)
+> buy_dedicated_number(buy_dedicated_number_input_object)
 
 Buy a dedicated number and assign it to the specified account.
 
@@ -308,13 +304,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 buy_dedicated_number_input_object = TextMagic::BuyDedicatedNumberInputObject.new # BuyDedicatedNumberInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Buy a dedicated number and assign it to the specified account.
-  api_instance.buy_dedicated_number(buy_dedicated_number_input_object, opts)
+  api_instance.buy_dedicated_number(buy_dedicated_number_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->buy_dedicated_number: #{e}"
 end
@@ -325,7 +318,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **buy_dedicated_number_input_object** | [**BuyDedicatedNumberInputObject**](BuyDedicatedNumberInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -394,7 +386,7 @@ Name | Type | Description  | Notes
 
 
 # **check_phone_verification_code**
-> check_phone_verification_code(check_phone_verification_code_input_object, opts)
+> check_phone_verification_code(check_phone_verification_code_input_object)
 
 Check user phone verification code
 
@@ -413,13 +405,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Check user phone verification code
-  api_instance.check_phone_verification_code(check_phone_verification_code_input_object, opts)
+  api_instance.check_phone_verification_code(check_phone_verification_code_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->check_phone_verification_code: #{e}"
 end
@@ -430,7 +419,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -502,7 +490,7 @@ Name | Type | Description  | Notes
 
 
 # **close_chats_bulk**
-> close_chats_bulk(close_chats_bulk_input_object, opts)
+> close_chats_bulk(close_chats_bulk_input_object)
 
 Close chats by chat ids or close all chats
 
@@ -521,13 +509,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 close_chats_bulk_input_object = TextMagic::CloseChatsBulkInputObject.new # CloseChatsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Close chats by chat ids or close all chats
-  api_instance.close_chats_bulk(close_chats_bulk_input_object, opts)
+  api_instance.close_chats_bulk(close_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_chats_bulk: #{e}"
 end
@@ -538,7 +523,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **close_chats_bulk_input_object** | [**CloseChatsBulkInputObject**](CloseChatsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -650,7 +634,7 @@ nil (empty response body)
 
 
 # **create_contact**
-> ResourceLinkResponse create_contact(create_contact_input_object, opts)
+> ResourceLinkResponse create_contact(create_contact_input_object)
 
 Create a new contact from the submitted data.
 
@@ -669,13 +653,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_contact_input_object = TextMagic::CreateContactInputObject.new # CreateContactInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new contact from the submitted data.
-  result = api_instance.create_contact(create_contact_input_object, opts)
+  result = api_instance.create_contact(create_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_contact: #{e}"
@@ -687,7 +668,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_contact_input_object** | [**CreateContactInputObject**](CreateContactInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -705,7 +685,7 @@ Name | Type | Description  | Notes
 
 
 # **create_contact_note**
-> ResourceLinkResponse create_contact_note(create_contact_note_input_object, id, opts)
+> ResourceLinkResponse create_contact_note(create_contact_note_input_object, id)
 
 Create a new contact note.
 
@@ -726,13 +706,10 @@ create_contact_note_input_object = TextMagic::CreateContactNoteInputObject.new #
 
 id = 56 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new contact note.
-  result = api_instance.create_contact_note(create_contact_note_input_object, id, opts)
+  result = api_instance.create_contact_note(create_contact_note_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_contact_note: #{e}"
@@ -745,7 +722,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_contact_note_input_object** | [**CreateContactNoteInputObject**](CreateContactNoteInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -763,7 +739,7 @@ Name | Type | Description  | Notes
 
 
 # **create_custom_field**
-> ResourceLinkResponse create_custom_field(create_custom_field_input_object, opts)
+> ResourceLinkResponse create_custom_field(create_custom_field_input_object)
 
 Create a new custom field from the submitted data.
 
@@ -782,13 +758,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_custom_field_input_object = TextMagic::CreateCustomFieldInputObject.new # CreateCustomFieldInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new custom field from the submitted data.
-  result = api_instance.create_custom_field(create_custom_field_input_object, opts)
+  result = api_instance.create_custom_field(create_custom_field_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_custom_field: #{e}"
@@ -800,7 +773,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_custom_field_input_object** | [**CreateCustomFieldInputObject**](CreateCustomFieldInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -818,7 +790,7 @@ Name | Type | Description  | Notes
 
 
 # **create_list**
-> ResourceLinkResponse create_list(create_list_input_object, opts)
+> ResourceLinkResponse create_list(create_list_input_object)
 
 Create a new list from the submitted data.
 
@@ -837,13 +809,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_list_input_object = TextMagic::CreateListInputObject.new # CreateListInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new list from the submitted data.
-  result = api_instance.create_list(create_list_input_object, opts)
+  result = api_instance.create_list(create_list_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_list: #{e}"
@@ -855,7 +824,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_list_input_object** | [**CreateListInputObject**](CreateListInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -873,7 +841,7 @@ Name | Type | Description  | Notes
 
 
 # **create_push_token**
-> create_push_token(create_push_token_input_object, opts)
+> create_push_token(create_push_token_input_object)
 
 Add or update a device token.
 
@@ -892,13 +860,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_push_token_input_object = TextMagic::CreatePushTokenInputObject.new # CreatePushTokenInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Add or update a device token.
-  api_instance.create_push_token(create_push_token_input_object, opts)
+  api_instance.create_push_token(create_push_token_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_push_token: #{e}"
 end
@@ -909,7 +874,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_push_token_input_object** | [**CreatePushTokenInputObject**](CreatePushTokenInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -927,7 +891,7 @@ nil (empty response body)
 
 
 # **create_survey**
-> ResourceLinkResponse create_survey(create_survey_input_object, opts)
+> ResourceLinkResponse create_survey(create_survey_input_object)
 
 Create a new survey from the submitted data.
 
@@ -946,13 +910,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_survey_input_object = TextMagic::CreateSurveyInputObject.new # CreateSurveyInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new survey from the submitted data.
-  result = api_instance.create_survey(create_survey_input_object, opts)
+  result = api_instance.create_survey(create_survey_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_survey: #{e}"
@@ -964,7 +925,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_survey_input_object** | [**CreateSurveyInputObject**](CreateSurveyInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -982,7 +942,7 @@ Name | Type | Description  | Notes
 
 
 # **create_survey_node**
-> ResourceLinkResponse create_survey_node(create_survey_node_input_object, id, opts)
+> ResourceLinkResponse create_survey_node(create_survey_node_input_object, id)
 
 Create a new node from the submitted data.
 
@@ -1003,13 +963,10 @@ create_survey_node_input_object = TextMagic::CreateSurveyNodeInputObject.new # C
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new node from the submitted data.
-  result = api_instance.create_survey_node(create_survey_node_input_object, id, opts)
+  result = api_instance.create_survey_node(create_survey_node_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_survey_node: #{e}"
@@ -1022,7 +979,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_survey_node_input_object** | [**CreateSurveyNodeInputObject**](CreateSurveyNodeInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1040,7 +996,7 @@ Name | Type | Description  | Notes
 
 
 # **create_template**
-> ResourceLinkResponse create_template(create_template_input_object, opts)
+> ResourceLinkResponse create_template(create_template_input_object)
 
 Create a new template from the submitted data.
 
@@ -1059,13 +1015,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_template_input_object = TextMagic::CreateTemplateInputObject.new # CreateTemplateInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Create a new template from the submitted data.
-  result = api_instance.create_template(create_template_input_object, opts)
+  result = api_instance.create_template(create_template_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->create_template: #{e}"
@@ -1077,7 +1030,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_template_input_object** | [**CreateTemplateInputObject**](CreateTemplateInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1229,7 +1181,7 @@ nil (empty response body)
 
 
 # **delete_chat_messages**
-> delete_chat_messages(delete_chat_messages_bulk_input_object, id, opts)
+> delete_chat_messages(delete_chat_messages_bulk_input_object, id)
 
 Delete messages from chat by given messages ID(s).
 
@@ -1250,13 +1202,10 @@ delete_chat_messages_bulk_input_object = TextMagic::DeleteChatMessagesBulkInputO
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete messages from chat by given messages ID(s).
-  api_instance.delete_chat_messages(delete_chat_messages_bulk_input_object, id, opts)
+  api_instance.delete_chat_messages(delete_chat_messages_bulk_input_object, id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chat_messages: #{e}"
 end
@@ -1268,7 +1217,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_chat_messages_bulk_input_object** | [**DeleteChatMessagesBulkInputObject**](DeleteChatMessagesBulkInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1286,7 +1234,7 @@ nil (empty response body)
 
 
 # **delete_chats_bulk**
-> delete_chats_bulk(delete_chats_bulk_input_object, opts)
+> delete_chats_bulk(delete_chats_bulk_input_object)
 
 Delete chats by given ID(s) or delete all chats.
 
@@ -1305,13 +1253,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_chats_bulk_input_object = TextMagic::DeleteChatsBulkInputObject.new # DeleteChatsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete chats by given ID(s) or delete all chats.
-  api_instance.delete_chats_bulk(delete_chats_bulk_input_object, opts)
+  api_instance.delete_chats_bulk(delete_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chats_bulk: #{e}"
 end
@@ -1322,7 +1267,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_chats_bulk_input_object** | [**DeleteChatsBulkInputObject**](DeleteChatsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1490,7 +1434,7 @@ nil (empty response body)
 
 
 # **delete_contact_notes_bulk**
-> delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object, opts)
+> delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 
 Delete contact note by given ID(s) or delete all contact notes.
 
@@ -1511,13 +1455,10 @@ id = 1 # Integer |
 
 delete_contact_notes_bulk_input_object = TextMagic::DeleteContactNotesBulkInputObject.new # DeleteContactNotesBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete contact note by given ID(s) or delete all contact notes.
-  api_instance.delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object, opts)
+  api_instance.delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_notes_bulk: #{e}"
 end
@@ -1529,7 +1470,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
  **delete_contact_notes_bulk_input_object** | [**DeleteContactNotesBulkInputObject**](DeleteContactNotesBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1547,7 +1487,7 @@ nil (empty response body)
 
 
 # **delete_contacts_by_ids**
-> delete_contacts_by_ids(delete_contacts_by_ids_input_object, opts)
+> delete_contacts_by_ids(delete_contacts_by_ids_input_object)
 
 Delete contact by given ID(s) or delete all contacts.
 
@@ -1566,13 +1506,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_contacts_by_ids_input_object = TextMagic::DeleteContactsByIdsInputObject.new # DeleteContactsByIdsInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete contact by given ID(s) or delete all contacts.
-  api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object, opts)
+  api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contacts_by_ids: #{e}"
 end
@@ -1583,7 +1520,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_contacts_by_ids_input_object** | [**DeleteContactsByIdsInputObject**](DeleteContactsByIdsInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1804,7 +1740,7 @@ nil (empty response body)
 
 
 # **delete_inbound_messages_bulk**
-> delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object, opts)
+> delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
 
 Delete inbound messages by given ID(s) or delete all inbound messages.
 
@@ -1823,13 +1759,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_inbound_messages_bulk_input_object = TextMagic::DeleteInboundMessagesBulkInputObject.new # DeleteInboundMessagesBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete inbound messages by given ID(s) or delete all inbound messages.
-  api_instance.delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object, opts)
+  api_instance.delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_inbound_messages_bulk: #{e}"
 end
@@ -1840,7 +1773,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_inbound_messages_bulk_input_object** | [**DeleteInboundMessagesBulkInputObject**](DeleteInboundMessagesBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1958,7 +1890,7 @@ nil (empty response body)
 
 
 # **delete_list_contacts_bulk**
-> delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id, opts)
+> delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 
 Delete contact from list by given ID(s) or all contacts from list.
 
@@ -1979,13 +1911,10 @@ delete_list_contacts_bulk_input_object = TextMagic::DeleteListContactsBulkInputO
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete contact from list by given ID(s) or all contacts from list.
-  api_instance.delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id, opts)
+  api_instance.delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list_contacts_bulk: #{e}"
 end
@@ -1997,7 +1926,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_list_contacts_bulk_input_object** | [**DeleteListContactsBulkInputObject**](DeleteListContactsBulkInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2015,7 +1943,7 @@ nil (empty response body)
 
 
 # **delete_lists_bulk**
-> delete_lists_bulk(delete_lists_bulk_input_object, opts)
+> delete_lists_bulk(delete_lists_bulk_input_object)
 
 Delete list by given ID(s) or delete all lists.
 
@@ -2034,13 +1962,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_lists_bulk_input_object = TextMagic::DeleteListsBulkInputObject.new # DeleteListsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete list by given ID(s) or delete all lists.
-  api_instance.delete_lists_bulk(delete_lists_bulk_input_object, opts)
+  api_instance.delete_lists_bulk(delete_lists_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_lists_bulk: #{e}"
 end
@@ -2051,7 +1976,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_lists_bulk_input_object** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2119,7 +2043,7 @@ nil (empty response body)
 
 
 # **delete_message_sessions_bulk**
-> delete_message_sessions_bulk(delete_message_sessions_bulk_input_object, opts)
+> delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
 
 Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
 
@@ -2138,13 +2062,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_message_sessions_bulk_input_object = TextMagic::DeleteMessageSessionsBulkInputObject.new # DeleteMessageSessionsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
-  api_instance.delete_message_sessions_bulk(delete_message_sessions_bulk_input_object, opts)
+  api_instance.delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_message_sessions_bulk: #{e}"
 end
@@ -2155,7 +2076,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_message_sessions_bulk_input_object** | [**DeleteMessageSessionsBulkInputObject**](DeleteMessageSessionsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2225,7 +2145,7 @@ nil (empty response body)
 
 
 # **delete_outbound_messages_bulk**
-> delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object, opts)
+> delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
 
 Delete messages by IDs
 
@@ -2246,13 +2166,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_outbound_messages_bulk_input_object = TextMagic::DeleteOutboundMessagesBulkInputObject.new # DeleteOutboundMessagesBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete messages by IDs
-  api_instance.delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object, opts)
+  api_instance.delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_outbound_messages_bulk: #{e}"
 end
@@ -2263,7 +2180,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_outbound_messages_bulk_input_object** | [**DeleteOutboundMessagesBulkInputObject**](DeleteOutboundMessagesBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2384,7 +2300,7 @@ nil (empty response body)
 
 
 # **delete_scheduled_messages_bulk**
-> delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object, opts)
+> delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
 
 Delete scheduled messages by given ID(s) or delete all scheduled messages.
 
@@ -2403,13 +2319,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_scheduled_messages_bulk_input_object = TextMagic::DeleteScheduledMessagesBulkInputObject.new # DeleteScheduledMessagesBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete scheduled messages by given ID(s) or delete all scheduled messages.
-  api_instance.delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object, opts)
+  api_instance.delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_scheduled_messages_bulk: #{e}"
 end
@@ -2420,7 +2333,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_scheduled_messages_bulk_input_object** | [**DeleteScheduledMessagesBulkInputObject**](DeleteScheduledMessagesBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2638,7 +2550,7 @@ nil (empty response body)
 
 
 # **delete_templates_bulk**
-> delete_templates_bulk(delete_templates_bulk_input_object, opts)
+> delete_templates_bulk(delete_templates_bulk_input_object)
 
 Delete template by given ID(s) or delete all templates.
 
@@ -2657,13 +2569,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 delete_templates_bulk_input_object = TextMagic::DeleteTemplatesBulkInputObject.new # DeleteTemplatesBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Delete template by given ID(s) or delete all templates.
-  api_instance.delete_templates_bulk(delete_templates_bulk_input_object, opts)
+  api_instance.delete_templates_bulk(delete_templates_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_templates_bulk: #{e}"
 end
@@ -2674,7 +2583,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_templates_bulk_input_object** | [**DeleteTemplatesBulkInputObject**](DeleteTemplatesBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2692,7 +2600,7 @@ nil (empty response body)
 
 
 # **do_auth**
-> DoAuthResponse do_auth(do_auth_input_object, opts)
+> DoAuthResponse do_auth(do_auth_input_object)
 
 Authenticate user by given username and password.
 
@@ -2707,13 +2615,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 do_auth_input_object = TextMagic::DoAuthInputObject.new # DoAuthInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Authenticate user by given username and password.
-  result = api_instance.do_auth(do_auth_input_object, opts)
+  result = api_instance.do_auth(do_auth_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->do_auth: #{e}"
@@ -2725,7 +2630,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **do_auth_input_object** | [**DoAuthInputObject**](DoAuthInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6167,8 +6071,7 @@ get_subaccounts_with_tokens_input_object = TextMagic::GetSubaccountsWithTokensIn
 
 opts = { 
   page: 1, # Float | Fetch specified results page
-  limit: 10, # Integer | How many results to return
-  x_ignore_null_values: true # BOOLEAN | 
+  limit: 10 # Integer | How many results to return
 }
 
 begin
@@ -6187,7 +6090,6 @@ Name | Type | Description  | Notes
  **get_subaccounts_with_tokens_input_object** | [**GetSubaccountsWithTokensInputObject**](GetSubaccountsWithTokensInputObject.md)|  | 
  **page** | **Float**| Fetch specified results page | [optional] [default to 1]
  **limit** | **Integer**| How many results to return | [optional] [default to 10]
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6828,7 +6730,7 @@ This endpoint does not need any parameter.
 
 
 # **invite_subaccount**
-> invite_subaccount(invite_subaccount_input_object, opts)
+> invite_subaccount(invite_subaccount_input_object)
 
 Invite new subaccount.
 
@@ -6847,13 +6749,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 invite_subaccount_input_object = TextMagic::InviteSubaccountInputObject.new # InviteSubaccountInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Invite new subaccount.
-  api_instance.invite_subaccount(invite_subaccount_input_object, opts)
+  api_instance.invite_subaccount(invite_subaccount_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->invite_subaccount: #{e}"
 end
@@ -6864,7 +6763,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invite_subaccount_input_object** | [**InviteSubaccountInputObject**](InviteSubaccountInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6882,7 +6780,7 @@ nil (empty response body)
 
 
 # **mark_chats_read_bulk**
-> mark_chats_read_bulk(mark_chats_read_bulk_input_object, opts)
+> mark_chats_read_bulk(mark_chats_read_bulk_input_object)
 
 Mark several chats as read by chat ids or mark all chats as read
 
@@ -6901,13 +6799,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 mark_chats_read_bulk_input_object = TextMagic::MarkChatsReadBulkInputObject.new # MarkChatsReadBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Mark several chats as read by chat ids or mark all chats as read
-  api_instance.mark_chats_read_bulk(mark_chats_read_bulk_input_object, opts)
+  api_instance.mark_chats_read_bulk(mark_chats_read_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_read_bulk: #{e}"
 end
@@ -6918,7 +6813,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mark_chats_read_bulk_input_object** | [**MarkChatsReadBulkInputObject**](MarkChatsReadBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6936,7 +6830,7 @@ nil (empty response body)
 
 
 # **mark_chats_unread_bulk**
-> mark_chats_unread_bulk(mark_chats_unread_bulk_input_object, opts)
+> mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
 
 Mark several chats as UNread by chat ids or mark all chats as UNread
 
@@ -6955,13 +6849,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 mark_chats_unread_bulk_input_object = TextMagic::MarkChatsUnreadBulkInputObject.new # MarkChatsUnreadBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Mark several chats as UNread by chat ids or mark all chats as UNread
-  api_instance.mark_chats_unread_bulk(mark_chats_unread_bulk_input_object, opts)
+  api_instance.mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_unread_bulk: #{e}"
 end
@@ -6972,7 +6863,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mark_chats_unread_bulk_input_object** | [**MarkChatsUnreadBulkInputObject**](MarkChatsUnreadBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6990,7 +6880,7 @@ nil (empty response body)
 
 
 # **merge_survey_nodes**
-> merge_survey_nodes(merge_survey_nodes_input_object, opts)
+> merge_survey_nodes(merge_survey_nodes_input_object)
 
 Merge two question nodes.
 
@@ -7009,13 +6899,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 merge_survey_nodes_input_object = TextMagic::MergeSurveyNodesInputObject.new # MergeSurveyNodesInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Merge two question nodes.
-  api_instance.merge_survey_nodes(merge_survey_nodes_input_object, opts)
+  api_instance.merge_survey_nodes(merge_survey_nodes_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->merge_survey_nodes: #{e}"
 end
@@ -7026,7 +6913,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merge_survey_nodes_input_object** | [**MergeSurveyNodesInputObject**](MergeSurveyNodesInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7044,7 +6930,7 @@ nil (empty response body)
 
 
 # **mute_chat**
-> ResourceLinkResponse mute_chat(mute_chat_input_object, opts)
+> ResourceLinkResponse mute_chat(mute_chat_input_object)
 
 Set mute mode.
 
@@ -7063,13 +6949,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 mute_chat_input_object = TextMagic::MuteChatInputObject.new # MuteChatInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Set mute mode.
-  result = api_instance.mute_chat(mute_chat_input_object, opts)
+  result = api_instance.mute_chat(mute_chat_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mute_chat: #{e}"
@@ -7081,7 +6964,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mute_chat_input_object** | [**MuteChatInputObject**](MuteChatInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7099,7 +6981,7 @@ Name | Type | Description  | Notes
 
 
 # **mute_chats_bulk**
-> mute_chats_bulk(mute_chats_bulk_input_object, opts)
+> mute_chats_bulk(mute_chats_bulk_input_object)
 
 Mute several chats by chat ids or mute all chats
 
@@ -7118,13 +7000,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 mute_chats_bulk_input_object = TextMagic::MuteChatsBulkInputObject.new # MuteChatsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Mute several chats by chat ids or mute all chats
-  api_instance.mute_chats_bulk(mute_chats_bulk_input_object, opts)
+  api_instance.mute_chats_bulk(mute_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mute_chats_bulk: #{e}"
 end
@@ -7135,7 +7014,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mute_chats_bulk_input_object** | [**MuteChatsBulkInputObject**](MuteChatsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7198,7 +7076,7 @@ This endpoint does not need any parameter.
 
 
 # **reopen_chats_bulk**
-> reopen_chats_bulk(reopen_chats_bulk_input_object, opts)
+> reopen_chats_bulk(reopen_chats_bulk_input_object)
 
 Reopen chats by chat ids or reopen all chats
 
@@ -7217,13 +7095,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 reopen_chats_bulk_input_object = TextMagic::ReopenChatsBulkInputObject.new # ReopenChatsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Reopen chats by chat ids or reopen all chats
-  api_instance.reopen_chats_bulk(reopen_chats_bulk_input_object, opts)
+  api_instance.reopen_chats_bulk(reopen_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->reopen_chats_bulk: #{e}"
 end
@@ -7234,7 +7109,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reopen_chats_bulk_input_object** | [**ReopenChatsBulkInputObject**](ReopenChatsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7252,7 +7126,7 @@ nil (empty response body)
 
 
 # **request_new_subaccount_token**
-> User request_new_subaccount_token(request_new_subaccount_token_input_object, opts)
+> User request_new_subaccount_token(request_new_subaccount_token_input_object)
 
 Request a new REST API token for subaccount.
 
@@ -7273,13 +7147,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 request_new_subaccount_token_input_object = TextMagic::RequestNewSubaccountTokenInputObject.new # RequestNewSubaccountTokenInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Request a new REST API token for subaccount.
-  result = api_instance.request_new_subaccount_token(request_new_subaccount_token_input_object, opts)
+  result = api_instance.request_new_subaccount_token(request_new_subaccount_token_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->request_new_subaccount_token: #{e}"
@@ -7291,7 +7162,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request_new_subaccount_token_input_object** | [**RequestNewSubaccountTokenInputObject**](RequestNewSubaccountTokenInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7309,7 +7179,7 @@ Name | Type | Description  | Notes
 
 
 # **request_sender_id**
-> ResourceLinkResponse request_sender_id(request_sender_id_input_object, opts)
+> ResourceLinkResponse request_sender_id(request_sender_id_input_object)
 
 Request for a new Sender ID.
 
@@ -7328,13 +7198,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 request_sender_id_input_object = TextMagic::RequestSenderIdInputObject.new # RequestSenderIdInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Request for a new Sender ID.
-  result = api_instance.request_sender_id(request_sender_id_input_object, opts)
+  result = api_instance.request_sender_id(request_sender_id_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->request_sender_id: #{e}"
@@ -7346,7 +7213,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request_sender_id_input_object** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8023,7 +7889,7 @@ nil (empty response body)
 
 
 # **send_message**
-> SendMessageResponse send_message(send_message_input_object, opts)
+> SendMessageResponse send_message(send_message_input_object)
 
 Send message
 
@@ -8044,13 +7910,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 send_message_input_object = TextMagic::SendMessageInputObject.new # SendMessageInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Send message
-  result = api_instance.send_message(send_message_input_object, opts)
+  result = api_instance.send_message(send_message_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->send_message: #{e}"
@@ -8062,7 +7925,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **send_message_input_object** | [**SendMessageInputObject**](SendMessageInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8124,7 +7986,7 @@ nil (empty response body)
 
 
 # **set_chat_status**
-> ResourceLinkResponse set_chat_status(set_chat_status_input_object, opts)
+> ResourceLinkResponse set_chat_status(set_chat_status_input_object)
 
 Set status of the chat given by ID.
 
@@ -8143,13 +8005,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 set_chat_status_input_object = TextMagic::SetChatStatusInputObject.new # SetChatStatusInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Set status of the chat given by ID.
-  result = api_instance.set_chat_status(set_chat_status_input_object, opts)
+  result = api_instance.set_chat_status(set_chat_status_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->set_chat_status: #{e}"
@@ -8161,7 +8020,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **set_chat_status_input_object** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8230,7 +8088,7 @@ Name | Type | Description  | Notes
 
 
 # **unblock_contact**
-> unblock_contact(unblock_contact_input_object, opts)
+> unblock_contact(unblock_contact_input_object)
 
 Unblock contact by phone number.
 
@@ -8249,13 +8107,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 unblock_contact_input_object = TextMagic::UnblockContactInputObject.new # UnblockContactInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Unblock contact by phone number.
-  api_instance.unblock_contact(unblock_contact_input_object, opts)
+  api_instance.unblock_contact(unblock_contact_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unblock_contact: #{e}"
 end
@@ -8266,7 +8121,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unblock_contact_input_object** | [**UnblockContactInputObject**](UnblockContactInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8284,7 +8138,7 @@ nil (empty response body)
 
 
 # **unblock_contacts_bulk**
-> unblock_contacts_bulk(unblock_contacts_bulk_input_object, opts)
+> unblock_contacts_bulk(unblock_contacts_bulk_input_object)
 
 Unblock several contacts by blocked contact ids or unblock all contacts
 
@@ -8303,13 +8157,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 unblock_contacts_bulk_input_object = TextMagic::UnblockContactsBulkInputObject.new # UnblockContactsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Unblock several contacts by blocked contact ids or unblock all contacts
-  api_instance.unblock_contacts_bulk(unblock_contacts_bulk_input_object, opts)
+  api_instance.unblock_contacts_bulk(unblock_contacts_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unblock_contacts_bulk: #{e}"
 end
@@ -8320,7 +8171,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unblock_contacts_bulk_input_object** | [**UnblockContactsBulkInputObject**](UnblockContactsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8338,7 +8188,7 @@ nil (empty response body)
 
 
 # **unmute_chats_bulk**
-> unmute_chats_bulk(unmute_chats_bulk_input_object, opts)
+> unmute_chats_bulk(unmute_chats_bulk_input_object)
 
 Unmute several chats by chat ids or unmute all chats
 
@@ -8357,13 +8207,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 unmute_chats_bulk_input_object = TextMagic::UnmuteChatsBulkInputObject.new # UnmuteChatsBulkInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Unmute several chats by chat ids or unmute all chats
-  api_instance.unmute_chats_bulk(unmute_chats_bulk_input_object, opts)
+  api_instance.unmute_chats_bulk(unmute_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unmute_chats_bulk: #{e}"
 end
@@ -8374,7 +8221,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unmute_chats_bulk_input_object** | [**UnmuteChatsBulkInputObject**](UnmuteChatsBulkInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8392,7 +8238,7 @@ nil (empty response body)
 
 
 # **unsubscribe_contact**
-> ResourceLinkResponse unsubscribe_contact(unsubscribe_contact_input_object, opts)
+> ResourceLinkResponse unsubscribe_contact(unsubscribe_contact_input_object)
 
 Unsubscribe contact from your communication by phone number.
 
@@ -8411,13 +8257,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 unsubscribe_contact_input_object = TextMagic::UnsubscribeContactInputObject.new # UnsubscribeContactInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Unsubscribe contact from your communication by phone number.
-  result = api_instance.unsubscribe_contact(unsubscribe_contact_input_object, opts)
+  result = api_instance.unsubscribe_contact(unsubscribe_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unsubscribe_contact: #{e}"
@@ -8429,7 +8272,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unsubscribe_contact_input_object** | [**UnsubscribeContactInputObject**](UnsubscribeContactInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8447,7 +8289,7 @@ Name | Type | Description  | Notes
 
 
 # **update_balance_notification_settings**
-> update_balance_notification_settings(update_balance_notification_settings_input_object, opts)
+> update_balance_notification_settings(update_balance_notification_settings_input_object)
 
 Update balance notification settings
 
@@ -8466,13 +8308,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_balance_notification_settings_input_object = TextMagic::UpdateBalanceNotificationSettingsInputObject.new # UpdateBalanceNotificationSettingsInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update balance notification settings
-  api_instance.update_balance_notification_settings(update_balance_notification_settings_input_object, opts)
+  api_instance.update_balance_notification_settings(update_balance_notification_settings_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_balance_notification_settings: #{e}"
 end
@@ -8483,7 +8322,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_balance_notification_settings_input_object** | [**UpdateBalanceNotificationSettingsInputObject**](UpdateBalanceNotificationSettingsInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8501,7 +8339,7 @@ nil (empty response body)
 
 
 # **update_callback_settings**
-> update_callback_settings(update_callback_settings_input_object, opts)
+> update_callback_settings(update_callback_settings_input_object)
 
 Update callback URL settings
 
@@ -8520,13 +8358,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_callback_settings_input_object = TextMagic::UpdateCallbackSettingsInputObject.new # UpdateCallbackSettingsInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update callback URL settings
-  api_instance.update_callback_settings(update_callback_settings_input_object, opts)
+  api_instance.update_callback_settings(update_callback_settings_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_callback_settings: #{e}"
 end
@@ -8537,7 +8372,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_callback_settings_input_object** | [**UpdateCallbackSettingsInputObject**](UpdateCallbackSettingsInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8555,7 +8389,7 @@ nil (empty response body)
 
 
 # **update_chat_desktop_notification_settings**
-> update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object, opts)
+> update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object)
 
 Update chat desktop notification settings
 
@@ -8574,13 +8408,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_chat_desktop_notification_settings_input_object = TextMagic::UpdateChatDesktopNotificationSettingsInputObject.new # UpdateChatDesktopNotificationSettingsInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update chat desktop notification settings
-  api_instance.update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object, opts)
+  api_instance.update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_chat_desktop_notification_settings: #{e}"
 end
@@ -8591,7 +8422,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_chat_desktop_notification_settings_input_object** | [**UpdateChatDesktopNotificationSettingsInputObject**](UpdateChatDesktopNotificationSettingsInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8609,7 +8439,7 @@ nil (empty response body)
 
 
 # **update_contact**
-> ResourceLinkResponse update_contact(update_contact_input_object, id, opts)
+> ResourceLinkResponse update_contact(update_contact_input_object, id)
 
 Update existing contact.
 
@@ -8630,13 +8460,10 @@ update_contact_input_object = TextMagic::UpdateContactInputObject.new # UpdateCo
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing contact.
-  result = api_instance.update_contact(update_contact_input_object, id, opts)
+  result = api_instance.update_contact(update_contact_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_contact: #{e}"
@@ -8649,7 +8476,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_contact_input_object** | [**UpdateContactInputObject**](UpdateContactInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8667,7 +8493,7 @@ Name | Type | Description  | Notes
 
 
 # **update_contact_note**
-> ResourceLinkResponse update_contact_note(update_contact_note_input_object, id, opts)
+> ResourceLinkResponse update_contact_note(update_contact_note_input_object, id)
 
 Update existing contact note.
 
@@ -8688,13 +8514,10 @@ update_contact_note_input_object = TextMagic::UpdateContactNoteInputObject.new #
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing contact note.
-  result = api_instance.update_contact_note(update_contact_note_input_object, id, opts)
+  result = api_instance.update_contact_note(update_contact_note_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_contact_note: #{e}"
@@ -8707,7 +8530,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_contact_note_input_object** | [**UpdateContactNoteInputObject**](UpdateContactNoteInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8725,7 +8547,7 @@ Name | Type | Description  | Notes
 
 
 # **update_current_user**
-> UpdateCurrentUserResponse update_current_user(update_current_user_input_object, opts)
+> UpdateCurrentUserResponse update_current_user(update_current_user_input_object)
 
 Update current user info.
 
@@ -8744,13 +8566,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_current_user_input_object = TextMagic::UpdateCurrentUserInputObject.new # UpdateCurrentUserInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update current user info.
-  result = api_instance.update_current_user(update_current_user_input_object, opts)
+  result = api_instance.update_current_user(update_current_user_input_object)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_current_user: #{e}"
@@ -8762,7 +8581,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_current_user_input_object** | [**UpdateCurrentUserInputObject**](UpdateCurrentUserInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8780,7 +8598,7 @@ Name | Type | Description  | Notes
 
 
 # **update_custom_field**
-> ResourceLinkResponse update_custom_field(update_custom_field_input_object, id, opts)
+> ResourceLinkResponse update_custom_field(update_custom_field_input_object, id)
 
 Update existing custom field.
 
@@ -8801,13 +8619,10 @@ update_custom_field_input_object = TextMagic::UpdateCustomFieldInputObject.new #
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing custom field.
-  result = api_instance.update_custom_field(update_custom_field_input_object, id, opts)
+  result = api_instance.update_custom_field(update_custom_field_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_custom_field: #{e}"
@@ -8820,7 +8635,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_custom_field_input_object** | [**UpdateCustomFieldInputObject**](UpdateCustomFieldInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8838,7 +8652,7 @@ Name | Type | Description  | Notes
 
 
 # **update_custom_field_value**
-> ResourceLinkResponse update_custom_field_value(update_custom_field_value_input_object, id, opts)
+> ResourceLinkResponse update_custom_field_value(update_custom_field_value_input_object, id)
 
 Update contact's custom field value.
 
@@ -8859,13 +8673,10 @@ update_custom_field_value_input_object = TextMagic::UpdateCustomFieldValueInputO
 
 id = 'id_example' # String | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update contact's custom field value.
-  result = api_instance.update_custom_field_value(update_custom_field_value_input_object, id, opts)
+  result = api_instance.update_custom_field_value(update_custom_field_value_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_custom_field_value: #{e}"
@@ -8878,7 +8689,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_custom_field_value_input_object** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md)|  | 
  **id** | **String**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8896,7 +8706,7 @@ Name | Type | Description  | Notes
 
 
 # **update_inbound_messages_notification_settings**
-> update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object, opts)
+> update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object)
 
 Update inbound messages notification settings
 
@@ -8915,13 +8725,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_inbound_messages_notification_settings_input_object = TextMagic::UpdateInboundMessagesNotificationSettingsInputObject.new # UpdateInboundMessagesNotificationSettingsInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update inbound messages notification settings
-  api_instance.update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object, opts)
+  api_instance.update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_inbound_messages_notification_settings: #{e}"
 end
@@ -8932,7 +8739,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_inbound_messages_notification_settings_input_object** | [**UpdateInboundMessagesNotificationSettingsInputObject**](UpdateInboundMessagesNotificationSettingsInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9005,7 +8811,7 @@ Name | Type | Description  | Notes
 
 
 # **update_password**
-> update_password(update_password_input_object, opts)
+> update_password(update_password_input_object)
 
 Change user password.
 
@@ -9024,13 +8830,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_password_input_object = TextMagic::UpdatePasswordInputObject.new # UpdatePasswordInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Change user password.
-  api_instance.update_password(update_password_input_object, opts)
+  api_instance.update_password(update_password_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_password: #{e}"
 end
@@ -9041,7 +8844,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_password_input_object** | [**UpdatePasswordInputObject**](UpdatePasswordInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9059,7 +8861,7 @@ nil (empty response body)
 
 
 # **update_sender_setting**
-> update_sender_setting(update_sender_setting_input_object, opts)
+> update_sender_setting(update_sender_setting_input_object)
 
 Change sender settings for specified country.
 
@@ -9078,13 +8880,10 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_sender_setting_input_object = TextMagic::UpdateSenderSettingInputObject.new # UpdateSenderSettingInputObject | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Change sender settings for specified country.
-  api_instance.update_sender_setting(update_sender_setting_input_object, opts)
+  api_instance.update_sender_setting(update_sender_setting_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_sender_setting: #{e}"
 end
@@ -9095,7 +8894,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_sender_setting_input_object** | [**UpdateSenderSettingInputObject**](UpdateSenderSettingInputObject.md)|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9113,7 +8911,7 @@ nil (empty response body)
 
 
 # **update_survey**
-> ResourceLinkResponse update_survey(update_survey_input_object, id, opts)
+> ResourceLinkResponse update_survey(update_survey_input_object, id)
 
 Update existing survey.
 
@@ -9134,13 +8932,10 @@ update_survey_input_object = TextMagic::UpdateSurveyInputObject.new # UpdateSurv
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing survey.
-  result = api_instance.update_survey(update_survey_input_object, id, opts)
+  result = api_instance.update_survey(update_survey_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_survey: #{e}"
@@ -9153,7 +8948,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_survey_input_object** | [**UpdateSurveyInputObject**](UpdateSurveyInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9171,7 +8965,7 @@ Name | Type | Description  | Notes
 
 
 # **update_survey_node**
-> ResourceLinkResponse update_survey_node(update_survey_node_input_object, id, opts)
+> ResourceLinkResponse update_survey_node(update_survey_node_input_object, id)
 
 Update existing node.
 
@@ -9192,13 +8986,10 @@ update_survey_node_input_object = TextMagic::UpdateSurveyNodeInputObject.new # U
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing node.
-  result = api_instance.update_survey_node(update_survey_node_input_object, id, opts)
+  result = api_instance.update_survey_node(update_survey_node_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_survey_node: #{e}"
@@ -9211,7 +9002,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_survey_node_input_object** | [**UpdateSurveyNodeInputObject**](UpdateSurveyNodeInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9229,7 +9019,7 @@ Name | Type | Description  | Notes
 
 
 # **update_template**
-> ResourceLinkResponse update_template(update_template_input_object, id, opts)
+> ResourceLinkResponse update_template(update_template_input_object, id)
 
 Update existing template.
 
@@ -9250,13 +9040,10 @@ update_template_input_object = TextMagic::UpdateTemplateInputObject.new # Update
 
 id = 1 # Integer | 
 
-opts = { 
-  x_ignore_null_values: true # BOOLEAN | 
-}
 
 begin
   #Update existing template.
-  result = api_instance.update_template(update_template_input_object, id, opts)
+  result = api_instance.update_template(update_template_input_object, id)
   p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->update_template: #{e}"
@@ -9269,7 +9056,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_template_input_object** | [**UpdateTemplateInputObject**](UpdateTemplateInputObject.md)|  | 
  **id** | **Integer**|  | 
- **x_ignore_null_values** | **BOOLEAN**|  | [optional] [default to true]
 
 ### Return type
 

@@ -48,7 +48,6 @@ describe 'TextMagicApi' do
   # Block contact from inbound and outbound communication by phone number.
   # @param block_contact_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'block_contact test' do
     it 'should work' do
@@ -60,7 +59,6 @@ describe 'TextMagicApi' do
   # Buy a dedicated number and assign it to the specified account.
   # @param buy_dedicated_number_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'buy_dedicated_number test' do
     it 'should work' do
@@ -83,7 +81,6 @@ describe 'TextMagicApi' do
   # Check user phone verification code
   # @param check_phone_verification_code_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'check_phone_verification_code test' do
     it 'should work' do
@@ -107,7 +104,6 @@ describe 'TextMagicApi' do
   # Close chats by chat ids or close all chats
   # @param close_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'close_chats_bulk test' do
     it 'should work' do
@@ -140,7 +136,6 @@ describe 'TextMagicApi' do
   # Create a new contact from the submitted data.
   # @param create_contact_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_contact test' do
     it 'should work' do
@@ -153,7 +148,6 @@ describe 'TextMagicApi' do
   # @param create_contact_note_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_contact_note test' do
     it 'should work' do
@@ -165,7 +159,6 @@ describe 'TextMagicApi' do
   # Create a new custom field from the submitted data.
   # @param create_custom_field_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_custom_field test' do
     it 'should work' do
@@ -177,7 +170,6 @@ describe 'TextMagicApi' do
   # Create a new list from the submitted data.
   # @param create_list_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_list test' do
     it 'should work' do
@@ -189,7 +181,6 @@ describe 'TextMagicApi' do
   # Add or update a device token.
   # @param create_push_token_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'create_push_token test' do
     it 'should work' do
@@ -201,7 +192,6 @@ describe 'TextMagicApi' do
   # Create a new survey from the submitted data.
   # @param create_survey_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_survey test' do
     it 'should work' do
@@ -214,7 +204,6 @@ describe 'TextMagicApi' do
   # @param create_survey_node_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_survey_node test' do
     it 'should work' do
@@ -226,7 +215,6 @@ describe 'TextMagicApi' do
   # Create a new template from the submitted data.
   # @param create_template_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'create_template test' do
     it 'should work' do
@@ -270,7 +258,6 @@ describe 'TextMagicApi' do
   # @param delete_chat_messages_bulk_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_chat_messages test' do
     it 'should work' do
@@ -282,7 +269,6 @@ describe 'TextMagicApi' do
   # Delete chats by given ID(s) or delete all chats.
   # @param delete_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_chats_bulk test' do
     it 'should work' do
@@ -328,7 +314,6 @@ describe 'TextMagicApi' do
   # @param id 
   # @param delete_contact_notes_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_contact_notes_bulk test' do
     it 'should work' do
@@ -340,7 +325,6 @@ describe 'TextMagicApi' do
   # Delete contact by given ID(s) or delete all contacts.
   # @param delete_contacts_by_ids_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_contacts_by_ids test' do
     it 'should work' do
@@ -397,7 +381,6 @@ describe 'TextMagicApi' do
   # Delete inbound messages by given ID(s) or delete all inbound messages.
   # @param delete_inbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_inbound_messages_bulk test' do
     it 'should work' do
@@ -432,7 +415,6 @@ describe 'TextMagicApi' do
   # @param delete_list_contacts_bulk_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_list_contacts_bulk test' do
     it 'should work' do
@@ -444,7 +426,6 @@ describe 'TextMagicApi' do
   # Delete list by given ID(s) or delete all lists.
   # @param delete_lists_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_lists_bulk test' do
     it 'should work' do
@@ -467,7 +448,6 @@ describe 'TextMagicApi' do
   # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
   # @param delete_message_sessions_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_message_sessions_bulk test' do
     it 'should work' do
@@ -492,7 +472,6 @@ describe 'TextMagicApi' do
   # Delete outbound messages by given ID(s) or delete all outbound messages.
   # @param delete_outbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_outbound_messages_bulk test' do
     it 'should work' do
@@ -527,7 +506,6 @@ describe 'TextMagicApi' do
   # Delete scheduled messages by given ID(s) or delete all scheduled messages.
   # @param delete_scheduled_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_scheduled_messages_bulk test' do
     it 'should work' do
@@ -583,7 +561,6 @@ describe 'TextMagicApi' do
   # Delete template by given ID(s) or delete all templates.
   # @param delete_templates_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'delete_templates_bulk test' do
     it 'should work' do
@@ -596,7 +573,6 @@ describe 'TextMagicApi' do
   # Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
   # @param do_auth_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [DoAuthResponse]
   describe 'do_auth test' do
     it 'should work' do
@@ -1401,7 +1377,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [GetSubaccountsWithTokensResponse]
   describe 'get_subaccounts_with_tokens test' do
     it 'should work' do
@@ -1552,7 +1527,6 @@ describe 'TextMagicApi' do
   # Invite new subaccount.
   # @param invite_subaccount_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'invite_subaccount test' do
     it 'should work' do
@@ -1564,7 +1538,6 @@ describe 'TextMagicApi' do
   # Mark several chats as read by chat ids or mark all chats as read
   # @param mark_chats_read_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'mark_chats_read_bulk test' do
     it 'should work' do
@@ -1576,7 +1549,6 @@ describe 'TextMagicApi' do
   # Mark several chats as UNread by chat ids or mark all chats as UNread
   # @param mark_chats_unread_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'mark_chats_unread_bulk test' do
     it 'should work' do
@@ -1588,7 +1560,6 @@ describe 'TextMagicApi' do
   # Merge two question nodes.
   # @param merge_survey_nodes_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'merge_survey_nodes test' do
     it 'should work' do
@@ -1600,7 +1571,6 @@ describe 'TextMagicApi' do
   # Set mute mode.
   # @param mute_chat_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'mute_chat test' do
     it 'should work' do
@@ -1612,7 +1582,6 @@ describe 'TextMagicApi' do
   # Mute several chats by chat ids or mute all chats
   # @param mute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'mute_chats_bulk test' do
     it 'should work' do
@@ -1634,7 +1603,6 @@ describe 'TextMagicApi' do
   # Reopen chats by chat ids or reopen all chats
   # @param reopen_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'reopen_chats_bulk test' do
     it 'should work' do
@@ -1647,7 +1615,6 @@ describe 'TextMagicApi' do
   # Returning user object, key and app name.
   # @param request_new_subaccount_token_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [User]
   describe 'request_new_subaccount_token test' do
     it 'should work' do
@@ -1659,7 +1626,6 @@ describe 'TextMagicApi' do
   # Request for a new Sender ID.
   # @param request_sender_id_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'request_sender_id test' do
     it 'should work' do
@@ -1840,7 +1806,6 @@ describe 'TextMagicApi' do
   # The main entrypoint to send messages. See examples above for the reference.
   # @param send_message_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [SendMessageResponse]
   describe 'send_message test' do
     it 'should work' do
@@ -1862,7 +1827,6 @@ describe 'TextMagicApi' do
   # Set status of the chat given by ID.
   # @param set_chat_status_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'set_chat_status test' do
     it 'should work' do
@@ -1885,7 +1849,6 @@ describe 'TextMagicApi' do
   # Unblock contact by phone number.
   # @param unblock_contact_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'unblock_contact test' do
     it 'should work' do
@@ -1897,7 +1860,6 @@ describe 'TextMagicApi' do
   # Unblock several contacts by blocked contact ids or unblock all contacts
   # @param unblock_contacts_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'unblock_contacts_bulk test' do
     it 'should work' do
@@ -1909,7 +1871,6 @@ describe 'TextMagicApi' do
   # Unmute several chats by chat ids or unmute all chats
   # @param unmute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'unmute_chats_bulk test' do
     it 'should work' do
@@ -1921,7 +1882,6 @@ describe 'TextMagicApi' do
   # Unsubscribe contact from your communication by phone number.
   # @param unsubscribe_contact_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'unsubscribe_contact test' do
     it 'should work' do
@@ -1933,7 +1893,6 @@ describe 'TextMagicApi' do
   # Update balance notification settings
   # @param update_balance_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_balance_notification_settings test' do
     it 'should work' do
@@ -1945,7 +1904,6 @@ describe 'TextMagicApi' do
   # Update callback URL settings
   # @param update_callback_settings_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_callback_settings test' do
     it 'should work' do
@@ -1957,7 +1915,6 @@ describe 'TextMagicApi' do
   # Update chat desktop notification settings
   # @param update_chat_desktop_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_chat_desktop_notification_settings test' do
     it 'should work' do
@@ -1970,7 +1927,6 @@ describe 'TextMagicApi' do
   # @param update_contact_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_contact test' do
     it 'should work' do
@@ -1983,7 +1939,6 @@ describe 'TextMagicApi' do
   # @param update_contact_note_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_contact_note test' do
     it 'should work' do
@@ -1995,7 +1950,6 @@ describe 'TextMagicApi' do
   # Update current user info.
   # @param update_current_user_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [UpdateCurrentUserResponse]
   describe 'update_current_user test' do
     it 'should work' do
@@ -2008,7 +1962,6 @@ describe 'TextMagicApi' do
   # @param update_custom_field_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_custom_field test' do
     it 'should work' do
@@ -2021,7 +1974,6 @@ describe 'TextMagicApi' do
   # @param update_custom_field_value_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_custom_field_value test' do
     it 'should work' do
@@ -2033,7 +1985,6 @@ describe 'TextMagicApi' do
   # Update inbound messages notification settings
   # @param update_inbound_messages_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_inbound_messages_notification_settings test' do
     it 'should work' do
@@ -2057,7 +2008,6 @@ describe 'TextMagicApi' do
   # Change user password.
   # @param update_password_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_password test' do
     it 'should work' do
@@ -2069,7 +2019,6 @@ describe 'TextMagicApi' do
   # Change sender settings for specified country.
   # @param update_sender_setting_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [nil]
   describe 'update_sender_setting test' do
     it 'should work' do
@@ -2082,7 +2031,6 @@ describe 'TextMagicApi' do
   # @param update_survey_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_survey test' do
     it 'should work' do
@@ -2095,7 +2043,6 @@ describe 'TextMagicApi' do
   # @param update_survey_node_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_survey_node test' do
     it 'should work' do
@@ -2108,7 +2055,6 @@ describe 'TextMagicApi' do
   # @param update_template_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :x_ignore_null_values 
   # @return [ResourceLinkResponse]
   describe 'update_template test' do
     it 'should work' do

@@ -80,7 +80,6 @@ module TextMagic
     # Block contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def block_contact(block_contact_input_object, opts = {})
       data, _status_code, _headers = block_contact_with_http_info(block_contact_input_object, opts)
@@ -90,7 +89,6 @@ module TextMagic
     # Block contact from inbound and outbound communication by phone number.
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def block_contact_with_http_info(block_contact_input_object, opts = {})
       if @api_client.config.debugging
@@ -112,7 +110,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -135,7 +132,6 @@ module TextMagic
     # Buy a dedicated number and assign it to the specified account.
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def buy_dedicated_number(buy_dedicated_number_input_object, opts = {})
       buy_dedicated_number_with_http_info(buy_dedicated_number_input_object, opts)
@@ -145,7 +141,6 @@ module TextMagic
     # Buy a dedicated number and assign it to the specified account.
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def buy_dedicated_number_with_http_info(buy_dedicated_number_input_object, opts = {})
       if @api_client.config.debugging
@@ -167,7 +162,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -241,7 +235,6 @@ module TextMagic
     # Check user phone verification code
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def check_phone_verification_code(check_phone_verification_code_input_object, opts = {})
       check_phone_verification_code_with_http_info(check_phone_verification_code_input_object, opts)
@@ -251,7 +244,6 @@ module TextMagic
     # Check user phone verification code
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def check_phone_verification_code_with_http_info(check_phone_verification_code_input_object, opts = {})
       if @api_client.config.debugging
@@ -273,7 +265,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -353,7 +344,6 @@ module TextMagic
     # Close chats by chat ids or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def close_chats_bulk(close_chats_bulk_input_object, opts = {})
       close_chats_bulk_with_http_info(close_chats_bulk_input_object, opts)
@@ -363,7 +353,6 @@ module TextMagic
     # Close chats by chat ids or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def close_chats_bulk_with_http_info(close_chats_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -383,7 +372,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -497,7 +485,6 @@ module TextMagic
     # Create a new contact from the submitted data.
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_contact(create_contact_input_object, opts = {})
       data, _status_code, _headers = create_contact_with_http_info(create_contact_input_object, opts)
@@ -507,7 +494,6 @@ module TextMagic
     # Create a new contact from the submitted data.
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_contact_with_http_info(create_contact_input_object, opts = {})
       if @api_client.config.debugging
@@ -529,7 +515,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -553,7 +538,6 @@ module TextMagic
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_contact_note(create_contact_note_input_object, id, opts = {})
       data, _status_code, _headers = create_contact_note_with_http_info(create_contact_note_input_object, id, opts)
@@ -564,7 +548,6 @@ module TextMagic
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_contact_note_with_http_info(create_contact_note_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -590,7 +573,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -613,7 +595,6 @@ module TextMagic
     # Create a new custom field from the submitted data.
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_custom_field(create_custom_field_input_object, opts = {})
       data, _status_code, _headers = create_custom_field_with_http_info(create_custom_field_input_object, opts)
@@ -623,7 +604,6 @@ module TextMagic
     # Create a new custom field from the submitted data.
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_custom_field_with_http_info(create_custom_field_input_object, opts = {})
       if @api_client.config.debugging
@@ -645,7 +625,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -668,7 +647,6 @@ module TextMagic
     # Create a new list from the submitted data.
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_list(create_list_input_object, opts = {})
       data, _status_code, _headers = create_list_with_http_info(create_list_input_object, opts)
@@ -678,7 +656,6 @@ module TextMagic
     # Create a new list from the submitted data.
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_list_with_http_info(create_list_input_object, opts = {})
       if @api_client.config.debugging
@@ -700,7 +677,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -723,7 +699,6 @@ module TextMagic
     # Add or update a device token.
     # @param create_push_token_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def create_push_token(create_push_token_input_object, opts = {})
       create_push_token_with_http_info(create_push_token_input_object, opts)
@@ -733,7 +708,6 @@ module TextMagic
     # Add or update a device token.
     # @param create_push_token_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def create_push_token_with_http_info(create_push_token_input_object, opts = {})
       if @api_client.config.debugging
@@ -755,7 +729,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -777,7 +750,6 @@ module TextMagic
     # Create a new survey from the submitted data.
     # @param create_survey_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_survey(create_survey_input_object, opts = {})
       data, _status_code, _headers = create_survey_with_http_info(create_survey_input_object, opts)
@@ -787,7 +759,6 @@ module TextMagic
     # Create a new survey from the submitted data.
     # @param create_survey_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_survey_with_http_info(create_survey_input_object, opts = {})
       if @api_client.config.debugging
@@ -809,7 +780,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -833,7 +803,6 @@ module TextMagic
     # @param create_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_survey_node(create_survey_node_input_object, id, opts = {})
       data, _status_code, _headers = create_survey_node_with_http_info(create_survey_node_input_object, id, opts)
@@ -844,7 +813,6 @@ module TextMagic
     # @param create_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_survey_node_with_http_info(create_survey_node_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -870,7 +838,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -893,7 +860,6 @@ module TextMagic
     # Create a new template from the submitted data.
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def create_template(create_template_input_object, opts = {})
       data, _status_code, _headers = create_template_with_http_info(create_template_input_object, opts)
@@ -903,7 +869,6 @@ module TextMagic
     # Create a new template from the submitted data.
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def create_template_with_http_info(create_template_input_object, opts = {})
       if @api_client.config.debugging
@@ -925,7 +890,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1080,7 +1044,6 @@ module TextMagic
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_chat_messages(delete_chat_messages_bulk_input_object, id, opts = {})
       delete_chat_messages_with_http_info(delete_chat_messages_bulk_input_object, id, opts)
@@ -1091,7 +1054,6 @@ module TextMagic
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_chat_messages_with_http_info(delete_chat_messages_bulk_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -1115,7 +1077,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1137,7 +1098,6 @@ module TextMagic
     # Delete chats by given ID(s) or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_chats_bulk(delete_chats_bulk_input_object, opts = {})
       delete_chats_bulk_with_http_info(delete_chats_bulk_input_object, opts)
@@ -1147,7 +1107,6 @@ module TextMagic
     # Delete chats by given ID(s) or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_chats_bulk_with_http_info(delete_chats_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -1167,7 +1126,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1339,7 +1297,6 @@ module TextMagic
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object, opts = {})
       delete_contact_notes_bulk_with_http_info(id, delete_contact_notes_bulk_input_object, opts)
@@ -1350,7 +1307,6 @@ module TextMagic
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_contact_notes_bulk_with_http_info(id, delete_contact_notes_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -1374,7 +1330,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1396,7 +1351,6 @@ module TextMagic
     # Delete contact by given ID(s) or delete all contacts.
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_contacts_by_ids(delete_contacts_by_ids_input_object, opts = {})
       delete_contacts_by_ids_with_http_info(delete_contacts_by_ids_input_object, opts)
@@ -1406,7 +1360,6 @@ module TextMagic
     # Delete contact by given ID(s) or delete all contacts.
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_contacts_by_ids_with_http_info(delete_contacts_by_ids_input_object, opts = {})
       if @api_client.config.debugging
@@ -1426,7 +1379,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1650,7 +1602,6 @@ module TextMagic
     # Delete inbound messages by given ID(s) or delete all inbound messages.
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object, opts = {})
       delete_inbound_messages_bulk_with_http_info(delete_inbound_messages_bulk_input_object, opts)
@@ -1660,7 +1611,6 @@ module TextMagic
     # Delete inbound messages by given ID(s) or delete all inbound messages.
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_inbound_messages_bulk_with_http_info(delete_inbound_messages_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -1680,7 +1630,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1803,7 +1752,6 @@ module TextMagic
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id, opts = {})
       delete_list_contacts_bulk_with_http_info(delete_list_contacts_bulk_input_object, id, opts)
@@ -1814,7 +1762,6 @@ module TextMagic
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_list_contacts_bulk_with_http_info(delete_list_contacts_bulk_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -1838,7 +1785,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1860,7 +1806,6 @@ module TextMagic
     # Delete list by given ID(s) or delete all lists.
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_lists_bulk(delete_lists_bulk_input_object, opts = {})
       delete_lists_bulk_with_http_info(delete_lists_bulk_input_object, opts)
@@ -1870,7 +1815,6 @@ module TextMagic
     # Delete list by given ID(s) or delete all lists.
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_lists_bulk_with_http_info(delete_lists_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -1890,7 +1834,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -1961,7 +1904,6 @@ module TextMagic
     # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_message_sessions_bulk(delete_message_sessions_bulk_input_object, opts = {})
       delete_message_sessions_bulk_with_http_info(delete_message_sessions_bulk_input_object, opts)
@@ -1971,7 +1913,6 @@ module TextMagic
     # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_message_sessions_bulk_with_http_info(delete_message_sessions_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -1991,7 +1932,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -2065,7 +2005,6 @@ module TextMagic
     # Delete outbound messages by given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object, opts = {})
       delete_outbound_messages_bulk_with_http_info(delete_outbound_messages_bulk_input_object, opts)
@@ -2076,7 +2015,6 @@ module TextMagic
     # Delete outbound messages by given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_outbound_messages_bulk_with_http_info(delete_outbound_messages_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -2096,7 +2034,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -2222,7 +2159,6 @@ module TextMagic
     # Delete scheduled messages by given ID(s) or delete all scheduled messages.
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object, opts = {})
       delete_scheduled_messages_bulk_with_http_info(delete_scheduled_messages_bulk_input_object, opts)
@@ -2232,7 +2168,6 @@ module TextMagic
     # Delete scheduled messages by given ID(s) or delete all scheduled messages.
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_scheduled_messages_bulk_with_http_info(delete_scheduled_messages_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -2252,7 +2187,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -2470,7 +2404,6 @@ module TextMagic
     # Delete template by given ID(s) or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def delete_templates_bulk(delete_templates_bulk_input_object, opts = {})
       delete_templates_bulk_with_http_info(delete_templates_bulk_input_object, opts)
@@ -2480,7 +2413,6 @@ module TextMagic
     # Delete template by given ID(s) or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_templates_bulk_with_http_info(delete_templates_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -2500,7 +2432,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -2523,7 +2454,6 @@ module TextMagic
     # Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
     # @param do_auth_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [DoAuthResponse]
     def do_auth(do_auth_input_object, opts = {})
       data, _status_code, _headers = do_auth_with_http_info(do_auth_input_object, opts)
@@ -2534,7 +2464,6 @@ module TextMagic
     # Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
     # @param do_auth_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(DoAuthResponse, Fixnum, Hash)>] DoAuthResponse data, response status code and response headers
     def do_auth_with_http_info(do_auth_input_object, opts = {})
       if @api_client.config.debugging
@@ -2556,7 +2485,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6096,7 +6024,6 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [GetSubaccountsWithTokensResponse]
     def get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts = {})
       data, _status_code, _headers = get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts)
@@ -6109,7 +6036,6 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(GetSubaccountsWithTokensResponse, Fixnum, Hash)>] GetSubaccountsWithTokensResponse data, response status code and response headers
     def get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts = {})
       if @api_client.config.debugging
@@ -6133,7 +6059,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6786,7 +6711,6 @@ module TextMagic
     # Invite new subaccount.
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def invite_subaccount(invite_subaccount_input_object, opts = {})
       invite_subaccount_with_http_info(invite_subaccount_input_object, opts)
@@ -6796,7 +6720,6 @@ module TextMagic
     # Invite new subaccount.
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def invite_subaccount_with_http_info(invite_subaccount_input_object, opts = {})
       if @api_client.config.debugging
@@ -6816,7 +6739,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6838,7 +6760,6 @@ module TextMagic
     # Mark several chats as read by chat ids or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def mark_chats_read_bulk(mark_chats_read_bulk_input_object, opts = {})
       mark_chats_read_bulk_with_http_info(mark_chats_read_bulk_input_object, opts)
@@ -6848,7 +6769,6 @@ module TextMagic
     # Mark several chats as read by chat ids or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def mark_chats_read_bulk_with_http_info(mark_chats_read_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -6868,7 +6788,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6890,7 +6809,6 @@ module TextMagic
     # Mark several chats as UNread by chat ids or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def mark_chats_unread_bulk(mark_chats_unread_bulk_input_object, opts = {})
       mark_chats_unread_bulk_with_http_info(mark_chats_unread_bulk_input_object, opts)
@@ -6900,7 +6818,6 @@ module TextMagic
     # Mark several chats as UNread by chat ids or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def mark_chats_unread_bulk_with_http_info(mark_chats_unread_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -6920,7 +6837,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6942,7 +6858,6 @@ module TextMagic
     # Merge two question nodes.
     # @param merge_survey_nodes_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def merge_survey_nodes(merge_survey_nodes_input_object, opts = {})
       merge_survey_nodes_with_http_info(merge_survey_nodes_input_object, opts)
@@ -6952,7 +6867,6 @@ module TextMagic
     # Merge two question nodes.
     # @param merge_survey_nodes_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def merge_survey_nodes_with_http_info(merge_survey_nodes_input_object, opts = {})
       if @api_client.config.debugging
@@ -6972,7 +6886,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -6994,7 +6907,6 @@ module TextMagic
     # Set mute mode.
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def mute_chat(mute_chat_input_object, opts = {})
       data, _status_code, _headers = mute_chat_with_http_info(mute_chat_input_object, opts)
@@ -7004,7 +6916,6 @@ module TextMagic
     # Set mute mode.
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def mute_chat_with_http_info(mute_chat_input_object, opts = {})
       if @api_client.config.debugging
@@ -7026,7 +6937,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -7049,7 +6959,6 @@ module TextMagic
     # Mute several chats by chat ids or mute all chats
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def mute_chats_bulk(mute_chats_bulk_input_object, opts = {})
       mute_chats_bulk_with_http_info(mute_chats_bulk_input_object, opts)
@@ -7059,7 +6968,6 @@ module TextMagic
     # Mute several chats by chat ids or mute all chats
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def mute_chats_bulk_with_http_info(mute_chats_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -7079,7 +6987,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -7147,7 +7054,6 @@ module TextMagic
     # Reopen chats by chat ids or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def reopen_chats_bulk(reopen_chats_bulk_input_object, opts = {})
       reopen_chats_bulk_with_http_info(reopen_chats_bulk_input_object, opts)
@@ -7157,7 +7063,6 @@ module TextMagic
     # Reopen chats by chat ids or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def reopen_chats_bulk_with_http_info(reopen_chats_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -7177,7 +7082,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -7200,7 +7104,6 @@ module TextMagic
     # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [User]
     def request_new_subaccount_token(request_new_subaccount_token_input_object, opts = {})
       data, _status_code, _headers = request_new_subaccount_token_with_http_info(request_new_subaccount_token_input_object, opts)
@@ -7211,7 +7114,6 @@ module TextMagic
     # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
     def request_new_subaccount_token_with_http_info(request_new_subaccount_token_input_object, opts = {})
       if @api_client.config.debugging
@@ -7233,7 +7135,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -7256,7 +7157,6 @@ module TextMagic
     # Request for a new Sender ID.
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def request_sender_id(request_sender_id_input_object, opts = {})
       data, _status_code, _headers = request_sender_id_with_http_info(request_sender_id_input_object, opts)
@@ -7266,7 +7166,6 @@ module TextMagic
     # Request for a new Sender ID.
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def request_sender_id_with_http_info(request_sender_id_input_object, opts = {})
       if @api_client.config.debugging
@@ -7288,7 +7187,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8046,7 +7944,6 @@ module TextMagic
     # The main entrypoint to send messages. See examples above for the reference.
     # @param send_message_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [SendMessageResponse]
     def send_message(send_message_input_object, opts = {})
       data, _status_code, _headers = send_message_with_http_info(send_message_input_object, opts)
@@ -8057,7 +7954,6 @@ module TextMagic
     # The main entrypoint to send messages. See examples above for the reference.
     # @param send_message_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(SendMessageResponse, Fixnum, Hash)>] SendMessageResponse data, response status code and response headers
     def send_message_with_http_info(send_message_input_object, opts = {})
       if @api_client.config.debugging
@@ -8079,7 +7975,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8147,7 +8042,6 @@ module TextMagic
     # Set status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def set_chat_status(set_chat_status_input_object, opts = {})
       data, _status_code, _headers = set_chat_status_with_http_info(set_chat_status_input_object, opts)
@@ -8157,7 +8051,6 @@ module TextMagic
     # Set status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def set_chat_status_with_http_info(set_chat_status_input_object, opts = {})
       if @api_client.config.debugging
@@ -8179,7 +8072,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8254,7 +8146,6 @@ module TextMagic
     # Unblock contact by phone number.
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def unblock_contact(unblock_contact_input_object, opts = {})
       unblock_contact_with_http_info(unblock_contact_input_object, opts)
@@ -8264,7 +8155,6 @@ module TextMagic
     # Unblock contact by phone number.
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def unblock_contact_with_http_info(unblock_contact_input_object, opts = {})
       if @api_client.config.debugging
@@ -8284,7 +8174,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8306,7 +8195,6 @@ module TextMagic
     # Unblock several contacts by blocked contact ids or unblock all contacts
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def unblock_contacts_bulk(unblock_contacts_bulk_input_object, opts = {})
       unblock_contacts_bulk_with_http_info(unblock_contacts_bulk_input_object, opts)
@@ -8316,7 +8204,6 @@ module TextMagic
     # Unblock several contacts by blocked contact ids or unblock all contacts
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def unblock_contacts_bulk_with_http_info(unblock_contacts_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -8336,7 +8223,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8358,7 +8244,6 @@ module TextMagic
     # Unmute several chats by chat ids or unmute all chats
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def unmute_chats_bulk(unmute_chats_bulk_input_object, opts = {})
       unmute_chats_bulk_with_http_info(unmute_chats_bulk_input_object, opts)
@@ -8368,7 +8253,6 @@ module TextMagic
     # Unmute several chats by chat ids or unmute all chats
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def unmute_chats_bulk_with_http_info(unmute_chats_bulk_input_object, opts = {})
       if @api_client.config.debugging
@@ -8388,7 +8272,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8410,7 +8293,6 @@ module TextMagic
     # Unsubscribe contact from your communication by phone number.
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def unsubscribe_contact(unsubscribe_contact_input_object, opts = {})
       data, _status_code, _headers = unsubscribe_contact_with_http_info(unsubscribe_contact_input_object, opts)
@@ -8420,7 +8302,6 @@ module TextMagic
     # Unsubscribe contact from your communication by phone number.
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def unsubscribe_contact_with_http_info(unsubscribe_contact_input_object, opts = {})
       if @api_client.config.debugging
@@ -8442,7 +8323,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8465,7 +8345,6 @@ module TextMagic
     # Update balance notification settings
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_balance_notification_settings(update_balance_notification_settings_input_object, opts = {})
       update_balance_notification_settings_with_http_info(update_balance_notification_settings_input_object, opts)
@@ -8475,7 +8354,6 @@ module TextMagic
     # Update balance notification settings
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_balance_notification_settings_with_http_info(update_balance_notification_settings_input_object, opts = {})
       if @api_client.config.debugging
@@ -8495,7 +8373,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8517,7 +8394,6 @@ module TextMagic
     # Update callback URL settings
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_callback_settings(update_callback_settings_input_object, opts = {})
       update_callback_settings_with_http_info(update_callback_settings_input_object, opts)
@@ -8527,7 +8403,6 @@ module TextMagic
     # Update callback URL settings
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_callback_settings_with_http_info(update_callback_settings_input_object, opts = {})
       if @api_client.config.debugging
@@ -8549,7 +8424,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8571,7 +8445,6 @@ module TextMagic
     # Update chat desktop notification settings
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_chat_desktop_notification_settings(update_chat_desktop_notification_settings_input_object, opts = {})
       update_chat_desktop_notification_settings_with_http_info(update_chat_desktop_notification_settings_input_object, opts)
@@ -8581,7 +8454,6 @@ module TextMagic
     # Update chat desktop notification settings
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_chat_desktop_notification_settings_with_http_info(update_chat_desktop_notification_settings_input_object, opts = {})
       if @api_client.config.debugging
@@ -8603,7 +8475,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8626,7 +8497,6 @@ module TextMagic
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_contact(update_contact_input_object, id, opts = {})
       data, _status_code, _headers = update_contact_with_http_info(update_contact_input_object, id, opts)
@@ -8637,7 +8507,6 @@ module TextMagic
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_contact_with_http_info(update_contact_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -8663,7 +8532,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8687,7 +8555,6 @@ module TextMagic
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_contact_note(update_contact_note_input_object, id, opts = {})
       data, _status_code, _headers = update_contact_note_with_http_info(update_contact_note_input_object, id, opts)
@@ -8698,7 +8565,6 @@ module TextMagic
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_contact_note_with_http_info(update_contact_note_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -8724,7 +8590,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8747,7 +8612,6 @@ module TextMagic
     # Update current user info.
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [UpdateCurrentUserResponse]
     def update_current_user(update_current_user_input_object, opts = {})
       data, _status_code, _headers = update_current_user_with_http_info(update_current_user_input_object, opts)
@@ -8757,7 +8621,6 @@ module TextMagic
     # Update current user info.
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(UpdateCurrentUserResponse, Fixnum, Hash)>] UpdateCurrentUserResponse data, response status code and response headers
     def update_current_user_with_http_info(update_current_user_input_object, opts = {})
       if @api_client.config.debugging
@@ -8779,7 +8642,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8803,7 +8665,6 @@ module TextMagic
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_custom_field(update_custom_field_input_object, id, opts = {})
       data, _status_code, _headers = update_custom_field_with_http_info(update_custom_field_input_object, id, opts)
@@ -8814,7 +8675,6 @@ module TextMagic
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_custom_field_with_http_info(update_custom_field_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -8840,7 +8700,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8864,7 +8723,6 @@ module TextMagic
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_custom_field_value(update_custom_field_value_input_object, id, opts = {})
       data, _status_code, _headers = update_custom_field_value_with_http_info(update_custom_field_value_input_object, id, opts)
@@ -8875,7 +8733,6 @@ module TextMagic
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_custom_field_value_with_http_info(update_custom_field_value_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -8901,7 +8758,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -8924,7 +8780,6 @@ module TextMagic
     # Update inbound messages notification settings
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_inbound_messages_notification_settings(update_inbound_messages_notification_settings_input_object, opts = {})
       update_inbound_messages_notification_settings_with_http_info(update_inbound_messages_notification_settings_input_object, opts)
@@ -8934,7 +8789,6 @@ module TextMagic
     # Update inbound messages notification settings
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_inbound_messages_notification_settings_with_http_info(update_inbound_messages_notification_settings_input_object, opts = {})
       if @api_client.config.debugging
@@ -8954,7 +8808,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -9030,7 +8883,6 @@ module TextMagic
     # Change user password.
     # @param update_password_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_password(update_password_input_object, opts = {})
       update_password_with_http_info(update_password_input_object, opts)
@@ -9040,7 +8892,6 @@ module TextMagic
     # Change user password.
     # @param update_password_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_password_with_http_info(update_password_input_object, opts = {})
       if @api_client.config.debugging
@@ -9060,7 +8911,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -9082,7 +8932,6 @@ module TextMagic
     # Change sender settings for specified country.
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [nil]
     def update_sender_setting(update_sender_setting_input_object, opts = {})
       update_sender_setting_with_http_info(update_sender_setting_input_object, opts)
@@ -9092,7 +8941,6 @@ module TextMagic
     # Change sender settings for specified country.
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def update_sender_setting_with_http_info(update_sender_setting_input_object, opts = {})
       if @api_client.config.debugging
@@ -9112,7 +8960,6 @@ module TextMagic
       header_params = {}
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -9135,7 +8982,6 @@ module TextMagic
     # @param update_survey_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_survey(update_survey_input_object, id, opts = {})
       data, _status_code, _headers = update_survey_with_http_info(update_survey_input_object, id, opts)
@@ -9146,7 +8992,6 @@ module TextMagic
     # @param update_survey_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_survey_with_http_info(update_survey_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -9172,7 +9017,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -9196,7 +9040,6 @@ module TextMagic
     # @param update_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_survey_node(update_survey_node_input_object, id, opts = {})
       data, _status_code, _headers = update_survey_node_with_http_info(update_survey_node_input_object, id, opts)
@@ -9207,7 +9050,6 @@ module TextMagic
     # @param update_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_survey_node_with_http_info(update_survey_node_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -9233,7 +9075,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
@@ -9257,7 +9098,6 @@ module TextMagic
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values  (default to true)
     # @return [ResourceLinkResponse]
     def update_template(update_template_input_object, id, opts = {})
       data, _status_code, _headers = update_template_with_http_info(update_template_input_object, id, opts)
@@ -9268,7 +9108,6 @@ module TextMagic
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :x_ignore_null_values 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def update_template_with_http_info(update_template_input_object, id, opts = {})
       if @api_client.config.debugging
@@ -9294,7 +9133,6 @@ module TextMagic
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'X-Ignore-Null-Values'] = opts[:'x_ignore_null_values'] if !opts[:'x_ignore_null_values'].nil?
 
       # form parameters
       form_params = {}
