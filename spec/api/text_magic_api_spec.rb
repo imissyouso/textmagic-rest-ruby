@@ -619,7 +619,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetAllBulkSessionsResponse]
+  # @return [GetAllBulkSessionsPaginatedResponse]
   describe 'get_all_bulk_sessions test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -635,7 +635,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [Integer] :voice Fetch results with voice calls
   # @option opts [Integer] :flat Should additional contact info be included
-  # @return [GetAllChatsResponse]
+  # @return [GetAllChatsPaginatedResponse]
   describe 'get_all_chats test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -649,7 +649,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetAllInboundMessagesResponse]
+  # @return [GetAllInboundMessagesPaginatedResponse]
   describe 'get_all_inbound_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -661,7 +661,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetAllMessageSessionsResponse]
+  # @return [GetAllMessageSessionsPaginatedResponse]
   describe 'get_all_message_sessions test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -675,7 +675,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-  # @return [GetAllOutboundMessagesResponse]
+  # @return [GetAllOutboundMessagesPaginatedResponse]
   describe 'get_all_outbound_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -690,7 +690,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetAllScheduledMessagesResponse]
+  # @return [GetAllScheduledMessagesPaginatedResponse]
   describe 'get_all_scheduled_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -702,7 +702,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetAllTemplatesResponse]
+  # @return [GetAllTemplatesPaginatedResponse]
   describe 'get_all_templates test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -761,7 +761,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :query Find blocked contacts by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetBlockedContactsResponse]
+  # @return [GetBlockedContactsPaginatedResponse]
   describe 'get_blocked_contacts test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -792,7 +792,7 @@ describe 'TextMagicApi' do
   # unit tests for get_calls_prices
   # Check pricing for a inbound/outbound call.
   # @param [Hash] opts the optional parameters
-  # @return [Hash<String, Object>]
+  # @return [GetCallsPricesResponse]
   describe 'get_calls_prices test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -834,7 +834,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :_end Return messages up to specified timestamp only
   # @option opts [String] :direction Order direction. Default is desc
   # @option opts [Integer] :voice Fetch results with voice calls
-  # @return [GetChatMessagesResponse]
+  # @return [GetChatMessagesPaginatedResponse]
   describe 'get_chat_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -902,7 +902,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetContactNotesResponse]
+  # @return [GetContactNotesPaginatedResponse]
   describe 'get_contact_notes test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -917,7 +917,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :shared Should shared contacts to be included
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetContactsResponse]
+  # @return [GetContactsPaginatedResponse]
   describe 'get_contacts test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -930,7 +930,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit How many results to return
   # @option opts [Integer] :lists Should lists be returned or not
-  # @return [Array<GetContactsAutocompleteResponse>]
+  # @return [GetContactsAutocompleteResponse]
   describe 'get_contacts_autocomplete test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -946,7 +946,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetContactsByListIdResponse]
+  # @return [GetContactsByListIdPaginatedResponse]
   describe 'get_contacts_by_list_id test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -956,7 +956,7 @@ describe 'TextMagicApi' do
   # unit tests for get_countries
   # Return list of countries.
   # @param [Hash] opts the optional parameters
-  # @return [Array<Country>]
+  # @return [GetCountriesResponse]
   describe 'get_countries test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -989,7 +989,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetCustomFieldsResponse]
+  # @return [GetCustomFieldsPaginatedResponse]
   describe 'get_custom_fields test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1010,7 +1010,7 @@ describe 'TextMagicApi' do
   # unit tests for get_disallowed_rules
   # Get an array of all rules that are disallowed to the current account.
   # @param [Hash] opts the optional parameters
-  # @return [Array<String>]
+  # @return [GetDisallowedRulesResponse]
   describe 'get_disallowed_rules test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1023,7 +1023,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :query Find contacts or lists by specified search query
-  # @return [GetFavouritesResponse]
+  # @return [GetFavouritesPaginatedResponse]
   describe 'get_favourites test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1035,7 +1035,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetForwardedCallsResponse]
+  # @return [GetForwardedCallsPaginatedResponse]
   describe 'get_forwarded_calls test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1068,7 +1068,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetInvoicesResponse]
+  # @return [GetInvoicesPaginatedResponse]
   describe 'get_invoices test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1103,7 +1103,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetListsOfContactResponse]
+  # @return [GetListsOfContactPaginatedResponse]
   describe 'get_lists_of_contact test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1210,7 +1210,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :statuses Find messages by status
   # @option opts [Integer] :include_deleted Search also in deleted messages
-  # @return [GetMessagesBySessionIdResponse]
+  # @return [GetMessagesBySessionIdPaginatedResponse]
   describe 'get_messages_by_session_id test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1261,7 +1261,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :query Find message by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [GetOutboundMessagesHistoryResponse]
+  # @return [GetOutboundMessagesHistoryPaginatedResponse]
   describe 'get_outbound_messages_history test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1305,7 +1305,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetSenderIdsResponse]
+  # @return [GetSenderIdsPaginatedResponse]
   describe 'get_sender_ids test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1330,7 +1330,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit How many results to return
   # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
   # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
-  # @return [GetSpendingStatResponse]
+  # @return [GetSpendingStatPaginatedResponse]
   describe 'get_spending_stat test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1422,7 +1422,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetSurveysResponse]
+  # @return [GetSurveysPaginatedResponse]
   describe 'get_surveys test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1444,7 +1444,7 @@ describe 'TextMagicApi' do
   # Return all available timezone IDs.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
-  # @return [Object]
+  # @return [GetTimezonesResponse]
   describe 'get_timezones test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1477,7 +1477,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
-  # @return [GetUnsubscribersResponse]
+  # @return [GetUnsubscribersPaginatedResponse]
   describe 'get_unsubscribers test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1490,7 +1490,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
   # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
-  # @return [GetUserDedicatedNumbersResponse]
+  # @return [GetUserDedicatedNumbersPaginatedResponse]
   describe 'get_user_dedicated_numbers test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1506,7 +1506,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :direction Order direction. Default is desc
   # @option opts [Integer] :favorite_only Return only favorite lists
   # @option opts [Integer] :only_mine Return only current user lists
-  # @return [GetUserListsResponse]
+  # @return [GetUserListsPaginatedResponse]
   describe 'get_user_lists test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1650,7 +1650,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :query Find chats by specified search query
-  # @return [SearchChatsResponse]
+  # @return [SearchChatsPaginatedResponse]
   describe 'search_chats test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1663,7 +1663,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :page Fetch specified results page
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :ids Find chats by ID(s)
-  # @return [SearchChatsByIdsResponse]
+  # @return [SearchChatsByIdsPaginatedResponse]
   describe 'search_chats_by_ids test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1677,7 +1677,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit How many results to return
   # @option opts [String] :query Find chats by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
-  # @return [SearchChatsByReceipentResponse]
+  # @return [SearchChatsByReceipentPaginatedResponse]
   describe 'search_chats_by_receipent test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1698,7 +1698,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [SearchContactsResponse]
+  # @return [SearchContactsPaginatedResponse]
   describe 'search_contacts test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1715,7 +1715,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
   # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId
-  # @return [SearchInboundMessagesResponse]
+  # @return [SearchInboundMessagesPaginatedResponse]
   describe 'search_inbound_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1733,7 +1733,7 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :only_default Return only default lists
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [SearchListsResponse]
+  # @return [SearchListsPaginatedResponse]
   describe 'search_lists test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1752,7 +1752,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :statuses Find messages by status
   # @option opts [Integer] :include_deleted Search also in deleted messages
   # @option opts [String] :query Find messages by specified search query
-  # @return [SearchOutboundMessagesResponse]
+  # @return [SearchOutboundMessagesPaginatedResponse]
   describe 'search_outbound_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1769,7 +1769,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
-  # @return [SearchScheduledMessagesResponse]
+  # @return [SearchScheduledMessagesPaginatedResponse]
   describe 'search_scheduled_messages test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1784,7 +1784,7 @@ describe 'TextMagicApi' do
   # @option opts [String] :ids Find template by ID(s)
   # @option opts [String] :name Find template by name
   # @option opts [String] :content Find template by content
-  # @return [SearchTemplatesResponse]
+  # @return [SearchTemplatesPaginatedResponse]
   describe 'search_templates test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

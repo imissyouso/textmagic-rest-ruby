@@ -14,88 +14,15 @@ require 'date'
 
 module TextMagic
   class GetContactsAutocompleteResponse
-    # Id of entity. 0 if object is a Reply
-    attr_accessor :entity_id
-
-    # 
-    attr_accessor :entity_type
-
-    # Id of contact/list if entityType is contact/list OR phone number if entityType is reply
-    attr_accessor :value
-
-    # Name of the contact/list if entityType is contact/list OR phone number if entityType is reply
-    attr_accessor :label
-
-    # If contact or list was shared by another user then name if this user will be shown
-    attr_accessor :shared_by
-
-    attr_accessor :avatar
-
-    # If contact was marked as favourited
-    attr_accessor :favorited
-
-    # Owner id of the contact/list (if it was shared)
-    attr_accessor :user_id
-
-    attr_accessor :country_name
-
-    attr_accessor :qposition
-
-    attr_accessor :rposition
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'entity_id' => :'entityId',
-        :'entity_type' => :'entityType',
-        :'value' => :'value',
-        :'label' => :'label',
-        :'shared_by' => :'sharedBy',
-        :'avatar' => :'avatar',
-        :'favorited' => :'favorited',
-        :'user_id' => :'userId',
-        :'country_name' => :'countryName',
-        :'qposition' => :'qposition',
-        :'rposition' => :'rposition'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'entity_id' => :'Integer',
-        :'entity_type' => :'String',
-        :'value' => :'String',
-        :'label' => :'String',
-        :'shared_by' => :'String',
-        :'avatar' => :'String',
-        :'favorited' => :'BOOLEAN',
-        :'user_id' => :'Integer',
-        :'country_name' => :'String',
-        :'qposition' => :'Integer',
-        :'rposition' => :'Integer'
       }
     end
 
@@ -106,148 +33,26 @@ module TextMagic
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'entityId')
-        self.entity_id = attributes[:'entityId']
-      end
-
-      if attributes.has_key?(:'entityType')
-        self.entity_type = attributes[:'entityType']
-      end
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
-      if attributes.has_key?(:'label')
-        self.label = attributes[:'label']
-      end
-
-      if attributes.has_key?(:'sharedBy')
-        self.shared_by = attributes[:'sharedBy']
-      end
-
-      if attributes.has_key?(:'avatar')
-        self.avatar = attributes[:'avatar']
-      end
-
-      if attributes.has_key?(:'favorited')
-        self.favorited = attributes[:'favorited']
-      end
-
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
-      end
-
-      if attributes.has_key?(:'countryName')
-        self.country_name = attributes[:'countryName']
-      end
-
-      if attributes.has_key?(:'qposition')
-        self.qposition = attributes[:'qposition']
-      end
-
-      if attributes.has_key?(:'rposition')
-        self.rposition = attributes[:'rposition']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @entity_id.nil?
-        invalid_properties.push('invalid value for "entity_id", entity_id cannot be nil.')
-      end
-
-      if @entity_type.nil?
-        invalid_properties.push('invalid value for "entity_type", entity_type cannot be nil.')
-      end
-
-      if @value.nil?
-        invalid_properties.push('invalid value for "value", value cannot be nil.')
-      end
-
-      if @label.nil?
-        invalid_properties.push('invalid value for "label", label cannot be nil.')
-      end
-
-      if @shared_by.nil?
-        invalid_properties.push('invalid value for "shared_by", shared_by cannot be nil.')
-      end
-
-      if @avatar.nil?
-        invalid_properties.push('invalid value for "avatar", avatar cannot be nil.')
-      end
-
-      if @favorited.nil?
-        invalid_properties.push('invalid value for "favorited", favorited cannot be nil.')
-      end
-
-      if @user_id.nil?
-        invalid_properties.push('invalid value for "user_id", user_id cannot be nil.')
-      end
-
-      if @country_name.nil?
-        invalid_properties.push('invalid value for "country_name", country_name cannot be nil.')
-      end
-
-      if @qposition.nil?
-        invalid_properties.push('invalid value for "qposition", qposition cannot be nil.')
-      end
-
-      if @rposition.nil?
-        invalid_properties.push('invalid value for "rposition", rposition cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @entity_id.nil?
-      return false if @entity_type.nil?
-      entity_type_validator = EnumAttributeValidator.new('String', ['list', 'contact', 'reply'])
-      return false unless entity_type_validator.valid?(@entity_type)
-      return false if @value.nil?
-      return false if @label.nil?
-      return false if @shared_by.nil?
-      return false if @avatar.nil?
-      return false if @favorited.nil?
-      return false if @user_id.nil?
-      return false if @country_name.nil?
-      return false if @qposition.nil?
-      return false if @rposition.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] entity_type Object to be assigned
-    def entity_type=(entity_type)
-      validator = EnumAttributeValidator.new('String', ['list', 'contact', 'reply'])
-      unless validator.valid?(entity_type)
-        fail ArgumentError, 'invalid value for "entity_type", must be one of #{validator.allowable_values}.'
-      end
-      @entity_type = entity_type
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          entity_id == o.entity_id &&
-          entity_type == o.entity_type &&
-          value == o.value &&
-          label == o.label &&
-          shared_by == o.shared_by &&
-          avatar == o.avatar &&
-          favorited == o.favorited &&
-          user_id == o.user_id &&
-          country_name == o.country_name &&
-          qposition == o.qposition &&
-          rposition == o.rposition
+      self.class == o.class
     end
 
     # @see the `==` method
@@ -259,7 +64,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [entity_id, entity_type, value, label, shared_by, avatar, favorited, user_id, country_name, qposition, rposition].hash
+      [].hash
     end
 
     # Builds the object from hash

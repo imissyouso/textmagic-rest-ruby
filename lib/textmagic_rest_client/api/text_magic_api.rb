@@ -2667,7 +2667,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetAllBulkSessionsResponse]
+    # @return [GetAllBulkSessionsPaginatedResponse]
     def get_all_bulk_sessions(opts = {})
       data, _status_code, _headers = get_all_bulk_sessions_with_http_info(opts)
       data
@@ -2677,7 +2677,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetAllBulkSessionsResponse, Fixnum, Hash)>] GetAllBulkSessionsResponse data, response status code and response headers
+    # @return [Array<(GetAllBulkSessionsPaginatedResponse, Fixnum, Hash)>] GetAllBulkSessionsPaginatedResponse data, response status code and response headers
     def get_all_bulk_sessions_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_bulk_sessions ...'
@@ -2709,7 +2709,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllBulkSessionsResponse')
+        :return_type => 'GetAllBulkSessionsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_bulk_sessions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2723,7 +2723,7 @@ module TextMagic
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [Integer] :voice Fetch results with voice calls (default to 0)
     # @option opts [Integer] :flat Should additional contact info be included (default to 0)
-    # @return [GetAllChatsResponse]
+    # @return [GetAllChatsPaginatedResponse]
     def get_all_chats(opts = {})
       data, _status_code, _headers = get_all_chats_with_http_info(opts)
       data
@@ -2737,7 +2737,7 @@ module TextMagic
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [Integer] :voice Fetch results with voice calls
     # @option opts [Integer] :flat Should additional contact info be included
-    # @return [Array<(GetAllChatsResponse, Fixnum, Hash)>] GetAllChatsResponse data, response status code and response headers
+    # @return [Array<(GetAllChatsPaginatedResponse, Fixnum, Hash)>] GetAllChatsPaginatedResponse data, response status code and response headers
     def get_all_chats_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_chats ...'
@@ -2779,7 +2779,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllChatsResponse')
+        :return_type => 'GetAllChatsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_chats\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2791,7 +2791,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetAllInboundMessagesResponse]
+    # @return [GetAllInboundMessagesPaginatedResponse]
     def get_all_inbound_messages(opts = {})
       data, _status_code, _headers = get_all_inbound_messages_with_http_info(opts)
       data
@@ -2803,7 +2803,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetAllInboundMessagesResponse, Fixnum, Hash)>] GetAllInboundMessagesResponse data, response status code and response headers
+    # @return [Array<(GetAllInboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllInboundMessagesPaginatedResponse data, response status code and response headers
     def get_all_inbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_inbound_messages ...'
@@ -2843,7 +2843,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllInboundMessagesResponse')
+        :return_type => 'GetAllInboundMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_inbound_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2853,7 +2853,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetAllMessageSessionsResponse]
+    # @return [GetAllMessageSessionsPaginatedResponse]
     def get_all_message_sessions(opts = {})
       data, _status_code, _headers = get_all_message_sessions_with_http_info(opts)
       data
@@ -2863,7 +2863,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetAllMessageSessionsResponse, Fixnum, Hash)>] GetAllMessageSessionsResponse data, response status code and response headers
+    # @return [Array<(GetAllMessageSessionsPaginatedResponse, Fixnum, Hash)>] GetAllMessageSessionsPaginatedResponse data, response status code and response headers
     def get_all_message_sessions_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_message_sessions ...'
@@ -2895,7 +2895,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllMessageSessionsResponse')
+        :return_type => 'GetAllMessageSessionsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_message_sessions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2907,7 +2907,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-    # @return [GetAllOutboundMessagesResponse]
+    # @return [GetAllOutboundMessagesPaginatedResponse]
     def get_all_outbound_messages(opts = {})
       data, _status_code, _headers = get_all_outbound_messages_with_http_info(opts)
       data
@@ -2919,7 +2919,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-    # @return [Array<(GetAllOutboundMessagesResponse, Fixnum, Hash)>] GetAllOutboundMessagesResponse data, response status code and response headers
+    # @return [Array<(GetAllOutboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllOutboundMessagesPaginatedResponse data, response status code and response headers
     def get_all_outbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_outbound_messages ...'
@@ -2952,7 +2952,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllOutboundMessagesResponse')
+        :return_type => 'GetAllOutboundMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_outbound_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2965,7 +2965,7 @@ module TextMagic
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetAllScheduledMessagesResponse]
+    # @return [GetAllScheduledMessagesPaginatedResponse]
     def get_all_scheduled_messages(opts = {})
       data, _status_code, _headers = get_all_scheduled_messages_with_http_info(opts)
       data
@@ -2978,7 +2978,7 @@ module TextMagic
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetAllScheduledMessagesResponse, Fixnum, Hash)>] GetAllScheduledMessagesResponse data, response status code and response headers
+    # @return [Array<(GetAllScheduledMessagesPaginatedResponse, Fixnum, Hash)>] GetAllScheduledMessagesPaginatedResponse data, response status code and response headers
     def get_all_scheduled_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_scheduled_messages ...'
@@ -3022,7 +3022,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllScheduledMessagesResponse')
+        :return_type => 'GetAllScheduledMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_scheduled_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3032,7 +3032,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [GetAllTemplatesResponse]
+    # @return [GetAllTemplatesPaginatedResponse]
     def get_all_templates(opts = {})
       data, _status_code, _headers = get_all_templates_with_http_info(opts)
       data
@@ -3042,7 +3042,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetAllTemplatesResponse, Fixnum, Hash)>] GetAllTemplatesResponse data, response status code and response headers
+    # @return [Array<(GetAllTemplatesPaginatedResponse, Fixnum, Hash)>] GetAllTemplatesPaginatedResponse data, response status code and response headers
     def get_all_templates_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_all_templates ...'
@@ -3074,7 +3074,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetAllTemplatesResponse')
+        :return_type => 'GetAllTemplatesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_all_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3287,7 +3287,7 @@ module TextMagic
     # @option opts [String] :query Find blocked contacts by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetBlockedContactsResponse]
+    # @return [GetBlockedContactsPaginatedResponse]
     def get_blocked_contacts(opts = {})
       data, _status_code, _headers = get_blocked_contacts_with_http_info(opts)
       data
@@ -3300,7 +3300,7 @@ module TextMagic
     # @option opts [String] :query Find blocked contacts by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetBlockedContactsResponse, Fixnum, Hash)>] GetBlockedContactsResponse data, response status code and response headers
+    # @return [Array<(GetBlockedContactsPaginatedResponse, Fixnum, Hash)>] GetBlockedContactsPaginatedResponse data, response status code and response headers
     def get_blocked_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_blocked_contacts ...'
@@ -3341,7 +3341,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetBlockedContactsResponse')
+        :return_type => 'GetBlockedContactsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_blocked_contacts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3447,7 +3447,7 @@ module TextMagic
     end
     # Check pricing for a inbound/outbound call.
     # @param [Hash] opts the optional parameters
-    # @return [Hash<String, Object>]
+    # @return [GetCallsPricesResponse]
     def get_calls_prices(opts = {})
       data, _status_code, _headers = get_calls_prices_with_http_info(opts)
       data
@@ -3455,7 +3455,7 @@ module TextMagic
 
     # Check pricing for a inbound/outbound call.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Hash<String, Object>, Fixnum, Hash)>] Hash<String, Object> data, response status code and response headers
+    # @return [Array<(GetCallsPricesResponse, Fixnum, Hash)>] GetCallsPricesResponse data, response status code and response headers
     def get_calls_prices_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_calls_prices ...'
@@ -3485,7 +3485,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Hash<String, Object>')
+        :return_type => 'GetCallsPricesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_calls_prices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3611,7 +3611,7 @@ module TextMagic
     # @option opts [Integer] :_end Return messages up to specified timestamp only
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @option opts [Integer] :voice Fetch results with voice calls (default to 0)
-    # @return [GetChatMessagesResponse]
+    # @return [GetChatMessagesPaginatedResponse]
     def get_chat_messages(id, opts = {})
       data, _status_code, _headers = get_chat_messages_with_http_info(id, opts)
       data
@@ -3627,7 +3627,7 @@ module TextMagic
     # @option opts [Integer] :_end Return messages up to specified timestamp only
     # @option opts [String] :direction Order direction. Default is desc
     # @option opts [Integer] :voice Fetch results with voice calls
-    # @return [Array<(GetChatMessagesResponse, Fixnum, Hash)>] GetChatMessagesResponse data, response status code and response headers
+    # @return [Array<(GetChatMessagesPaginatedResponse, Fixnum, Hash)>] GetChatMessagesPaginatedResponse data, response status code and response headers
     def get_chat_messages_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_chat_messages ...'
@@ -3671,7 +3671,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetChatMessagesResponse')
+        :return_type => 'GetChatMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_chat_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -3943,7 +3943,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetContactNotesResponse]
+    # @return [GetContactNotesPaginatedResponse]
     def get_contact_notes(id, opts = {})
       data, _status_code, _headers = get_contact_notes_with_http_info(id, opts)
       data
@@ -3954,7 +3954,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetContactNotesResponse, Fixnum, Hash)>] GetContactNotesResponse data, response status code and response headers
+    # @return [Array<(GetContactNotesPaginatedResponse, Fixnum, Hash)>] GetContactNotesPaginatedResponse data, response status code and response headers
     def get_contact_notes_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contact_notes ...'
@@ -3990,7 +3990,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetContactNotesResponse')
+        :return_type => 'GetContactNotesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_contact_notes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4003,7 +4003,7 @@ module TextMagic
     # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetContactsResponse]
+    # @return [GetContactsPaginatedResponse]
     def get_contacts(opts = {})
       data, _status_code, _headers = get_contacts_with_http_info(opts)
       data
@@ -4016,7 +4016,7 @@ module TextMagic
     # @option opts [Integer] :shared Should shared contacts to be included
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetContactsResponse, Fixnum, Hash)>] GetContactsResponse data, response status code and response headers
+    # @return [Array<(GetContactsPaginatedResponse, Fixnum, Hash)>] GetContactsPaginatedResponse data, response status code and response headers
     def get_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contacts ...'
@@ -4057,7 +4057,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetContactsResponse')
+        :return_type => 'GetContactsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_contacts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4068,7 +4068,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [Integer] :lists Should lists be returned or not (default to 0)
-    # @return [Array<GetContactsAutocompleteResponse>]
+    # @return [GetContactsAutocompleteResponse]
     def get_contacts_autocomplete(query, opts = {})
       data, _status_code, _headers = get_contacts_autocomplete_with_http_info(query, opts)
       data
@@ -4079,7 +4079,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit How many results to return
     # @option opts [Integer] :lists Should lists be returned or not
-    # @return [Array<(Array<GetContactsAutocompleteResponse>, Fixnum, Hash)>] Array<GetContactsAutocompleteResponse> data, response status code and response headers
+    # @return [Array<(GetContactsAutocompleteResponse, Fixnum, Hash)>] GetContactsAutocompleteResponse data, response status code and response headers
     def get_contacts_autocomplete_with_http_info(query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contacts_autocomplete ...'
@@ -4116,7 +4116,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<GetContactsAutocompleteResponse>')
+        :return_type => 'GetContactsAutocompleteResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_contacts_autocomplete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4130,7 +4130,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetContactsByListIdResponse]
+    # @return [GetContactsByListIdPaginatedResponse]
     def get_contacts_by_list_id(id, opts = {})
       data, _status_code, _headers = get_contacts_by_list_id_with_http_info(id, opts)
       data
@@ -4144,7 +4144,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetContactsByListIdResponse, Fixnum, Hash)>] GetContactsByListIdResponse data, response status code and response headers
+    # @return [Array<(GetContactsByListIdPaginatedResponse, Fixnum, Hash)>] GetContactsByListIdPaginatedResponse data, response status code and response headers
     def get_contacts_by_list_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contacts_by_list_id ...'
@@ -4188,7 +4188,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetContactsByListIdResponse')
+        :return_type => 'GetContactsByListIdPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_contacts_by_list_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4196,7 +4196,7 @@ module TextMagic
     end
     # Return list of countries.
     # @param [Hash] opts the optional parameters
-    # @return [Array<Country>]
+    # @return [GetCountriesResponse]
     def get_countries(opts = {})
       data, _status_code, _headers = get_countries_with_http_info(opts)
       data
@@ -4204,7 +4204,7 @@ module TextMagic
 
     # Return list of countries.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Country>, Fixnum, Hash)>] Array<Country> data, response status code and response headers
+    # @return [Array<(GetCountriesResponse, Fixnum, Hash)>] GetCountriesResponse data, response status code and response headers
     def get_countries_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_countries ...'
@@ -4234,7 +4234,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Country>')
+        :return_type => 'GetCountriesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_countries\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4342,7 +4342,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetCustomFieldsResponse]
+    # @return [GetCustomFieldsPaginatedResponse]
     def get_custom_fields(opts = {})
       data, _status_code, _headers = get_custom_fields_with_http_info(opts)
       data
@@ -4352,7 +4352,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetCustomFieldsResponse, Fixnum, Hash)>] GetCustomFieldsResponse data, response status code and response headers
+    # @return [Array<(GetCustomFieldsPaginatedResponse, Fixnum, Hash)>] GetCustomFieldsPaginatedResponse data, response status code and response headers
     def get_custom_fields_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_custom_fields ...'
@@ -4384,7 +4384,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetCustomFieldsResponse')
+        :return_type => 'GetCustomFieldsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_custom_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4444,7 +4444,7 @@ module TextMagic
     end
     # Get an array of all rules that are disallowed to the current account.
     # @param [Hash] opts the optional parameters
-    # @return [Array<String>]
+    # @return [GetDisallowedRulesResponse]
     def get_disallowed_rules(opts = {})
       data, _status_code, _headers = get_disallowed_rules_with_http_info(opts)
       data
@@ -4452,7 +4452,7 @@ module TextMagic
 
     # Get an array of all rules that are disallowed to the current account.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
+    # @return [Array<(GetDisallowedRulesResponse, Fixnum, Hash)>] GetDisallowedRulesResponse data, response status code and response headers
     def get_disallowed_rules_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_disallowed_rules ...'
@@ -4482,7 +4482,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<String>')
+        :return_type => 'GetDisallowedRulesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_disallowed_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4493,7 +4493,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :query Find contacts or lists by specified search query (default to A)
-    # @return [GetFavouritesResponse]
+    # @return [GetFavouritesPaginatedResponse]
     def get_favourites(opts = {})
       data, _status_code, _headers = get_favourites_with_http_info(opts)
       data
@@ -4504,7 +4504,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :query Find contacts or lists by specified search query
-    # @return [Array<(GetFavouritesResponse, Fixnum, Hash)>] GetFavouritesResponse data, response status code and response headers
+    # @return [Array<(GetFavouritesPaginatedResponse, Fixnum, Hash)>] GetFavouritesPaginatedResponse data, response status code and response headers
     def get_favourites_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_favourites ...'
@@ -4537,7 +4537,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetFavouritesResponse')
+        :return_type => 'GetFavouritesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_favourites\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4547,7 +4547,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetForwardedCallsResponse]
+    # @return [GetForwardedCallsPaginatedResponse]
     def get_forwarded_calls(opts = {})
       data, _status_code, _headers = get_forwarded_calls_with_http_info(opts)
       data
@@ -4557,7 +4557,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetForwardedCallsResponse, Fixnum, Hash)>] GetForwardedCallsResponse data, response status code and response headers
+    # @return [Array<(GetForwardedCallsPaginatedResponse, Fixnum, Hash)>] GetForwardedCallsPaginatedResponse data, response status code and response headers
     def get_forwarded_calls_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_forwarded_calls ...'
@@ -4589,7 +4589,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetForwardedCallsResponse')
+        :return_type => 'GetForwardedCallsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_forwarded_calls\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4697,7 +4697,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetInvoicesResponse]
+    # @return [GetInvoicesPaginatedResponse]
     def get_invoices(opts = {})
       data, _status_code, _headers = get_invoices_with_http_info(opts)
       data
@@ -4707,7 +4707,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetInvoicesResponse, Fixnum, Hash)>] GetInvoicesResponse data, response status code and response headers
+    # @return [Array<(GetInvoicesPaginatedResponse, Fixnum, Hash)>] GetInvoicesPaginatedResponse data, response status code and response headers
     def get_invoices_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_invoices ...'
@@ -4739,7 +4739,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetInvoicesResponse')
+        :return_type => 'GetInvoicesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_invoices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -4854,7 +4854,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetListsOfContactResponse]
+    # @return [GetListsOfContactPaginatedResponse]
     def get_lists_of_contact(id, opts = {})
       data, _status_code, _headers = get_lists_of_contact_with_http_info(id, opts)
       data
@@ -4865,7 +4865,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetListsOfContactResponse, Fixnum, Hash)>] GetListsOfContactResponse data, response status code and response headers
+    # @return [Array<(GetListsOfContactPaginatedResponse, Fixnum, Hash)>] GetListsOfContactPaginatedResponse data, response status code and response headers
     def get_lists_of_contact_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_lists_of_contact ...'
@@ -4901,7 +4901,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetListsOfContactResponse')
+        :return_type => 'GetListsOfContactPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_lists_of_contact\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -5271,7 +5271,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages (default to 0)
-    # @return [GetMessagesBySessionIdResponse]
+    # @return [GetMessagesBySessionIdPaginatedResponse]
     def get_messages_by_session_id(id, opts = {})
       data, _status_code, _headers = get_messages_by_session_id_with_http_info(id, opts)
       data
@@ -5285,7 +5285,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages
-    # @return [Array<(GetMessagesBySessionIdResponse, Fixnum, Hash)>] GetMessagesBySessionIdResponse data, response status code and response headers
+    # @return [Array<(GetMessagesBySessionIdPaginatedResponse, Fixnum, Hash)>] GetMessagesBySessionIdPaginatedResponse data, response status code and response headers
     def get_messages_by_session_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_messages_by_session_id ...'
@@ -5326,7 +5326,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetMessagesBySessionIdResponse')
+        :return_type => 'GetMessagesBySessionIdPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_messages_by_session_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -5498,7 +5498,7 @@ module TextMagic
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [GetOutboundMessagesHistoryResponse]
+    # @return [GetOutboundMessagesHistoryPaginatedResponse]
     def get_outbound_messages_history(opts = {})
       data, _status_code, _headers = get_outbound_messages_history_with_http_info(opts)
       data
@@ -5512,7 +5512,7 @@ module TextMagic
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(GetOutboundMessagesHistoryResponse, Fixnum, Hash)>] GetOutboundMessagesHistoryResponse data, response status code and response headers
+    # @return [Array<(GetOutboundMessagesHistoryPaginatedResponse, Fixnum, Hash)>] GetOutboundMessagesHistoryPaginatedResponse data, response status code and response headers
     def get_outbound_messages_history_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_outbound_messages_history ...'
@@ -5553,7 +5553,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetOutboundMessagesHistoryResponse')
+        :return_type => 'GetOutboundMessagesHistoryPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_outbound_messages_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -5713,7 +5713,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetSenderIdsResponse]
+    # @return [GetSenderIdsPaginatedResponse]
     def get_sender_ids(opts = {})
       data, _status_code, _headers = get_sender_ids_with_http_info(opts)
       data
@@ -5723,7 +5723,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetSenderIdsResponse, Fixnum, Hash)>] GetSenderIdsResponse data, response status code and response headers
+    # @return [Array<(GetSenderIdsPaginatedResponse, Fixnum, Hash)>] GetSenderIdsPaginatedResponse data, response status code and response headers
     def get_sender_ids_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_sender_ids ...'
@@ -5755,7 +5755,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetSenderIdsResponse')
+        :return_type => 'GetSenderIdsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_sender_ids\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -5816,7 +5816,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
     # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
-    # @return [GetSpendingStatResponse]
+    # @return [GetSpendingStatPaginatedResponse]
     def get_spending_stat(opts = {})
       data, _status_code, _headers = get_spending_stat_with_http_info(opts)
       data
@@ -5828,7 +5828,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return
     # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
     # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
-    # @return [Array<(GetSpendingStatResponse, Fixnum, Hash)>] GetSpendingStatResponse data, response status code and response headers
+    # @return [Array<(GetSpendingStatPaginatedResponse, Fixnum, Hash)>] GetSpendingStatPaginatedResponse data, response status code and response headers
     def get_spending_stat_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_spending_stat ...'
@@ -5862,7 +5862,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetSpendingStatResponse')
+        :return_type => 'GetSpendingStatPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_spending_stat\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -6238,7 +6238,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetSurveysResponse]
+    # @return [GetSurveysPaginatedResponse]
     def get_surveys(opts = {})
       data, _status_code, _headers = get_surveys_with_http_info(opts)
       data
@@ -6248,7 +6248,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetSurveysResponse, Fixnum, Hash)>] GetSurveysResponse data, response status code and response headers
+    # @return [Array<(GetSurveysPaginatedResponse, Fixnum, Hash)>] GetSurveysPaginatedResponse data, response status code and response headers
     def get_surveys_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_surveys ...'
@@ -6280,7 +6280,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetSurveysResponse')
+        :return_type => 'GetSurveysPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_surveys\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -6341,7 +6341,7 @@ module TextMagic
     # Return all available timezone IDs.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0 (default to 0)
-    # @return [Object]
+    # @return [GetTimezonesResponse]
     def get_timezones(opts = {})
       data, _status_code, _headers = get_timezones_with_http_info(opts)
       data
@@ -6350,7 +6350,7 @@ module TextMagic
     # Return all available timezone IDs.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
-    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GetTimezonesResponse, Fixnum, Hash)>] GetTimezonesResponse data, response status code and response headers
     def get_timezones_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_timezones ...'
@@ -6381,7 +6381,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Object')
+        :return_type => 'GetTimezonesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_timezones\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -6489,7 +6489,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetUnsubscribersResponse]
+    # @return [GetUnsubscribersPaginatedResponse]
     def get_unsubscribers(opts = {})
       data, _status_code, _headers = get_unsubscribers_with_http_info(opts)
       data
@@ -6499,7 +6499,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetUnsubscribersResponse, Fixnum, Hash)>] GetUnsubscribersResponse data, response status code and response headers
+    # @return [Array<(GetUnsubscribersPaginatedResponse, Fixnum, Hash)>] GetUnsubscribersPaginatedResponse data, response status code and response headers
     def get_unsubscribers_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_unsubscribers ...'
@@ -6531,7 +6531,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetUnsubscribersResponse')
+        :return_type => 'GetUnsubscribersPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_unsubscribers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -6542,7 +6542,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
-    # @return [GetUserDedicatedNumbersResponse]
+    # @return [GetUserDedicatedNumbersPaginatedResponse]
     def get_user_dedicated_numbers(opts = {})
       data, _status_code, _headers = get_user_dedicated_numbers_with_http_info(opts)
       data
@@ -6553,7 +6553,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
     # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
-    # @return [Array<(GetUserDedicatedNumbersResponse, Fixnum, Hash)>] GetUserDedicatedNumbersResponse data, response status code and response headers
+    # @return [Array<(GetUserDedicatedNumbersPaginatedResponse, Fixnum, Hash)>] GetUserDedicatedNumbersPaginatedResponse data, response status code and response headers
     def get_user_dedicated_numbers_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_user_dedicated_numbers ...'
@@ -6586,7 +6586,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetUserDedicatedNumbersResponse')
+        :return_type => 'GetUserDedicatedNumbersPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_user_dedicated_numbers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -6600,7 +6600,7 @@ module TextMagic
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @option opts [Integer] :favorite_only Return only favorite lists (default to 0)
     # @option opts [Integer] :only_mine Return only current user lists (default to 0)
-    # @return [GetUserListsResponse]
+    # @return [GetUserListsPaginatedResponse]
     def get_user_lists(opts = {})
       data, _status_code, _headers = get_user_lists_with_http_info(opts)
       data
@@ -6614,7 +6614,7 @@ module TextMagic
     # @option opts [String] :direction Order direction. Default is desc
     # @option opts [Integer] :favorite_only Return only favorite lists
     # @option opts [Integer] :only_mine Return only current user lists
-    # @return [Array<(GetUserListsResponse, Fixnum, Hash)>] GetUserListsResponse data, response status code and response headers
+    # @return [Array<(GetUserListsPaginatedResponse, Fixnum, Hash)>] GetUserListsPaginatedResponse data, response status code and response headers
     def get_user_lists_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_user_lists ...'
@@ -6656,7 +6656,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetUserListsResponse')
+        :return_type => 'GetUserListsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_user_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7263,7 +7263,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :query Find chats by specified search query
-    # @return [SearchChatsResponse]
+    # @return [SearchChatsPaginatedResponse]
     def search_chats(opts = {})
       data, _status_code, _headers = search_chats_with_http_info(opts)
       data
@@ -7274,7 +7274,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :query Find chats by specified search query
-    # @return [Array<(SearchChatsResponse, Fixnum, Hash)>] SearchChatsResponse data, response status code and response headers
+    # @return [Array<(SearchChatsPaginatedResponse, Fixnum, Hash)>] SearchChatsPaginatedResponse data, response status code and response headers
     def search_chats_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_chats ...'
@@ -7307,7 +7307,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchChatsResponse')
+        :return_type => 'SearchChatsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_chats\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7318,7 +7318,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page (default to 1)
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :ids Find chats by ID(s)
-    # @return [SearchChatsByIdsResponse]
+    # @return [SearchChatsByIdsPaginatedResponse]
     def search_chats_by_ids(opts = {})
       data, _status_code, _headers = search_chats_by_ids_with_http_info(opts)
       data
@@ -7329,7 +7329,7 @@ module TextMagic
     # @option opts [Integer] :page Fetch specified results page
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :ids Find chats by ID(s)
-    # @return [Array<(SearchChatsByIdsResponse, Fixnum, Hash)>] SearchChatsByIdsResponse data, response status code and response headers
+    # @return [Array<(SearchChatsByIdsPaginatedResponse, Fixnum, Hash)>] SearchChatsByIdsPaginatedResponse data, response status code and response headers
     def search_chats_by_ids_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_chats_by_ids ...'
@@ -7366,7 +7366,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchChatsByIdsResponse')
+        :return_type => 'SearchChatsByIdsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_chats_by_ids\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7378,7 +7378,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return (default to 10)
     # @option opts [String] :query Find chats by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @return [SearchChatsByReceipentResponse]
+    # @return [SearchChatsByReceipentPaginatedResponse]
     def search_chats_by_receipent(opts = {})
       data, _status_code, _headers = search_chats_by_receipent_with_http_info(opts)
       data
@@ -7390,7 +7390,7 @@ module TextMagic
     # @option opts [Integer] :limit How many results to return
     # @option opts [String] :query Find chats by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
-    # @return [Array<(SearchChatsByReceipentResponse, Fixnum, Hash)>] SearchChatsByReceipentResponse data, response status code and response headers
+    # @return [Array<(SearchChatsByReceipentPaginatedResponse, Fixnum, Hash)>] SearchChatsByReceipentPaginatedResponse data, response status code and response headers
     def search_chats_by_receipent_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_chats_by_receipent ...'
@@ -7427,7 +7427,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchChatsByReceipentResponse')
+        :return_type => 'SearchChatsByReceipentPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_chats_by_receipent\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7446,7 +7446,7 @@ module TextMagic
     # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [SearchContactsResponse]
+    # @return [SearchContactsPaginatedResponse]
     def search_contacts(opts = {})
       data, _status_code, _headers = search_contacts_with_http_info(opts)
       data
@@ -7465,7 +7465,7 @@ module TextMagic
     # @option opts [String] :country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(SearchContactsResponse, Fixnum, Hash)>] SearchContactsResponse data, response status code and response headers
+    # @return [Array<(SearchContactsPaginatedResponse, Fixnum, Hash)>] SearchContactsPaginatedResponse data, response status code and response headers
     def search_contacts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_contacts ...'
@@ -7516,7 +7516,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchContactsResponse')
+        :return_type => 'SearchContactsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_contacts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7531,7 +7531,7 @@ module TextMagic
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId (default to 0)
-    # @return [SearchInboundMessagesResponse]
+    # @return [SearchInboundMessagesPaginatedResponse]
     def search_inbound_messages(opts = {})
       data, _status_code, _headers = search_inbound_messages_with_http_info(opts)
       data
@@ -7546,7 +7546,7 @@ module TextMagic
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
     # @option opts [Integer] :expand Expand by adding firstName, lastName and contactId
-    # @return [Array<(SearchInboundMessagesResponse, Fixnum, Hash)>] SearchInboundMessagesResponse data, response status code and response headers
+    # @return [Array<(SearchInboundMessagesPaginatedResponse, Fixnum, Hash)>] SearchInboundMessagesPaginatedResponse data, response status code and response headers
     def search_inbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_inbound_messages ...'
@@ -7593,7 +7593,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchInboundMessagesResponse')
+        :return_type => 'SearchInboundMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_inbound_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7609,7 +7609,7 @@ module TextMagic
     # @option opts [Integer] :only_default Return only default lists (default to 0)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [SearchListsResponse]
+    # @return [SearchListsPaginatedResponse]
     def search_lists(opts = {})
       data, _status_code, _headers = search_lists_with_http_info(opts)
       data
@@ -7625,7 +7625,7 @@ module TextMagic
     # @option opts [Integer] :only_default Return only default lists
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(SearchListsResponse, Fixnum, Hash)>] SearchListsResponse data, response status code and response headers
+    # @return [Array<(SearchListsPaginatedResponse, Fixnum, Hash)>] SearchListsPaginatedResponse data, response status code and response headers
     def search_lists_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_lists ...'
@@ -7669,7 +7669,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchListsResponse')
+        :return_type => 'SearchListsPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7686,7 +7686,7 @@ module TextMagic
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages (default to 0)
     # @option opts [String] :query Find messages by specified search query
-    # @return [SearchOutboundMessagesResponse]
+    # @return [SearchOutboundMessagesPaginatedResponse]
     def search_outbound_messages(opts = {})
       data, _status_code, _headers = search_outbound_messages_with_http_info(opts)
       data
@@ -7703,7 +7703,7 @@ module TextMagic
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages
     # @option opts [String] :query Find messages by specified search query
-    # @return [Array<(SearchOutboundMessagesResponse, Fixnum, Hash)>] SearchOutboundMessagesResponse data, response status code and response headers
+    # @return [Array<(SearchOutboundMessagesPaginatedResponse, Fixnum, Hash)>] SearchOutboundMessagesPaginatedResponse data, response status code and response headers
     def search_outbound_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_outbound_messages ...'
@@ -7748,7 +7748,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchOutboundMessagesResponse')
+        :return_type => 'SearchOutboundMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_outbound_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7763,7 +7763,7 @@ module TextMagic
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @return [SearchScheduledMessagesResponse]
+    # @return [SearchScheduledMessagesPaginatedResponse]
     def search_scheduled_messages(opts = {})
       data, _status_code, _headers = search_scheduled_messages_with_http_info(opts)
       data
@@ -7778,7 +7778,7 @@ module TextMagic
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
-    # @return [Array<(SearchScheduledMessagesResponse, Fixnum, Hash)>] SearchScheduledMessagesResponse data, response status code and response headers
+    # @return [Array<(SearchScheduledMessagesPaginatedResponse, Fixnum, Hash)>] SearchScheduledMessagesPaginatedResponse data, response status code and response headers
     def search_scheduled_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_scheduled_messages ...'
@@ -7828,7 +7828,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchScheduledMessagesResponse')
+        :return_type => 'SearchScheduledMessagesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_scheduled_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -7841,7 +7841,7 @@ module TextMagic
     # @option opts [String] :ids Find template by ID(s)
     # @option opts [String] :name Find template by name
     # @option opts [String] :content Find template by content
-    # @return [SearchTemplatesResponse]
+    # @return [SearchTemplatesPaginatedResponse]
     def search_templates(opts = {})
       data, _status_code, _headers = search_templates_with_http_info(opts)
       data
@@ -7854,7 +7854,7 @@ module TextMagic
     # @option opts [String] :ids Find template by ID(s)
     # @option opts [String] :name Find template by name
     # @option opts [String] :content Find template by content
-    # @return [Array<(SearchTemplatesResponse, Fixnum, Hash)>] SearchTemplatesResponse data, response status code and response headers
+    # @return [Array<(SearchTemplatesPaginatedResponse, Fixnum, Hash)>] SearchTemplatesPaginatedResponse data, response status code and response headers
     def search_templates_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.search_templates ...'
@@ -7889,7 +7889,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SearchTemplatesResponse')
+        :return_type => 'SearchTemplatesPaginatedResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#search_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
