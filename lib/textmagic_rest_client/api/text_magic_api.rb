@@ -555,7 +555,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Close subaccount.
+    # Close sub-account
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -565,7 +565,7 @@ module TextMagic
       nil
     end
 
-    # Close subaccount.
+    # Close sub-account
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1139,7 +1139,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete an avatar for the current user.\\
+    # Delete an avatar
     # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1148,7 +1148,7 @@ module TextMagic
       nil
     end
 
-    # Delete an avatar for the current user.\\
+    # Delete an avatar
     # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -4494,7 +4494,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get current user info.
+    # Get current account information
     # 
     # @param [Hash] opts the optional parameters
     # @return [User]
@@ -4503,7 +4503,7 @@ module TextMagic
       data
     end
 
-    # Get current user info.
+    # Get current account information
     # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
@@ -4704,8 +4704,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Get disallowed permissions
     # Get an array of all rules that are disallowed to the current account.
-    # 
     # @param [Hash] opts the optional parameters
     # @return [GetDisallowedRulesResponse]
     def get_disallowed_rules(opts = {})
@@ -4713,8 +4713,8 @@ module TextMagic
       data
     end
 
+    # Get disallowed permissions
     # Get an array of all rules that are disallowed to the current account.
-    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetDisallowedRulesResponse, Fixnum, Hash)>] GetDisallowedRulesResponse data, response status code and response headers
     def get_disallowed_rules_with_http_info(opts = {})
@@ -4911,8 +4911,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return account invoices.
-    # 
+    # Get all invoices
+    # With the TextMagic API, you can check the invoices and transactions for your account.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4922,8 +4922,8 @@ module TextMagic
       data
     end
 
-    # Return account invoices.
-    # 
+    # Get all invoices
+    # With the TextMagic API, you can check the invoices and transactions for your account.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -5562,8 +5562,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return counters for messaging data views.
-    # 
+    # Get sent/received messages counters values
+    # Get total contacts, sent messages and received messages counters values.
     # @param [Hash] opts the optional parameters
     # @return [GetMessagingCountersResponse]
     def get_messaging_counters(opts = {})
@@ -5571,8 +5571,8 @@ module TextMagic
       data
     end
 
-    # Return counters for messaging data views.
-    # 
+    # Get sent/received messages counters values
+    # Get total contacts, sent messages and received messages counters values.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetMessagingCountersResponse, Fixnum, Hash)>] GetMessagingCountersResponse data, response status code and response headers
     def get_messaging_counters_with_http_info(opts = {})
@@ -5610,24 +5610,24 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return messaging statistics.
+    # Get messaging statistics
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off (default to off)
-    # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
-    # @option opts [String] :_end End date in unix timestamp format. Default is now
+    # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  (default to off)
+    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [GetMessagingStatResponse]
     def get_messaging_stat(opts = {})
       data, _status_code, _headers = get_messaging_stat_with_http_info(opts)
       data
     end
 
-    # Return messaging statistics.
+    # Get messaging statistics
     # 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off
-    # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
-    # @option opts [String] :_end End date in unix timestamp format. Default is now
+    # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [Array<(GetMessagingStatResponse, Fixnum, Hash)>] GetMessagingStatResponse data, response status code and response headers
     def get_messaging_stat_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6054,26 +6054,26 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return account spending statistics.
+    # Get spending statistics
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
-    # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
+    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [GetSpendingStatPaginatedResponse]
     def get_spending_stat(opts = {})
       data, _status_code, _headers = get_spending_stat_with_http_info(opts)
       data
     end
 
-    # Return account spending statistics.
+    # Get spending statistics
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
-    # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
+    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [Array<(GetSpendingStatPaginatedResponse, Fixnum, Hash)>] GetSpendingStatPaginatedResponse data, response status code and response headers
     def get_spending_stat_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6162,7 +6162,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single subaccount.
+    # Get sub-account information
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -6172,7 +6172,7 @@ module TextMagic
       data
     end
 
-    # Get a single subaccount.
+    # Get sub-account information
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -6216,7 +6216,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all subaccounts of current user.
+    # Get sub-accounts list
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -6227,7 +6227,7 @@ module TextMagic
       data
     end
 
-    # Get all subaccounts of current user.
+    # Get sub-accounts list
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -6270,8 +6270,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all subaccounts with their REST API tokens associated with specified app name.
-    # When more than one token related to app name, last key will be returned.
+    # Get all sub-accounts with their REST API tokens associated with app name
+    # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page. (default to 1)
@@ -6282,8 +6282,8 @@ module TextMagic
       data
     end
 
-    # Get all subaccounts with their REST API tokens associated with specified app name.
-    # When more than one token related to app name, last key will be returned.
+    # Get all sub-accounts with their REST API tokens associated with app name
+    # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :page Fetch specified results page.
@@ -6984,7 +6984,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Invite new subaccount.
+    # Invite a new sub-account
     # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
@@ -6994,7 +6994,7 @@ module TextMagic
       nil
     end
 
-    # Invite new subaccount.
+    # Invite a new sub-account
     # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
@@ -7392,7 +7392,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Request a new REST API token for subaccount.
+    # Request a new REST API token for sub-account
     # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
@@ -7402,7 +7402,7 @@ module TextMagic
       data
     end
 
-    # Request a new REST API token for subaccount.
+    # Request a new REST API token for sub-account
     # Returning user object, key and app name.
     # @param request_new_subaccount_token_input_object 
     # @param [Hash] opts the optional parameters
@@ -9001,7 +9001,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update current user info.
+    # Edit current account info
     # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
@@ -9011,7 +9011,7 @@ module TextMagic
       data
     end
 
-    # Update current user info.
+    # Edit current account info
     # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
@@ -9564,7 +9564,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Add an avatar for the current user.
+    # Upload an avatar
     # 
     # @param image User avatar. Should be PNG or JPG file not more than 10 MB
     # @param [Hash] opts the optional parameters
@@ -9574,7 +9574,7 @@ module TextMagic
       nil
     end
 
-    # Add an avatar for the current user.
+    # Upload an avatar
     # 
     # @param image User avatar. Should be PNG or JPG file not more than 10 MB
     # @param [Hash] opts the optional parameters

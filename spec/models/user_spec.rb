@@ -65,6 +65,10 @@ describe 'User' do
   describe 'test attribute "status"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["A", "T"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.status = value }.not_to raise_error
+      # end
     end
   end
 
@@ -107,6 +111,10 @@ describe 'User' do
   describe 'test attribute "subaccount_type"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["P", "A", "U"])
+      # validator.allowable_values.each do |value|
+      #   expect { @instance.subaccount_type = value }.not_to raise_error
+      # end
     end
   end
 

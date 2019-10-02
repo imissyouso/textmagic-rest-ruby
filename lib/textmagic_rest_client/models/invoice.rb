@@ -14,14 +14,19 @@ require 'date'
 
 module TextMagic
   class Invoice
+    # The invoice ID.
     attr_accessor :id
 
+    # Top up amount.
     attr_accessor :bundle
 
+    # Top up currency.
     attr_accessor :currency
 
+    # VAT charged (if any).
     attr_accessor :vat
 
+    # Payment method description.
     attr_accessor :payment_method
 
     # Attribute mapping from ruby-style variable name to JSON key.

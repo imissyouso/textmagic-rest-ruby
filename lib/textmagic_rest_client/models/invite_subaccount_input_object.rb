@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class InviteSubaccountInputObject
-    # Subaccount email
+    # Invitation email will be sent to this email address.
     attr_accessor :email
 
-    # Subaccount role: A for administrator or U for regular user
+    # Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
     attr_accessor :role
 
     class EnumAttributeValidator

@@ -14,19 +14,24 @@ require 'date'
 
 module TextMagic
   class UpdateCurrentUserResponse
+    # Username.
     attr_accessor :username
 
+    # Account first name.
     attr_accessor :first_name
 
+    # Account last name.
     attr_accessor :last_name
 
+    # User email address.
     attr_accessor :email
 
     attr_accessor :phone
 
+    # Account company name.
     attr_accessor :company
 
-    # timezone id
+    # Internal timezone ID
     attr_accessor :timezone
 
     # Attribute mapping from ruby-style variable name to JSON key.

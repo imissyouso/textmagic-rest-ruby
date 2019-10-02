@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class Currency
+    # Three-letter ISO currency ID.
     attr_accessor :id
 
+    # Unicode-compatible currency symbol.
     attr_accessor :unicode_symbol
 
+    # HTML-compatible currency symbol.
     attr_accessor :html_symbol
 
     # Attribute mapping from ruby-style variable name to JSON key.

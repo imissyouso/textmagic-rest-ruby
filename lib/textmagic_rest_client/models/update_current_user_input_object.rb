@@ -16,17 +16,20 @@ module TextMagic
   class UpdateCurrentUserInputObject
     attr_accessor :username
 
+    # Account first name.
     attr_accessor :first_name
 
+    # Account last name.
     attr_accessor :last_name
 
     attr_accessor :email
 
     attr_accessor :phone
 
+    # Account company name.
     attr_accessor :company
 
-    # timezone id
+    # The timezome internal id
     attr_accessor :timezone
 
     # Attribute mapping from ruby-style variable name to JSON key.

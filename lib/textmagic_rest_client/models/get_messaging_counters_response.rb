@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class GetMessagingCountersResponse
+    # Total contacts amount.
     attr_accessor :contacts
 
+    # Total sent messages amount.
     attr_accessor :sent
 
+    # Total received messages amount.
     attr_accessor :received
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,26 +14,37 @@ require 'date'
 
 module TextMagic
   class MessagingStatItem
+    # the number of incoming messages divided by the number of total messages.
     attr_accessor :reply_rate
 
+    # Time interval start, empty if the **by** parameter was set to **off**. 
     attr_accessor :date
 
+    # Message delivery rate:the number of delivered messages divided by the number of total messages.
     attr_accessor :delivery_rate
 
+    # Cost for sent messages during this period. The costs are in the [Account](/docs/api/account/) currency. TODO 
     attr_accessor :costs
 
+    # Total received messages count.
     attr_accessor :messages_received
 
+    # Delivered messages count. As messages are retried for up to 48 hours, this value could change.
     attr_accessor :messages_sent_delivered
 
+    # Messages accepted for delivery (in queue), but not yet delivered.
     attr_accessor :messages_sent_accepted
 
+    # Messages buffered by endpoint cell phone operators.
     attr_accessor :messages_sent_buffered
 
+    # Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient phone account is out of service.
     attr_accessor :messages_sent_failed
 
+    # Messages that were rejected: invalid Sender ID used (e.g. you cannot use the Sender ID or your own mobile number when sending to the United States and Canada.) 
     attr_accessor :messages_sent_rejected
 
+    # Total sent messages **parts** count. Note that this is not equal to the sent messages count, because one message could consist of 1 to 6 parts and users are charged per part, not per message.
     attr_accessor :messages_sent_parts
 
     # Attribute mapping from ruby-style variable name to JSON key.

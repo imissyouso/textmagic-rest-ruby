@@ -14,14 +14,18 @@ require 'date'
 
 module TextMagic
   class Timezone
+    # Internal timezone ID.
     attr_accessor :id
 
+    # Timezone area.
     attr_accessor :area
 
+    # Is Daylight saving time used in this timezone?
     attr_accessor :dst
 
     attr_accessor :offset
 
+    # User-friendly timezone name (with spaces replaced by underscores).
     attr_accessor :timezone
 
     # Attribute mapping from ruby-style variable name to JSON key.

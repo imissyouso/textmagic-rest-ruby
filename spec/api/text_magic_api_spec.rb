@@ -154,7 +154,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for close_subaccount
-  # Close subaccount.
+  # Close sub-account
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -286,7 +286,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_avatar
-  # Delete an avatar for the current user.\\
+  # Delete an avatar
   # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1062,7 +1062,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_current_user
-  # Get current user info.
+  # Get current account information
   # 
   # @param [Hash] opts the optional parameters
   # @return [User]
@@ -1110,8 +1110,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_disallowed_rules
+  # Get disallowed permissions
   # Get an array of all rules that are disallowed to the current account.
-  # 
   # @param [Hash] opts the optional parameters
   # @return [GetDisallowedRulesResponse]
   describe 'get_disallowed_rules test' do
@@ -1158,8 +1158,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_invoices
-  # Return account invoices.
-  # 
+  # Get all invoices
+  # With the TextMagic API, you can check the invoices and transactions for your account.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
@@ -1318,8 +1318,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_messaging_counters
-  # Return counters for messaging data views.
-  # 
+  # Get sent/received messages counters values
+  # Get total contacts, sent messages and received messages counters values.
   # @param [Hash] opts the optional parameters
   # @return [GetMessagingCountersResponse]
   describe 'get_messaging_counters test' do
@@ -1329,12 +1329,12 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_messaging_stat
-  # Return messaging statistics.
+  # Get messaging statistics
   # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off
-  # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
-  # @option opts [String] :_end End date in unix timestamp format. Default is now
+  # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+  # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
   # @return [GetMessagingStatResponse]
   describe 'get_messaging_stat test' do
     it 'should work' do
@@ -1431,13 +1431,13 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_spending_stat
-  # Return account spending statistics.
+  # Get spending statistics
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
-  # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
+  # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
   # @return [GetSpendingStatPaginatedResponse]
   describe 'get_spending_stat test' do
     it 'should work' do
@@ -1457,7 +1457,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_subaccount
-  # Get a single subaccount.
+  # Get sub-account information
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1469,7 +1469,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_subaccounts
-  # Get all subaccounts of current user.
+  # Get sub-accounts list
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1482,8 +1482,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_subaccounts_with_tokens
-  # Get all subaccounts with their REST API tokens associated with specified app name.
-  # When more than one token related to app name, last key will be returned.
+  # Get all sub-accounts with their REST API tokens associated with app name
+  # Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
   # @param get_subaccounts_with_tokens_input_object 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :page Fetch specified results page.
@@ -1647,7 +1647,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for invite_subaccount
-  # Invite new subaccount.
+  # Invite a new sub-account
   # 
   # @param invite_subaccount_input_object 
   # @param [Hash] opts the optional parameters
@@ -1742,7 +1742,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for request_new_subaccount_token
-  # Request a new REST API token for subaccount.
+  # Request a new REST API token for sub-account
   # Returning user object, key and app name.
   # @param request_new_subaccount_token_input_object 
   # @param [Hash] opts the optional parameters
@@ -2113,7 +2113,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_current_user
-  # Update current user info.
+  # Edit current account info
   # 
   # @param update_current_user_input_object 
   # @param [Hash] opts the optional parameters
@@ -2239,7 +2239,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for upload_avatar
-  # Add an avatar for the current user.
+  # Upload an avatar
   # 
   # @param image User avatar. Should be PNG or JPG file not more than 10 MB
   # @param [Hash] opts the optional parameters

@@ -16,18 +16,24 @@ module TextMagic
   class UserStatement
     attr_accessor :id
 
+    # User statement ID.
     attr_accessor :user_id
 
+    # User statement date.
     attr_accessor :date
 
     attr_accessor :balance
 
+    # Balance change amount.
     attr_accessor :delta
 
+    # Type of statement (what you have been charged for): *   **sms** for sending SMS *   **number** for renewing a dedicated number *   **schedule** for scheduling text messages *   **topup** for adding credits to your account 
     attr_accessor :type
 
+    # Value differs by **type**: *   for **sms**, it is the sent messages amount *   for **number**, it is a dedicated phone number *   for **schedule**, it is a scheduled messages amount *   for **top-up**, it is an invoice ID 
     attr_accessor :value
 
+    # Optional comment.
     attr_accessor :comment
 
     # Attribute mapping from ruby-style variable name to JSON key.

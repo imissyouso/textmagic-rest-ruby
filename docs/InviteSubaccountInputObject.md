@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** | Subaccount email | 
-**role** | **String** | Subaccount role: A for administrator or U for regular user | 
+**email** | **String** | Invitation email will be sent to this email address. | 
+**role** | **String** | Type of account: *   **A** for Administrator sub-account *   **U** for Regular User  | 
 
 
