@@ -20,7 +20,7 @@ module TextMagic
     # Template name.
     attr_accessor :name
 
-    # Template text. May contain the tags listed below @TODO.
+    # Template text. May contain the tags listed below TODO.
     attr_accessor :content
 
     # Time when template was last modified.

@@ -25,7 +25,7 @@ module TextMagic
 
     attr_accessor :text
 
-    # Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
+    # Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
     attr_accessor :status
 
     attr_accessor :contact_id
@@ -44,7 +44,7 @@ module TextMagic
 
     attr_accessor :charset_label
 
-    # @TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
+    # TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
     attr_accessor :first_name
 
     # Contact last name.
