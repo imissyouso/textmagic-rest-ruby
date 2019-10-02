@@ -14,20 +14,24 @@ require 'date'
 
 module TextMagic
   class UsersInbound
+    # Dedicated number ID.
     attr_accessor :id
+
+    # Dedicated phone number.
+    attr_accessor :phone
 
     attr_accessor :user
 
+    # Time when the dedicated number was purchased.
     attr_accessor :purchased_at
 
+    # Dedicated number subscription expiration time.
     attr_accessor :expire_at
 
-    # A - active, in use (at least one message was sent/received from/to this number), U - never used before
+    # Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. 
     attr_accessor :status
 
     attr_accessor :country
-
-    attr_accessor :phone
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -55,12 +59,12 @@ module TextMagic
     def self.attribute_map
       {
         :'id' => :'id',
+        :'phone' => :'phone',
         :'user' => :'user',
         :'purchased_at' => :'purchasedAt',
         :'expire_at' => :'expireAt',
         :'status' => :'status',
-        :'country' => :'country',
-        :'phone' => :'phone'
+        :'country' => :'country'
       }
     end
 
@@ -68,12 +72,12 @@ module TextMagic
     def self.swagger_types
       {
         :'id' => :'Integer',
+        :'phone' => :'String',
         :'user' => :'User',
         :'purchased_at' => :'DateTime',
         :'expire_at' => :'DateTime',
         :'status' => :'String',
-        :'country' => :'Country',
-        :'phone' => :'String'
+        :'country' => :'Country'
       }
     end
 
@@ -87,6 +91,10 @@ module TextMagic
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'phone')
+        self.phone = attributes[:'phone']
       end
 
       if attributes.has_key?(:'user')
@@ -107,10 +115,6 @@ module TextMagic
 
       if attributes.has_key?(:'country')
         self.country = attributes[:'country']
-      end
-
-      if attributes.has_key?(:'phone')
-        self.phone = attributes[:'phone']
       end
     end
 
@@ -175,12 +179,12 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          phone == o.phone &&
           user == o.user &&
           purchased_at == o.purchased_at &&
           expire_at == o.expire_at &&
           status == o.status &&
-          country == o.country &&
-          phone == o.phone
+          country == o.country
     end
 
     # @see the `==` method
@@ -192,7 +196,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, user, purchased_at, expire_at, status, country, phone].hash
+      [id, phone, user, purchased_at, expire_at, status, country].hash
     end
 
     # Builds the object from hash

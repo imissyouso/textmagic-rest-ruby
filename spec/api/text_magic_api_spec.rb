@@ -58,8 +58,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for buy_dedicated_number
-  # Buy a dedicated number and assign it to the specified account.
-  # 
+  # Buy a dedicated number
+  # To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
   # @param buy_dedicated_number_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -253,7 +253,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_template
   # Create a template
-  # 
+  # There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
   # @param create_template_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -408,7 +408,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_dedicated_number
-  # Cancel dedicated number subscription.
+  # Cancel dedicated number subscription
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -578,7 +578,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_sender_id
-  # Delete a Sender ID.
+  # Delete a Sender ID
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -788,12 +788,12 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_available_dedicated_numbers
-  # Find available dedicated numbers to buy.
+  # Find dedicated numbers available for purchase
   # 
-  # @param country Dedicated number country. Two letters in upper case
+  # @param country Two-letter dedicated number country ISO code.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore.
-  # @option opts [Integer] :tollfree Should we show only tollfree numbers (tollfree available only for US). Default is false.
+  # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+  # @option opts [Integer] :tollfree Should we show only tollfree numbers (tollfree available only for US).
   # @return [GetAvailableDedicatedNumbersResponse]
   describe 'get_available_dedicated_numbers test' do
     it 'should work' do
@@ -802,10 +802,10 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_available_sender_setting_options
+  # Get available sender settings
   # Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
-  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :country Return sender setting options available in specific country only. Two upper case characters
+  # @option opts [String] :country Two-letter ISO country ID. If not specified, it returns all the available sender settings.
   # @return [GetAvailableSenderSettingOptionsResponse]
   describe 'get_available_sender_setting_options test' do
     it 'should work' do
@@ -1098,7 +1098,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_dedicated_number
-  # Get a single dedicated number.
+  # Get the details of a specific dedicated number
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1394,7 +1394,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_sender_id
-  # Get a single Sender ID.
+  # Get the details of a specific Sender ID
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1406,7 +1406,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_sender_ids
-  # Get all sender IDs of current user.
+  # Get all your approved Sender IDs
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1419,8 +1419,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_sender_settings
-  # Get current user sender settings.
-  # 
+  # Get current sender settings
+  # @TODO
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
   # @return [GetSenderSettingsResponse]
@@ -1605,7 +1605,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_user_dedicated_numbers
-  # Get user&#39;s dedicated numbers.
+  # Get all your dedicated numbers
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1754,8 +1754,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for request_sender_id
-  # Request for a new Sender ID.
-  # 
+  # Apply for a new Sender ID
+  # &gt; Sender IDs are shared between all of your sub-accounts.
   # @param request_sender_id_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -2188,8 +2188,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_sender_setting
-  # Change sender settings for specified country.
-  # 
+  # Change sender settings
+  # @TODO
   # @param update_sender_setting_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]

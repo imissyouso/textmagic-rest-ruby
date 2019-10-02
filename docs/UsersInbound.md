@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Integer** | Dedicated number ID. | 
+**phone** | **String** | Dedicated phone number. | [optional] 
 **user** | [**User**](User.md) |  | 
-**purchased_at** | **DateTime** |  | 
-**expire_at** | **DateTime** |  | 
-**status** | **String** | A - active, in use (at least one message was sent/received from/to this number), U - never used before | 
+**purchased_at** | **DateTime** | Time when the dedicated number was purchased. | 
+**expire_at** | **DateTime** | Dedicated number subscription expiration time. | 
+**status** | **String** | Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active.  | 
 **country** | [**Country**](Country.md) |  | 
-**phone** | **String** |  | [optional] 
 
 

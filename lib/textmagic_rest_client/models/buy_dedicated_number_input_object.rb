@@ -14,13 +14,13 @@ require 'date'
 
 module TextMagic
   class BuyDedicatedNumberInputObject
-    # Desired dedicated phone number in international E.164 format
+    # Dedicated phone number.
     attr_accessor :phone
 
-    # Dedicated number country. Two charactes in upper case.
+    # Country code phone number.
     attr_accessor :country
 
-    # User ID this number will be assigned to
+    # Assigned dedicated number. This number will be available for this account only. You cannot transfer numbers between sub-accounts. 
     attr_accessor :user_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

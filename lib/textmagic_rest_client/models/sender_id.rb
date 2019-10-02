@@ -14,13 +14,15 @@ require 'date'
 
 module TextMagic
   class SenderId
+    # Numeric sender ID.
     attr_accessor :id
 
+    # Alphanumeric ID.
     attr_accessor :sender_id
 
     attr_accessor :user
 
-    # A - accepted, R - rejected, P - pending
+    # *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. 
     attr_accessor :status
 
     class EnumAttributeValidator

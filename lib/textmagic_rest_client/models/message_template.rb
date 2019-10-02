@@ -14,12 +14,16 @@ require 'date'
 
 module TextMagic
   class MessageTemplate
+    # Template ID.
     attr_accessor :id
 
+    # Template name.
     attr_accessor :name
 
+    # Template text. May contain the tags listed below @TODO.
     attr_accessor :content
 
+    # Time when template was last modified.
     attr_accessor :last_modified
 
     # Attribute mapping from ruby-style variable name to JSON key.

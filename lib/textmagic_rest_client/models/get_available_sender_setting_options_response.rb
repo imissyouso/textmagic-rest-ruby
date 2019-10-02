@@ -14,12 +14,16 @@ require 'date'
 
 module TextMagic
   class GetAvailableSenderSettingOptionsResponse
+    # Array of dedicated numbers strings.
     attr_accessor :dedicated
 
+    # Array of verified account phone numbers (currently only one).
     attr_accessor :user
 
+    # Array of shared numbers strings.
     attr_accessor :shared
 
+    # Array of alphanumeric sender IDs.
     attr_accessor :sender_ids
 
     # Attribute mapping from ruby-style variable name to JSON key.
