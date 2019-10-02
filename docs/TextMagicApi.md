@@ -8,10 +8,12 @@ Method | HTTP request | Description
 [**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block contact from inbound and outbound communication by phone number.
 [**buy_dedicated_number**](TextMagicApi.md#buy_dedicated_number) | **POST** /api/v2/numbers | Buy a dedicated number and assign it to the specified account.
 [**cancel_survey**](TextMagicApi.md#cancel_survey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
+[**cancel_verification**](TextMagicApi.md#cancel_verification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
 [**check_phone_verification_code**](TextMagicApi.md#check_phone_verification_code) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
+[**check_phone_verification_code_0**](TextMagicApi.md#check_phone_verification_code_0) | **PUT** /api/v2/verify | Step 2: Check the verification code 
 [**clear_and_assign_contacts_to_list**](TextMagicApi.md#clear_and_assign_contacts_to_list) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts.
-[**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats by chat ids or close all chats
-[**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close all chats that have no unread messages.
+[**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
+[**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats
 [**close_subaccount**](TextMagicApi.md#close_subaccount) | **DELETE** /api/v2/subaccounts/{id} | Close subaccount.
 [**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts | Create a new contact from the submitted data.
 [**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
@@ -20,12 +22,12 @@ Method | HTTP request | Description
 [**create_push_token**](TextMagicApi.md#create_push_token) | **POST** /api/v2/push/tokens | Add or update a device token.
 [**create_survey**](TextMagicApi.md#create_survey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
 [**create_survey_node**](TextMagicApi.md#create_survey_node) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
-[**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a new template from the submitted data.
+[**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template
 [**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete all contacts.
 [**delete_all_outbound_messages**](TextMagicApi.md#delete_all_outbound_messages) | **DELETE** /api/v2/message/all | Delete all messages
 [**delete_avatar**](TextMagicApi.md#delete_avatar) | **DELETE** /api/v2/user/avatar | Delete an avatar for the current user.\\
-[**delete_chat_messages**](TextMagicApi.md#delete_chat_messages) | **POST** /api/v2/chats/{id}/messages/delete | Delete messages from chat by given messages ID(s).
-[**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats by given ID(s) or delete all chats.
+[**delete_chat_messages**](TextMagicApi.md#delete_chat_messages) | **POST** /api/v2/chats/{id}/messages/delete | Delete chat messages by ID(s)
+[**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats (bulk)
 [**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a single contact.
 [**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar for the contact.
 [**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a single contact note.
@@ -34,35 +36,35 @@ Method | HTTP request | Description
 [**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from the specified list.
 [**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a single custom field.
 [**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel dedicated number subscription.
-[**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete the incoming message.
-[**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages by given ID(s) or delete all inbound messages.
+[**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message
+[**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk)
 [**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a single list.
 [**delete_list_avatar**](TextMagicApi.md#delete_list_avatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for the list.
 [**delete_list_contacts_bulk**](TextMagicApi.md#delete_list_contacts_bulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contact from list by given ID(s) or all contacts from list.
 [**delete_lists_bulk**](TextMagicApi.md#delete_lists_bulk) | **POST** /api/v2/lists/delete | Delete list by given ID(s) or delete all lists.
-[**delete_message_session**](TextMagicApi.md#delete_message_session) | **DELETE** /api/v2/sessions/{id} | Delete a message session, together with all nested messages.
-[**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+[**delete_message_session**](TextMagicApi.md#delete_message_session) | **DELETE** /api/v2/sessions/{id} | Delete a session
+[**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
 [**delete_outbound_message**](TextMagicApi.md#delete_outbound_message) | **DELETE** /api/v2/messages/{id} | Delete message
-[**delete_outbound_messages_bulk**](TextMagicApi.md#delete_outbound_messages_bulk) | **POST** /api/v2/messages/delete | Delete messages by IDs
+[**delete_outbound_messages_bulk**](TextMagicApi.md#delete_outbound_messages_bulk) | **POST** /api/v2/messages/delete | Delete messages (bulk)
 [**delete_push_token**](TextMagicApi.md#delete_push_token) | **DELETE** /api/v2/push/tokens/{type}/{deviceId} | Delete a push notification device token.
-[**delete_scheduled_message**](TextMagicApi.md#delete_scheduled_message) | **DELETE** /api/v2/schedules/{id} | Delete a message session, together with all nested messages.
-[**delete_scheduled_messages_bulk**](TextMagicApi.md#delete_scheduled_messages_bulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages by given ID(s) or delete all scheduled messages.
+[**delete_scheduled_message**](TextMagicApi.md#delete_scheduled_message) | **DELETE** /api/v2/schedules/{id} | Delete a single scheduled message
+[**delete_scheduled_messages_bulk**](TextMagicApi.md#delete_scheduled_messages_bulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages (bulk)
 [**delete_sender_id**](TextMagicApi.md#delete_sender_id) | **DELETE** /api/v2/senderids/{id} | Delete a Sender ID.
 [**delete_survey**](TextMagicApi.md#delete_survey) | **DELETE** /api/v2/surveys/{id} | Delete a survey.
 [**delete_survey_node**](TextMagicApi.md#delete_survey_node) | **DELETE** /api/v2/surveys/nodes/{id} | Delete a node.
-[**delete_template**](TextMagicApi.md#delete_template) | **DELETE** /api/v2/templates/{id} | Delete a single template.
-[**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete template by given ID(s) or delete all templates.
+[**delete_template**](TextMagicApi.md#delete_template) | **DELETE** /api/v2/templates/{id} | Delete a template
+[**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete templates (bulk)
 [**do_auth**](TextMagicApi.md#do_auth) | **POST** /api/v2/auth | Authenticate user by given username and password.
 [**do_carrier_lookup**](TextMagicApi.md#do_carrier_lookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup
 [**do_email_lookup**](TextMagicApi.md#do_email_lookup) | **GET** /api/v2/email-lookups/{email} | Validate Email address using Email Lookup tool
 [**duplicate_survey**](TextMagicApi.md#duplicate_survey) | **PUT** /api/v2/surveys/{id}/duplicate | Duplicate a survey.
 [**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sending sessions.
-[**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all user chats.
-[**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbox messages.
-[**get_all_message_sessions**](TextMagicApi.md#get_all_message_sessions) | **GET** /api/v2/sessions | Get all message sending sessions.
+[**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all chats
+[**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbound messages
+[**get_all_message_sessions**](TextMagicApi.md#get_all_message_sessions) | **GET** /api/v2/sessions | Get all sessions
 [**get_all_outbound_messages**](TextMagicApi.md#get_all_outbound_messages) | **GET** /api/v2/messages | Get all messages
-[**get_all_scheduled_messages**](TextMagicApi.md#get_all_scheduled_messages) | **GET** /api/v2/schedules | Get all scheduled messages.
-[**get_all_templates**](TextMagicApi.md#get_all_templates) | **GET** /api/v2/templates | Get all user templates.
+[**get_all_scheduled_messages**](TextMagicApi.md#get_all_scheduled_messages) | **GET** /api/v2/schedules | Get all scheduled messages
+[**get_all_templates**](TextMagicApi.md#get_all_templates) | **GET** /api/v2/templates | Get all templates
 [**get_available_dedicated_numbers**](TextMagicApi.md#get_available_dedicated_numbers) | **GET** /api/v2/numbers/available | Find available dedicated numbers to buy.
 [**get_available_sender_setting_options**](TextMagicApi.md#get_available_sender_setting_options) | **GET** /api/v2/sources | Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
 [**get_balance_notification_options**](TextMagicApi.md#get_balance_notification_options) | **GET** /api/v2/user/notification/balance/bundles | Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
@@ -71,9 +73,9 @@ Method | HTTP request | Description
 [**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk message session status.
 [**get_callback_settings**](TextMagicApi.md#get_callback_settings) | **GET** /api/v2/callback/settings | Fetch callback URL settings
 [**get_calls_prices**](TextMagicApi.md#get_calls_prices) | **GET** /api/v2/calls/price | Check pricing for a inbound/outbound call.
-[**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat.
-[**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone.
-[**get_chat_messages**](TextMagicApi.md#get_chat_messages) | **GET** /api/v2/chats/{id}/message | Fetch messages from chat with specified chat id.
+[**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat
+[**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone
+[**get_chat_messages**](TextMagicApi.md#get_chat_messages) | **GET** /api/v2/chats/{id}/message | Get chat messages
 [**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get a single contact.
 [**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get a single contact by phone number.
 [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
@@ -90,8 +92,7 @@ Method | HTTP request | Description
 [**get_dedicated_number**](TextMagicApi.md#get_dedicated_number) | **GET** /api/v2/numbers/{id} | Get a single dedicated number.
 [**get_disallowed_rules**](TextMagicApi.md#get_disallowed_rules) | **GET** /api/v2/user/disallowed-rules | Get an array of all rules that are disallowed to the current account.
 [**get_favourites**](TextMagicApi.md#get_favourites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists.
-[**get_forwarded_calls**](TextMagicApi.md#get_forwarded_calls) | **GET** /api/v2/calls | Get all forwarded calls.
-[**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbox message.
+[**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message
 [**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**get_invoices**](TextMagicApi.md#get_invoices) | **GET** /api/v2/invoices | Return account invoices.
 [**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get a single list.
@@ -100,15 +101,15 @@ Method | HTTP request | Description
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price | Check price
 [**get_message_prices**](TextMagicApi.md#get_message_prices) | **GET** /api/v2/messages/prices | Get pricing
-[**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a message session.
-[**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get sending session statistics.
-[**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Fetch messages by given session id.
+[**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session details
+[**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session statistics
+[**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session messages
 [**get_messaging_counters**](TextMagicApi.md#get_messaging_counters) | **GET** /api/v2/stats/messaging/data | Return counters for messaging data views.
 [**get_messaging_stat**](TextMagicApi.md#get_messaging_stat) | **GET** /api/v2/stats/messaging | Return messaging statistics.
 [**get_outbound_message**](TextMagicApi.md#get_outbound_message) | **GET** /api/v2/messages/{id} | Get a single message
 [**get_outbound_messages_history**](TextMagicApi.md#get_outbound_messages_history) | **GET** /api/v2/history | Get history
 [**get_push_tokens**](TextMagicApi.md#get_push_tokens) | **GET** /api/v2/push/tokens | Get all device tokens assigned to the current account
-[**get_scheduled_message**](TextMagicApi.md#get_scheduled_message) | **GET** /api/v2/schedules/{id} | Get message schedule.
+[**get_scheduled_message**](TextMagicApi.md#get_scheduled_message) | **GET** /api/v2/schedules/{id} | Get a single scheduled message
 [**get_sender_id**](TextMagicApi.md#get_sender_id) | **GET** /api/v2/senderids/{id} | Get a single Sender ID.
 [**get_sender_ids**](TextMagicApi.md#get_sender_ids) | **GET** /api/v2/senderids | Get all sender IDs of current user.
 [**get_sender_settings**](TextMagicApi.md#get_sender_settings) | **GET** /api/v2/sender/settings | Get current user sender settings.
@@ -121,42 +122,43 @@ Method | HTTP request | Description
 [**get_survey_node**](TextMagicApi.md#get_survey_node) | **GET** /api/v2/surveys/nodes/{id} | Get a node by id.
 [**get_survey_nodes**](TextMagicApi.md#get_survey_nodes) | **GET** /api/v2/surveys/{id}/nodes | Fetch nodes by given survey id.
 [**get_surveys**](TextMagicApi.md#get_surveys) | **GET** /api/v2/surveys | Get all user surveys.
-[**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a single template.
+[**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template details
 [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Return all available timezone IDs.
-[**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get total amount of unread messages in the current user chats.
+[**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get a single unsubscribed contact.
 [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all contact have unsubscribed from your communication.
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get user&#39;s dedicated numbers.
 [**get_user_lists**](TextMagicApi.md#get_user_lists) | **GET** /api/v2/lists | Get all user lists.
 [**get_versions**](TextMagicApi.md#get_versions) | **GET** /api/v2/versions | Get minimal valid apps versions
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite new subaccount.
-[**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark several chats as read by chat ids or mark all chats as read
-[**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark several chats as UNread by chat ids or mark all chats as UNread
+[**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
+[**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
 [**merge_survey_nodes**](TextMagicApi.md#merge_survey_nodes) | **POST** /api/v2/surveys/nodes/merge | Merge two question nodes.
-[**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Set mute mode.
-[**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute several chats by chat ids or mute all chats
+[**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds
+[**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
 [**ping**](TextMagicApi.md#ping) | **GET** /api/v2/ping | Just does a pong.
-[**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats by chat ids or reopen all chats
+[**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for subaccount.
 [**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Request for a new Sender ID.
 [**reset_survey**](TextMagicApi.md#reset_survey) | **PUT** /api/v2/surveys/{id}/reset | Reset a survey flow.
-[**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by inbound or outbound messages text.
-[**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats by IDs.
-[**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient (contact, list name or phone number).
+[**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by message text
+[**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats (bulk)
+[**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
 [**search_contacts**](TextMagicApi.md#search_contacts) | **GET** /api/v2/contacts/search | Find user contacts by given parameters.
-[**search_inbound_messages**](TextMagicApi.md#search_inbound_messages) | **GET** /api/v2/replies/search | Find inbound messages by given parameters.
+[**search_inbound_messages**](TextMagicApi.md#search_inbound_messages) | **GET** /api/v2/replies/search | Find inbound messages
 [**search_lists**](TextMagicApi.md#search_lists) | **GET** /api/v2/lists/search | Find contact lists by given parameters.
 [**search_outbound_messages**](TextMagicApi.md#search_outbound_messages) | **GET** /api/v2/messages/search | Find messages
-[**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages by given parameters.
-[**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find user templates by given parameters.
+[**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages
+[**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find templates by criteria
 [**send_email_verification_code**](TextMagicApi.md#send_email_verification_code) | **GET** /api/v2/user/email/verification | Send user email verification
 [**send_message**](TextMagicApi.md#send_message) | **POST** /api/v2/messages | Send message
 [**send_phone_verification_code**](TextMagicApi.md#send_phone_verification_code) | **GET** /api/v2/user/phone/verification | Send user phone verification
-[**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Set status of the chat given by ID.
+[**send_phone_verification_code_0**](TextMagicApi.md#send_phone_verification_code_0) | **POST** /api/v2/verify | Step 1: Send a verification code 
+[**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status
 [**start_survey**](TextMagicApi.md#start_survey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
 [**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock several contacts by blocked contact ids or unblock all contacts
-[**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute several chats by chat ids or unmute all chats
+[**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
 [**unsubscribe_contact**](TextMagicApi.md#unsubscribe_contact) | **POST** /api/v2/unsubscribers | Unsubscribe contact from your communication by phone number.
 [**update_balance_notification_settings**](TextMagicApi.md#update_balance_notification_settings) | **PUT** /api/v2/user/notification/balance | Update balance notification settings
 [**update_callback_settings**](TextMagicApi.md#update_callback_settings) | **PUT** /api/v2/callback/settings | Update callback URL settings
@@ -172,7 +174,7 @@ Method | HTTP request | Description
 [**update_sender_setting**](TextMagicApi.md#update_sender_setting) | **PUT** /api/v2/sender/settings | Change sender settings for specified country.
 [**update_survey**](TextMagicApi.md#update_survey) | **PUT** /api/v2/surveys/{id} | Update existing survey.
 [**update_survey_node**](TextMagicApi.md#update_survey_node) | **PUT** /api/v2/surveys/nodes/{id} | Update existing node.
-[**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update existing template.
+[**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update a template
 [**upload_avatar**](TextMagicApi.md#upload_avatar) | **POST** /api/v2/user/avatar | Add an avatar for the current user.
 [**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Add an avatar for the contact.
 [**upload_list_avatar**](TextMagicApi.md#upload_list_avatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for the list.
@@ -183,6 +185,8 @@ Method | HTTP request | Description
 > ResourceLinkResponse assign_contacts_to_list(assign_contacts_to_list_input_object, id)
 
 Assign contacts to the specified list.
+
+
 
 ### Example
 ```ruby
@@ -238,6 +242,8 @@ Name | Type | Description  | Notes
 
 Block contact from inbound and outbound communication by phone number.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -289,6 +295,8 @@ Name | Type | Description  | Notes
 
 Buy a dedicated number and assign it to the specified account.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -339,6 +347,8 @@ nil (empty response body)
 
 Cancel a survey.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -385,10 +395,64 @@ Name | Type | Description  | Notes
 
 
 
+# **cancel_verification**
+> cancel_verification(verify_id)
+
+Cancel verification process
+
+You can cancel the verification not earlier than 30 seconds after the initial request.
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+verify_id = '\"123e4567-e89b-12d3-a456-426655440000\"' # String | the verifyId that you received in Step 1.
+
+
+begin
+  #Cancel verification process
+  api_instance.cancel_verification(verify_id)
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->cancel_verification: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verify_id** | **String**| the verifyId that you received in Step 1. | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **check_phone_verification_code**
 > check_phone_verification_code(check_phone_verification_code_input_object)
 
 Check user phone verification code
+
+
 
 ### Example
 ```ruby
@@ -435,10 +499,64 @@ nil (empty response body)
 
 
 
+# **check_phone_verification_code_0**
+> check_phone_verification_code_0(check_phone_verification_code_input_object)
+
+Step 2: Check the verification code 
+
+Check received code from user with the code which was actually sent.
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject1.new # CheckPhoneVerificationCodeInputObject1 | 
+
+
+begin
+  #Step 2: Check the verification code 
+  api_instance.check_phone_verification_code_0(check_phone_verification_code_input_object)
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->check_phone_verification_code_0: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject1**](CheckPhoneVerificationCodeInputObject1.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **clear_and_assign_contacts_to_list**
 > ResourceLinkResponse clear_and_assign_contacts_to_list(clear_and_assign_contacts_to_list_input_object, id)
 
 Reset list members to the specified contacts.
+
+
 
 ### Example
 ```ruby
@@ -492,6 +610,8 @@ Name | Type | Description  | Notes
 # **close_chats_bulk**
 > close_chats_bulk(close_chats_bulk_input_object)
 
+Close chats (bulk)
+
 Close chats by chat ids or close all chats
 
 ### Example
@@ -511,7 +631,7 @@ close_chats_bulk_input_object = TextMagic::CloseChatsBulkInputObject.new # Close
 
 
 begin
-  #Close chats by chat ids or close all chats
+  #Close chats (bulk)
   api_instance.close_chats_bulk(close_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_chats_bulk: #{e}"
@@ -542,6 +662,8 @@ nil (empty response body)
 # **close_read_chats**
 > close_read_chats
 
+Close read chats
+
 Close all chats that have no unread messages.
 
 ### Example
@@ -558,7 +680,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 begin
-  #Close all chats that have no unread messages.
+  #Close read chats
   api_instance.close_read_chats
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->close_read_chats: #{e}"
@@ -587,6 +709,8 @@ nil (empty response body)
 > close_subaccount(id)
 
 Close subaccount.
+
+
 
 ### Example
 ```ruby
@@ -638,6 +762,8 @@ nil (empty response body)
 
 Create a new contact from the submitted data.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -688,6 +814,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse create_contact_note(create_contact_note_input_object, id)
 
 Create a new contact note.
+
+
 
 ### Example
 ```ruby
@@ -743,6 +871,8 @@ Name | Type | Description  | Notes
 
 Create a new custom field from the submitted data.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -793,6 +923,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse create_list(create_list_input_object)
 
 Create a new list from the submitted data.
+
+
 
 ### Example
 ```ruby
@@ -845,6 +977,8 @@ Name | Type | Description  | Notes
 
 Add or update a device token.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -894,6 +1028,8 @@ nil (empty response body)
 > ResourceLinkResponse create_survey(create_survey_input_object)
 
 Create a new survey from the submitted data.
+
+
 
 ### Example
 ```ruby
@@ -945,6 +1081,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse create_survey_node(create_survey_node_input_object, id)
 
 Create a new node from the submitted data.
+
+
 
 ### Example
 ```ruby
@@ -998,7 +1136,9 @@ Name | Type | Description  | Notes
 # **create_template**
 > ResourceLinkResponse create_template(create_template_input_object)
 
-Create a new template from the submitted data.
+Create a template
+
+
 
 ### Example
 ```ruby
@@ -1017,7 +1157,7 @@ create_template_input_object = TextMagic::CreateTemplateInputObject.new # Create
 
 
 begin
-  #Create a new template from the submitted data.
+  #Create a template
   result = api_instance.create_template(create_template_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -1050,6 +1190,8 @@ Name | Type | Description  | Notes
 > delete_all_contacts
 
 Delete all contacts.
+
+
 
 ### Example
 ```ruby
@@ -1141,6 +1283,8 @@ nil (empty response body)
 
 Delete an avatar for the current user.\\
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1183,6 +1327,8 @@ nil (empty response body)
 # **delete_chat_messages**
 > delete_chat_messages(delete_chat_messages_bulk_input_object, id)
 
+Delete chat messages by ID(s)
+
 Delete messages from chat by given messages ID(s).
 
 ### Example
@@ -1204,7 +1350,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete messages from chat by given messages ID(s).
+  #Delete chat messages by ID(s)
   api_instance.delete_chat_messages(delete_chat_messages_bulk_input_object, id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chat_messages: #{e}"
@@ -1236,6 +1382,8 @@ nil (empty response body)
 # **delete_chats_bulk**
 > delete_chats_bulk(delete_chats_bulk_input_object)
 
+Delete chats (bulk)
+
 Delete chats by given ID(s) or delete all chats.
 
 ### Example
@@ -1255,7 +1403,7 @@ delete_chats_bulk_input_object = TextMagic::DeleteChatsBulkInputObject.new # Del
 
 
 begin
-  #Delete chats by given ID(s) or delete all chats.
+  #Delete chats (bulk)
   api_instance.delete_chats_bulk(delete_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_chats_bulk: #{e}"
@@ -1287,6 +1435,8 @@ nil (empty response body)
 > delete_contact(id)
 
 Delete a single contact.
+
+
 
 ### Example
 ```ruby
@@ -1338,6 +1488,8 @@ nil (empty response body)
 
 Delete an avatar for the contact.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1388,6 +1540,8 @@ nil (empty response body)
 
 Delete a single contact note.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1437,6 +1591,8 @@ nil (empty response body)
 > delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 
 Delete contact note by given ID(s) or delete all contact notes.
+
+
 
 ### Example
 ```ruby
@@ -1491,6 +1647,8 @@ nil (empty response body)
 
 Delete contact by given ID(s) or delete all contacts.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1540,6 +1698,8 @@ nil (empty response body)
 > delete_contacts_from_list(delete_contacs_from_list_object, id)
 
 Unassign contacts from the specified list.
+
+
 
 ### Example
 ```ruby
@@ -1594,6 +1754,8 @@ nil (empty response body)
 
 Delete a single custom field.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1644,6 +1806,8 @@ nil (empty response body)
 
 Cancel dedicated number subscription.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1692,7 +1856,9 @@ nil (empty response body)
 # **delete_inbound_message**
 > delete_inbound_message(id)
 
-Delete the incoming message.
+Delete a single inbound message
+
+> Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
 ### Example
 ```ruby
@@ -1707,11 +1873,11 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 1 # Integer | 
+id = 1 # Integer | The unique numeric ID for the inbound message.
 
 
 begin
-  #Delete the incoming message.
+  #Delete a single inbound message
   api_instance.delete_inbound_message(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_inbound_message: #{e}"
@@ -1722,7 +1888,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
+ **id** | **Integer**| The unique numeric ID for the inbound message. | 
 
 ### Return type
 
@@ -1742,7 +1908,9 @@ nil (empty response body)
 # **delete_inbound_messages_bulk**
 > delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
 
-Delete inbound messages by given ID(s) or delete all inbound messages.
+Delete inbound messages (bulk)
+
+> Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
 ### Example
 ```ruby
@@ -1761,7 +1929,7 @@ delete_inbound_messages_bulk_input_object = TextMagic::DeleteInboundMessagesBulk
 
 
 begin
-  #Delete inbound messages by given ID(s) or delete all inbound messages.
+  #Delete inbound messages (bulk)
   api_instance.delete_inbound_messages_bulk(delete_inbound_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_inbound_messages_bulk: #{e}"
@@ -1793,6 +1961,8 @@ nil (empty response body)
 > delete_list(id)
 
 Delete a single list.
+
+
 
 ### Example
 ```ruby
@@ -1844,6 +2014,8 @@ nil (empty response body)
 
 Delete an avatar for the list.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1893,6 +2065,8 @@ nil (empty response body)
 > delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 
 Delete contact from list by given ID(s) or all contacts from list.
+
+
 
 ### Example
 ```ruby
@@ -1947,6 +2121,8 @@ nil (empty response body)
 
 Delete list by given ID(s) or delete all lists.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -1995,7 +2171,9 @@ nil (empty response body)
 # **delete_message_session**
 > delete_message_session(id)
 
-Delete a message session, together with all nested messages.
+Delete a session
+
+
 
 ### Example
 ```ruby
@@ -2014,7 +2192,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a message session, together with all nested messages.
+  #Delete a session
   api_instance.delete_message_session(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_message_session: #{e}"
@@ -2045,7 +2223,9 @@ nil (empty response body)
 # **delete_message_sessions_bulk**
 > delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
 
-Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+Delete sessions (bulk)
+
+
 
 ### Example
 ```ruby
@@ -2064,7 +2244,7 @@ delete_message_sessions_bulk_input_object = TextMagic::DeleteMessageSessionsBulk
 
 
 begin
-  #Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+  #Delete sessions (bulk)
   api_instance.delete_message_sessions_bulk(delete_message_sessions_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_message_sessions_bulk: #{e}"
@@ -2147,7 +2327,7 @@ nil (empty response body)
 # **delete_outbound_messages_bulk**
 > delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
 
-Delete messages by IDs
+Delete messages (bulk)
 
 Delete outbound messages by given ID(s) or delete all outbound messages.
 
@@ -2168,7 +2348,7 @@ delete_outbound_messages_bulk_input_object = TextMagic::DeleteOutboundMessagesBu
 
 
 begin
-  #Delete messages by IDs
+  #Delete messages (bulk)
   api_instance.delete_outbound_messages_bulk(delete_outbound_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_outbound_messages_bulk: #{e}"
@@ -2200,6 +2380,8 @@ nil (empty response body)
 > delete_push_token(type, device_id)
 
 Delete a push notification device token.
+
+
 
 ### Example
 ```ruby
@@ -2252,7 +2434,9 @@ nil (empty response body)
 # **delete_scheduled_message**
 > delete_scheduled_message(id)
 
-Delete a message session, together with all nested messages.
+Delete a single scheduled message
+
+
 
 ### Example
 ```ruby
@@ -2271,7 +2455,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a message session, together with all nested messages.
+  #Delete a single scheduled message
   api_instance.delete_scheduled_message(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_scheduled_message: #{e}"
@@ -2302,7 +2486,9 @@ nil (empty response body)
 # **delete_scheduled_messages_bulk**
 > delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
 
-Delete scheduled messages by given ID(s) or delete all scheduled messages.
+Delete scheduled messages (bulk)
+
+
 
 ### Example
 ```ruby
@@ -2321,7 +2507,7 @@ delete_scheduled_messages_bulk_input_object = TextMagic::DeleteScheduledMessages
 
 
 begin
-  #Delete scheduled messages by given ID(s) or delete all scheduled messages.
+  #Delete scheduled messages (bulk)
   api_instance.delete_scheduled_messages_bulk(delete_scheduled_messages_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_scheduled_messages_bulk: #{e}"
@@ -2353,6 +2539,8 @@ nil (empty response body)
 > delete_sender_id(id)
 
 Delete a Sender ID.
+
+
 
 ### Example
 ```ruby
@@ -2404,6 +2592,8 @@ nil (empty response body)
 
 Delete a survey.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -2454,6 +2644,8 @@ nil (empty response body)
 
 Delete a node.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -2502,7 +2694,9 @@ nil (empty response body)
 # **delete_template**
 > delete_template(id)
 
-Delete a single template.
+Delete a template
+
+
 
 ### Example
 ```ruby
@@ -2521,7 +2715,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a single template.
+  #Delete a template
   api_instance.delete_template(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_template: #{e}"
@@ -2552,7 +2746,9 @@ nil (empty response body)
 # **delete_templates_bulk**
 > delete_templates_bulk(delete_templates_bulk_input_object)
 
-Delete template by given ID(s) or delete all templates.
+Delete templates (bulk)
+
+
 
 ### Example
 ```ruby
@@ -2571,7 +2767,7 @@ delete_templates_bulk_input_object = TextMagic::DeleteTemplatesBulkInputObject.n
 
 
 begin
-  #Delete template by given ID(s) or delete all templates.
+  #Delete templates (bulk)
   api_instance.delete_templates_bulk(delete_templates_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_templates_bulk: #{e}"
@@ -2651,6 +2847,8 @@ No authorization required
 
 Carrier Lookup
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -2706,6 +2904,8 @@ Name | Type | Description  | Notes
 
 Validate Email address using Email Lookup tool
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -2756,6 +2956,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse duplicate_survey(id)
 
 Duplicate a survey.
+
+
 
 ### Example
 ```ruby
@@ -2808,6 +3010,8 @@ Name | Type | Description  | Notes
 
 Get all bulk sending sessions.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -2822,8 +3026,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -2839,8 +3043,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -2860,7 +3064,9 @@ Name | Type | Description  | Notes
 # **get_all_chats**
 > GetAllChatsPaginatedResponse get_all_chats(opts)
 
-Get all user chats.
+Get all chats
+
+
 
 ### Example
 ```ruby
@@ -2877,15 +3083,15 @@ api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   status: 'status_example', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
   voice: 0, # Integer | Fetch results with voice calls
   flat: 0 # Integer | Should additional contact info be included
 }
 
 begin
-  #Get all user chats.
+  #Get all chats
   result = api_instance.get_all_chats(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -2898,8 +3104,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | **String**| Fetch only (a)ctive, (c)losed or (d)eleted chats | [optional] 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **voice** | **Integer**| Fetch results with voice calls | [optional] [default to 0]
  **flat** | **Integer**| Should additional contact info be included | [optional] [default to 0]
@@ -2922,7 +3128,9 @@ Name | Type | Description  | Notes
 # **get_all_inbound_messages**
 > GetAllInboundMessagesPaginatedResponse get_all_inbound_messages(opts)
 
-Get all inbox messages.
+Get all inbound messages
+
+
 
 ### Example
 ```ruby
@@ -2938,14 +3146,14 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc' # String | Order direction. Default is desc
 }
 
 begin
-  #Get all inbox messages.
+  #Get all inbound messages
   result = api_instance.get_all_inbound_messages(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -2957,8 +3165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
 
@@ -2980,7 +3188,9 @@ Name | Type | Description  | Notes
 # **get_all_message_sessions**
 > GetAllMessageSessionsPaginatedResponse get_all_message_sessions(opts)
 
-Get all message sending sessions.
+Get all sessions
+
+
 
 ### Example
 ```ruby
@@ -2996,12 +3206,12 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  #Get all message sending sessions.
+  #Get all sessions
   result = api_instance.get_all_message_sessions(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3013,8 +3223,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -3052,8 +3262,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   last_id: 56 # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified
 }
 
@@ -3070,8 +3280,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
 
 ### Return type
@@ -3092,7 +3302,9 @@ Name | Type | Description  | Notes
 # **get_all_scheduled_messages**
 > GetAllScheduledMessagesPaginatedResponse get_all_scheduled_messages(opts)
 
-Get all scheduled messages.
+Get all scheduled messages
+
+
 
 ### Example
 ```ruby
@@ -3108,15 +3320,15 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   status: 'x', # String | Fetch schedules with the specific status: a - actual, c - completed, x - all
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc' # String | Order direction. Default is desc
 }
 
 begin
-  #Get all scheduled messages.
+  #Get all scheduled messages
   result = api_instance.get_all_scheduled_messages(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3128,8 +3340,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **status** | **String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [optional] [default to x]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
@@ -3152,7 +3364,9 @@ Name | Type | Description  | Notes
 # **get_all_templates**
 > GetAllTemplatesPaginatedResponse get_all_templates(opts)
 
-Get all user templates.
+Get all templates
+
+
 
 ### Example
 ```ruby
@@ -3168,12 +3382,12 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
-  #Get all user templates.
+  #Get all templates
   result = api_instance.get_all_templates(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3185,8 +3399,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] 
- **limit** | **Integer**| How many results to return | [optional] 
+ **page** | **Integer**| Fetch specified results page. | [optional] 
+ **limit** | **Integer**| The number of results per page. | [optional] 
 
 ### Return type
 
@@ -3207,6 +3421,8 @@ Name | Type | Description  | Notes
 > GetAvailableDedicatedNumbersResponse get_available_dedicated_numbers(country, opts)
 
 Find available dedicated numbers to buy.
+
+
 
 ### Example
 ```ruby
@@ -3265,6 +3481,8 @@ Name | Type | Description  | Notes
 
 Get all available sender setting options which could be used in \"from\" parameter of POST messages method.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3317,6 +3535,8 @@ Name | Type | Description  | Notes
 
 Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3361,6 +3581,8 @@ This endpoint does not need any parameter.
 > GetBalanceNotificationSettingsResponse get_balance_notification_settings
 
 Get balance notification settings
+
+
 
 ### Example
 ```ruby
@@ -3407,6 +3629,8 @@ This endpoint does not need any parameter.
 
 Get blocked contacts.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3421,8 +3645,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find blocked contacts by specified search query
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc' # String | Order direction. Default is desc
@@ -3441,8 +3665,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find blocked contacts by specified search query | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
@@ -3466,6 +3690,8 @@ Name | Type | Description  | Notes
 > BulkSession get_bulk_session(id)
 
 Get bulk message session status.
+
+
 
 ### Example
 ```ruby
@@ -3518,6 +3744,8 @@ Name | Type | Description  | Notes
 
 Fetch callback URL settings
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3563,6 +3791,8 @@ This endpoint does not need any parameter.
 
 Check pricing for a inbound/outbound call.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3606,7 +3836,9 @@ This endpoint does not need any parameter.
 # **get_chat**
 > Chat get_chat(id)
 
-Get a single chat.
+Get a single chat
+
+
 
 ### Example
 ```ruby
@@ -3625,7 +3857,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a single chat.
+  #Get a single chat
   result = api_instance.get_chat(id)
   p result
 rescue TextMagic::ApiError => e
@@ -3657,7 +3889,9 @@ Name | Type | Description  | Notes
 # **get_chat_by_phone**
 > Chat get_chat_by_phone(phone, opts)
 
-Find chats by phone.
+Find chats by phone
+
+
 
 ### Example
 ```ruby
@@ -3680,7 +3914,7 @@ opts = {
 }
 
 begin
-  #Find chats by phone.
+  #Find chats by phone
   result = api_instance.get_chat_by_phone(phone, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3714,7 +3948,9 @@ Name | Type | Description  | Notes
 # **get_chat_messages**
 > GetChatMessagesPaginatedResponse get_chat_messages(id, opts)
 
-Fetch messages from chat with specified chat id.
+Get chat messages
+
+
 
 ### Example
 ```ruby
@@ -3732,8 +3968,8 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | 
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find messages by specified search query
   start: 56, # Integer | Return messages since specified timestamp only
   _end: 56, # Integer | Return messages up to specified timestamp only
@@ -3742,7 +3978,7 @@ opts = {
 }
 
 begin
-  #Fetch messages from chat with specified chat id.
+  #Get chat messages
   result = api_instance.get_chat_messages(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3755,8 +3991,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find messages by specified search query | [optional] 
  **start** | **Integer**| Return messages since specified timestamp only | [optional] 
  **_end** | **Integer**| Return messages up to specified timestamp only | [optional] 
@@ -3782,6 +4018,8 @@ Name | Type | Description  | Notes
 > Contact get_contact(id)
 
 Get a single contact.
+
+
 
 ### Example
 ```ruby
@@ -3834,6 +4072,8 @@ Name | Type | Description  | Notes
 
 Get a single contact by phone number.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3884,6 +4124,8 @@ Name | Type | Description  | Notes
 > Contact get_contact_if_blocked(phone)
 
 Check is that phone number blocked
+
+
 
 ### Example
 ```ruby
@@ -3936,6 +4178,8 @@ Name | Type | Description  | Notes
 
 Get contact import session progress.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -3986,6 +4230,8 @@ Name | Type | Description  | Notes
 > ContactNote get_contact_note(id)
 
 Get a single contact note.
+
+
 
 ### Example
 ```ruby
@@ -4038,6 +4284,8 @@ Name | Type | Description  | Notes
 
 Fetch notes assigned to the given contact.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4054,8 +4302,8 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | 
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -4072,8 +4320,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -4095,6 +4343,8 @@ Name | Type | Description  | Notes
 
 Get all user contacts.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4109,8 +4359,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   shared: 0, # Integer | Should shared contacts to be included
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc' # String | Order direction. Default is desc
@@ -4129,8 +4379,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **shared** | **Integer**| Should shared contacts to be included | [optional] [default to 0]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
@@ -4155,6 +4405,8 @@ Name | Type | Description  | Notes
 
 Get contacts autocomplete suggestions by given search term.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4171,7 +4423,7 @@ api_instance = TextMagic::TextMagicApi.new
 query = '\"A\"' # String | Find recipients by specified search query
 
 opts = { 
-  limit: 10, # Integer | How many results to return
+  limit: 10, # Integer | The number of results per page.
   lists: 0 # Integer | Should lists be returned or not
 }
 
@@ -4189,7 +4441,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| Find recipients by specified search query | 
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **lists** | **Integer**| Should lists be returned or not | [optional] [default to 0]
 
 ### Return type
@@ -4230,8 +4482,8 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | Given group Id.
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc' # String | Order direction. Default is desc
 }
@@ -4250,8 +4502,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Given group Id. | 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
 
@@ -4274,6 +4526,8 @@ Name | Type | Description  | Notes
 > GetCountriesResponse get_countries
 
 Return list of countries.
+
+
 
 ### Example
 ```ruby
@@ -4320,6 +4574,8 @@ This endpoint does not need any parameter.
 
 Get current user info.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4364,6 +4620,8 @@ This endpoint does not need any parameter.
 > UserCustomField get_custom_field(id)
 
 Get a single custom field.
+
+
 
 ### Example
 ```ruby
@@ -4416,6 +4674,8 @@ Name | Type | Description  | Notes
 
 Get all contact custom fields.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4430,8 +4690,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -4447,8 +4707,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -4469,6 +4729,8 @@ Name | Type | Description  | Notes
 > UsersInbound get_dedicated_number(id)
 
 Get a single dedicated number.
+
+
 
 ### Example
 ```ruby
@@ -4521,6 +4783,8 @@ Name | Type | Description  | Notes
 
 Get an array of all rules that are disallowed to the current account.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4566,6 +4830,8 @@ This endpoint does not need any parameter.
 
 Get favorite contacts and lists.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4580,8 +4846,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'A' # String | Find contacts or lists by specified search query
 }
 
@@ -4598,8 +4864,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find contacts or lists by specified search query | [optional] [default to A]
 
 ### Return type
@@ -4617,64 +4883,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_forwarded_calls**
-> GetForwardedCallsPaginatedResponse get_forwarded_calls(opts)
-
-Get all forwarded calls.
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
-}
-
-begin
-  #Get all forwarded calls.
-  result = api_instance.get_forwarded_calls(opts)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_forwarded_calls: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
-
-### Return type
-
-[**GetForwardedCallsPaginatedResponse**](GetForwardedCallsPaginatedResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **get_inbound_message**
 > MessageIn get_inbound_message(id)
 
-Get a single inbox message.
+Get a single inbound message
+
+
 
 ### Example
 ```ruby
@@ -4689,11 +4903,11 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 1 # Integer | 
+id = 1782832 # Integer | The unique numeric ID for the inbound message.
 
 
 begin
-  #Get a single inbox message.
+  #Get a single inbound message
   result = api_instance.get_inbound_message(id)
   p result
 rescue TextMagic::ApiError => e
@@ -4705,7 +4919,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
+ **id** | **Integer**| The unique numeric ID for the inbound message. | 
 
 ### Return type
 
@@ -4726,6 +4940,8 @@ Name | Type | Description  | Notes
 > GetInboundMessagesNotificationSettingsResponse get_inbound_messages_notification_settings
 
 Get inbound messages notification settings
+
+
 
 ### Example
 ```ruby
@@ -4772,6 +4988,8 @@ This endpoint does not need any parameter.
 
 Return account invoices.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4786,8 +5004,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -4803,8 +5021,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -4825,6 +5043,8 @@ Name | Type | Description  | Notes
 > Group get_list(id)
 
 Get a single list.
+
+
 
 ### Example
 ```ruby
@@ -4877,6 +5097,8 @@ Name | Type | Description  | Notes
 
 Fetch all contacts IDs belonging to the list with ID.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4928,6 +5150,8 @@ Name | Type | Description  | Notes
 
 Return lists which contact belongs to.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -4944,8 +5168,8 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | 
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -4962,8 +5186,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -5204,7 +5428,9 @@ This endpoint does not need any parameter.
 # **get_message_session**
 > MessageSession get_message_session(id)
 
-Get a message session.
+Get a session details
+
+
 
 ### Example
 ```ruby
@@ -5219,11 +5445,11 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 1 # Integer | 
+id = 1 # Integer | a session ID
 
 
 begin
-  #Get a message session.
+  #Get a session details
   result = api_instance.get_message_session(id)
   p result
 rescue TextMagic::ApiError => e
@@ -5235,7 +5461,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
+ **id** | **Integer**| a session ID | 
 
 ### Return type
 
@@ -5255,7 +5481,9 @@ Name | Type | Description  | Notes
 # **get_message_session_stat**
 > GetMessageSessionStatResponse get_message_session_stat(id, opts)
 
-Get sending session statistics.
+Get a session statistics
+
+
 
 ### Example
 ```ruby
@@ -5277,7 +5505,7 @@ opts = {
 }
 
 begin
-  #Get sending session statistics.
+  #Get a session statistics
   result = api_instance.get_message_session_stat(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5310,7 +5538,7 @@ Name | Type | Description  | Notes
 # **get_messages_by_session_id**
 > GetMessagesBySessionIdPaginatedResponse get_messages_by_session_id(id, opts)
 
-Fetch messages by given session id.
+Get a session messages
 
 A useful synonym for \"messages/search\" command with provided \"sessionId\" parameter.
 
@@ -5330,14 +5558,14 @@ api_instance = TextMagic::TextMagicApi.new
 id = 1 # Integer | 
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   statuses: 'statuses_example', # String | Find messages by status
   include_deleted: 0 # Integer | Search also in deleted messages
 }
 
 begin
-  #Fetch messages by given session id.
+  #Get a session messages
   result = api_instance.get_messages_by_session_id(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5350,8 +5578,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  | 
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **statuses** | **String**| Find messages by status | [optional] 
  **include_deleted** | **Integer**| Search also in deleted messages | [optional] [default to 0]
 
@@ -5374,6 +5602,8 @@ Name | Type | Description  | Notes
 > GetMessagingCountersResponse get_messaging_counters
 
 Return counters for messaging data views.
+
+
 
 ### Example
 ```ruby
@@ -5419,6 +5649,8 @@ This endpoint does not need any parameter.
 > GetMessagingStatResponse get_messaging_stat(opts)
 
 Return messaging statistics.
+
+
 
 ### Example
 ```ruby
@@ -5545,7 +5777,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  limit: 10, # Integer | How many results to return
+  limit: 10, # Integer | The number of results per page.
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID.
   query: 'query_example', # String | Find message by specified search query
   order_by: 'id', # String | Order results by some field. Default is id
@@ -5565,7 +5797,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. | [optional] 
  **query** | **String**| Find message by specified search query | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
@@ -5590,6 +5822,8 @@ Name | Type | Description  | Notes
 > GetPushTokensResponse get_push_tokens
 
 Get all device tokens assigned to the current account
+
+
 
 ### Example
 ```ruby
@@ -5634,7 +5868,9 @@ This endpoint does not need any parameter.
 # **get_scheduled_message**
 > MessagesIcs get_scheduled_message(id)
 
-Get message schedule.
+Get a single scheduled message
+
+
 
 ### Example
 ```ruby
@@ -5653,7 +5889,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get message schedule.
+  #Get a single scheduled message
   result = api_instance.get_scheduled_message(id)
   p result
 rescue TextMagic::ApiError => e
@@ -5686,6 +5922,8 @@ Name | Type | Description  | Notes
 > SenderId get_sender_id(id)
 
 Get a single Sender ID.
+
+
 
 ### Example
 ```ruby
@@ -5738,6 +5976,8 @@ Name | Type | Description  | Notes
 
 Get all sender IDs of current user.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -5752,8 +5992,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -5769,8 +6009,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -5791,6 +6031,8 @@ Name | Type | Description  | Notes
 > GetSenderSettingsResponse get_sender_settings(opts)
 
 Get current user sender settings.
+
+
 
 ### Example
 ```ruby
@@ -5844,6 +6086,8 @@ Name | Type | Description  | Notes
 
 Return account spending statistics.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -5858,8 +6102,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   start: 56, # Integer | Optional. Start date in unix timestamp format. Default is 7 days ago
   _end: 56 # Integer | Optional. End date in unix timestamp format. Default is now
 }
@@ -5877,8 +6121,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **start** | **Integer**| Optional. Start date in unix timestamp format. Default is 7 days ago | [optional] 
  **_end** | **Integer**| Optional. End date in unix timestamp format. Default is now | [optional] 
 
@@ -5901,6 +6145,8 @@ Name | Type | Description  | Notes
 > GetStateResponse get_state
 
 Get current entities state
+
+
 
 ### Example
 ```ruby
@@ -5946,6 +6192,8 @@ This endpoint does not need any parameter.
 > User get_subaccount(id)
 
 Get a single subaccount.
+
+
 
 ### Example
 ```ruby
@@ -5998,6 +6246,8 @@ Name | Type | Description  | Notes
 
 Get all subaccounts of current user.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6012,8 +6262,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -6029,8 +6279,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -6070,8 +6320,8 @@ api_instance = TextMagic::TextMagicApi.new
 get_subaccounts_with_tokens_input_object = TextMagic::GetSubaccountsWithTokensInputObject.new # GetSubaccountsWithTokensInputObject | 
 
 opts = { 
-  page: 1, # Float | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Float | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -6088,8 +6338,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **get_subaccounts_with_tokens_input_object** | [**GetSubaccountsWithTokensInputObject**](GetSubaccountsWithTokensInputObject.md)|  | 
- **page** | **Float**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Float**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -6110,6 +6360,8 @@ Name | Type | Description  | Notes
 > Survey get_survey(id)
 
 Get a survey by id.
+
+
 
 ### Example
 ```ruby
@@ -6162,6 +6414,8 @@ Name | Type | Description  | Notes
 
 Get a node by id.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6212,6 +6466,8 @@ Name | Type | Description  | Notes
 > GetSurveyNodesResponse get_survey_nodes(id)
 
 Fetch nodes by given survey id.
+
+
 
 ### Example
 ```ruby
@@ -6264,6 +6520,8 @@ Name | Type | Description  | Notes
 
 Get all user surveys.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6278,8 +6536,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -6295,8 +6553,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -6316,7 +6574,9 @@ Name | Type | Description  | Notes
 # **get_template**
 > MessageTemplate get_template(id)
 
-Get a single template.
+Get a template details
+
+
 
 ### Example
 ```ruby
@@ -6335,7 +6595,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a single template.
+  #Get a template details
   result = api_instance.get_template(id)
   p result
 rescue TextMagic::ApiError => e
@@ -6368,6 +6628,8 @@ Name | Type | Description  | Notes
 > GetTimezonesResponse get_timezones(opts)
 
 Return all available timezone IDs.
+
+
 
 ### Example
 ```ruby
@@ -6419,6 +6681,8 @@ Name | Type | Description  | Notes
 # **get_unread_messages_total**
 > GetUnreadMessagesTotalResponse get_unread_messages_total
 
+Get unread messages number
+
 Get total amount of unread messages in the current user chats.
 
 ### Example
@@ -6435,7 +6699,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 begin
-  #Get total amount of unread messages in the current user chats.
+  #Get unread messages number
   result = api_instance.get_unread_messages_total
   p result
 rescue TextMagic::ApiError => e
@@ -6465,6 +6729,8 @@ This endpoint does not need any parameter.
 > UnsubscribedContact get_unsubscribed_contact(id)
 
 Get a single unsubscribed contact.
+
+
 
 ### Example
 ```ruby
@@ -6517,6 +6783,8 @@ Name | Type | Description  | Notes
 
 Get all contact have unsubscribed from your communication.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6531,8 +6799,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10 # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10 # Integer | The number of results per page.
 }
 
 begin
@@ -6548,8 +6816,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
 
 ### Return type
 
@@ -6571,6 +6839,8 @@ Name | Type | Description  | Notes
 
 Get user's dedicated numbers.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6585,8 +6855,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   survey_id: 56 # Integer | Fetch only that numbers which are ready for the survey
 }
 
@@ -6603,8 +6873,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **survey_id** | **Integer**| Fetch only that numbers which are ready for the survey | [optional] 
 
 ### Return type
@@ -6627,6 +6897,8 @@ Name | Type | Description  | Notes
 
 Get all user lists.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -6641,8 +6913,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id
   direction: 'desc', # String | Order direction. Default is desc
   favorite_only: 0, # Integer | Return only favorite lists
@@ -6662,8 +6934,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
  **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
  **favorite_only** | **Integer**| Return only favorite lists | [optional] [default to 0]
@@ -6688,6 +6960,8 @@ Name | Type | Description  | Notes
 > GetVersionsResponse get_versions
 
 Get minimal valid apps versions
+
+
 
 ### Example
 ```ruby
@@ -6733,6 +7007,8 @@ This endpoint does not need any parameter.
 > invite_subaccount(invite_subaccount_input_object)
 
 Invite new subaccount.
+
+
 
 ### Example
 ```ruby
@@ -6782,6 +7058,8 @@ nil (empty response body)
 # **mark_chats_read_bulk**
 > mark_chats_read_bulk(mark_chats_read_bulk_input_object)
 
+Mark chats as read (bulk)
+
 Mark several chats as read by chat ids or mark all chats as read
 
 ### Example
@@ -6801,7 +7079,7 @@ mark_chats_read_bulk_input_object = TextMagic::MarkChatsReadBulkInputObject.new 
 
 
 begin
-  #Mark several chats as read by chat ids or mark all chats as read
+  #Mark chats as read (bulk)
   api_instance.mark_chats_read_bulk(mark_chats_read_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_read_bulk: #{e}"
@@ -6832,6 +7110,8 @@ nil (empty response body)
 # **mark_chats_unread_bulk**
 > mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
 
+Mark chats as unread (bulk)
+
 Mark several chats as UNread by chat ids or mark all chats as UNread
 
 ### Example
@@ -6851,7 +7131,7 @@ mark_chats_unread_bulk_input_object = TextMagic::MarkChatsUnreadBulkInputObject.
 
 
 begin
-  #Mark several chats as UNread by chat ids or mark all chats as UNread
+  #Mark chats as unread (bulk)
   api_instance.mark_chats_unread_bulk(mark_chats_unread_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mark_chats_unread_bulk: #{e}"
@@ -6883,6 +7163,8 @@ nil (empty response body)
 > merge_survey_nodes(merge_survey_nodes_input_object)
 
 Merge two question nodes.
+
+
 
 ### Example
 ```ruby
@@ -6932,7 +7214,9 @@ nil (empty response body)
 # **mute_chat**
 > ResourceLinkResponse mute_chat(mute_chat_input_object)
 
-Set mute mode.
+Mute chat sounds
+
+
 
 ### Example
 ```ruby
@@ -6951,7 +7235,7 @@ mute_chat_input_object = TextMagic::MuteChatInputObject.new # MuteChatInputObjec
 
 
 begin
-  #Set mute mode.
+  #Mute chat sounds
   result = api_instance.mute_chat(mute_chat_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -6983,6 +7267,8 @@ Name | Type | Description  | Notes
 # **mute_chats_bulk**
 > mute_chats_bulk(mute_chats_bulk_input_object)
 
+Mute chats (bulk)
+
 Mute several chats by chat ids or mute all chats
 
 ### Example
@@ -7002,7 +7288,7 @@ mute_chats_bulk_input_object = TextMagic::MuteChatsBulkInputObject.new # MuteCha
 
 
 begin
-  #Mute several chats by chat ids or mute all chats
+  #Mute chats (bulk)
   api_instance.mute_chats_bulk(mute_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->mute_chats_bulk: #{e}"
@@ -7034,6 +7320,8 @@ nil (empty response body)
 > PingResponse ping
 
 Just does a pong.
+
+
 
 ### Example
 ```ruby
@@ -7078,6 +7366,8 @@ This endpoint does not need any parameter.
 # **reopen_chats_bulk**
 > reopen_chats_bulk(reopen_chats_bulk_input_object)
 
+Reopen chats (bulk)
+
 Reopen chats by chat ids or reopen all chats
 
 ### Example
@@ -7097,7 +7387,7 @@ reopen_chats_bulk_input_object = TextMagic::ReopenChatsBulkInputObject.new # Reo
 
 
 begin
-  #Reopen chats by chat ids or reopen all chats
+  #Reopen chats (bulk)
   api_instance.reopen_chats_bulk(reopen_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->reopen_chats_bulk: #{e}"
@@ -7183,6 +7473,8 @@ Name | Type | Description  | Notes
 
 Request for a new Sender ID.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -7234,6 +7526,8 @@ Name | Type | Description  | Notes
 
 Reset a survey flow.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -7283,7 +7577,9 @@ Name | Type | Description  | Notes
 # **search_chats**
 > SearchChatsPaginatedResponse search_chats(opts)
 
-Find chats by inbound or outbound messages text.
+Find chats by message text
+
+
 
 ### Example
 ```ruby
@@ -7299,13 +7595,13 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example' # String | Find chats by specified search query
 }
 
 begin
-  #Find chats by inbound or outbound messages text.
+  #Find chats by message text
   result = api_instance.search_chats(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7317,8 +7613,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find chats by specified search query | [optional] 
 
 ### Return type
@@ -7339,7 +7635,9 @@ Name | Type | Description  | Notes
 # **search_chats_by_ids**
 > SearchChatsByIdsPaginatedResponse search_chats_by_ids(opts)
 
-Find chats by IDs.
+Find chats (bulk)
+
+
 
 ### Example
 ```ruby
@@ -7355,13 +7653,13 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example' # String | Find chats by ID(s)
 }
 
 begin
-  #Find chats by IDs.
+  #Find chats (bulk)
   result = api_instance.search_chats_by_ids(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7373,8 +7671,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **ids** | **String**| Find chats by ID(s) | [optional] 
 
 ### Return type
@@ -7395,6 +7693,8 @@ Name | Type | Description  | Notes
 # **search_chats_by_receipent**
 > SearchChatsByReceipentPaginatedResponse search_chats_by_receipent(opts)
 
+Find chats by recipient
+
 Find chats by recipient (contact, list name or phone number).
 
 ### Example
@@ -7411,14 +7711,14 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find chats by specified search query
   order_by: 'id' # String | Order results by some field. Default is id
 }
 
 begin
-  #Find chats by recipient (contact, list name or phone number).
+  #Find chats by recipient
   result = api_instance.search_chats_by_receipent(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7430,8 +7730,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find chats by specified search query | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
 
@@ -7455,6 +7755,8 @@ Name | Type | Description  | Notes
 
 Find user contacts by given parameters.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -7469,8 +7771,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   shared: 0, # Integer | Should shared contacts to be included
   ids: 'ids_example', # String | Find contact by ID(s)
   list_id: 56, # Integer | Find contact by List ID
@@ -7495,8 +7797,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **shared** | **Integer**| Should shared contacts to be included | [optional] [default to 0]
  **ids** | **String**| Find contact by ID(s) | [optional] 
  **list_id** | **Integer**| Find contact by List ID | [optional] 
@@ -7525,6 +7827,8 @@ Name | Type | Description  | Notes
 # **search_inbound_messages**
 > SearchInboundMessagesPaginatedResponse search_inbound_messages(opts)
 
+Find inbound messages
+
 Find inbound messages by given parameters.
 
 ### Example
@@ -7541,8 +7845,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example', # String | Find message by ID(s)
   query: 'query_example', # String | Find recipients by specified search query
   order_by: 'id', # String | Order results by some field. Default is id
@@ -7551,7 +7855,7 @@ opts = {
 }
 
 begin
-  #Find inbound messages by given parameters.
+  #Find inbound messages
   result = api_instance.search_inbound_messages(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7563,8 +7867,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **ids** | **String**| Find message by ID(s) | [optional] 
  **query** | **String**| Find recipients by specified search query | [optional] 
  **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
@@ -7591,6 +7895,8 @@ Name | Type | Description  | Notes
 
 Find contact lists by given parameters.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -7605,8 +7911,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: '\"1,2,3,4\"', # String | Find lists by ID(s)
   query: '\"A\"', # String | Find lists by specified search query
   only_mine: 0, # Integer | Return only current user lists
@@ -7628,8 +7934,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **ids** | **String**| Find lists by ID(s) | [optional] 
  **query** | **String**| Find lists by specified search query | [optional] 
  **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
@@ -7673,8 +7979,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   last_id: 56, # Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified
   ids: 'ids_example', # String | Find message by ID(s)
   session_id: 56, # Integer | Find messages by session ID
@@ -7696,8 +8002,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **last_id** | **Integer**| Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | [optional] 
  **ids** | **String**| Find message by ID(s) | [optional] 
  **session_id** | **Integer**| Find messages by session ID | [optional] 
@@ -7723,7 +8029,9 @@ Name | Type | Description  | Notes
 # **search_scheduled_messages**
 > SearchScheduledMessagesPaginatedResponse search_scheduled_messages(opts)
 
-Find scheduled messages by given parameters.
+Find scheduled messages
+
+
 
 ### Example
 ```ruby
@@ -7739,8 +8047,8 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   query: 'query_example', # String | Find messages by specified search query
   ids: 'ids_example', # String | Find schedules by ID(s)
   status: 'x', # String | Fetch schedules with the specific status: a - actual, c - completed, x - all
@@ -7749,7 +8057,7 @@ opts = {
 }
 
 begin
-  #Find scheduled messages by given parameters.
+  #Find scheduled messages
   result = api_instance.search_scheduled_messages(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7761,8 +8069,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **query** | **String**| Find messages by specified search query | [optional] 
  **ids** | **String**| Find schedules by ID(s) | [optional] 
  **status** | **String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [optional] [default to x]
@@ -7787,7 +8095,9 @@ Name | Type | Description  | Notes
 # **search_templates**
 > SearchTemplatesPaginatedResponse search_templates(opts)
 
-Find user templates by given parameters.
+Find templates by criteria
+
+
 
 ### Example
 ```ruby
@@ -7803,15 +8113,15 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  page: 1, # Integer | Fetch specified results page
-  limit: 10, # Integer | How many results to return
+  page: 1, # Integer | Fetch specified results page.
+  limit: 10, # Integer | The number of results per page.
   ids: 'ids_example', # String | Find template by ID(s)
   name: 'name_example', # String | Find template by name
   content: 'content_example' # String | Find template by content
 }
 
 begin
-  #Find user templates by given parameters.
+  #Find templates by criteria
   result = api_instance.search_templates(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7823,8 +8133,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page | [optional] [default to 1]
- **limit** | **Integer**| How many results to return | [optional] [default to 10]
+ **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
  **ids** | **String**| Find template by ID(s) | [optional] 
  **name** | **String**| Find template by name | [optional] 
  **content** | **String**| Find template by content | [optional] 
@@ -7848,6 +8158,8 @@ Name | Type | Description  | Notes
 > send_email_verification_code
 
 Send user email verification
+
+
 
 ### Example
 ```ruby
@@ -7946,6 +8258,8 @@ Name | Type | Description  | Notes
 
 Send user phone verification
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -7985,8 +8299,63 @@ nil (empty response body)
 
 
 
+# **send_phone_verification_code_0**
+> SendPhoneVerificationCodeResponse send_phone_verification_code_0(send_phone_verification_code_input_object)
+
+Step 1: Send a verification code 
+
+Sends verification code to specified phone number.
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+send_phone_verification_code_input_object = TextMagic::SendPhoneVerificationCodeInputObject.new # SendPhoneVerificationCodeInputObject | 
+
+
+begin
+  #Step 1: Send a verification code 
+  result = api_instance.send_phone_verification_code_0(send_phone_verification_code_input_object)
+  p result
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->send_phone_verification_code_0: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **send_phone_verification_code_input_object** | [**SendPhoneVerificationCodeInputObject**](SendPhoneVerificationCodeInputObject.md)|  | 
+
+### Return type
+
+[**SendPhoneVerificationCodeResponse**](SendPhoneVerificationCodeResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **set_chat_status**
 > ResourceLinkResponse set_chat_status(set_chat_status_input_object)
+
+Change chat status
 
 Set status of the chat given by ID.
 
@@ -8007,7 +8376,7 @@ set_chat_status_input_object = TextMagic::SetChatStatusInputObject.new # SetChat
 
 
 begin
-  #Set status of the chat given by ID.
+  #Change chat status
   result = api_instance.set_chat_status(set_chat_status_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -8040,6 +8409,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse start_survey(id)
 
 Start a survey.
+
+
 
 ### Example
 ```ruby
@@ -8092,6 +8463,8 @@ Name | Type | Description  | Notes
 
 Unblock contact by phone number.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8142,6 +8515,8 @@ nil (empty response body)
 
 Unblock several contacts by blocked contact ids or unblock all contacts
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8190,6 +8565,8 @@ nil (empty response body)
 # **unmute_chats_bulk**
 > unmute_chats_bulk(unmute_chats_bulk_input_object)
 
+Unmute chats (bulk)
+
 Unmute several chats by chat ids or unmute all chats
 
 ### Example
@@ -8209,7 +8586,7 @@ unmute_chats_bulk_input_object = TextMagic::UnmuteChatsBulkInputObject.new # Unm
 
 
 begin
-  #Unmute several chats by chat ids or unmute all chats
+  #Unmute chats (bulk)
   api_instance.unmute_chats_bulk(unmute_chats_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unmute_chats_bulk: #{e}"
@@ -8241,6 +8618,8 @@ nil (empty response body)
 > ResourceLinkResponse unsubscribe_contact(unsubscribe_contact_input_object)
 
 Unsubscribe contact from your communication by phone number.
+
+
 
 ### Example
 ```ruby
@@ -8293,6 +8672,8 @@ Name | Type | Description  | Notes
 
 Update balance notification settings
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8342,6 +8723,8 @@ nil (empty response body)
 > update_callback_settings(update_callback_settings_input_object)
 
 Update callback URL settings
+
+
 
 ### Example
 ```ruby
@@ -8393,6 +8776,8 @@ nil (empty response body)
 
 Update chat desktop notification settings
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8442,6 +8827,8 @@ nil (empty response body)
 > ResourceLinkResponse update_contact(update_contact_input_object, id)
 
 Update existing contact.
+
+
 
 ### Example
 ```ruby
@@ -8497,6 +8884,8 @@ Name | Type | Description  | Notes
 
 Update existing contact note.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8551,6 +8940,8 @@ Name | Type | Description  | Notes
 
 Update current user info.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8601,6 +8992,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse update_custom_field(update_custom_field_input_object, id)
 
 Update existing custom field.
+
+
 
 ### Example
 ```ruby
@@ -8656,6 +9049,8 @@ Name | Type | Description  | Notes
 
 Update contact's custom field value.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8710,6 +9105,8 @@ Name | Type | Description  | Notes
 
 Update inbound messages notification settings
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8759,6 +9156,8 @@ nil (empty response body)
 > ResourceLinkResponse update_list(id, opts)
 
 Update existing list.
+
+
 
 ### Example
 ```ruby
@@ -8815,6 +9214,8 @@ Name | Type | Description  | Notes
 
 Change user password.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8865,6 +9266,8 @@ nil (empty response body)
 
 Change sender settings for specified country.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -8914,6 +9317,8 @@ nil (empty response body)
 > ResourceLinkResponse update_survey(update_survey_input_object, id)
 
 Update existing survey.
+
+
 
 ### Example
 ```ruby
@@ -8969,6 +9374,8 @@ Name | Type | Description  | Notes
 
 Update existing node.
 
+
+
 ### Example
 ```ruby
 # load the gem
@@ -9021,7 +9428,9 @@ Name | Type | Description  | Notes
 # **update_template**
 > ResourceLinkResponse update_template(update_template_input_object, id)
 
-Update existing template.
+Update a template
+
+
 
 ### Example
 ```ruby
@@ -9042,7 +9451,7 @@ id = 1 # Integer |
 
 
 begin
-  #Update existing template.
+  #Update a template
   result = api_instance.update_template(update_template_input_object, id)
   p result
 rescue TextMagic::ApiError => e
@@ -9076,6 +9485,8 @@ Name | Type | Description  | Notes
 > upload_avatar(image)
 
 Add an avatar for the current user.
+
+
 
 ### Example
 ```ruby
@@ -9126,6 +9537,8 @@ nil (empty response body)
 > ResourceLinkResponse upload_contact_avatar(image, id)
 
 Add an avatar for the contact.
+
+
 
 ### Example
 ```ruby
@@ -9180,6 +9593,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse upload_list_avatar(image, id)
 
 Add an avatar for the list.
+
+
 
 ### Example
 ```ruby

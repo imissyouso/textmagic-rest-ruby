@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class MessagesIcs
+    # Schedule ID.
     attr_accessor :id
 
+    # Next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601) format. 
     attr_accessor :next_send
 
+    # [iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string. 
     attr_accessor :rrule
 
     attr_accessor :session

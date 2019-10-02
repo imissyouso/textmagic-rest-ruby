@@ -13,34 +13,26 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class SearchChatsByIdsPaginatedResponse
-    attr_accessor :page
+  class SendPhoneVerificationCodeResponse
+    # The ID of a verification request. This is required to finish the verification request in the next step.
+    attr_accessor :verify_id
 
-    # The total number of pages.
-    attr_accessor :page_count
-
-    # The number of results per page.
-    attr_accessor :limit
-
-    attr_accessor :resources
+    # Amount of credit which will be deducted from your account balance when this verification is successfully completed.
+    attr_accessor :price
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'page' => :'page',
-        :'page_count' => :'pageCount',
-        :'limit' => :'limit',
-        :'resources' => :'resources'
+        :'verify_id' => :'verifyId',
+        :'price' => :'price'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'page' => :'Integer',
-        :'page_count' => :'Integer',
-        :'limit' => :'Integer',
-        :'resources' => :'Array<Chat>'
+        :'verify_id' => :'String',
+        :'price' => :'Float'
       }
     end
 
@@ -52,22 +44,12 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'page')
-        self.page = attributes[:'page']
+      if attributes.has_key?(:'verifyId')
+        self.verify_id = attributes[:'verifyId']
       end
 
-      if attributes.has_key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
-      end
-
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
-      end
-
-      if attributes.has_key?(:'resources')
-        if (value = attributes[:'resources']).is_a?(Array)
-          self.resources = value
-        end
+      if attributes.has_key?(:'price')
+        self.price = attributes[:'price']
       end
     end
 
@@ -75,20 +57,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @page.nil?
-        invalid_properties.push('invalid value for "page", page cannot be nil.')
+      if @verify_id.nil?
+        invalid_properties.push('invalid value for "verify_id", verify_id cannot be nil.')
       end
 
-      if @page_count.nil?
-        invalid_properties.push('invalid value for "page_count", page_count cannot be nil.')
-      end
-
-      if @limit.nil?
-        invalid_properties.push('invalid value for "limit", limit cannot be nil.')
-      end
-
-      if @resources.nil?
-        invalid_properties.push('invalid value for "resources", resources cannot be nil.')
+      if @price.nil?
+        invalid_properties.push('invalid value for "price", price cannot be nil.')
       end
 
       invalid_properties
@@ -97,10 +71,8 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @page.nil?
-      return false if @page_count.nil?
-      return false if @limit.nil?
-      return false if @resources.nil?
+      return false if @verify_id.nil?
+      return false if @price.nil?
       true
     end
 
@@ -109,10 +81,8 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          page == o.page &&
-          page_count == o.page_count &&
-          limit == o.limit &&
-          resources == o.resources
+          verify_id == o.verify_id &&
+          price == o.price
     end
 
     # @see the `==` method
@@ -124,7 +94,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [page, page_count, limit, resources].hash
+      [verify_id, price].hash
     end
 
     # Builds the object from hash

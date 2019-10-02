@@ -14,18 +14,25 @@ require 'date'
 
 module TextMagic
   class MessageSession
+    # Session ID.
     attr_accessor :id
 
+    # Session creation time.
     attr_accessor :start_time
 
+    # Session text. If a template was used for the session text (see [Messages: Send](#tag/Outbound-Messages) for details), it may contain template tags. 
     attr_accessor :text
 
+    # *   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](/docs/api/send-email-to-sms/) *   **X** for [Distribution lists](/docs/api/distribution-lists/) 
     attr_accessor :source
 
+    # Custom reference ID (see [Messages: Send](/docs/api/send-sms/) for details). 
     attr_accessor :reference_id
 
+    # Session cost (in account currency).
     attr_accessor :price
 
+    # Session recipient count.
     attr_accessor :numbers_count
 
     attr_accessor :destination

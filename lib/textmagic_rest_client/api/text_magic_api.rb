@@ -20,6 +20,7 @@ module TextMagic
       @api_client = api_client
     end
     # Assign contacts to the specified list.
+    # 
     # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -30,6 +31,7 @@ module TextMagic
     end
 
     # Assign contacts to the specified list.
+    # 
     # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -78,6 +80,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Block contact from inbound and outbound communication by phone number.
+    # 
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -87,6 +90,7 @@ module TextMagic
     end
 
     # Block contact from inbound and outbound communication by phone number.
+    # 
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -130,6 +134,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Buy a dedicated number and assign it to the specified account.
+    # 
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -139,6 +144,7 @@ module TextMagic
     end
 
     # Buy a dedicated number and assign it to the specified account.
+    # 
     # @param buy_dedicated_number_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -181,6 +187,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Cancel a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -190,6 +197,7 @@ module TextMagic
     end
 
     # Cancel a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -232,7 +240,61 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Cancel verification process
+    # You can cancel the verification not earlier than 30 seconds after the initial request.
+    # @param verify_id the verifyId that you received in Step 1.
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def cancel_verification(verify_id, opts = {})
+      cancel_verification_with_http_info(verify_id, opts)
+      nil
+    end
+
+    # Cancel verification process
+    # You can cancel the verification not earlier than 30 seconds after the initial request.
+    # @param verify_id the verifyId that you received in Step 1.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def cancel_verification_with_http_info(verify_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.cancel_verification ...'
+      end
+      # verify the required parameter 'verify_id' is set
+      if @api_client.config.client_side_validation && verify_id.nil?
+        fail ArgumentError, "Missing the required parameter 'verify_id' when calling TextMagicApi.cancel_verification"
+      end
+      # resource path
+      local_var_path = '/api/v2/verify/{verifyId}'.sub('{' + 'verifyId' + '}', verify_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#cancel_verification\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Check user phone verification code
+    # 
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -242,6 +304,7 @@ module TextMagic
     end
 
     # Check user phone verification code
+    # 
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -283,7 +346,61 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Step 2: Check the verification code 
+    # Check received code from user with the code which was actually sent.
+    # @param check_phone_verification_code_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def check_phone_verification_code_0(check_phone_verification_code_input_object, opts = {})
+      check_phone_verification_code_0_with_http_info(check_phone_verification_code_input_object, opts)
+      nil
+    end
+
+    # Step 2: Check the verification code 
+    # Check received code from user with the code which was actually sent.
+    # @param check_phone_verification_code_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def check_phone_verification_code_0_with_http_info(check_phone_verification_code_input_object, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.check_phone_verification_code_0 ...'
+      end
+      # verify the required parameter 'check_phone_verification_code_input_object' is set
+      if @api_client.config.client_side_validation && check_phone_verification_code_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'check_phone_verification_code_input_object' when calling TextMagicApi.check_phone_verification_code_0"
+      end
+      # resource path
+      local_var_path = '/api/v2/verify'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(check_phone_verification_code_input_object)
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#check_phone_verification_code_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Reset list members to the specified contacts.
+    # 
     # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -294,6 +411,7 @@ module TextMagic
     end
 
     # Reset list members to the specified contacts.
+    # 
     # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -341,6 +459,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Close chats (bulk)
     # Close chats by chat ids or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -350,6 +469,7 @@ module TextMagic
       nil
     end
 
+    # Close chats (bulk)
     # Close chats by chat ids or close all chats
     # @param close_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -390,6 +510,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Close read chats
     # Close all chats that have no unread messages.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -398,6 +519,7 @@ module TextMagic
       nil
     end
 
+    # Close read chats
     # Close all chats that have no unread messages.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -434,6 +556,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Close subaccount.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -443,6 +566,7 @@ module TextMagic
     end
 
     # Close subaccount.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -483,6 +607,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new contact from the submitted data.
+    # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -492,6 +617,7 @@ module TextMagic
     end
 
     # Create a new contact from the submitted data.
+    # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -535,6 +661,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new contact note.
+    # 
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -545,6 +672,7 @@ module TextMagic
     end
 
     # Create a new contact note.
+    # 
     # @param create_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -593,6 +721,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new custom field from the submitted data.
+    # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -602,6 +731,7 @@ module TextMagic
     end
 
     # Create a new custom field from the submitted data.
+    # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -645,6 +775,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new list from the submitted data.
+    # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -654,6 +785,7 @@ module TextMagic
     end
 
     # Create a new list from the submitted data.
+    # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -697,6 +829,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add or update a device token.
+    # 
     # @param create_push_token_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -706,6 +839,7 @@ module TextMagic
     end
 
     # Add or update a device token.
+    # 
     # @param create_push_token_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -748,6 +882,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new survey from the submitted data.
+    # 
     # @param create_survey_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -757,6 +892,7 @@ module TextMagic
     end
 
     # Create a new survey from the submitted data.
+    # 
     # @param create_survey_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -800,6 +936,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Create a new node from the submitted data.
+    # 
     # @param create_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -810,6 +947,7 @@ module TextMagic
     end
 
     # Create a new node from the submitted data.
+    # 
     # @param create_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -857,7 +995,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Create a new template from the submitted data.
+    # Create a template
+    # 
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -866,7 +1005,8 @@ module TextMagic
       data
     end
 
-    # Create a new template from the submitted data.
+    # Create a template
+    # 
     # @param create_template_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -910,6 +1050,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete all contacts.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_all_contacts(opts = {})
@@ -918,6 +1059,7 @@ module TextMagic
     end
 
     # Delete all contacts.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_all_contacts_with_http_info(opts = {})
@@ -998,6 +1140,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar for the current user.\\
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_avatar(opts = {})
@@ -1006,6 +1149,7 @@ module TextMagic
     end
 
     # Delete an avatar for the current user.\\
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_avatar_with_http_info(opts = {})
@@ -1040,6 +1184,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Delete chat messages by ID(s)
     # Delete messages from chat by given messages ID(s).
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
@@ -1050,6 +1195,7 @@ module TextMagic
       nil
     end
 
+    # Delete chat messages by ID(s)
     # Delete messages from chat by given messages ID(s).
     # @param delete_chat_messages_bulk_input_object 
     # @param id 
@@ -1095,6 +1241,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Delete chats (bulk)
     # Delete chats by given ID(s) or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1104,6 +1251,7 @@ module TextMagic
       nil
     end
 
+    # Delete chats (bulk)
     # Delete chats by given ID(s) or delete all chats.
     # @param delete_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1145,6 +1293,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1154,6 +1303,7 @@ module TextMagic
     end
 
     # Delete a single contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1194,6 +1344,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar for the contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1203,6 +1354,7 @@ module TextMagic
     end
 
     # Delete an avatar for the contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1245,6 +1397,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single contact note.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1254,6 +1407,7 @@ module TextMagic
     end
 
     # Delete a single contact note.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1294,6 +1448,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contact note by given ID(s) or delete all contact notes.
+    # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1304,6 +1459,7 @@ module TextMagic
     end
 
     # Delete contact note by given ID(s) or delete all contact notes.
+    # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1349,6 +1505,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contact by given ID(s) or delete all contacts.
+    # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1358,6 +1515,7 @@ module TextMagic
     end
 
     # Delete contact by given ID(s) or delete all contacts.
+    # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1398,6 +1556,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unassign contacts from the specified list.
+    # 
     # @param delete_contacs_from_list_object Contact ID(s), separated by comma
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1408,6 +1567,7 @@ module TextMagic
     end
 
     # Unassign contacts from the specified list.
+    # 
     # @param delete_contacs_from_list_object Contact ID(s), separated by comma
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1453,6 +1613,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single custom field.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1462,6 +1623,7 @@ module TextMagic
     end
 
     # Delete a single custom field.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1502,6 +1664,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Cancel dedicated number subscription.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1511,6 +1674,7 @@ module TextMagic
     end
 
     # Cancel dedicated number subscription.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1550,8 +1714,9 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete the incoming message.
-    # @param id 
+    # Delete a single inbound message
+    # > Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_inbound_message(id, opts = {})
@@ -1559,8 +1724,9 @@ module TextMagic
       nil
     end
 
-    # Delete the incoming message.
-    # @param id 
+    # Delete a single inbound message
+    # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+    # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_inbound_message_with_http_info(id, opts = {})
@@ -1599,7 +1765,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete inbound messages by given ID(s) or delete all inbound messages.
+    # Delete inbound messages (bulk)
+    # > Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1608,7 +1775,8 @@ module TextMagic
       nil
     end
 
-    # Delete inbound messages by given ID(s) or delete all inbound messages.
+    # Delete inbound messages (bulk)
+    # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
     # @param delete_inbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1649,6 +1817,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a single list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1658,6 +1827,7 @@ module TextMagic
     end
 
     # Delete a single list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1698,6 +1868,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete an avatar for the list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1707,6 +1878,7 @@ module TextMagic
     end
 
     # Delete an avatar for the list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1749,6 +1921,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete contact from list by given ID(s) or all contacts from list.
+    # 
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1759,6 +1932,7 @@ module TextMagic
     end
 
     # Delete contact from list by given ID(s) or all contacts from list.
+    # 
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1804,6 +1978,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete list by given ID(s) or delete all lists.
+    # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1813,6 +1988,7 @@ module TextMagic
     end
 
     # Delete list by given ID(s) or delete all lists.
+    # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1852,7 +2028,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a message session, together with all nested messages.
+    # Delete a session
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1861,7 +2038,8 @@ module TextMagic
       nil
     end
 
-    # Delete a message session, together with all nested messages.
+    # Delete a session
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1901,7 +2079,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+    # Delete sessions (bulk)
+    # 
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1910,7 +2089,8 @@ module TextMagic
       nil
     end
 
-    # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+    # Delete sessions (bulk)
+    # 
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2001,7 +2181,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete messages by IDs
+    # Delete messages (bulk)
     # Delete outbound messages by given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -2011,7 +2191,7 @@ module TextMagic
       nil
     end
 
-    # Delete messages by IDs
+    # Delete messages (bulk)
     # Delete outbound messages by given ID(s) or delete all outbound messages.
     # @param delete_outbound_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -2053,6 +2233,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a push notification device token.
+    # 
     # @param type 
     # @param device_id 
     # @param [Hash] opts the optional parameters
@@ -2063,6 +2244,7 @@ module TextMagic
     end
 
     # Delete a push notification device token.
+    # 
     # @param type 
     # @param device_id 
     # @param [Hash] opts the optional parameters
@@ -2107,7 +2289,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a message session, together with all nested messages.
+    # Delete a single scheduled message
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2116,7 +2299,8 @@ module TextMagic
       nil
     end
 
-    # Delete a message session, together with all nested messages.
+    # Delete a single scheduled message
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2156,7 +2340,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete scheduled messages by given ID(s) or delete all scheduled messages.
+    # Delete scheduled messages (bulk)
+    # 
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2165,7 +2350,8 @@ module TextMagic
       nil
     end
 
-    # Delete scheduled messages by given ID(s) or delete all scheduled messages.
+    # Delete scheduled messages (bulk)
+    # 
     # @param delete_scheduled_messages_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2206,6 +2392,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a Sender ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2215,6 +2402,7 @@ module TextMagic
     end
 
     # Delete a Sender ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2255,6 +2443,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2264,6 +2453,7 @@ module TextMagic
     end
 
     # Delete a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2304,6 +2494,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a node.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2313,6 +2504,7 @@ module TextMagic
     end
 
     # Delete a node.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2352,7 +2544,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a single template.
+    # Delete a template
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2361,7 +2554,8 @@ module TextMagic
       nil
     end
 
-    # Delete a single template.
+    # Delete a template
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2401,7 +2595,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete template by given ID(s) or delete all templates.
+    # Delete templates (bulk)
+    # 
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2410,7 +2605,8 @@ module TextMagic
       nil
     end
 
-    # Delete template by given ID(s) or delete all templates.
+    # Delete templates (bulk)
+    # 
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2505,6 +2701,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Carrier Lookup
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Country code for local formatted numbers (default to US)
@@ -2515,6 +2712,7 @@ module TextMagic
     end
 
     # Carrier Lookup
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Country code for local formatted numbers
@@ -2560,6 +2758,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Validate Email address using Email Lookup tool
+    # 
     # @param email 
     # @param [Hash] opts the optional parameters
     # @return [DoEmailLookupResponse]
@@ -2569,6 +2768,7 @@ module TextMagic
     end
 
     # Validate Email address using Email Lookup tool
+    # 
     # @param email 
     # @param [Hash] opts the optional parameters
     # @return [Array<(DoEmailLookupResponse, Fixnum, Hash)>] DoEmailLookupResponse data, response status code and response headers
@@ -2612,6 +2812,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Duplicate a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -2621,6 +2822,7 @@ module TextMagic
     end
 
     # Duplicate a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -2664,9 +2866,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all bulk sending sessions.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetAllBulkSessionsPaginatedResponse]
     def get_all_bulk_sessions(opts = {})
       data, _status_code, _headers = get_all_bulk_sessions_with_http_info(opts)
@@ -2674,9 +2877,10 @@ module TextMagic
     end
 
     # Get all bulk sending sessions.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetAllBulkSessionsPaginatedResponse, Fixnum, Hash)>] GetAllBulkSessionsPaginatedResponse data, response status code and response headers
     def get_all_bulk_sessions_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2715,11 +2919,12 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all user chats.
+    # Get all chats
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [Integer] :voice Fetch results with voice calls (default to 0)
     # @option opts [Integer] :flat Should additional contact info be included (default to 0)
@@ -2729,11 +2934,12 @@ module TextMagic
       data
     end
 
-    # Get all user chats.
+    # Get all chats
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [Integer] :voice Fetch results with voice calls
     # @option opts [Integer] :flat Should additional contact info be included
@@ -2785,10 +2991,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all inbox messages.
+    # Get all inbound messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @return [GetAllInboundMessagesPaginatedResponse]
@@ -2797,10 +3004,11 @@ module TextMagic
       data
     end
 
-    # Get all inbox messages.
+    # Get all inbound messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
     # @return [Array<(GetAllInboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllInboundMessagesPaginatedResponse data, response status code and response headers
@@ -2849,20 +3057,22 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all message sending sessions.
+    # Get all sessions
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetAllMessageSessionsPaginatedResponse]
     def get_all_message_sessions(opts = {})
       data, _status_code, _headers = get_all_message_sessions_with_http_info(opts)
       data
     end
 
-    # Get all message sending sessions.
+    # Get all sessions
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetAllMessageSessionsPaginatedResponse, Fixnum, Hash)>] GetAllMessageSessionsPaginatedResponse data, response status code and response headers
     def get_all_message_sessions_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2904,8 +3114,8 @@ module TextMagic
     # Get all messages
     # Get all user oubound messages.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
     # @return [GetAllOutboundMessagesPaginatedResponse]
     def get_all_outbound_messages(opts = {})
@@ -2916,8 +3126,8 @@ module TextMagic
     # Get all messages
     # Get all user oubound messages.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
     # @return [Array<(GetAllOutboundMessagesPaginatedResponse, Fixnum, Hash)>] GetAllOutboundMessagesPaginatedResponse data, response status code and response headers
     def get_all_outbound_messages_with_http_info(opts = {})
@@ -2958,10 +3168,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all scheduled messages.
+    # Get all scheduled messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
@@ -2971,10 +3182,11 @@ module TextMagic
       data
     end
 
-    # Get all scheduled messages.
+    # Get all scheduled messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
@@ -3028,20 +3240,22 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all user templates.
+    # Get all templates
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [GetAllTemplatesPaginatedResponse]
     def get_all_templates(opts = {})
       data, _status_code, _headers = get_all_templates_with_http_info(opts)
       data
     end
 
-    # Get all user templates.
+    # Get all templates
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetAllTemplatesPaginatedResponse, Fixnum, Hash)>] GetAllTemplatesPaginatedResponse data, response status code and response headers
     def get_all_templates_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3081,6 +3295,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find available dedicated numbers to buy.
+    # 
     # @param country Dedicated number country. Two letters in upper case
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore. (default to 1)
@@ -3092,6 +3307,7 @@ module TextMagic
     end
 
     # Find available dedicated numbers to buy.
+    # 
     # @param country Dedicated number country. Two letters in upper case
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore.
@@ -3140,6 +3356,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all available sender setting options which could be used in \"from\" parameter of POST messages method.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender setting options available in specific country only. Two upper case characters
     # @return [GetAvailableSenderSettingOptionsResponse]
@@ -3149,6 +3366,7 @@ module TextMagic
     end
 
     # Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender setting options available in specific country only. Two upper case characters
     # @return [Array<(GetAvailableSenderSettingOptionsResponse, Fixnum, Hash)>] GetAvailableSenderSettingOptionsResponse data, response status code and response headers
@@ -3189,6 +3407,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetBalanceNotificationOptionsResponse]
     def get_balance_notification_options(opts = {})
@@ -3197,6 +3416,7 @@ module TextMagic
     end
 
     # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetBalanceNotificationOptionsResponse, Fixnum, Hash)>] GetBalanceNotificationOptionsResponse data, response status code and response headers
     def get_balance_notification_options_with_http_info(opts = {})
@@ -3235,6 +3455,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get balance notification settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetBalanceNotificationSettingsResponse]
     def get_balance_notification_settings(opts = {})
@@ -3243,6 +3464,7 @@ module TextMagic
     end
 
     # Get balance notification settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetBalanceNotificationSettingsResponse, Fixnum, Hash)>] GetBalanceNotificationSettingsResponse data, response status code and response headers
     def get_balance_notification_settings_with_http_info(opts = {})
@@ -3281,9 +3503,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get blocked contacts.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find blocked contacts by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
@@ -3294,9 +3517,10 @@ module TextMagic
     end
 
     # Get blocked contacts.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find blocked contacts by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
@@ -3348,6 +3572,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get bulk message session status.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [BulkSession]
@@ -3357,6 +3582,7 @@ module TextMagic
     end
 
     # Get bulk message session status.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(BulkSession, Fixnum, Hash)>] BulkSession data, response status code and response headers
@@ -3400,6 +3626,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch callback URL settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetCallbackSettingsResponse]
     def get_callback_settings(opts = {})
@@ -3408,6 +3635,7 @@ module TextMagic
     end
 
     # Fetch callback URL settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCallbackSettingsResponse, Fixnum, Hash)>] GetCallbackSettingsResponse data, response status code and response headers
     def get_callback_settings_with_http_info(opts = {})
@@ -3446,6 +3674,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Check pricing for a inbound/outbound call.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetCallsPricesResponse]
     def get_calls_prices(opts = {})
@@ -3454,6 +3683,7 @@ module TextMagic
     end
 
     # Check pricing for a inbound/outbound call.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCallsPricesResponse, Fixnum, Hash)>] GetCallsPricesResponse data, response status code and response headers
     def get_calls_prices_with_http_info(opts = {})
@@ -3491,7 +3721,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single chat.
+    # Get a single chat
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Chat]
@@ -3500,7 +3731,8 @@ module TextMagic
       data
     end
 
-    # Get a single chat.
+    # Get a single chat
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Chat, Fixnum, Hash)>] Chat data, response status code and response headers
@@ -3543,7 +3775,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find chats by phone.
+    # Find chats by phone
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :upsert Create a new chat if not found (default to 0)
@@ -3554,7 +3787,8 @@ module TextMagic
       data
     end
 
-    # Find chats by phone.
+    # Find chats by phone
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :upsert Create a new chat if not found
@@ -3601,11 +3835,12 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Fetch messages from chat with specified chat id.
+    # Get chat messages
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find messages by specified search query
     # @option opts [Integer] :start Return messages since specified timestamp only
     # @option opts [Integer] :_end Return messages up to specified timestamp only
@@ -3617,11 +3852,12 @@ module TextMagic
       data
     end
 
-    # Fetch messages from chat with specified chat id.
+    # Get chat messages
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find messages by specified search query
     # @option opts [Integer] :start Return messages since specified timestamp only
     # @option opts [Integer] :_end Return messages up to specified timestamp only
@@ -3678,6 +3914,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single contact.
+    # 
     # @param id The contact id
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3687,6 +3924,7 @@ module TextMagic
     end
 
     # Get a single contact.
+    # 
     # @param id The contact id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3730,6 +3968,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single contact by phone number.
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3739,6 +3978,7 @@ module TextMagic
     end
 
     # Get a single contact by phone number.
+    # 
     # @param phone 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3782,6 +4022,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Check is that phone number blocked
+    # 
     # @param phone Phone number to check
     # @param [Hash] opts the optional parameters
     # @return [Contact]
@@ -3791,6 +4032,7 @@ module TextMagic
     end
 
     # Check is that phone number blocked
+    # 
     # @param phone Phone number to check
     # @param [Hash] opts the optional parameters
     # @return [Array<(Contact, Fixnum, Hash)>] Contact data, response status code and response headers
@@ -3835,6 +4077,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get contact import session progress.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [GetContactImportSessionProgressResponse]
@@ -3844,6 +4087,7 @@ module TextMagic
     end
 
     # Get contact import session progress.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetContactImportSessionProgressResponse, Fixnum, Hash)>] GetContactImportSessionProgressResponse data, response status code and response headers
@@ -3887,6 +4131,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single contact note.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ContactNote]
@@ -3896,6 +4141,7 @@ module TextMagic
     end
 
     # Get a single contact note.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ContactNote, Fixnum, Hash)>] ContactNote data, response status code and response headers
@@ -3939,10 +4185,11 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch notes assigned to the given contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetContactNotesPaginatedResponse]
     def get_contact_notes(id, opts = {})
       data, _status_code, _headers = get_contact_notes_with_http_info(id, opts)
@@ -3950,10 +4197,11 @@ module TextMagic
     end
 
     # Fetch notes assigned to the given contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetContactNotesPaginatedResponse, Fixnum, Hash)>] GetContactNotesPaginatedResponse data, response status code and response headers
     def get_contact_notes_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -3997,9 +4245,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all user contacts.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
@@ -4010,9 +4259,10 @@ module TextMagic
     end
 
     # Get all user contacts.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :shared Should shared contacts to be included
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
@@ -4064,9 +4314,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get contacts autocomplete suggestions by given search term.
+    # 
     # @param query Find recipients by specified search query
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :lists Should lists be returned or not (default to 0)
     # @return [GetContactsAutocompleteResponse]
     def get_contacts_autocomplete(query, opts = {})
@@ -4075,9 +4326,10 @@ module TextMagic
     end
 
     # Get contacts autocomplete suggestions by given search term.
+    # 
     # @param query Find recipients by specified search query
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :lists Should lists be returned or not
     # @return [Array<(GetContactsAutocompleteResponse, Fixnum, Hash)>] GetContactsAutocompleteResponse data, response status code and response headers
     def get_contacts_autocomplete_with_http_info(query, opts = {})
@@ -4126,8 +4378,8 @@ module TextMagic
     # A useful synonym for \"contacts/search\" command with provided \"listId\" parameter.
     # @param id Given group Id.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @return [GetContactsByListIdPaginatedResponse]
@@ -4140,8 +4392,8 @@ module TextMagic
     # A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
     # @param id Given group Id.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
     # @return [Array<(GetContactsByListIdPaginatedResponse, Fixnum, Hash)>] GetContactsByListIdPaginatedResponse data, response status code and response headers
@@ -4195,6 +4447,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Return list of countries.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetCountriesResponse]
     def get_countries(opts = {})
@@ -4203,6 +4456,7 @@ module TextMagic
     end
 
     # Return list of countries.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCountriesResponse, Fixnum, Hash)>] GetCountriesResponse data, response status code and response headers
     def get_countries_with_http_info(opts = {})
@@ -4241,6 +4495,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get current user info.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [User]
     def get_current_user(opts = {})
@@ -4249,6 +4504,7 @@ module TextMagic
     end
 
     # Get current user info.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
     def get_current_user_with_http_info(opts = {})
@@ -4287,6 +4543,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single custom field.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UserCustomField]
@@ -4296,6 +4553,7 @@ module TextMagic
     end
 
     # Get a single custom field.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserCustomField, Fixnum, Hash)>] UserCustomField data, response status code and response headers
@@ -4339,9 +4597,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all contact custom fields.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetCustomFieldsPaginatedResponse]
     def get_custom_fields(opts = {})
       data, _status_code, _headers = get_custom_fields_with_http_info(opts)
@@ -4349,9 +4608,10 @@ module TextMagic
     end
 
     # Get all contact custom fields.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetCustomFieldsPaginatedResponse, Fixnum, Hash)>] GetCustomFieldsPaginatedResponse data, response status code and response headers
     def get_custom_fields_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -4391,6 +4651,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single dedicated number.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UsersInbound]
@@ -4400,6 +4661,7 @@ module TextMagic
     end
 
     # Get a single dedicated number.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UsersInbound, Fixnum, Hash)>] UsersInbound data, response status code and response headers
@@ -4443,6 +4705,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get an array of all rules that are disallowed to the current account.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetDisallowedRulesResponse]
     def get_disallowed_rules(opts = {})
@@ -4451,6 +4714,7 @@ module TextMagic
     end
 
     # Get an array of all rules that are disallowed to the current account.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetDisallowedRulesResponse, Fixnum, Hash)>] GetDisallowedRulesResponse data, response status code and response headers
     def get_disallowed_rules_with_http_info(opts = {})
@@ -4489,9 +4753,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get favorite contacts and lists.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find contacts or lists by specified search query (default to A)
     # @return [GetFavouritesPaginatedResponse]
     def get_favourites(opts = {})
@@ -4500,9 +4765,10 @@ module TextMagic
     end
 
     # Get favorite contacts and lists.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find contacts or lists by specified search query
     # @return [Array<(GetFavouritesPaginatedResponse, Fixnum, Hash)>] GetFavouritesPaginatedResponse data, response status code and response headers
     def get_favourites_with_http_info(opts = {})
@@ -4543,60 +4809,9 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all forwarded calls.
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
-    # @return [GetForwardedCallsPaginatedResponse]
-    def get_forwarded_calls(opts = {})
-      data, _status_code, _headers = get_forwarded_calls_with_http_info(opts)
-      data
-    end
-
-    # Get all forwarded calls.
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
-    # @return [Array<(GetForwardedCallsPaginatedResponse, Fixnum, Hash)>] GetForwardedCallsPaginatedResponse data, response status code and response headers
-    def get_forwarded_calls_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_forwarded_calls ...'
-      end
-      # resource path
-      local_var_path = '/api/v2/calls'
-
-      # query parameters
-      query_params = {}
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetForwardedCallsPaginatedResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_forwarded_calls\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Get a single inbox message.
-    # @param id 
+    # Get a single inbound message
+    # 
+    # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [MessageIn]
     def get_inbound_message(id, opts = {})
@@ -4604,8 +4819,9 @@ module TextMagic
       data
     end
 
-    # Get a single inbox message.
-    # @param id 
+    # Get a single inbound message
+    # 
+    # @param id The unique numeric ID for the inbound message.
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageIn, Fixnum, Hash)>] MessageIn data, response status code and response headers
     def get_inbound_message_with_http_info(id, opts = {})
@@ -4648,6 +4864,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get inbound messages notification settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetInboundMessagesNotificationSettingsResponse]
     def get_inbound_messages_notification_settings(opts = {})
@@ -4656,6 +4873,7 @@ module TextMagic
     end
 
     # Get inbound messages notification settings
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetInboundMessagesNotificationSettingsResponse, Fixnum, Hash)>] GetInboundMessagesNotificationSettingsResponse data, response status code and response headers
     def get_inbound_messages_notification_settings_with_http_info(opts = {})
@@ -4694,9 +4912,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Return account invoices.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetInvoicesPaginatedResponse]
     def get_invoices(opts = {})
       data, _status_code, _headers = get_invoices_with_http_info(opts)
@@ -4704,9 +4923,10 @@ module TextMagic
     end
 
     # Return account invoices.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetInvoicesPaginatedResponse, Fixnum, Hash)>] GetInvoicesPaginatedResponse data, response status code and response headers
     def get_invoices_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -4746,6 +4966,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Group]
@@ -4755,6 +4976,7 @@ module TextMagic
     end
 
     # Get a single list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Group, Fixnum, Hash)>] Group data, response status code and response headers
@@ -4798,6 +5020,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch all contacts IDs belonging to the list with ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [GetListContactsIdsResponse]
@@ -4807,6 +5030,7 @@ module TextMagic
     end
 
     # Fetch all contacts IDs belonging to the list with ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetListContactsIdsResponse, Fixnum, Hash)>] GetListContactsIdsResponse data, response status code and response headers
@@ -4850,10 +5074,11 @@ module TextMagic
       return data, status_code, headers
     end
     # Return lists which contact belongs to.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetListsOfContactPaginatedResponse]
     def get_lists_of_contact(id, opts = {})
       data, _status_code, _headers = get_lists_of_contact_with_http_info(id, opts)
@@ -4861,10 +5086,11 @@ module TextMagic
     end
 
     # Return lists which contact belongs to.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetListsOfContactPaginatedResponse, Fixnum, Hash)>] GetListsOfContactPaginatedResponse data, response status code and response headers
     def get_lists_of_contact_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -5156,8 +5382,9 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a message session.
-    # @param id 
+    # Get a session details
+    # 
+    # @param id a session ID
     # @param [Hash] opts the optional parameters
     # @return [MessageSession]
     def get_message_session(id, opts = {})
@@ -5165,8 +5392,9 @@ module TextMagic
       data
     end
 
-    # Get a message session.
-    # @param id 
+    # Get a session details
+    # 
+    # @param id a session ID
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageSession, Fixnum, Hash)>] MessageSession data, response status code and response headers
     def get_message_session_with_http_info(id, opts = {})
@@ -5208,7 +5436,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get sending session statistics.
+    # Get a session statistics
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_deleted Search also in deleted messages (default to 0)
@@ -5218,7 +5447,8 @@ module TextMagic
       data
     end
 
-    # Get sending session statistics.
+    # Get a session statistics
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_deleted Search also in deleted messages
@@ -5263,12 +5493,12 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Fetch messages by given session id.
+    # Get a session messages
     # A useful synonym for \"messages/search\" command with provided \"sessionId\" parameter.
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages (default to 0)
     # @return [GetMessagesBySessionIdPaginatedResponse]
@@ -5277,12 +5507,12 @@ module TextMagic
       data
     end
 
-    # Fetch messages by given session id.
+    # Get a session messages
     # A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :statuses Find messages by status
     # @option opts [Integer] :include_deleted Search also in deleted messages
     # @return [Array<(GetMessagesBySessionIdPaginatedResponse, Fixnum, Hash)>] GetMessagesBySessionIdPaginatedResponse data, response status code and response headers
@@ -5333,6 +5563,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Return counters for messaging data views.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetMessagingCountersResponse]
     def get_messaging_counters(opts = {})
@@ -5341,6 +5572,7 @@ module TextMagic
     end
 
     # Return counters for messaging data views.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetMessagingCountersResponse, Fixnum, Hash)>] GetMessagingCountersResponse data, response status code and response headers
     def get_messaging_counters_with_http_info(opts = {})
@@ -5379,6 +5611,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Return messaging statistics.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off (default to off)
     # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
@@ -5390,6 +5623,7 @@ module TextMagic
     end
 
     # Return messaging statistics.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off
     # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
@@ -5493,7 +5727,7 @@ module TextMagic
     # Get history
     # Get outbound messages history.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
@@ -5507,7 +5741,7 @@ module TextMagic
     # Get history
     # Get outbound messages history.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
     # @option opts [String] :query Find message by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
@@ -5560,6 +5794,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all device tokens assigned to the current account
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetPushTokensResponse]
     def get_push_tokens(opts = {})
@@ -5568,6 +5803,7 @@ module TextMagic
     end
 
     # Get all device tokens assigned to the current account
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetPushTokensResponse, Fixnum, Hash)>] GetPushTokensResponse data, response status code and response headers
     def get_push_tokens_with_http_info(opts = {})
@@ -5605,7 +5841,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get message schedule.
+    # Get a single scheduled message
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessagesIcs]
@@ -5614,7 +5851,8 @@ module TextMagic
       data
     end
 
-    # Get message schedule.
+    # Get a single scheduled message
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessagesIcs, Fixnum, Hash)>] MessagesIcs data, response status code and response headers
@@ -5658,6 +5896,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single Sender ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [SenderId]
@@ -5667,6 +5906,7 @@ module TextMagic
     end
 
     # Get a single Sender ID.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SenderId, Fixnum, Hash)>] SenderId data, response status code and response headers
@@ -5710,9 +5950,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all sender IDs of current user.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetSenderIdsPaginatedResponse]
     def get_sender_ids(opts = {})
       data, _status_code, _headers = get_sender_ids_with_http_info(opts)
@@ -5720,9 +5961,10 @@ module TextMagic
     end
 
     # Get all sender IDs of current user.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetSenderIdsPaginatedResponse, Fixnum, Hash)>] GetSenderIdsPaginatedResponse data, response status code and response headers
     def get_sender_ids_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -5762,6 +6004,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get current user sender settings.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
     # @return [GetSenderSettingsResponse]
@@ -5771,6 +6014,7 @@ module TextMagic
     end
 
     # Get current user sender settings.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
     # @return [Array<(GetSenderSettingsResponse, Fixnum, Hash)>] GetSenderSettingsResponse data, response status code and response headers
@@ -5811,9 +6055,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Return account spending statistics.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
     # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
     # @return [GetSpendingStatPaginatedResponse]
@@ -5823,9 +6068,10 @@ module TextMagic
     end
 
     # Return account spending statistics.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
     # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
     # @return [Array<(GetSpendingStatPaginatedResponse, Fixnum, Hash)>] GetSpendingStatPaginatedResponse data, response status code and response headers
@@ -5869,6 +6115,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get current entities state
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetStateResponse]
     def get_state(opts = {})
@@ -5877,6 +6124,7 @@ module TextMagic
     end
 
     # Get current entities state
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetStateResponse, Fixnum, Hash)>] GetStateResponse data, response status code and response headers
     def get_state_with_http_info(opts = {})
@@ -5915,6 +6163,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single subaccount.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [User]
@@ -5924,6 +6173,7 @@ module TextMagic
     end
 
     # Get a single subaccount.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
@@ -5967,9 +6217,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all subaccounts of current user.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [User]
     def get_subaccounts(opts = {})
       data, _status_code, _headers = get_subaccounts_with_http_info(opts)
@@ -5977,9 +6228,10 @@ module TextMagic
     end
 
     # Get all subaccounts of current user.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(User, Fixnum, Hash)>] User data, response status code and response headers
     def get_subaccounts_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6022,8 +6274,8 @@ module TextMagic
     # When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [Float] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Float] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetSubaccountsWithTokensResponse]
     def get_subaccounts_with_tokens(get_subaccounts_with_tokens_input_object, opts = {})
       data, _status_code, _headers = get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts)
@@ -6034,8 +6286,8 @@ module TextMagic
     # When more than one token related to app name, last key will be returned.
     # @param get_subaccounts_with_tokens_input_object 
     # @param [Hash] opts the optional parameters
-    # @option opts [Float] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Float] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetSubaccountsWithTokensResponse, Fixnum, Hash)>] GetSubaccountsWithTokensResponse data, response status code and response headers
     def get_subaccounts_with_tokens_with_http_info(get_subaccounts_with_tokens_input_object, opts = {})
       if @api_client.config.debugging
@@ -6079,6 +6331,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a survey by id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Survey]
@@ -6088,6 +6341,7 @@ module TextMagic
     end
 
     # Get a survey by id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Survey, Fixnum, Hash)>] Survey data, response status code and response headers
@@ -6131,6 +6385,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a node by id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [SurveyNode]
@@ -6140,6 +6395,7 @@ module TextMagic
     end
 
     # Get a node by id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SurveyNode, Fixnum, Hash)>] SurveyNode data, response status code and response headers
@@ -6183,6 +6439,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Fetch nodes by given survey id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [GetSurveyNodesResponse]
@@ -6192,6 +6449,7 @@ module TextMagic
     end
 
     # Fetch nodes by given survey id.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetSurveyNodesResponse, Fixnum, Hash)>] GetSurveyNodesResponse data, response status code and response headers
@@ -6235,9 +6493,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all user surveys.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetSurveysPaginatedResponse]
     def get_surveys(opts = {})
       data, _status_code, _headers = get_surveys_with_http_info(opts)
@@ -6245,9 +6504,10 @@ module TextMagic
     end
 
     # Get all user surveys.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetSurveysPaginatedResponse, Fixnum, Hash)>] GetSurveysPaginatedResponse data, response status code and response headers
     def get_surveys_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6286,7 +6546,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single template.
+    # Get a template details
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessageTemplate]
@@ -6295,7 +6556,8 @@ module TextMagic
       data
     end
 
-    # Get a single template.
+    # Get a template details
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageTemplate, Fixnum, Hash)>] MessageTemplate data, response status code and response headers
@@ -6339,6 +6601,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Return all available timezone IDs.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0 (default to 0)
     # @return [GetTimezonesResponse]
@@ -6348,6 +6611,7 @@ module TextMagic
     end
 
     # Return all available timezone IDs.
+    # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
     # @return [Array<(GetTimezonesResponse, Fixnum, Hash)>] GetTimezonesResponse data, response status code and response headers
@@ -6387,6 +6651,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Get unread messages number
     # Get total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [GetUnreadMessagesTotalResponse]
@@ -6395,6 +6660,7 @@ module TextMagic
       data
     end
 
+    # Get unread messages number
     # Get total amount of unread messages in the current user chats.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetUnreadMessagesTotalResponse, Fixnum, Hash)>] GetUnreadMessagesTotalResponse data, response status code and response headers
@@ -6434,6 +6700,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a single unsubscribed contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [UnsubscribedContact]
@@ -6443,6 +6710,7 @@ module TextMagic
     end
 
     # Get a single unsubscribed contact.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UnsubscribedContact, Fixnum, Hash)>] UnsubscribedContact data, response status code and response headers
@@ -6486,9 +6754,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all contact have unsubscribed from your communication.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @return [GetUnsubscribersPaginatedResponse]
     def get_unsubscribers(opts = {})
       data, _status_code, _headers = get_unsubscribers_with_http_info(opts)
@@ -6496,9 +6765,10 @@ module TextMagic
     end
 
     # Get all contact have unsubscribed from your communication.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @return [Array<(GetUnsubscribersPaginatedResponse, Fixnum, Hash)>] GetUnsubscribersPaginatedResponse data, response status code and response headers
     def get_unsubscribers_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -6538,9 +6808,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get user's dedicated numbers.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
     # @return [GetUserDedicatedNumbersPaginatedResponse]
     def get_user_dedicated_numbers(opts = {})
@@ -6549,9 +6820,10 @@ module TextMagic
     end
 
     # Get user&#39;s dedicated numbers.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
     # @return [Array<(GetUserDedicatedNumbersPaginatedResponse, Fixnum, Hash)>] GetUserDedicatedNumbersPaginatedResponse data, response status code and response headers
     def get_user_dedicated_numbers_with_http_info(opts = {})
@@ -6593,9 +6865,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all user lists.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @option opts [String] :direction Order direction. Default is desc (default to desc)
     # @option opts [Integer] :favorite_only Return only favorite lists (default to 0)
@@ -6607,9 +6880,10 @@ module TextMagic
     end
 
     # Get all user lists.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :order_by Order results by some field. Default is id
     # @option opts [String] :direction Order direction. Default is desc
     # @option opts [Integer] :favorite_only Return only favorite lists
@@ -6663,6 +6937,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get minimal valid apps versions
+    # 
     # @param [Hash] opts the optional parameters
     # @return [GetVersionsResponse]
     def get_versions(opts = {})
@@ -6671,6 +6946,7 @@ module TextMagic
     end
 
     # Get minimal valid apps versions
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetVersionsResponse, Fixnum, Hash)>] GetVersionsResponse data, response status code and response headers
     def get_versions_with_http_info(opts = {})
@@ -6709,6 +6985,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Invite new subaccount.
+    # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6718,6 +6995,7 @@ module TextMagic
     end
 
     # Invite new subaccount.
+    # 
     # @param invite_subaccount_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6757,6 +7035,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Mark chats as read (bulk)
     # Mark several chats as read by chat ids or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -6766,6 +7045,7 @@ module TextMagic
       nil
     end
 
+    # Mark chats as read (bulk)
     # Mark several chats as read by chat ids or mark all chats as read
     # @param mark_chats_read_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -6806,6 +7086,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Mark chats as unread (bulk)
     # Mark several chats as UNread by chat ids or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -6815,6 +7096,7 @@ module TextMagic
       nil
     end
 
+    # Mark chats as unread (bulk)
     # Mark several chats as UNread by chat ids or mark all chats as UNread
     # @param mark_chats_unread_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -6856,6 +7138,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Merge two question nodes.
+    # 
     # @param merge_survey_nodes_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -6865,6 +7148,7 @@ module TextMagic
     end
 
     # Merge two question nodes.
+    # 
     # @param merge_survey_nodes_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -6904,7 +7188,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Set mute mode.
+    # Mute chat sounds
+    # 
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -6913,7 +7198,8 @@ module TextMagic
       data
     end
 
-    # Set mute mode.
+    # Mute chat sounds
+    # 
     # @param mute_chat_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -6956,6 +7242,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Mute chats (bulk)
     # Mute several chats by chat ids or mute all chats
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -6965,6 +7252,7 @@ module TextMagic
       nil
     end
 
+    # Mute chats (bulk)
     # Mute several chats by chat ids or mute all chats
     # @param mute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -7006,6 +7294,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Just does a pong.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [PingResponse]
     def ping(opts = {})
@@ -7014,6 +7303,7 @@ module TextMagic
     end
 
     # Just does a pong.
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(PingResponse, Fixnum, Hash)>] PingResponse data, response status code and response headers
     def ping_with_http_info(opts = {})
@@ -7051,6 +7341,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Reopen chats (bulk)
     # Reopen chats by chat ids or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -7060,6 +7351,7 @@ module TextMagic
       nil
     end
 
+    # Reopen chats (bulk)
     # Reopen chats by chat ids or reopen all chats
     # @param reopen_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -7155,6 +7447,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Request for a new Sender ID.
+    # 
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -7164,6 +7457,7 @@ module TextMagic
     end
 
     # Request for a new Sender ID.
+    # 
     # @param request_sender_id_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -7207,6 +7501,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Reset a survey flow.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -7216,6 +7511,7 @@ module TextMagic
     end
 
     # Reset a survey flow.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -7258,10 +7554,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find chats by inbound or outbound messages text.
+    # Find chats by message text
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find chats by specified search query
     # @return [SearchChatsPaginatedResponse]
     def search_chats(opts = {})
@@ -7269,10 +7566,11 @@ module TextMagic
       data
     end
 
-    # Find chats by inbound or outbound messages text.
+    # Find chats by message text
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find chats by specified search query
     # @return [Array<(SearchChatsPaginatedResponse, Fixnum, Hash)>] SearchChatsPaginatedResponse data, response status code and response headers
     def search_chats_with_http_info(opts = {})
@@ -7313,10 +7611,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find chats by IDs.
+    # Find chats (bulk)
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :ids Find chats by ID(s)
     # @return [SearchChatsByIdsPaginatedResponse]
     def search_chats_by_ids(opts = {})
@@ -7324,10 +7623,11 @@ module TextMagic
       data
     end
 
-    # Find chats by IDs.
+    # Find chats (bulk)
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :ids Find chats by ID(s)
     # @return [Array<(SearchChatsByIdsPaginatedResponse, Fixnum, Hash)>] SearchChatsByIdsPaginatedResponse data, response status code and response headers
     def search_chats_by_ids_with_http_info(opts = {})
@@ -7372,10 +7672,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Find chats by recipient
     # Find chats by recipient (contact, list name or phone number).
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find chats by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
     # @return [SearchChatsByReceipentPaginatedResponse]
@@ -7384,10 +7685,11 @@ module TextMagic
       data
     end
 
+    # Find chats by recipient
     # Find chats by recipient (contact, list name or phone number).
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find chats by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
     # @return [Array<(SearchChatsByReceipentPaginatedResponse, Fixnum, Hash)>] SearchChatsByReceipentPaginatedResponse data, response status code and response headers
@@ -7434,9 +7736,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Find user contacts by given parameters.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :shared Should shared contacts to be included (default to 0)
     # @option opts [String] :ids Find contact by ID(s)
     # @option opts [Integer] :list_id Find contact by List ID
@@ -7453,9 +7756,10 @@ module TextMagic
     end
 
     # Find user contacts by given parameters.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :shared Should shared contacts to be included
     # @option opts [String] :ids Find contact by ID(s)
     # @option opts [Integer] :list_id Find contact by List ID
@@ -7522,10 +7826,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Find inbound messages
     # Find inbound messages by given parameters.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :ids Find message by ID(s)
     # @option opts [String] :query Find recipients by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id (default to id)
@@ -7537,10 +7842,11 @@ module TextMagic
       data
     end
 
+    # Find inbound messages
     # Find inbound messages by given parameters.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :ids Find message by ID(s)
     # @option opts [String] :query Find recipients by specified search query
     # @option opts [String] :order_by Order results by some field. Default is id
@@ -7600,9 +7906,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Find contact lists by given parameters.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :ids Find lists by ID(s)
     # @option opts [String] :query Find lists by specified search query
     # @option opts [Integer] :only_mine Return only current user lists (default to 0)
@@ -7616,9 +7923,10 @@ module TextMagic
     end
 
     # Find contact lists by given parameters.
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :ids Find lists by ID(s)
     # @option opts [String] :query Find lists by specified search query
     # @option opts [Integer] :only_mine Return only current user lists
@@ -7678,8 +7986,8 @@ module TextMagic
     # Find messages
     # Find outbound messages by given parameters.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
     # @option opts [String] :ids Find message by ID(s)
     # @option opts [Integer] :session_id Find messages by session ID
@@ -7695,8 +8003,8 @@ module TextMagic
     # Find messages
     # Find outbound messages by given parameters.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
     # @option opts [String] :ids Find message by ID(s)
     # @option opts [Integer] :session_id Find messages by session ID
@@ -7754,10 +8062,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find scheduled messages by given parameters.
+    # Find scheduled messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :query Find messages by specified search query
     # @option opts [String] :ids Find schedules by ID(s)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all (default to x)
@@ -7769,10 +8078,11 @@ module TextMagic
       data
     end
 
-    # Find scheduled messages by given parameters.
+    # Find scheduled messages
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :query Find messages by specified search query
     # @option opts [String] :ids Find schedules by ID(s)
     # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
@@ -7834,10 +8144,11 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find user templates by given parameters.
+    # Find templates by criteria
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page (default to 1)
-    # @option opts [Integer] :limit How many results to return (default to 10)
+    # @option opts [Integer] :page Fetch specified results page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
     # @option opts [String] :ids Find template by ID(s)
     # @option opts [String] :name Find template by name
     # @option opts [String] :content Find template by content
@@ -7847,10 +8158,11 @@ module TextMagic
       data
     end
 
-    # Find user templates by given parameters.
+    # Find templates by criteria
+    # 
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page
-    # @option opts [Integer] :limit How many results to return
+    # @option opts [Integer] :page Fetch specified results page.
+    # @option opts [Integer] :limit The number of results per page.
     # @option opts [String] :ids Find template by ID(s)
     # @option opts [String] :name Find template by name
     # @option opts [String] :content Find template by content
@@ -7896,6 +8208,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Send user email verification
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def send_email_verification_code(opts = {})
@@ -7904,6 +8217,7 @@ module TextMagic
     end
 
     # Send user email verification
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def send_email_verification_code_with_http_info(opts = {})
@@ -7995,6 +8309,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Send user phone verification
+    # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def send_phone_verification_code(opts = {})
@@ -8003,6 +8318,7 @@ module TextMagic
     end
 
     # Send user phone verification
+    # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def send_phone_verification_code_with_http_info(opts = {})
@@ -8039,6 +8355,61 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Step 1: Send a verification code 
+    # Sends verification code to specified phone number.
+    # @param send_phone_verification_code_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [SendPhoneVerificationCodeResponse]
+    def send_phone_verification_code_0(send_phone_verification_code_input_object, opts = {})
+      data, _status_code, _headers = send_phone_verification_code_0_with_http_info(send_phone_verification_code_input_object, opts)
+      data
+    end
+
+    # Step 1: Send a verification code 
+    # Sends verification code to specified phone number.
+    # @param send_phone_verification_code_input_object 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SendPhoneVerificationCodeResponse, Fixnum, Hash)>] SendPhoneVerificationCodeResponse data, response status code and response headers
+    def send_phone_verification_code_0_with_http_info(send_phone_verification_code_input_object, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.send_phone_verification_code_0 ...'
+      end
+      # verify the required parameter 'send_phone_verification_code_input_object' is set
+      if @api_client.config.client_side_validation && send_phone_verification_code_input_object.nil?
+        fail ArgumentError, "Missing the required parameter 'send_phone_verification_code_input_object' when calling TextMagicApi.send_phone_verification_code_0"
+      end
+      # resource path
+      local_var_path = '/api/v2/verify'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(send_phone_verification_code_input_object)
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SendPhoneVerificationCodeResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#send_phone_verification_code_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Change chat status
     # Set status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
@@ -8048,6 +8419,7 @@ module TextMagic
       data
     end
 
+    # Change chat status
     # Set status of the chat given by ID.
     # @param set_chat_status_input_object 
     # @param [Hash] opts the optional parameters
@@ -8092,6 +8464,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Start a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -8101,6 +8474,7 @@ module TextMagic
     end
 
     # Start a survey.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -8144,6 +8518,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unblock contact by phone number.
+    # 
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8153,6 +8528,7 @@ module TextMagic
     end
 
     # Unblock contact by phone number.
+    # 
     # @param unblock_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8193,6 +8569,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unblock several contacts by blocked contact ids or unblock all contacts
+    # 
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8202,6 +8579,7 @@ module TextMagic
     end
 
     # Unblock several contacts by blocked contact ids or unblock all contacts
+    # 
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8241,6 +8619,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Unmute chats (bulk)
     # Unmute several chats by chat ids or unmute all chats
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -8250,6 +8629,7 @@ module TextMagic
       nil
     end
 
+    # Unmute chats (bulk)
     # Unmute several chats by chat ids or unmute all chats
     # @param unmute_chats_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -8291,6 +8671,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Unsubscribe contact from your communication by phone number.
+    # 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -8300,6 +8681,7 @@ module TextMagic
     end
 
     # Unsubscribe contact from your communication by phone number.
+    # 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -8343,6 +8725,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update balance notification settings
+    # 
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8352,6 +8735,7 @@ module TextMagic
     end
 
     # Update balance notification settings
+    # 
     # @param update_balance_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8392,6 +8776,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update callback URL settings
+    # 
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8401,6 +8786,7 @@ module TextMagic
     end
 
     # Update callback URL settings
+    # 
     # @param update_callback_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8443,6 +8829,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update chat desktop notification settings
+    # 
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8452,6 +8839,7 @@ module TextMagic
     end
 
     # Update chat desktop notification settings
+    # 
     # @param update_chat_desktop_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8494,6 +8882,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing contact.
+    # 
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8504,6 +8893,7 @@ module TextMagic
     end
 
     # Update existing contact.
+    # 
     # @param update_contact_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8552,6 +8942,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing contact note.
+    # 
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8562,6 +8953,7 @@ module TextMagic
     end
 
     # Update existing contact note.
+    # 
     # @param update_contact_note_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8610,6 +9002,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update current user info.
+    # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
     # @return [UpdateCurrentUserResponse]
@@ -8619,6 +9012,7 @@ module TextMagic
     end
 
     # Update current user info.
+    # 
     # @param update_current_user_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UpdateCurrentUserResponse, Fixnum, Hash)>] UpdateCurrentUserResponse data, response status code and response headers
@@ -8662,6 +9056,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing custom field.
+    # 
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8672,6 +9067,7 @@ module TextMagic
     end
 
     # Update existing custom field.
+    # 
     # @param update_custom_field_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8720,6 +9116,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update contact's custom field value.
+    # 
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8730,6 +9127,7 @@ module TextMagic
     end
 
     # Update contact&#39;s custom field value.
+    # 
     # @param update_custom_field_value_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8778,6 +9176,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update inbound messages notification settings
+    # 
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8787,6 +9186,7 @@ module TextMagic
     end
 
     # Update inbound messages notification settings
+    # 
     # @param update_inbound_messages_notification_settings_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8827,6 +9227,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateListObject] :update_list_object 
@@ -8837,6 +9238,7 @@ module TextMagic
     end
 
     # Update existing list.
+    # 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateListObject] :update_list_object 
@@ -8881,6 +9283,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change user password.
+    # 
     # @param update_password_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8890,6 +9293,7 @@ module TextMagic
     end
 
     # Change user password.
+    # 
     # @param update_password_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8930,6 +9334,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change sender settings for specified country.
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8939,6 +9344,7 @@ module TextMagic
     end
 
     # Change sender settings for specified country.
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8979,6 +9385,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing survey.
+    # 
     # @param update_survey_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -8989,6 +9396,7 @@ module TextMagic
     end
 
     # Update existing survey.
+    # 
     # @param update_survey_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9037,6 +9445,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Update existing node.
+    # 
     # @param update_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9047,6 +9456,7 @@ module TextMagic
     end
 
     # Update existing node.
+    # 
     # @param update_survey_node_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9094,7 +9504,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update existing template.
+    # Update a template
+    # 
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9104,7 +9515,8 @@ module TextMagic
       data
     end
 
-    # Update existing template.
+    # Update a template
+    # 
     # @param update_template_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9153,6 +9565,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add an avatar for the current user.
+    # 
     # @param image User avatar. Should be PNG or JPG file not more than 10 MB
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -9162,6 +9575,7 @@ module TextMagic
     end
 
     # Add an avatar for the current user.
+    # 
     # @param image User avatar. Should be PNG or JPG file not more than 10 MB
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -9205,6 +9619,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add an avatar for the contact.
+    # 
     # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9215,6 +9630,7 @@ module TextMagic
     end
 
     # Add an avatar for the contact.
+    # 
     # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9264,6 +9680,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Add an avatar for the list.
+    # 
     # @param image List avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9274,6 +9691,7 @@ module TextMagic
     end
 
     # Add an avatar for the list.
+    # 
     # @param image List avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 
     # @param [Hash] opts the optional parameters

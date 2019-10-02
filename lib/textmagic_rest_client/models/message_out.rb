@@ -14,41 +14,50 @@ require 'date'
 
 module TextMagic
   class MessageOut
+    # Message ID.
     attr_accessor :id
+
+    # Message sender (phone number or alphanumeric Sender ID).
+    attr_accessor :sender
+
+    # Recipient phone number.
+    attr_accessor :receiver
+
+    attr_accessor :text
+
+    # Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
+    attr_accessor :status
 
     attr_accessor :contact_id
 
     attr_accessor :session_id
 
-    attr_accessor :receiver
-
+    # Sending time.
     attr_accessor :message_time
-
-    # q - queued s - scheduled queue e - sending error r - enroute a - acked d - delivered b - buffered f - failed u - unknown j - rejected i - bulk insert p - scheduled suspend h - queue suspend
-    attr_accessor :status
 
     attr_accessor :avatar
 
-    attr_accessor :text
-
     attr_accessor :deleted
 
+    # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
     attr_accessor :charset
 
     attr_accessor :charset_label
 
+    # @TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
     attr_accessor :first_name
 
+    # Contact last name.
     attr_accessor :last_name
 
+    # Two-letter ISO country code of the recipient phone number. 
     attr_accessor :country
-
-    attr_accessor :sender
 
     attr_accessor :phone
 
     attr_accessor :price
 
+    # Message parts (multiples of 160 characters) count.
     attr_accessor :parts_count
 
     attr_accessor :from_email
@@ -97,20 +106,20 @@ module TextMagic
     def self.attribute_map
       {
         :'id' => :'id',
+        :'sender' => :'sender',
+        :'receiver' => :'receiver',
+        :'text' => :'text',
+        :'status' => :'status',
         :'contact_id' => :'contactId',
         :'session_id' => :'sessionId',
-        :'receiver' => :'receiver',
         :'message_time' => :'messageTime',
-        :'status' => :'status',
         :'avatar' => :'avatar',
-        :'text' => :'text',
         :'deleted' => :'deleted',
         :'charset' => :'charset',
         :'charset_label' => :'charsetLabel',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
         :'country' => :'country',
-        :'sender' => :'sender',
         :'phone' => :'phone',
         :'price' => :'price',
         :'parts_count' => :'partsCount',
@@ -131,20 +140,20 @@ module TextMagic
     def self.swagger_types
       {
         :'id' => :'Integer',
+        :'sender' => :'String',
+        :'receiver' => :'String',
+        :'text' => :'String',
+        :'status' => :'String',
         :'contact_id' => :'Integer',
         :'session_id' => :'Integer',
-        :'receiver' => :'String',
         :'message_time' => :'DateTime',
-        :'status' => :'String',
         :'avatar' => :'String',
-        :'text' => :'String',
         :'deleted' => :'BOOLEAN',
         :'charset' => :'String',
         :'charset_label' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'country' => :'String',
-        :'sender' => :'String',
         :'phone' => :'String',
         :'price' => :'Float',
         :'parts_count' => :'Integer',
@@ -173,6 +182,22 @@ module TextMagic
         self.id = attributes[:'id']
       end
 
+      if attributes.has_key?(:'sender')
+        self.sender = attributes[:'sender']
+      end
+
+      if attributes.has_key?(:'receiver')
+        self.receiver = attributes[:'receiver']
+      end
+
+      if attributes.has_key?(:'text')
+        self.text = attributes[:'text']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
       if attributes.has_key?(:'contactId')
         self.contact_id = attributes[:'contactId']
       end
@@ -181,24 +206,12 @@ module TextMagic
         self.session_id = attributes[:'sessionId']
       end
 
-      if attributes.has_key?(:'receiver')
-        self.receiver = attributes[:'receiver']
-      end
-
       if attributes.has_key?(:'messageTime')
         self.message_time = attributes[:'messageTime']
       end
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
       if attributes.has_key?(:'avatar')
         self.avatar = attributes[:'avatar']
-      end
-
-      if attributes.has_key?(:'text')
-        self.text = attributes[:'text']
       end
 
       if attributes.has_key?(:'deleted')
@@ -223,10 +236,6 @@ module TextMagic
 
       if attributes.has_key?(:'country')
         self.country = attributes[:'country']
-      end
-
-      if attributes.has_key?(:'sender')
-        self.sender = attributes[:'sender']
       end
 
       if attributes.has_key?(:'phone')
@@ -290,6 +299,14 @@ module TextMagic
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
+      if @text.nil?
+        invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @status.nil?
+        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
       if @contact_id.nil?
         invalid_properties.push('invalid value for "contact_id", contact_id cannot be nil.')
       end
@@ -302,16 +319,8 @@ module TextMagic
         invalid_properties.push('invalid value for "message_time", message_time cannot be nil.')
       end
 
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
-      end
-
       if @avatar.nil?
         invalid_properties.push('invalid value for "avatar", avatar cannot be nil.')
-      end
-
-      if @text.nil?
-        invalid_properties.push('invalid value for "text", text cannot be nil.')
       end
 
       if @charset.nil?
@@ -345,14 +354,14 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
-      return false if @contact_id.nil?
-      return false if @session_id.nil?
-      return false if @message_time.nil?
+      return false if @text.nil?
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ['q', 's', 'e', 'r', 'a', 'd', 'b', 'f', 'u', 'j', 'i', 'p', 'h'])
       return false unless status_validator.valid?(@status)
+      return false if @contact_id.nil?
+      return false if @session_id.nil?
+      return false if @message_time.nil?
       return false if @avatar.nil?
-      return false if @text.nil?
       return false if @charset.nil?
       return false if @charset_label.nil?
       return false if @first_name.nil?
@@ -378,20 +387,20 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          sender == o.sender &&
+          receiver == o.receiver &&
+          text == o.text &&
+          status == o.status &&
           contact_id == o.contact_id &&
           session_id == o.session_id &&
-          receiver == o.receiver &&
           message_time == o.message_time &&
-          status == o.status &&
           avatar == o.avatar &&
-          text == o.text &&
           deleted == o.deleted &&
           charset == o.charset &&
           charset_label == o.charset_label &&
           first_name == o.first_name &&
           last_name == o.last_name &&
           country == o.country &&
-          sender == o.sender &&
           phone == o.phone &&
           price == o.price &&
           parts_count == o.parts_count &&
@@ -416,7 +425,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, contact_id, session_id, receiver, message_time, status, avatar, text, deleted, charset, charset_label, first_name, last_name, country, sender, phone, price, parts_count, from_email, from_number, smsc_id, contact, source, delivered_count, numbers_count, user_id, credits_price, chars].hash
+      [id, sender, receiver, text, status, contact_id, session_id, message_time, avatar, deleted, charset, charset_label, first_name, last_name, country, phone, price, parts_count, from_email, from_number, smsc_id, contact, source, delivered_count, numbers_count, user_id, credits_price, chars].hash
     end
 
     # Builds the object from hash

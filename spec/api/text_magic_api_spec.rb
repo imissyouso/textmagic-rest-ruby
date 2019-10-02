@@ -34,6 +34,7 @@ describe 'TextMagicApi' do
 
   # unit tests for assign_contacts_to_list
   # Assign contacts to the specified list.
+  # 
   # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -46,6 +47,7 @@ describe 'TextMagicApi' do
 
   # unit tests for block_contact
   # Block contact from inbound and outbound communication by phone number.
+  # 
   # @param block_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -57,6 +59,7 @@ describe 'TextMagicApi' do
 
   # unit tests for buy_dedicated_number
   # Buy a dedicated number and assign it to the specified account.
+  # 
   # @param buy_dedicated_number_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -68,6 +71,7 @@ describe 'TextMagicApi' do
 
   # unit tests for cancel_survey
   # Cancel a survey.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -77,8 +81,21 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for cancel_verification
+  # Cancel verification process
+  # You can cancel the verification not earlier than 30 seconds after the initial request.
+  # @param verify_id the verifyId that you received in Step 1.
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'cancel_verification test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for check_phone_verification_code
   # Check user phone verification code
+  # 
   # @param check_phone_verification_code_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -88,8 +105,21 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for check_phone_verification_code_0
+  # Step 2: Check the verification code 
+  # Check received code from user with the code which was actually sent.
+  # @param check_phone_verification_code_input_object 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'check_phone_verification_code_0 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for clear_and_assign_contacts_to_list
   # Reset list members to the specified contacts.
+  # 
   # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -101,6 +131,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for close_chats_bulk
+  # Close chats (bulk)
   # Close chats by chat ids or close all chats
   # @param close_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -112,6 +143,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for close_read_chats
+  # Close read chats
   # Close all chats that have no unread messages.
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -123,6 +155,7 @@ describe 'TextMagicApi' do
 
   # unit tests for close_subaccount
   # Close subaccount.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -134,6 +167,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_contact
   # Create a new contact from the submitted data.
+  # 
   # @param create_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -145,6 +179,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_contact_note
   # Create a new contact note.
+  # 
   # @param create_contact_note_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -157,6 +192,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_custom_field
   # Create a new custom field from the submitted data.
+  # 
   # @param create_custom_field_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -168,6 +204,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_list
   # Create a new list from the submitted data.
+  # 
   # @param create_list_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -179,6 +216,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_push_token
   # Add or update a device token.
+  # 
   # @param create_push_token_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -190,6 +228,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_survey
   # Create a new survey from the submitted data.
+  # 
   # @param create_survey_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -201,6 +240,7 @@ describe 'TextMagicApi' do
 
   # unit tests for create_survey_node
   # Create a new node from the submitted data.
+  # 
   # @param create_survey_node_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -212,7 +252,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for create_template
-  # Create a new template from the submitted data.
+  # Create a template
+  # 
   # @param create_template_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -224,6 +265,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_all_contacts
   # Delete all contacts.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_all_contacts test' do
@@ -245,6 +287,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_avatar
   # Delete an avatar for the current user.\\
+  # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_avatar test' do
@@ -254,6 +297,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_chat_messages
+  # Delete chat messages by ID(s)
   # Delete messages from chat by given messages ID(s).
   # @param delete_chat_messages_bulk_input_object 
   # @param id 
@@ -266,6 +310,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_chats_bulk
+  # Delete chats (bulk)
   # Delete chats by given ID(s) or delete all chats.
   # @param delete_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -278,6 +323,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contact
   # Delete a single contact.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -289,6 +335,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contact_avatar
   # Delete an avatar for the contact.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -300,6 +347,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contact_note
   # Delete a single contact note.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -311,6 +359,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contact_notes_bulk
   # Delete contact note by given ID(s) or delete all contact notes.
+  # 
   # @param id 
   # @param delete_contact_notes_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -323,6 +372,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contacts_by_ids
   # Delete contact by given ID(s) or delete all contacts.
+  # 
   # @param delete_contacts_by_ids_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -334,6 +384,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contacts_from_list
   # Unassign contacts from the specified list.
+  # 
   # @param delete_contacs_from_list_object Contact ID(s), separated by comma
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -346,6 +397,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_custom_field
   # Delete a single custom field.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -357,6 +409,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_dedicated_number
   # Cancel dedicated number subscription.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -367,8 +420,9 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_inbound_message
-  # Delete the incoming message.
-  # @param id 
+  # Delete a single inbound message
+  # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+  # @param id The unique numeric ID for the inbound message.
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_inbound_message test' do
@@ -378,7 +432,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_inbound_messages_bulk
-  # Delete inbound messages by given ID(s) or delete all inbound messages.
+  # Delete inbound messages (bulk)
+  # &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
   # @param delete_inbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -390,6 +445,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_list
   # Delete a single list.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -401,6 +457,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_list_avatar
   # Delete an avatar for the list.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -412,6 +469,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_list_contacts_bulk
   # Delete contact from list by given ID(s) or all contacts from list.
+  # 
   # @param delete_list_contacts_bulk_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -424,6 +482,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_lists_bulk
   # Delete list by given ID(s) or delete all lists.
+  # 
   # @param delete_lists_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -434,7 +493,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_message_session
-  # Delete a message session, together with all nested messages.
+  # Delete a session
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -445,7 +505,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_message_sessions_bulk
-  # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+  # Delete sessions (bulk)
+  # 
   # @param delete_message_sessions_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -468,7 +529,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_outbound_messages_bulk
-  # Delete messages by IDs
+  # Delete messages (bulk)
   # Delete outbound messages by given ID(s) or delete all outbound messages.
   # @param delete_outbound_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -481,6 +542,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_push_token
   # Delete a push notification device token.
+  # 
   # @param type 
   # @param device_id 
   # @param [Hash] opts the optional parameters
@@ -492,7 +554,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_scheduled_message
-  # Delete a message session, together with all nested messages.
+  # Delete a single scheduled message
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -503,7 +566,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_scheduled_messages_bulk
-  # Delete scheduled messages by given ID(s) or delete all scheduled messages.
+  # Delete scheduled messages (bulk)
+  # 
   # @param delete_scheduled_messages_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -515,6 +579,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_sender_id
   # Delete a Sender ID.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -526,6 +591,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_survey
   # Delete a survey.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -537,6 +603,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_survey_node
   # Delete a node.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -547,7 +614,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_template
-  # Delete a single template.
+  # Delete a template
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -558,7 +626,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_templates_bulk
-  # Delete template by given ID(s) or delete all templates.
+  # Delete templates (bulk)
+  # 
   # @param delete_templates_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -582,6 +651,7 @@ describe 'TextMagicApi' do
 
   # unit tests for do_carrier_lookup
   # Carrier Lookup
+  # 
   # @param phone 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country Country code for local formatted numbers
@@ -594,6 +664,7 @@ describe 'TextMagicApi' do
 
   # unit tests for do_email_lookup
   # Validate Email address using Email Lookup tool
+  # 
   # @param email 
   # @param [Hash] opts the optional parameters
   # @return [DoEmailLookupResponse]
@@ -605,6 +676,7 @@ describe 'TextMagicApi' do
 
   # unit tests for duplicate_survey
   # Duplicate a survey.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -616,9 +688,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_all_bulk_sessions
   # Get all bulk sending sessions.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetAllBulkSessionsPaginatedResponse]
   describe 'get_all_bulk_sessions test' do
     it 'should work' do
@@ -627,11 +700,12 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_all_chats
-  # Get all user chats.
+  # Get all chats
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :status Fetch only (a)ctive, (c)losed or (d)eleted chats
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [Integer] :voice Fetch results with voice calls
   # @option opts [Integer] :flat Should additional contact info be included
@@ -643,10 +717,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_all_inbound_messages
-  # Get all inbox messages.
+  # Get all inbound messages
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
   # @return [GetAllInboundMessagesPaginatedResponse]
@@ -657,10 +732,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_all_message_sessions
-  # Get all message sending sessions.
+  # Get all sessions
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetAllMessageSessionsPaginatedResponse]
   describe 'get_all_message_sessions test' do
     it 'should work' do
@@ -672,8 +748,8 @@ describe 'TextMagicApi' do
   # Get all messages
   # Get all user oubound messages.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
   # @return [GetAllOutboundMessagesPaginatedResponse]
   describe 'get_all_outbound_messages test' do
@@ -683,10 +759,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_all_scheduled_messages
-  # Get all scheduled messages.
+  # Get all scheduled messages
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
@@ -698,10 +775,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_all_templates
-  # Get all user templates.
+  # Get all templates
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetAllTemplatesPaginatedResponse]
   describe 'get_all_templates test' do
     it 'should work' do
@@ -711,6 +789,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_available_dedicated_numbers
   # Find available dedicated numbers to buy.
+  # 
   # @param country Dedicated number country. Two letters in upper case
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore.
@@ -724,6 +803,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_available_sender_setting_options
   # Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country Return sender setting options available in specific country only. Two upper case characters
   # @return [GetAvailableSenderSettingOptionsResponse]
@@ -735,6 +815,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_balance_notification_options
   # Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetBalanceNotificationOptionsResponse]
   describe 'get_balance_notification_options test' do
@@ -745,6 +826,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_balance_notification_settings
   # Get balance notification settings
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetBalanceNotificationSettingsResponse]
   describe 'get_balance_notification_settings test' do
@@ -755,9 +837,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_blocked_contacts
   # Get blocked contacts.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find blocked contacts by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
@@ -770,6 +853,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_bulk_session
   # Get bulk message session status.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [BulkSession]
@@ -781,6 +865,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_callback_settings
   # Fetch callback URL settings
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetCallbackSettingsResponse]
   describe 'get_callback_settings test' do
@@ -791,6 +876,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_calls_prices
   # Check pricing for a inbound/outbound call.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetCallsPricesResponse]
   describe 'get_calls_prices test' do
@@ -800,7 +886,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_chat
-  # Get a single chat.
+  # Get a single chat
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [Chat]
@@ -811,7 +898,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_chat_by_phone
-  # Find chats by phone.
+  # Find chats by phone
+  # 
   # @param phone 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :upsert Create a new chat if not found
@@ -824,11 +912,12 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_chat_messages
-  # Fetch messages from chat with specified chat id.
+  # Get chat messages
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find messages by specified search query
   # @option opts [Integer] :start Return messages since specified timestamp only
   # @option opts [Integer] :_end Return messages up to specified timestamp only
@@ -843,6 +932,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact
   # Get a single contact.
+  # 
   # @param id The contact id
   # @param [Hash] opts the optional parameters
   # @return [Contact]
@@ -854,6 +944,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact_by_phone
   # Get a single contact by phone number.
+  # 
   # @param phone 
   # @param [Hash] opts the optional parameters
   # @return [Contact]
@@ -865,6 +956,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact_if_blocked
   # Check is that phone number blocked
+  # 
   # @param phone Phone number to check
   # @param [Hash] opts the optional parameters
   # @return [Contact]
@@ -876,6 +968,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact_import_session_progress
   # Get contact import session progress.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [GetContactImportSessionProgressResponse]
@@ -887,6 +980,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact_note
   # Get a single contact note.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ContactNote]
@@ -898,10 +992,11 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contact_notes
   # Fetch notes assigned to the given contact.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetContactNotesPaginatedResponse]
   describe 'get_contact_notes test' do
     it 'should work' do
@@ -911,9 +1006,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contacts
   # Get all user contacts.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :shared Should shared contacts to be included
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
@@ -926,9 +1022,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_contacts_autocomplete
   # Get contacts autocomplete suggestions by given search term.
+  # 
   # @param query Find recipients by specified search query
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :lists Should lists be returned or not
   # @return [GetContactsAutocompleteResponse]
   describe 'get_contacts_autocomplete test' do
@@ -942,8 +1039,8 @@ describe 'TextMagicApi' do
   # A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
   # @param id Given group Id.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
   # @return [GetContactsByListIdPaginatedResponse]
@@ -955,6 +1052,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_countries
   # Return list of countries.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetCountriesResponse]
   describe 'get_countries test' do
@@ -965,6 +1063,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_current_user
   # Get current user info.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [User]
   describe 'get_current_user test' do
@@ -975,6 +1074,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_custom_field
   # Get a single custom field.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [UserCustomField]
@@ -986,9 +1086,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_custom_fields
   # Get all contact custom fields.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetCustomFieldsPaginatedResponse]
   describe 'get_custom_fields test' do
     it 'should work' do
@@ -998,6 +1099,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_dedicated_number
   # Get a single dedicated number.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [UsersInbound]
@@ -1009,6 +1111,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_disallowed_rules
   # Get an array of all rules that are disallowed to the current account.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetDisallowedRulesResponse]
   describe 'get_disallowed_rules test' do
@@ -1019,9 +1122,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_favourites
   # Get favorite contacts and lists.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find contacts or lists by specified search query
   # @return [GetFavouritesPaginatedResponse]
   describe 'get_favourites test' do
@@ -1030,21 +1134,10 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_forwarded_calls
-  # Get all forwarded calls.
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
-  # @return [GetForwardedCallsPaginatedResponse]
-  describe 'get_forwarded_calls test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_inbound_message
-  # Get a single inbox message.
-  # @param id 
+  # Get a single inbound message
+  # 
+  # @param id The unique numeric ID for the inbound message.
   # @param [Hash] opts the optional parameters
   # @return [MessageIn]
   describe 'get_inbound_message test' do
@@ -1055,6 +1148,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_inbound_messages_notification_settings
   # Get inbound messages notification settings
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetInboundMessagesNotificationSettingsResponse]
   describe 'get_inbound_messages_notification_settings test' do
@@ -1065,9 +1159,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_invoices
   # Return account invoices.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetInvoicesPaginatedResponse]
   describe 'get_invoices test' do
     it 'should work' do
@@ -1077,6 +1172,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_list
   # Get a single list.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [Group]
@@ -1088,6 +1184,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_list_contacts_ids
   # Fetch all contacts IDs belonging to the list with ID.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [GetListContactsIdsResponse]
@@ -1099,10 +1196,11 @@ describe 'TextMagicApi' do
 
   # unit tests for get_lists_of_contact
   # Return lists which contact belongs to.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetListsOfContactPaginatedResponse]
   describe 'get_lists_of_contact test' do
     it 'should work' do
@@ -1179,8 +1277,9 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_message_session
-  # Get a message session.
-  # @param id 
+  # Get a session details
+  # 
+  # @param id a session ID
   # @param [Hash] opts the optional parameters
   # @return [MessageSession]
   describe 'get_message_session test' do
@@ -1190,7 +1289,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_message_session_stat
-  # Get sending session statistics.
+  # Get a session statistics
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :include_deleted Search also in deleted messages
@@ -1202,12 +1302,12 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_messages_by_session_id
-  # Fetch messages by given session id.
+  # Get a session messages
   # A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :statuses Find messages by status
   # @option opts [Integer] :include_deleted Search also in deleted messages
   # @return [GetMessagesBySessionIdPaginatedResponse]
@@ -1219,6 +1319,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_messaging_counters
   # Return counters for messaging data views.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetMessagingCountersResponse]
   describe 'get_messaging_counters test' do
@@ -1229,6 +1330,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_messaging_stat
   # Return messaging statistics.
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :by Group results by specified period: off, day, month or year. Default is off
   # @option opts [Integer] :start Start date in unix timestamp format. Default is 7 days ago
@@ -1256,7 +1358,7 @@ describe 'TextMagicApi' do
   # Get history
   # Get outbound messages history.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID.
   # @option opts [String] :query Find message by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
@@ -1270,6 +1372,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_push_tokens
   # Get all device tokens assigned to the current account
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetPushTokensResponse]
   describe 'get_push_tokens test' do
@@ -1279,7 +1382,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_scheduled_message
-  # Get message schedule.
+  # Get a single scheduled message
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [MessagesIcs]
@@ -1291,6 +1395,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_sender_id
   # Get a single Sender ID.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [SenderId]
@@ -1302,9 +1407,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_sender_ids
   # Get all sender IDs of current user.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetSenderIdsPaginatedResponse]
   describe 'get_sender_ids test' do
     it 'should work' do
@@ -1314,6 +1420,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_sender_settings
   # Get current user sender settings.
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
   # @return [GetSenderSettingsResponse]
@@ -1325,9 +1432,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_spending_stat
   # Return account spending statistics.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :start Optional. Start date in unix timestamp format. Default is 7 days ago
   # @option opts [Integer] :_end Optional. End date in unix timestamp format. Default is now
   # @return [GetSpendingStatPaginatedResponse]
@@ -1339,6 +1447,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_state
   # Get current entities state
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetStateResponse]
   describe 'get_state test' do
@@ -1349,6 +1458,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_subaccount
   # Get a single subaccount.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [User]
@@ -1360,9 +1470,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_subaccounts
   # Get all subaccounts of current user.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [User]
   describe 'get_subaccounts test' do
     it 'should work' do
@@ -1375,8 +1486,8 @@ describe 'TextMagicApi' do
   # When more than one token related to app name, last key will be returned.
   # @param get_subaccounts_with_tokens_input_object 
   # @param [Hash] opts the optional parameters
-  # @option opts [Float] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Float] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetSubaccountsWithTokensResponse]
   describe 'get_subaccounts_with_tokens test' do
     it 'should work' do
@@ -1386,6 +1497,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_survey
   # Get a survey by id.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [Survey]
@@ -1397,6 +1509,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_survey_node
   # Get a node by id.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [SurveyNode]
@@ -1408,6 +1521,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_survey_nodes
   # Fetch nodes by given survey id.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [GetSurveyNodesResponse]
@@ -1419,9 +1533,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_surveys
   # Get all user surveys.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetSurveysPaginatedResponse]
   describe 'get_surveys test' do
     it 'should work' do
@@ -1430,7 +1545,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_template
-  # Get a single template.
+  # Get a template details
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [MessageTemplate]
@@ -1442,6 +1558,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_timezones
   # Return all available timezone IDs.
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
   # @return [GetTimezonesResponse]
@@ -1452,6 +1569,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_unread_messages_total
+  # Get unread messages number
   # Get total amount of unread messages in the current user chats.
   # @param [Hash] opts the optional parameters
   # @return [GetUnreadMessagesTotalResponse]
@@ -1463,6 +1581,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_unsubscribed_contact
   # Get a single unsubscribed contact.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [UnsubscribedContact]
@@ -1474,9 +1593,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_unsubscribers
   # Get all contact have unsubscribed from your communication.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @return [GetUnsubscribersPaginatedResponse]
   describe 'get_unsubscribers test' do
     it 'should work' do
@@ -1486,9 +1606,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_user_dedicated_numbers
   # Get user&#39;s dedicated numbers.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :survey_id Fetch only that numbers which are ready for the survey
   # @return [GetUserDedicatedNumbersPaginatedResponse]
   describe 'get_user_dedicated_numbers test' do
@@ -1499,9 +1620,10 @@ describe 'TextMagicApi' do
 
   # unit tests for get_user_lists
   # Get all user lists.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :order_by Order results by some field. Default is id
   # @option opts [String] :direction Order direction. Default is desc
   # @option opts [Integer] :favorite_only Return only favorite lists
@@ -1515,6 +1637,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_versions
   # Get minimal valid apps versions
+  # 
   # @param [Hash] opts the optional parameters
   # @return [GetVersionsResponse]
   describe 'get_versions test' do
@@ -1525,6 +1648,7 @@ describe 'TextMagicApi' do
 
   # unit tests for invite_subaccount
   # Invite new subaccount.
+  # 
   # @param invite_subaccount_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1535,6 +1659,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for mark_chats_read_bulk
+  # Mark chats as read (bulk)
   # Mark several chats as read by chat ids or mark all chats as read
   # @param mark_chats_read_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1546,6 +1671,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for mark_chats_unread_bulk
+  # Mark chats as unread (bulk)
   # Mark several chats as UNread by chat ids or mark all chats as UNread
   # @param mark_chats_unread_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1558,6 +1684,7 @@ describe 'TextMagicApi' do
 
   # unit tests for merge_survey_nodes
   # Merge two question nodes.
+  # 
   # @param merge_survey_nodes_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1568,7 +1695,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for mute_chat
-  # Set mute mode.
+  # Mute chat sounds
+  # 
   # @param mute_chat_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1579,6 +1707,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for mute_chats_bulk
+  # Mute chats (bulk)
   # Mute several chats by chat ids or mute all chats
   # @param mute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1591,6 +1720,7 @@ describe 'TextMagicApi' do
 
   # unit tests for ping
   # Just does a pong.
+  # 
   # @param [Hash] opts the optional parameters
   # @return [PingResponse]
   describe 'ping test' do
@@ -1600,6 +1730,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for reopen_chats_bulk
+  # Reopen chats (bulk)
   # Reopen chats by chat ids or reopen all chats
   # @param reopen_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1624,6 +1755,7 @@ describe 'TextMagicApi' do
 
   # unit tests for request_sender_id
   # Request for a new Sender ID.
+  # 
   # @param request_sender_id_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1635,6 +1767,7 @@ describe 'TextMagicApi' do
 
   # unit tests for reset_survey
   # Reset a survey flow.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1645,10 +1778,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_chats
-  # Find chats by inbound or outbound messages text.
+  # Find chats by message text
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find chats by specified search query
   # @return [SearchChatsPaginatedResponse]
   describe 'search_chats test' do
@@ -1658,10 +1792,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_chats_by_ids
-  # Find chats by IDs.
+  # Find chats (bulk)
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :ids Find chats by ID(s)
   # @return [SearchChatsByIdsPaginatedResponse]
   describe 'search_chats_by_ids test' do
@@ -1671,10 +1806,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_chats_by_receipent
+  # Find chats by recipient
   # Find chats by recipient (contact, list name or phone number).
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find chats by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
   # @return [SearchChatsByReceipentPaginatedResponse]
@@ -1686,9 +1822,10 @@ describe 'TextMagicApi' do
 
   # unit tests for search_contacts
   # Find user contacts by given parameters.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :shared Should shared contacts to be included
   # @option opts [String] :ids Find contact by ID(s)
   # @option opts [Integer] :list_id Find contact by List ID
@@ -1706,10 +1843,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_inbound_messages
+  # Find inbound messages
   # Find inbound messages by given parameters.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :ids Find message by ID(s)
   # @option opts [String] :query Find recipients by specified search query
   # @option opts [String] :order_by Order results by some field. Default is id
@@ -1724,9 +1862,10 @@ describe 'TextMagicApi' do
 
   # unit tests for search_lists
   # Find contact lists by given parameters.
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :ids Find lists by ID(s)
   # @option opts [String] :query Find lists by specified search query
   # @option opts [Integer] :only_mine Return only current user lists
@@ -1744,8 +1883,8 @@ describe 'TextMagicApi' do
   # Find messages
   # Find outbound messages by given parameters.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [Integer] :last_id Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
   # @option opts [String] :ids Find message by ID(s)
   # @option opts [Integer] :session_id Find messages by session ID
@@ -1760,10 +1899,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_scheduled_messages
-  # Find scheduled messages by given parameters.
+  # Find scheduled messages
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :query Find messages by specified search query
   # @option opts [String] :ids Find schedules by ID(s)
   # @option opts [String] :status Fetch schedules with the specific status: a - actual, c - completed, x - all
@@ -1777,10 +1917,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_templates
-  # Find user templates by given parameters.
+  # Find templates by criteria
+  # 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page
-  # @option opts [Integer] :limit How many results to return
+  # @option opts [Integer] :page Fetch specified results page.
+  # @option opts [Integer] :limit The number of results per page.
   # @option opts [String] :ids Find template by ID(s)
   # @option opts [String] :name Find template by name
   # @option opts [String] :content Find template by content
@@ -1793,6 +1934,7 @@ describe 'TextMagicApi' do
 
   # unit tests for send_email_verification_code
   # Send user email verification
+  # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'send_email_verification_code test' do
@@ -1815,6 +1957,7 @@ describe 'TextMagicApi' do
 
   # unit tests for send_phone_verification_code
   # Send user phone verification
+  # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'send_phone_verification_code test' do
@@ -1823,7 +1966,20 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for send_phone_verification_code_0
+  # Step 1: Send a verification code 
+  # Sends verification code to specified phone number.
+  # @param send_phone_verification_code_input_object 
+  # @param [Hash] opts the optional parameters
+  # @return [SendPhoneVerificationCodeResponse]
+  describe 'send_phone_verification_code_0 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for set_chat_status
+  # Change chat status
   # Set status of the chat given by ID.
   # @param set_chat_status_input_object 
   # @param [Hash] opts the optional parameters
@@ -1836,6 +1992,7 @@ describe 'TextMagicApi' do
 
   # unit tests for start_survey
   # Start a survey.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1847,6 +2004,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unblock_contact
   # Unblock contact by phone number.
+  # 
   # @param unblock_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1858,6 +2016,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unblock_contacts_bulk
   # Unblock several contacts by blocked contact ids or unblock all contacts
+  # 
   # @param unblock_contacts_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1868,6 +2027,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for unmute_chats_bulk
+  # Unmute chats (bulk)
   # Unmute several chats by chat ids or unmute all chats
   # @param unmute_chats_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1880,6 +2040,7 @@ describe 'TextMagicApi' do
 
   # unit tests for unsubscribe_contact
   # Unsubscribe contact from your communication by phone number.
+  # 
   # @param unsubscribe_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -1891,6 +2052,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_balance_notification_settings
   # Update balance notification settings
+  # 
   # @param update_balance_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1902,6 +2064,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_callback_settings
   # Update callback URL settings
+  # 
   # @param update_callback_settings_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1913,6 +2076,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_chat_desktop_notification_settings
   # Update chat desktop notification settings
+  # 
   # @param update_chat_desktop_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1924,6 +2088,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_contact
   # Update existing contact.
+  # 
   # @param update_contact_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1936,6 +2101,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_contact_note
   # Update existing contact note.
+  # 
   # @param update_contact_note_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1948,6 +2114,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_current_user
   # Update current user info.
+  # 
   # @param update_current_user_input_object 
   # @param [Hash] opts the optional parameters
   # @return [UpdateCurrentUserResponse]
@@ -1959,6 +2126,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_custom_field
   # Update existing custom field.
+  # 
   # @param update_custom_field_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1971,6 +2139,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_custom_field_value
   # Update contact&#39;s custom field value.
+  # 
   # @param update_custom_field_value_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1983,6 +2152,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_inbound_messages_notification_settings
   # Update inbound messages notification settings
+  # 
   # @param update_inbound_messages_notification_settings_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -1994,6 +2164,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_list
   # Update existing list.
+  # 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [UpdateListObject] :update_list_object 
@@ -2006,6 +2177,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_password
   # Change user password.
+  # 
   # @param update_password_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -2017,6 +2189,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_sender_setting
   # Change sender settings for specified country.
+  # 
   # @param update_sender_setting_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -2028,6 +2201,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_survey
   # Update existing survey.
+  # 
   # @param update_survey_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2040,6 +2214,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_survey_node
   # Update existing node.
+  # 
   # @param update_survey_node_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2051,7 +2226,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_template
-  # Update existing template.
+  # Update a template
+  # 
   # @param update_template_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2064,6 +2240,7 @@ describe 'TextMagicApi' do
 
   # unit tests for upload_avatar
   # Add an avatar for the current user.
+  # 
   # @param image User avatar. Should be PNG or JPG file not more than 10 MB
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -2075,6 +2252,7 @@ describe 'TextMagicApi' do
 
   # unit tests for upload_contact_avatar
   # Add an avatar for the contact.
+  # 
   # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2087,6 +2265,7 @@ describe 'TextMagicApi' do
 
   # unit tests for upload_list_avatar
   # Add an avatar for the list.
+  # 
   # @param image List avatar. Should be PNG or JPG file not more than 10 MB
   # @param id 
   # @param [Hash] opts the optional parameters

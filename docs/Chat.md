@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Integer** | Chat ID. | 
 **original_id** | **Integer** |  | 
-**phone** | **String** |  | 
+**phone** | **String** | Chat partner phone number. | 
 **contact** | [**Contact**](Contact.md) |  | 
 **unsubscribed_contact_id** | **Integer** |  | 
-**unread** | **Integer** |  | 
-**updated_at** | **DateTime** |  | 
+**unread** | **Integer** | Unread incoming messages count. | 
+**updated_at** | **DateTime** | Time when last incoming message arrived at this chat. | 
 **status** | **String** |  | 
 **mute** | **Integer** |  | 
 **last_message** | **String** |  | 

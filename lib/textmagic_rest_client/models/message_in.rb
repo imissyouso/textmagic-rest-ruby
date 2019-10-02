@@ -14,14 +14,19 @@ require 'date'
 
 module TextMagic
   class MessageIn
+    # The ID of the inbound message.
     attr_accessor :id
 
+    # The sender’s phone number.
     attr_accessor :sender
 
+    # The receiver’s phone number (i.e. your dedicated or shared reply number).
     attr_accessor :receiver
 
+    # The time when the message reached the TextMagic API endpoint.
     attr_accessor :message_time
 
+    # The text from the received message.
     attr_accessor :text
 
     attr_accessor :contact_id

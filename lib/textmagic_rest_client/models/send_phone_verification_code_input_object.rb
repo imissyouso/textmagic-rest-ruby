@@ -13,34 +13,46 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class SearchChatsByIdsPaginatedResponse
-    attr_accessor :page
+  class SendPhoneVerificationCodeInputObject
+    # Use the phone number in international E.164 format. If you need to pass phone numbers in the local format, please use them with the **country** parameter to specify the origin country of the phone number. 
+    attr_accessor :phone
 
-    # The total number of pages.
-    attr_accessor :page_count
+    # Alphanumeric string with up to 18 characters you can use to personalize the verification text message body, to help users identify your company or application name. For example: “Your TextMagic PIN is …” 
+    attr_accessor :brand
 
-    # The number of results per page.
-    attr_accessor :limit
+    # The length of the verification code. The value can be 4 or 6 characters. 
+    attr_accessor :code_length
 
-    attr_accessor :resources
+    # By default, the SMS or text-to-speech (TTS) voice message is generated in the locale that matches the number. For example, the text message or TTS message for a 33\\* number is sent in French. Use this parameter to explicitly control the language, accent, and gender used for the verification request.Can be one of the following: `de-de`, `en-au`, `en-gb`, `en-us`, `en-in`, `es-es`, `es-mx`, `es-us`, `fr-ca`, `fr-fr`, `is-is`, `it-it`, `ja-jp`, `ko-kr`, `nl-nl`, `pl-pl`, `pt-pt`, `pt-br`, `ro-ro`, `ru-ru`, `sv-se`, `tr-tr`, `zh-cn` or `zh-tw`. 
+    attr_accessor :language
+
+    # One of the available [sender settings](https://my.textmagic.com/online/reply-options/) on your TextMagic account. If specified sender setting type is not allowed for some destinations, a fallback default sender will be used to ensure the message delivery. More info about known restrictions can be found [here](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/). 
+    attr_accessor :sender_id
+
+    # 2-letter ISO country code for local phone number.
+    attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'page' => :'page',
-        :'page_count' => :'pageCount',
-        :'limit' => :'limit',
-        :'resources' => :'resources'
+        :'phone' => :'phone',
+        :'brand' => :'brand',
+        :'code_length' => :'codeLength',
+        :'language' => :'language',
+        :'sender_id' => :'senderId',
+        :'country' => :'country'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'page' => :'Integer',
-        :'page_count' => :'Integer',
-        :'limit' => :'Integer',
-        :'resources' => :'Array<Chat>'
+        :'phone' => :'String',
+        :'brand' => :'String',
+        :'code_length' => :'Integer',
+        :'language' => :'String',
+        :'sender_id' => :'String',
+        :'country' => :'String'
       }
     end
 
@@ -52,22 +64,28 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'page')
-        self.page = attributes[:'page']
+      if attributes.has_key?(:'phone')
+        self.phone = attributes[:'phone']
       end
 
-      if attributes.has_key?(:'pageCount')
-        self.page_count = attributes[:'pageCount']
+      if attributes.has_key?(:'brand')
+        self.brand = attributes[:'brand']
       end
 
-      if attributes.has_key?(:'limit')
-        self.limit = attributes[:'limit']
+      if attributes.has_key?(:'codeLength')
+        self.code_length = attributes[:'codeLength']
       end
 
-      if attributes.has_key?(:'resources')
-        if (value = attributes[:'resources']).is_a?(Array)
-          self.resources = value
-        end
+      if attributes.has_key?(:'language')
+        self.language = attributes[:'language']
+      end
+
+      if attributes.has_key?(:'senderId')
+        self.sender_id = attributes[:'senderId']
+      end
+
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
       end
     end
 
@@ -75,20 +93,16 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @page.nil?
-        invalid_properties.push('invalid value for "page", page cannot be nil.')
+      if @phone.nil?
+        invalid_properties.push('invalid value for "phone", phone cannot be nil.')
       end
 
-      if @page_count.nil?
-        invalid_properties.push('invalid value for "page_count", page_count cannot be nil.')
+      if @brand.nil?
+        invalid_properties.push('invalid value for "brand", brand cannot be nil.')
       end
 
-      if @limit.nil?
-        invalid_properties.push('invalid value for "limit", limit cannot be nil.')
-      end
-
-      if @resources.nil?
-        invalid_properties.push('invalid value for "resources", resources cannot be nil.')
+      if @code_length.nil?
+        invalid_properties.push('invalid value for "code_length", code_length cannot be nil.')
       end
 
       invalid_properties
@@ -97,10 +111,9 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @page.nil?
-      return false if @page_count.nil?
-      return false if @limit.nil?
-      return false if @resources.nil?
+      return false if @phone.nil?
+      return false if @brand.nil?
+      return false if @code_length.nil?
       true
     end
 
@@ -109,10 +122,12 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          page == o.page &&
-          page_count == o.page_count &&
-          limit == o.limit &&
-          resources == o.resources
+          phone == o.phone &&
+          brand == o.brand &&
+          code_length == o.code_length &&
+          language == o.language &&
+          sender_id == o.sender_id &&
+          country == o.country
     end
 
     # @see the `==` method
@@ -124,7 +139,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [page, page_count, limit, resources].hash
+      [phone, brand, code_length, language, sender_id, country].hash
     end
 
     # Builds the object from hash

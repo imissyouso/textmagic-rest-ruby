@@ -16,23 +16,53 @@ module TextMagic
   class Conversation
     attr_accessor :id
 
+    # Message type: inbound or outbound. 
     attr_accessor :direction
 
+    # Sender phone number.
     attr_accessor :sender
 
+    # Time when message arrived at TextMagic.
     attr_accessor :message_time
 
+    # Message text.
     attr_accessor :text
 
+    # Receiver phone number.
     attr_accessor :receiver
 
+    # Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details.
     attr_accessor :status
 
+    # Contact first name.
     attr_accessor :first_name
 
+    # Contact last name.
     attr_accessor :last_name
 
     attr_accessor :session_id
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -167,6 +197,8 @@ module TextMagic
     def valid?
       return false if @id.nil?
       return false if @direction.nil?
+      direction_validator = EnumAttributeValidator.new('String', ['in', 'out'])
+      return false unless direction_validator.valid?(@direction)
       return false if @sender.nil?
       return false if @message_time.nil?
       return false if @text.nil?
@@ -176,6 +208,16 @@ module TextMagic
       return false if @last_name.nil?
       return false if @session_id.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] direction Object to be assigned
+    def direction=(direction)
+      validator = EnumAttributeValidator.new('String', ['in', 'out'])
+      unless validator.valid?(direction)
+        fail ArgumentError, 'invalid value for "direction", must be one of #{validator.allowable_values}.'
+      end
+      @direction = direction
     end
 
     # Checks equality by comparing each attribute.

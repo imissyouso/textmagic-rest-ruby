@@ -14,18 +14,22 @@ require 'date'
 
 module TextMagic
   class Chat
+    # Chat ID.
     attr_accessor :id
 
     attr_accessor :original_id
 
+    # Chat partner phone number.
     attr_accessor :phone
 
     attr_accessor :contact
 
     attr_accessor :unsubscribed_contact_id
 
+    # Unread incoming messages count.
     attr_accessor :unread
 
+    # Time when last incoming message arrived at this chat.
     attr_accessor :updated_at
 
     attr_accessor :status

@@ -4,14 +4,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | 
-**direction** | **String** |  | 
-**sender** | **String** |  | 
-**message_time** | **DateTime** |  | 
-**text** | **String** |  | 
-**receiver** | **String** |  | 
-**status** | **String** |  | 
-**first_name** | **String** |  | 
-**last_name** | **String** |  | 
+**direction** | **String** | Message type: inbound or outbound.  | 
+**sender** | **String** | Sender phone number. | 
+**message_time** | **DateTime** | Time when message arrived at TextMagic. | 
+**text** | **String** | Message text. | 
+**receiver** | **String** | Receiver phone number. | 
+**status** | **String** | Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details. | 
+**first_name** | **String** | Contact first name. | 
+**last_name** | **String** | Contact last name. | 
 **session_id** | **Integer** |  | 
 
 

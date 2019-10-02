@@ -16,8 +16,10 @@ module TextMagic
   class GetAllOutboundMessagesPaginatedResponse
     attr_accessor :page
 
+    # The total number of pages.
     attr_accessor :page_count
 
+    # The number of results per page.
     attr_accessor :limit
 
     attr_accessor :resources

@@ -18,6 +18,7 @@ module TextMagic
 
     attr_accessor :next_last_id
 
+    # The number of results per page.
     attr_accessor :limit
 
     attr_accessor :resources
