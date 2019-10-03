@@ -79,7 +79,7 @@ module TextMagic
         :'country' => :'Country',
         :'custom_fields' => :'Array<ContactCustomField>',
         :'user' => :'User',
-        :'lists' => :'Array<Group>',
+        :'lists' => :'Array<Array>',
         :'phone_type' => :'String',
         :'avatar' => :'ContactImage',
         :'notes' => :'Array<ContactNote>'

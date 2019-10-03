@@ -1,4 +1,4 @@
-# TextMagic::Group
+# TextMagic::List
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **user** | [**User**](User.md) |  | 
 **service** | **BOOLEAN** |  | 
 **shared** | **BOOLEAN** |  | 
-**avatar** | [**GroupImage**](GroupImage.md) |  | 
+**avatar** | [**ListImage**](ListImage.md) |  | 
 **is_default** | **BOOLEAN** |  | 
 
 

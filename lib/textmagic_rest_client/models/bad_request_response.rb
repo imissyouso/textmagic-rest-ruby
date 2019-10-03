@@ -15,8 +15,10 @@ require 'date'
 module TextMagic
   # Returned when the form has errors
   class BadRequestResponse
+    # HTTP error code.
     attr_accessor :code
 
+    # Brief error message. You could display this message to your user or save it in a log.
     attr_accessor :message
 
     attr_accessor :errors

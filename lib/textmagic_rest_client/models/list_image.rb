@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GroupImage
+  class ListImage
     attr_accessor :href
 
     # Attribute mapping from ruby-style variable name to JSON key.

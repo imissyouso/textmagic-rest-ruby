@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GetUserListsPaginatedResponse
+  class GetListsPaginatedResponse
     attr_accessor :page
 
     # The total number of pages.
@@ -40,7 +40,7 @@ module TextMagic
         :'page' => :'Integer',
         :'page_count' => :'Integer',
         :'limit' => :'Integer',
-        :'resources' => :'Array<Group>'
+        :'resources' => :'Array<Array>'
       }
     end
 

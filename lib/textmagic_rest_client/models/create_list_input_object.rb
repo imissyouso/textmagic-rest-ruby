@@ -14,16 +14,16 @@ require 'date'
 
 module TextMagic
   class CreateListInputObject
-    # List name
+    # List name.
     attr_accessor :name
 
-    # Should this list be shared with sub-accounts
+    # Should new list be shared among all the sub-accounts? The default is 0 (false).
     attr_accessor :shared
 
-    # Is list favorited. Default is false
+    # Is list favorited. Default is false.
     attr_accessor :favorited
 
-    # Is list default for new contacts (web only).
+    # Is list default for new contacts (web only). Default is false.
     attr_accessor :is_default
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -60,6 +60,8 @@ module TextMagic
 
       if attributes.has_key?(:'shared')
         self.shared = attributes[:'shared']
+      else
+        self.shared = false
       end
 
       if attributes.has_key?(:'favorited')
@@ -83,10 +85,6 @@ module TextMagic
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @shared.nil?
-        invalid_properties.push('invalid value for "shared", shared cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -94,7 +92,6 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
-      return false if @shared.nil?
       true
     end
 

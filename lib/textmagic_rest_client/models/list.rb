@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class Group
+  class List
     attr_accessor :id
 
     attr_accessor :name
@@ -61,7 +61,7 @@ module TextMagic
         :'user' => :'User',
         :'service' => :'BOOLEAN',
         :'shared' => :'BOOLEAN',
-        :'avatar' => :'GroupImage',
+        :'avatar' => :'ListImage',
         :'is_default' => :'BOOLEAN'
       }
     end

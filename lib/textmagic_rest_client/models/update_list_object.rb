@@ -83,10 +83,6 @@ module TextMagic
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @shared.nil?
-        invalid_properties.push('invalid value for "shared", shared cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -94,7 +90,6 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
-      return false if @shared.nil?
       true
     end
 

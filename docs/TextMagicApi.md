@@ -1,6 +1,6 @@
 # TextMagic::TextMagicApi
 
-All URIs are relative to *http://my.textmagic.com*
+All URIs are relative to *http://rest.textmagic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**cancel_survey**](TextMagicApi.md#cancel_survey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancel_verification**](TextMagicApi.md#cancel_verification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
 [**check_phone_verification_code**](TextMagicApi.md#check_phone_verification_code) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
-[**check_phone_verification_code_0**](TextMagicApi.md#check_phone_verification_code_0) | **PUT** /api/v2/verify | Step 2: Check the verification code 
+[**check_phone_verification_code_tfa**](TextMagicApi.md#check_phone_verification_code_tfa) | **PUT** /api/v2/verify | Step 2: Check the verification code 
 [**clear_and_assign_contacts_to_list**](TextMagicApi.md#clear_and_assign_contacts_to_list) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts.
 [**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
 [**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts | Create a new contact from the submitted data.
 [**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
 [**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Create a new custom field from the submitted data.
-[**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list from the submitted data.
+[**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list
 [**create_push_token**](TextMagicApi.md#create_push_token) | **POST** /api/v2/push/tokens | Add or update a device token.
 [**create_survey**](TextMagicApi.md#create_survey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
 [**create_survey_node**](TextMagicApi.md#create_survey_node) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
@@ -95,8 +95,9 @@ Method | HTTP request | Description
 [**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message
 [**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**get_invoices**](TextMagicApi.md#get_invoices) | **GET** /api/v2/invoices | Get all invoices
-[**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get a single list.
+[**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get the details of a specific list
 [**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Fetch all contacts IDs belonging to the list with ID.
+[**get_lists**](TextMagicApi.md#get_lists) | **GET** /api/v2/lists | Get all lists
 [**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price | Check price
@@ -128,7 +129,6 @@ Method | HTTP request | Description
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get a single unsubscribed contact.
 [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all contact have unsubscribed from your communication.
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**get_user_lists**](TextMagicApi.md#get_user_lists) | **GET** /api/v2/lists | Get all user lists.
 [**get_versions**](TextMagicApi.md#get_versions) | **GET** /api/v2/versions | Get minimal valid apps versions
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
@@ -153,7 +153,7 @@ Method | HTTP request | Description
 [**send_email_verification_code**](TextMagicApi.md#send_email_verification_code) | **GET** /api/v2/user/email/verification | Send user email verification
 [**send_message**](TextMagicApi.md#send_message) | **POST** /api/v2/messages | Send message
 [**send_phone_verification_code**](TextMagicApi.md#send_phone_verification_code) | **GET** /api/v2/user/phone/verification | Send user phone verification
-[**send_phone_verification_code_0**](TextMagicApi.md#send_phone_verification_code_0) | **POST** /api/v2/verify | Step 1: Send a verification code 
+[**send_phone_verification_code_tfa**](TextMagicApi.md#send_phone_verification_code_tfa) | **POST** /api/v2/verify | Step 1: Send a verification code 
 [**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status
 [**start_survey**](TextMagicApi.md#start_survey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
@@ -499,8 +499,8 @@ nil (empty response body)
 
 
 
-# **check_phone_verification_code_0**
-> check_phone_verification_code_0(check_phone_verification_code_input_object)
+# **check_phone_verification_code_tfa**
+> check_phone_verification_code_tfa(check_phone_verification_code_input_object)
 
 Step 2: Check the verification code 
 
@@ -524,9 +524,9 @@ check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCo
 
 begin
   #Step 2: Check the verification code 
-  api_instance.check_phone_verification_code_0(check_phone_verification_code_input_object)
+  api_instance.check_phone_verification_code_tfa(check_phone_verification_code_input_object)
 rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->check_phone_verification_code_0: #{e}"
+  puts "Exception when calling TextMagicApi->check_phone_verification_code_tfa: #{e}"
 end
 ```
 
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 # **create_list**
 > ResourceLinkResponse create_list(create_list_input_object)
 
-Create a new list from the submitted data.
+Create a new list
 
 
 
@@ -943,7 +943,7 @@ create_list_input_object = TextMagic::CreateListInputObject.new # CreateListInpu
 
 
 begin
-  #Create a new list from the submitted data.
+  #Create a new list
   result = api_instance.create_list(create_list_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -5040,9 +5040,9 @@ Name | Type | Description  | Notes
 
 
 # **get_list**
-> Group get_list(id)
+> Array get_list(id)
 
-Get a single list.
+Get the details of a specific list
 
 
 
@@ -5063,7 +5063,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a single list.
+  #Get the details of a specific list
   result = api_instance.get_list(id)
   p result
 rescue TextMagic::ApiError => e
@@ -5079,7 +5079,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Group**](Group.md)
+**Array**
 
 ### Authorization
 
@@ -5133,6 +5133,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetListContactsIdsResponse**](GetListContactsIdsResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_lists**
+> GetListsPaginatedResponse get_lists(opts)
+
+Get all lists
+
+
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+opts = { 
+  page: 1, # Integer | The current fetched page.
+  limit: 10, # Integer | The number of results per page.
+  order_by: 'id', # String | Order results by some field. Default is id
+  direction: 'desc', # String | Order direction. Default is desc
+  favorite_only: 0, # Integer | Return only favorite lists
+  only_mine: 0 # Integer | Return only current user lists
+}
+
+begin
+  #Get all lists
+  result = api_instance.get_lists(opts)
+  p result
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_lists: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| The current fetched page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
+ **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
+ **favorite_only** | **Integer**| Return only favorite lists | [optional] [default to 0]
+ **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
+
+### Return type
+
+[**GetListsPaginatedResponse**](GetListsPaginatedResponse.md)
 
 ### Authorization
 
@@ -6892,70 +6956,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_user_lists**
-> GetUserListsPaginatedResponse get_user_lists(opts)
-
-Get all user lists.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-opts = { 
-  page: 1, # Integer | Fetch specified results page.
-  limit: 10, # Integer | The number of results per page.
-  order_by: 'id', # String | Order results by some field. Default is id
-  direction: 'desc', # String | Order direction. Default is desc
-  favorite_only: 0, # Integer | Return only favorite lists
-  only_mine: 0 # Integer | Return only current user lists
-}
-
-begin
-  #Get all user lists.
-  result = api_instance.get_user_lists(opts)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_user_lists: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
- **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **order_by** | **String**| Order results by some field. Default is id | [optional] [default to id]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc]
- **favorite_only** | **Integer**| Return only favorite lists | [optional] [default to 0]
- **only_mine** | **Integer**| Return only current user lists | [optional] [default to 0]
-
-### Return type
-
-[**GetUserListsPaginatedResponse**](GetUserListsPaginatedResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **get_versions**
 > GetVersionsResponse get_versions
 
@@ -8299,8 +8299,8 @@ nil (empty response body)
 
 
 
-# **send_phone_verification_code_0**
-> SendPhoneVerificationCodeResponse send_phone_verification_code_0(send_phone_verification_code_input_object)
+# **send_phone_verification_code_tfa**
+> SendPhoneVerificationCodeResponse send_phone_verification_code_tfa(send_phone_verification_code_input_object)
 
 Step 1: Send a verification code 
 
@@ -8324,10 +8324,10 @@ send_phone_verification_code_input_object = TextMagic::SendPhoneVerificationCode
 
 begin
   #Step 1: Send a verification code 
-  result = api_instance.send_phone_verification_code_0(send_phone_verification_code_input_object)
+  result = api_instance.send_phone_verification_code_tfa(send_phone_verification_code_input_object)
   p result
 rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->send_phone_verification_code_0: #{e}"
+  puts "Exception when calling TextMagicApi->send_phone_verification_code_tfa: #{e}"
 end
 ```
 

@@ -351,8 +351,8 @@ module TextMagic
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def check_phone_verification_code_0(check_phone_verification_code_input_object, opts = {})
-      check_phone_verification_code_0_with_http_info(check_phone_verification_code_input_object, opts)
+    def check_phone_verification_code_tfa(check_phone_verification_code_input_object, opts = {})
+      check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_input_object, opts)
       nil
     end
 
@@ -361,13 +361,13 @@ module TextMagic
     # @param check_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def check_phone_verification_code_0_with_http_info(check_phone_verification_code_input_object, opts = {})
+    def check_phone_verification_code_tfa_with_http_info(check_phone_verification_code_input_object, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.check_phone_verification_code_0 ...'
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.check_phone_verification_code_tfa ...'
       end
       # verify the required parameter 'check_phone_verification_code_input_object' is set
       if @api_client.config.client_side_validation && check_phone_verification_code_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'check_phone_verification_code_input_object' when calling TextMagicApi.check_phone_verification_code_0"
+        fail ArgumentError, "Missing the required parameter 'check_phone_verification_code_input_object' when calling TextMagicApi.check_phone_verification_code_tfa"
       end
       # resource path
       local_var_path = '/api/v2/verify'
@@ -395,7 +395,7 @@ module TextMagic
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#check_phone_verification_code_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TextMagicApi#check_phone_verification_code_tfa\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -774,7 +774,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Create a new list from the submitted data.
+    # Create a new list
     # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
@@ -784,7 +784,7 @@ module TextMagic
       data
     end
 
-    # Create a new list from the submitted data.
+    # Create a new list
     # 
     # @param create_list_input_object 
     # @param [Hash] opts the optional parameters
@@ -4965,21 +4965,21 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single list.
+    # Get the details of a specific list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @return [Group]
+    # @return [Array]
     def get_list(id, opts = {})
       data, _status_code, _headers = get_list_with_http_info(id, opts)
       data
     end
 
-    # Get a single list.
+    # Get the details of a specific list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Group, Fixnum, Hash)>] Group data, response status code and response headers
+    # @return [Array<(Array, Fixnum, Hash)>] Array data, response status code and response headers
     def get_list_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_list ...'
@@ -5013,7 +5013,7 @@ module TextMagic
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Group')
+        :return_type => 'Array')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -5070,6 +5070,78 @@ module TextMagic
         :return_type => 'GetListContactsIdsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_list_contacts_ids\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get all lists
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page The current fetched page. (default to 1)
+    # @option opts [Integer] :limit The number of results per page. (default to 10)
+    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
+    # @option opts [String] :direction Order direction. Default is desc (default to desc)
+    # @option opts [Integer] :favorite_only Return only favorite lists (default to 0)
+    # @option opts [Integer] :only_mine Return only current user lists (default to 0)
+    # @return [GetListsPaginatedResponse]
+    def get_lists(opts = {})
+      data, _status_code, _headers = get_lists_with_http_info(opts)
+      data
+    end
+
+    # Get all lists
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page The current fetched page.
+    # @option opts [Integer] :limit The number of results per page.
+    # @option opts [String] :order_by Order results by some field. Default is id
+    # @option opts [String] :direction Order direction. Default is desc
+    # @option opts [Integer] :favorite_only Return only favorite lists
+    # @option opts [Integer] :only_mine Return only current user lists
+    # @return [Array<(GetListsPaginatedResponse, Fixnum, Hash)>] GetListsPaginatedResponse data, response status code and response headers
+    def get_lists_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_lists ...'
+      end
+      if @api_client.config.client_side_validation && opts[:'order_by'] && !['id', 'firstName', 'lastName'].include?(opts[:'order_by'])
+        fail ArgumentError, 'invalid value for "order_by", must be one of id, firstName, lastName'
+      end
+      if @api_client.config.client_side_validation && opts[:'direction'] && !['asc', 'desc'].include?(opts[:'direction'])
+        fail ArgumentError, 'invalid value for "direction", must be one of asc, desc'
+      end
+      # resource path
+      local_var_path = '/api/v2/lists'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'orderBy'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'direction'] = opts[:'direction'] if !opts[:'direction'].nil?
+      query_params[:'favoriteOnly'] = opts[:'favorite_only'] if !opts[:'favorite_only'].nil?
+      query_params[:'onlyMine'] = opts[:'only_mine'] if !opts[:'only_mine'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetListsPaginatedResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#get_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6864,78 +6936,6 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all user lists.
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page. (default to 1)
-    # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :order_by Order results by some field. Default is id (default to id)
-    # @option opts [String] :direction Order direction. Default is desc (default to desc)
-    # @option opts [Integer] :favorite_only Return only favorite lists (default to 0)
-    # @option opts [Integer] :only_mine Return only current user lists (default to 0)
-    # @return [GetUserListsPaginatedResponse]
-    def get_user_lists(opts = {})
-      data, _status_code, _headers = get_user_lists_with_http_info(opts)
-      data
-    end
-
-    # Get all user lists.
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Fetch specified results page.
-    # @option opts [Integer] :limit The number of results per page.
-    # @option opts [String] :order_by Order results by some field. Default is id
-    # @option opts [String] :direction Order direction. Default is desc
-    # @option opts [Integer] :favorite_only Return only favorite lists
-    # @option opts [Integer] :only_mine Return only current user lists
-    # @return [Array<(GetUserListsPaginatedResponse, Fixnum, Hash)>] GetUserListsPaginatedResponse data, response status code and response headers
-    def get_user_lists_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_user_lists ...'
-      end
-      if @api_client.config.client_side_validation && opts[:'order_by'] && !['id', 'firstName', 'lastName'].include?(opts[:'order_by'])
-        fail ArgumentError, 'invalid value for "order_by", must be one of id, firstName, lastName'
-      end
-      if @api_client.config.client_side_validation && opts[:'direction'] && !['asc', 'desc'].include?(opts[:'direction'])
-        fail ArgumentError, 'invalid value for "direction", must be one of asc, desc'
-      end
-      # resource path
-      local_var_path = '/api/v2/lists'
-
-      # query parameters
-      query_params = {}
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
-      query_params[:'orderBy'] = opts[:'order_by'] if !opts[:'order_by'].nil?
-      query_params[:'direction'] = opts[:'direction'] if !opts[:'direction'].nil?
-      query_params[:'favoriteOnly'] = opts[:'favorite_only'] if !opts[:'favorite_only'].nil?
-      query_params[:'onlyMine'] = opts[:'only_mine'] if !opts[:'only_mine'].nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetUserListsPaginatedResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_user_lists\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Get minimal valid apps versions
     # 
     # @param [Hash] opts the optional parameters
@@ -8360,8 +8360,8 @@ module TextMagic
     # @param send_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [SendPhoneVerificationCodeResponse]
-    def send_phone_verification_code_0(send_phone_verification_code_input_object, opts = {})
-      data, _status_code, _headers = send_phone_verification_code_0_with_http_info(send_phone_verification_code_input_object, opts)
+    def send_phone_verification_code_tfa(send_phone_verification_code_input_object, opts = {})
+      data, _status_code, _headers = send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_input_object, opts)
       data
     end
 
@@ -8370,13 +8370,13 @@ module TextMagic
     # @param send_phone_verification_code_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SendPhoneVerificationCodeResponse, Fixnum, Hash)>] SendPhoneVerificationCodeResponse data, response status code and response headers
-    def send_phone_verification_code_0_with_http_info(send_phone_verification_code_input_object, opts = {})
+    def send_phone_verification_code_tfa_with_http_info(send_phone_verification_code_input_object, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.send_phone_verification_code_0 ...'
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.send_phone_verification_code_tfa ...'
       end
       # verify the required parameter 'send_phone_verification_code_input_object' is set
       if @api_client.config.client_side_validation && send_phone_verification_code_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'send_phone_verification_code_input_object' when calling TextMagicApi.send_phone_verification_code_0"
+        fail ArgumentError, "Missing the required parameter 'send_phone_verification_code_input_object' when calling TextMagicApi.send_phone_verification_code_tfa"
       end
       # resource path
       local_var_path = '/api/v2/verify'
@@ -8405,7 +8405,7 @@ module TextMagic
         :auth_names => auth_names,
         :return_type => 'SendPhoneVerificationCodeResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#send_phone_verification_code_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TextMagicApi#send_phone_verification_code_tfa\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

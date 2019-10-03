@@ -129,7 +129,7 @@ module TextMagic
 
     def initialize
       @scheme = 'http'
-      @host = 'my.textmagic.com'
+      @host = 'rest.textmagic.com'
       @base_path = ''
       @api_key = {}
       @api_key_prefix = {}

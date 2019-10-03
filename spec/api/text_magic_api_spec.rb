@@ -105,13 +105,13 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for check_phone_verification_code_0
+  # unit tests for check_phone_verification_code_tfa
   # Step 2: Check the verification code 
   # Check received code from user with the code which was actually sent.
   # @param check_phone_verification_code_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
-  describe 'check_phone_verification_code_0 test' do
+  describe 'check_phone_verification_code_tfa test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -203,7 +203,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for create_list
-  # Create a new list from the submitted data.
+  # Create a new list
   # 
   # @param create_list_input_object 
   # @param [Hash] opts the optional parameters
@@ -1171,11 +1171,11 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_list
-  # Get a single list.
+  # Get the details of a specific list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [Group]
+  # @return [Array]
   describe 'get_list test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1189,6 +1189,23 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [GetListContactsIdsResponse]
   describe 'get_list_contacts_ids test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_lists
+  # Get all lists
+  # 
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page The current fetched page.
+  # @option opts [Integer] :limit The number of results per page.
+  # @option opts [String] :order_by Order results by some field. Default is id
+  # @option opts [String] :direction Order direction. Default is desc
+  # @option opts [Integer] :favorite_only Return only favorite lists
+  # @option opts [Integer] :only_mine Return only current user lists
+  # @return [GetListsPaginatedResponse]
+  describe 'get_lists test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1618,23 +1635,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_user_lists
-  # Get all user lists.
-  # 
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page.
-  # @option opts [Integer] :limit The number of results per page.
-  # @option opts [String] :order_by Order results by some field. Default is id
-  # @option opts [String] :direction Order direction. Default is desc
-  # @option opts [Integer] :favorite_only Return only favorite lists
-  # @option opts [Integer] :only_mine Return only current user lists
-  # @return [GetUserListsPaginatedResponse]
-  describe 'get_user_lists test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_versions
   # Get minimal valid apps versions
   # 
@@ -1966,13 +1966,13 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for send_phone_verification_code_0
+  # unit tests for send_phone_verification_code_tfa
   # Step 1: Send a verification code 
   # Sends verification code to specified phone number.
   # @param send_phone_verification_code_input_object 
   # @param [Hash] opts the optional parameters
   # @return [SendPhoneVerificationCodeResponse]
-  describe 'send_phone_verification_code_0 test' do
+  describe 'send_phone_verification_code_tfa test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

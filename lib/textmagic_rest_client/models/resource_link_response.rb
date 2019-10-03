@@ -14,8 +14,10 @@ require 'date'
 
 module TextMagic
   class ResourceLinkResponse
+    # Resource ID.
     attr_accessor :id
 
+    # A link to this resource. If you want to fetch it, just **GET** this address.
     attr_accessor :href
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -1,4 +1,4 @@
-# TextMagic::GroupImage
+# TextMagic::ListImage
 
 ## Properties
 Name | Type | Description | Notes
