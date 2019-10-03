@@ -101,7 +101,6 @@ Method | HTTP request | Description
 [**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price | Check price
-[**get_message_prices**](TextMagicApi.md#get_message_prices) | **GET** /api/v2/messages/prices | Get pricing
 [**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session details
 [**get_message_session_stat**](TextMagicApi.md#get_message_session_stat) | **GET** /api/v2/sessions/{id}/stat | Get a session statistics
 [**get_messages_by_session_id**](TextMagicApi.md#get_messages_by_session_id) | **GET** /api/v2/sessions/{id}/messages | Get a session messages
@@ -5430,53 +5429,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetMessagePriceResponse**](GetMessagePriceResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_message_prices**
-> GetMessagePricesResponse get_message_prices
-
-Get pricing
-
-Get message prices for all countries.
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Get pricing
-  result = api_instance.get_message_prices
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_message_prices: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetMessagePricesResponse**](GetMessagePricesResponse.md)
 
 ### Authorization
 

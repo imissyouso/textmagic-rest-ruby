@@ -1282,17 +1282,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_message_prices
-  # Get pricing
-  # Get message prices for all countries.
-  # @param [Hash] opts the optional parameters
-  # @return [GetMessagePricesResponse]
-  describe 'get_message_prices test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_message_session
   # Get a session details
   # 

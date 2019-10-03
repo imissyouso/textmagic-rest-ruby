@@ -5406,54 +5406,6 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get pricing
-    # Get message prices for all countries.
-    # @param [Hash] opts the optional parameters
-    # @return [GetMessagePricesResponse]
-    def get_message_prices(opts = {})
-      data, _status_code, _headers = get_message_prices_with_http_info(opts)
-      data
-    end
-
-    # Get pricing
-    # Get message prices for all countries.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(GetMessagePricesResponse, Fixnum, Hash)>] GetMessagePricesResponse data, response status code and response headers
-    def get_message_prices_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_message_prices ...'
-      end
-      # resource path
-      local_var_path = '/api/v2/messages/prices'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetMessagePricesResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_message_prices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Get a session details
     # 
     # @param id a session ID
