@@ -14,8 +14,10 @@ require 'date'
 
 module TextMagic
   class UpdateCustomFieldValueInputObject
+    # [Contact](/docs/api/contacts/) 
     attr_accessor :contact_id
 
+    # Custom field value. Note that this value is not parsed in any way. It is stored and used in tags exactly as you send it.
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -5,7 +5,7 @@ All URIs are relative to *http://rest.textmagic.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**assign_contacts_to_list**](TextMagicApi.md#assign_contacts_to_list) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list
-[**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block contact from inbound and outbound communication by phone number.
+[**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block contact by phone number
 [**buy_dedicated_number**](TextMagicApi.md#buy_dedicated_number) | **POST** /api/v2/numbers | Buy a dedicated number
 [**cancel_survey**](TextMagicApi.md#cancel_survey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancel_verification**](TextMagicApi.md#cancel_verification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
@@ -15,33 +15,33 @@ Method | HTTP request | Description
 [**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
 [**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats
 [**close_subaccount**](TextMagicApi.md#close_subaccount) | **DELETE** /api/v2/subaccounts/{id} | Close sub-account
-[**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts | Create a new contact from the submitted data.
+[**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts | Add a new contact
 [**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
-[**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Create a new custom field from the submitted data.
+[**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Add a new custom field
 [**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list
 [**create_push_token**](TextMagicApi.md#create_push_token) | **POST** /api/v2/push/tokens | Add or update a device token.
 [**create_survey**](TextMagicApi.md#create_survey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
 [**create_survey_node**](TextMagicApi.md#create_survey_node) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
 [**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template
-[**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete all contacts.
+[**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete contacts (bulk)
 [**delete_all_outbound_messages**](TextMagicApi.md#delete_all_outbound_messages) | **DELETE** /api/v2/message/all | Delete all messages
 [**delete_avatar**](TextMagicApi.md#delete_avatar) | **DELETE** /api/v2/user/avatar | Delete an avatar
 [**delete_chat_messages**](TextMagicApi.md#delete_chat_messages) | **POST** /api/v2/chats/{id}/messages/delete | Delete chat messages by ID(s)
 [**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats (bulk)
-[**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a single contact.
-[**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar for the contact.
+[**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a contact
+[**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar
 [**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a single contact note.
 [**delete_contact_notes_bulk**](TextMagicApi.md#delete_contact_notes_bulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact note by given ID(s) or delete all contact notes.
-[**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contact by given ID(s) or delete all contacts.
+[**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contacts by IDs (bulk)
 [**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list
-[**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a single custom field.
+[**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a custom field
 [**delete_dedicated_number**](TextMagicApi.md#delete_dedicated_number) | **DELETE** /api/v2/numbers/{id} | Cancel dedicated number subscription
 [**delete_inbound_message**](TextMagicApi.md#delete_inbound_message) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message
 [**delete_inbound_messages_bulk**](TextMagicApi.md#delete_inbound_messages_bulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk)
-[**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a single list
+[**delete_list**](TextMagicApi.md#delete_list) | **DELETE** /api/v2/lists/{id} | Delete a list
 [**delete_list_avatar**](TextMagicApi.md#delete_list_avatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for the list
-[**delete_list_contacts_bulk**](TextMagicApi.md#delete_list_contacts_bulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contact from list by given ID(s) or all contacts from list
-[**delete_lists_bulk**](TextMagicApi.md#delete_lists_bulk) | **POST** /api/v2/lists/delete | Delete list by given ID(s) or delete all lists
+[**delete_list_contacts_bulk**](TextMagicApi.md#delete_list_contacts_bulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contacts from list (bulk)
+[**delete_lists_bulk**](TextMagicApi.md#delete_lists_bulk) | **POST** /api/v2/lists/delete | Delete lists (bulk)
 [**delete_message_session**](TextMagicApi.md#delete_message_session) | **DELETE** /api/v2/sessions/{id} | Delete a session
 [**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
 [**delete_outbound_message**](TextMagicApi.md#delete_outbound_message) | **DELETE** /api/v2/messages/{id} | Delete message
@@ -69,36 +69,36 @@ Method | HTTP request | Description
 [**get_available_sender_setting_options**](TextMagicApi.md#get_available_sender_setting_options) | **GET** /api/v2/sources | Get available sender settings
 [**get_balance_notification_options**](TextMagicApi.md#get_balance_notification_options) | **GET** /api/v2/user/notification/balance/bundles | Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
 [**get_balance_notification_settings**](TextMagicApi.md#get_balance_notification_settings) | **GET** /api/v2/user/notification/balance | Get balance notification settings
-[**get_blocked_contacts**](TextMagicApi.md#get_blocked_contacts) | **GET** /api/v2/contacts/block/list | Get blocked contacts.
+[**get_blocked_contacts**](TextMagicApi.md#get_blocked_contacts) | **GET** /api/v2/contacts/block/list | Get blocked contacts
 [**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk message session status.
 [**get_callback_settings**](TextMagicApi.md#get_callback_settings) | **GET** /api/v2/callback/settings | Fetch callback URL settings
 [**get_calls_prices**](TextMagicApi.md#get_calls_prices) | **GET** /api/v2/calls/price | Check pricing for a inbound/outbound call.
 [**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat
 [**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone
 [**get_chat_messages**](TextMagicApi.md#get_chat_messages) | **GET** /api/v2/chats/{id}/message | Get chat messages
-[**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get a single contact.
-[**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get a single contact by phone number.
+[**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact
+[**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
 [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
 [**get_contact_import_session_progress**](TextMagicApi.md#get_contact_import_session_progress) | **GET** /api/v2/contacts/import/progress/{id} | Get contact import session progress.
 [**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a single contact note.
 [**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
-[**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all user contacts.
-[**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions by given search term.
+[**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts
+[**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions
 [**get_contacts_by_list_id**](TextMagicApi.md#get_contacts_by_list_id) | **GET** /api/v2/lists/{id}/contacts | Get all contacts in a list
 [**get_countries**](TextMagicApi.md#get_countries) | **GET** /api/v2/countries | Return list of countries.
 [**get_current_user**](TextMagicApi.md#get_current_user) | **GET** /api/v2/user | Get current account information
-[**get_custom_field**](TextMagicApi.md#get_custom_field) | **GET** /api/v2/customfields/{id} | Get a single custom field.
-[**get_custom_fields**](TextMagicApi.md#get_custom_fields) | **GET** /api/v2/customfields | Get all contact custom fields.
+[**get_custom_field**](TextMagicApi.md#get_custom_field) | **GET** /api/v2/customfields/{id} | Get the details of a specific custom field
+[**get_custom_fields**](TextMagicApi.md#get_custom_fields) | **GET** /api/v2/customfields | Get all custom fields
 [**get_dedicated_number**](TextMagicApi.md#get_dedicated_number) | **GET** /api/v2/numbers/{id} | Get the details of a specific dedicated number
 [**get_disallowed_rules**](TextMagicApi.md#get_disallowed_rules) | **GET** /api/v2/user/disallowed-rules | Get disallowed permissions
-[**get_favourites**](TextMagicApi.md#get_favourites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists.
+[**get_favourites**](TextMagicApi.md#get_favourites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists
 [**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message
 [**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**get_invoices**](TextMagicApi.md#get_invoices) | **GET** /api/v2/invoices | Get all invoices
 [**get_list**](TextMagicApi.md#get_list) | **GET** /api/v2/lists/{id} | Get the details of a specific list
-[**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Fetch all contacts IDs belonging to the list with ID
+[**get_list_contacts_ids**](TextMagicApi.md#get_list_contacts_ids) | **GET** /api/v2/lists/{id}/contacts/ids | Get all contacts IDs in a list
 [**get_lists**](TextMagicApi.md#get_lists) | **GET** /api/v2/lists | Get all lists
-[**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
+[**get_lists_of_contact**](TextMagicApi.md#get_lists_of_contact) | **GET** /api/v2/contacts/{id}/lists | Get contact&#39;s lists
 [**get_message_preview**](TextMagicApi.md#get_message_preview) | **GET** /api/v2/messages/preview | Preview message
 [**get_message_price**](TextMagicApi.md#get_message_price) | **GET** /api/v2/messages/price | Check price
 [**get_message_session**](TextMagicApi.md#get_message_session) | **GET** /api/v2/sessions/{id} | Get a session details
@@ -125,8 +125,8 @@ Method | HTTP request | Description
 [**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template details
 [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Return all available timezone IDs.
 [**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
-[**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get a single unsubscribed contact.
-[**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all contact have unsubscribed from your communication.
+[**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
+[**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
 [**get_versions**](TextMagicApi.md#get_versions) | **GET** /api/v2/versions | Get minimal valid apps versions
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
@@ -143,9 +143,9 @@ Method | HTTP request | Description
 [**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by message text
 [**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats (bulk)
 [**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
-[**search_contacts**](TextMagicApi.md#search_contacts) | **GET** /api/v2/contacts/search | Find user contacts by given parameters.
+[**search_contacts**](TextMagicApi.md#search_contacts) | **GET** /api/v2/contacts/search | Find contacts by given criteria
 [**search_inbound_messages**](TextMagicApi.md#search_inbound_messages) | **GET** /api/v2/replies/search | Find inbound messages
-[**search_lists**](TextMagicApi.md#search_lists) | **GET** /api/v2/lists/search | Find contact lists by given parameters
+[**search_lists**](TextMagicApi.md#search_lists) | **GET** /api/v2/lists/search | Find lists by given criteria
 [**search_outbound_messages**](TextMagicApi.md#search_outbound_messages) | **GET** /api/v2/messages/search | Find messages
 [**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages
 [**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find templates by criteria
@@ -156,26 +156,26 @@ Method | HTTP request | Description
 [**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status
 [**start_survey**](TextMagicApi.md#start_survey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
-[**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock several contacts by blocked contact ids or unblock all contacts
+[**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
 [**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
-[**unsubscribe_contact**](TextMagicApi.md#unsubscribe_contact) | **POST** /api/v2/unsubscribers | Unsubscribe contact from your communication by phone number.
+[**unsubscribe_contact**](TextMagicApi.md#unsubscribe_contact) | **POST** /api/v2/unsubscribers | Manually unsubscribe a contact
 [**update_balance_notification_settings**](TextMagicApi.md#update_balance_notification_settings) | **PUT** /api/v2/user/notification/balance | Update balance notification settings
 [**update_callback_settings**](TextMagicApi.md#update_callback_settings) | **PUT** /api/v2/callback/settings | Update callback URL settings
 [**update_chat_desktop_notification_settings**](TextMagicApi.md#update_chat_desktop_notification_settings) | **PUT** /api/v2/user/desktop/notification | Update chat desktop notification settings
-[**update_contact**](TextMagicApi.md#update_contact) | **PUT** /api/v2/contacts/{id} | Update existing contact.
+[**update_contact**](TextMagicApi.md#update_contact) | **PUT** /api/v2/contacts/{id} | Edit a contact
 [**update_contact_note**](TextMagicApi.md#update_contact_note) | **PUT** /api/v2/notes/{id} | Update existing contact note.
 [**update_current_user**](TextMagicApi.md#update_current_user) | **PUT** /api/v2/user | Edit current account info
-[**update_custom_field**](TextMagicApi.md#update_custom_field) | **PUT** /api/v2/customfields/{id} | Update existing custom field.
-[**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Update contact&#39;s custom field value.
+[**update_custom_field**](TextMagicApi.md#update_custom_field) | **PUT** /api/v2/customfields/{id} | Edit a custom field
+[**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact
 [**update_inbound_messages_notification_settings**](TextMagicApi.md#update_inbound_messages_notification_settings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings
-[**update_list**](TextMagicApi.md#update_list) | **PUT** /api/v2/lists/{id} | Update existing list
+[**update_list**](TextMagicApi.md#update_list) | **PUT** /api/v2/lists/{id} | Edit a list
 [**update_password**](TextMagicApi.md#update_password) | **PUT** /api/v2/user/password/change | Change user password.
 [**update_sender_setting**](TextMagicApi.md#update_sender_setting) | **PUT** /api/v2/sender/settings | Change sender settings
 [**update_survey**](TextMagicApi.md#update_survey) | **PUT** /api/v2/surveys/{id} | Update existing survey.
 [**update_survey_node**](TextMagicApi.md#update_survey_node) | **PUT** /api/v2/surveys/nodes/{id} | Update existing node.
 [**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update a template
 [**upload_avatar**](TextMagicApi.md#upload_avatar) | **POST** /api/v2/user/avatar | Upload an avatar
-[**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Add an avatar for the contact.
+[**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar
 [**upload_list_avatar**](TextMagicApi.md#upload_list_avatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for the list
 [**upload_message_attachment**](TextMagicApi.md#upload_message_attachment) | **POST** /api/v2/messages/attachment | Upload message attachment
 
@@ -185,7 +185,7 @@ Method | HTTP request | Description
 
 Assign contacts to a list
 
-
+> Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
 
 ### Example
 ```ruby
@@ -200,7 +200,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-assign_contacts_to_list_input_object = TextMagic::AssignContactsToListInputObject.new # AssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
+assign_contacts_to_list_input_object = TextMagic::AssignContactsToListInputObject.new # AssignContactsToListInputObject | 
 
 id = 1 # Integer | 
 
@@ -218,7 +218,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **assign_contacts_to_list_input_object** | [**AssignContactsToListInputObject**](AssignContactsToListInputObject.md)| Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user | 
+ **assign_contacts_to_list_input_object** | [**AssignContactsToListInputObject**](AssignContactsToListInputObject.md)|  | 
  **id** | **Integer**|  | 
 
 ### Return type
@@ -239,9 +239,9 @@ Name | Type | Description  | Notes
 # **block_contact**
 > ResourceLinkResponse block_contact(block_contact_input_object)
 
+Block contact by phone number
+
 Block contact from inbound and outbound communication by phone number.
-
-
 
 ### Example
 ```ruby
@@ -260,7 +260,7 @@ block_contact_input_object = TextMagic::BlockContactInputObject.new # BlockConta
 
 
 begin
-  #Block contact from inbound and outbound communication by phone number.
+  #Block contact by phone number
   result = api_instance.block_contact(block_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -759,7 +759,7 @@ nil (empty response body)
 # **create_contact**
 > ResourceLinkResponse create_contact(create_contact_input_object)
 
-Create a new contact from the submitted data.
+Add a new contact
 
 
 
@@ -780,7 +780,7 @@ create_contact_input_object = TextMagic::CreateContactInputObject.new # CreateCo
 
 
 begin
-  #Create a new contact from the submitted data.
+  #Add a new contact
   result = api_instance.create_contact(create_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 # **create_custom_field**
 > ResourceLinkResponse create_custom_field(create_custom_field_input_object)
 
-Create a new custom field from the submitted data.
+Add a new custom field
 
 
 
@@ -889,7 +889,7 @@ create_custom_field_input_object = TextMagic::CreateCustomFieldInputObject.new #
 
 
 begin
-  #Create a new custom field from the submitted data.
+  #Add a new custom field
   result = api_instance.create_custom_field(create_custom_field_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 # **delete_all_contacts**
 > delete_all_contacts
 
-Delete all contacts.
+Delete contacts (bulk)
 
 
 
@@ -1206,7 +1206,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 begin
-  #Delete all contacts.
+  #Delete contacts (bulk)
   api_instance.delete_all_contacts
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_all_contacts: #{e}"
@@ -1433,9 +1433,9 @@ nil (empty response body)
 # **delete_contact**
 > delete_contact(id)
 
-Delete a single contact.
+Delete a contact
 
-
+> This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
 
 ### Example
 ```ruby
@@ -1454,7 +1454,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a single contact.
+  #Delete a contact
   api_instance.delete_contact(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact: #{e}"
@@ -1485,7 +1485,7 @@ nil (empty response body)
 # **delete_contact_avatar**
 > delete_contact_avatar(id)
 
-Delete an avatar for the contact.
+Delete an avatar
 
 
 
@@ -1506,7 +1506,7 @@ id = 56 # Integer |
 
 
 begin
-  #Delete an avatar for the contact.
+  #Delete an avatar
   api_instance.delete_contact_avatar(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_avatar: #{e}"
@@ -1644,7 +1644,7 @@ nil (empty response body)
 # **delete_contacts_by_ids**
 > delete_contacts_by_ids(delete_contacts_by_ids_input_object)
 
-Delete contact by given ID(s) or delete all contacts.
+Delete contacts by IDs (bulk)
 
 
 
@@ -1665,7 +1665,7 @@ delete_contacts_by_ids_input_object = TextMagic::DeleteContactsByIdsInputObject.
 
 
 begin
-  #Delete contact by given ID(s) or delete all contacts.
+  #Delete contacts by IDs (bulk)
   api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contacts_by_ids: #{e}"
@@ -1698,7 +1698,7 @@ nil (empty response body)
 
 Unassign contacts from a list
 
-
+> When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
 
 ### Example
 ```ruby
@@ -1713,7 +1713,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-delete_contacs_from_list_object = TextMagic::DeleteContacsFromListObject.new # DeleteContacsFromListObject | Contact ID(s), separated by comma
+delete_contacs_from_list_object = TextMagic::DeleteContacsFromListObject.new # DeleteContacsFromListObject | 
 
 id = 1 # Integer | 
 
@@ -1730,7 +1730,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **delete_contacs_from_list_object** | [**DeleteContacsFromListObject**](DeleteContacsFromListObject.md)| Contact ID(s), separated by comma | 
+ **delete_contacs_from_list_object** | [**DeleteContacsFromListObject**](DeleteContacsFromListObject.md)|  | 
  **id** | **Integer**|  | 
 
 ### Return type
@@ -1751,9 +1751,9 @@ nil (empty response body)
 # **delete_custom_field**
 > delete_custom_field(id)
 
-Delete a single custom field.
+Delete a custom field
 
-
+> When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
 
 ### Example
 ```ruby
@@ -1772,7 +1772,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a single custom field.
+  #Delete a custom field
   api_instance.delete_custom_field(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_custom_field: #{e}"
@@ -1959,9 +1959,9 @@ nil (empty response body)
 # **delete_list**
 > delete_list(id)
 
-Delete a single list
+Delete a list
 
-
+> When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
 
 ### Example
 ```ruby
@@ -1980,7 +1980,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a single list
+  #Delete a list
   api_instance.delete_list(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list: #{e}"
@@ -2063,7 +2063,7 @@ nil (empty response body)
 # **delete_list_contacts_bulk**
 > delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 
-Delete contact from list by given ID(s) or all contacts from list
+Delete contacts from list (bulk)
 
 
 
@@ -2086,7 +2086,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete contact from list by given ID(s) or all contacts from list
+  #Delete contacts from list (bulk)
   api_instance.delete_list_contacts_bulk(delete_list_contacts_bulk_input_object, id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_list_contacts_bulk: #{e}"
@@ -2118,7 +2118,7 @@ nil (empty response body)
 # **delete_lists_bulk**
 > delete_lists_bulk(delete_lists_bulk_input_object)
 
-Delete list by given ID(s) or delete all lists
+Delete lists (bulk)
 
 
 
@@ -2139,7 +2139,7 @@ delete_lists_bulk_input_object = TextMagic::DeleteListsBulkInputObject.new # Del
 
 
 begin
-  #Delete list by given ID(s) or delete all lists
+  #Delete lists (bulk)
   api_instance.delete_lists_bulk(delete_lists_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_lists_bulk: #{e}"
@@ -2172,7 +2172,7 @@ nil (empty response body)
 
 Delete a session
 
-
+Delete a message session, together with all nested messages. > You will not be refunded for any deleted sent sessions. 
 
 ### Example
 ```ruby
@@ -2224,7 +2224,7 @@ nil (empty response body)
 
 Delete sessions (bulk)
 
-
+Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
 
 ### Example
 ```ruby
@@ -2747,7 +2747,7 @@ nil (empty response body)
 
 Delete templates (bulk)
 
-
+Delete template by given ID(s) or delete all templates.
 
 ### Example
 ```ruby
@@ -3189,7 +3189,7 @@ Name | Type | Description  | Notes
 
 Get all sessions
 
-
+Get all message sending sessions. > This list contains all of your sessions, including those which were sent but not via API 
 
 ### Example
 ```ruby
@@ -3626,7 +3626,7 @@ This endpoint does not need any parameter.
 # **get_blocked_contacts**
 > GetBlockedContactsPaginatedResponse get_blocked_contacts(opts)
 
-Get blocked contacts.
+Get blocked contacts
 
 
 
@@ -3652,7 +3652,7 @@ opts = {
 }
 
 begin
-  #Get blocked contacts.
+  #Get blocked contacts
   result = api_instance.get_blocked_contacts(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4016,7 +4016,7 @@ Name | Type | Description  | Notes
 # **get_contact**
 > Contact get_contact(id)
 
-Get a single contact.
+Get the details of a specific contact
 
 
 
@@ -4037,7 +4037,7 @@ id = 1 # Integer | The contact id
 
 
 begin
-  #Get a single contact.
+  #Get the details of a specific contact
   result = api_instance.get_contact(id)
   p result
 rescue TextMagic::ApiError => e
@@ -4069,7 +4069,7 @@ Name | Type | Description  | Notes
 # **get_contact_by_phone**
 > Contact get_contact_by_phone(phone)
 
-Get a single contact by phone number.
+Get the details of a specific contact by phone number
 
 
 
@@ -4090,7 +4090,7 @@ phone = 'phone_example' # String |
 
 
 begin
-  #Get a single contact by phone number.
+  #Get the details of a specific contact by phone number
   result = api_instance.get_contact_by_phone(phone)
   p result
 rescue TextMagic::ApiError => e
@@ -4139,7 +4139,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-phone = '9997339956475' # String | Phone number to check
+phone = '447860021130' # String | Phone number to check
 
 
 begin
@@ -4340,7 +4340,7 @@ Name | Type | Description  | Notes
 # **get_contacts**
 > GetContactsPaginatedResponse get_contacts(opts)
 
-Get all user contacts.
+Get all contacts
 
 
 
@@ -4366,7 +4366,7 @@ opts = {
 }
 
 begin
-  #Get all user contacts.
+  #Get all contacts
   result = api_instance.get_contacts(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4402,9 +4402,9 @@ Name | Type | Description  | Notes
 # **get_contacts_autocomplete**
 > GetContactsAutocompleteResponse get_contacts_autocomplete(query, opts)
 
-Get contacts autocomplete suggestions by given search term.
+Get contacts autocomplete suggestions
 
-
+Get contacts autocomplete suggestions by given search term
 
 ### Example
 ```ruby
@@ -4427,7 +4427,7 @@ opts = {
 }
 
 begin
-  #Get contacts autocomplete suggestions by given search term.
+  #Get contacts autocomplete suggestions
   result = api_instance.get_contacts_autocomplete(query, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4618,7 +4618,7 @@ This endpoint does not need any parameter.
 # **get_custom_field**
 > UserCustomField get_custom_field(id)
 
-Get a single custom field.
+Get the details of a specific custom field
 
 
 
@@ -4639,7 +4639,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a single custom field.
+  #Get the details of a specific custom field
   result = api_instance.get_custom_field(id)
   p result
 rescue TextMagic::ApiError => e
@@ -4671,7 +4671,7 @@ Name | Type | Description  | Notes
 # **get_custom_fields**
 > GetCustomFieldsPaginatedResponse get_custom_fields(opts)
 
-Get all contact custom fields.
+Get all custom fields
 
 
 
@@ -4694,7 +4694,7 @@ opts = {
 }
 
 begin
-  #Get all contact custom fields.
+  #Get all custom fields
   result = api_instance.get_custom_fields(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -4827,7 +4827,7 @@ This endpoint does not need any parameter.
 # **get_favourites**
 > GetFavouritesPaginatedResponse get_favourites(opts)
 
-Get favorite contacts and lists.
+Get favorite contacts and lists
 
 
 
@@ -4851,7 +4851,7 @@ opts = {
 }
 
 begin
-  #Get favorite contacts and lists.
+  #Get favorite contacts and lists
   result = api_instance.get_favourites(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5094,7 +5094,7 @@ Name | Type | Description  | Notes
 # **get_list_contacts_ids**
 > GetListContactsIdsResponse get_list_contacts_ids(id)
 
-Fetch all contacts IDs belonging to the list with ID
+Get all contacts IDs in a list
 
 
 
@@ -5115,7 +5115,7 @@ id = 1 # Integer |
 
 
 begin
-  #Fetch all contacts IDs belonging to the list with ID
+  #Get all contacts IDs in a list
   result = api_instance.get_list_contacts_ids(id)
   p result
 rescue TextMagic::ApiError => e
@@ -5211,9 +5211,9 @@ Name | Type | Description  | Notes
 # **get_lists_of_contact**
 > GetListsOfContactPaginatedResponse get_lists_of_contact(id, opts)
 
-Return lists which contact belongs to.
+Get contact's lists
 
-
+Get all the lists in which the contact is included
 
 ### Example
 ```ruby
@@ -5236,7 +5236,7 @@ opts = {
 }
 
 begin
-  #Return lists which contact belongs to.
+  #Get contact's lists
   result = api_instance.get_lists_of_contact(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -5295,7 +5295,7 @@ opts = {
   sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
   contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to
   lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to
-  phones: '\"+19993322111,+19993322110\"', # String | Comma separated array of E.164 phone numbers message will be sent to
+  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to
   cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
   parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
   reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure
@@ -5382,7 +5382,7 @@ opts = {
   sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
   contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to
   lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to
-  phones: '\"+19993322111,+19993322110\"', # String | Comma separated array of E.164 phone numbers message will be sent to
+  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to
   cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
   parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
   reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure
@@ -5446,7 +5446,7 @@ Name | Type | Description  | Notes
 
 Get a session details
 
-
+Get a specific session’s details
 
 ### Example
 ```ruby
@@ -6592,7 +6592,7 @@ Name | Type | Description  | Notes
 
 Get a template details
 
-
+Get a single template.
 
 ### Example
 ```ruby
@@ -6744,7 +6744,7 @@ This endpoint does not need any parameter.
 # **get_unsubscribed_contact**
 > UnsubscribedContact get_unsubscribed_contact(id)
 
-Get a single unsubscribed contact.
+Get the details of a specific unsubscribed contact
 
 
 
@@ -6765,7 +6765,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get a single unsubscribed contact.
+  #Get the details of a specific unsubscribed contact
   result = api_instance.get_unsubscribed_contact(id)
   p result
 rescue TextMagic::ApiError => e
@@ -6797,9 +6797,9 @@ Name | Type | Description  | Notes
 # **get_unsubscribers**
 > GetUnsubscribersPaginatedResponse get_unsubscribers(opts)
 
-Get all contact have unsubscribed from your communication.
+Get all unsubscribed contacts
 
-
+When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
 
 ### Example
 ```ruby
@@ -6820,7 +6820,7 @@ opts = {
 }
 
 begin
-  #Get all contact have unsubscribed from your communication.
+  #Get all unsubscribed contacts
   result = api_instance.get_unsubscribers(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7705,7 +7705,7 @@ Name | Type | Description  | Notes
 # **search_contacts**
 > SearchContactsPaginatedResponse search_contacts(opts)
 
-Find user contacts by given parameters.
+Find contacts by given criteria
 
 
 
@@ -7737,7 +7737,7 @@ opts = {
 }
 
 begin
-  #Find user contacts by given parameters.
+  #Find contacts by given criteria
   result = api_instance.search_contacts(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -7845,7 +7845,7 @@ Name | Type | Description  | Notes
 # **search_lists**
 > SearchListsPaginatedResponse search_lists(opts)
 
-Find contact lists by given parameters
+Find lists by given criteria
 
 
 
@@ -7874,7 +7874,7 @@ opts = {
 }
 
 begin
-  #Find contact lists by given parameters
+  #Find lists by given criteria
   result = api_instance.search_lists(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -8049,7 +8049,7 @@ Name | Type | Description  | Notes
 
 Find templates by criteria
 
-
+Find user templates by given parameters.
 
 ### Example
 ```ruby
@@ -8465,9 +8465,9 @@ nil (empty response body)
 # **unblock_contacts_bulk**
 > unblock_contacts_bulk(unblock_contacts_bulk_input_object)
 
+Unblock contacts (bulk)
+
 Unblock several contacts by blocked contact ids or unblock all contacts
-
-
 
 ### Example
 ```ruby
@@ -8486,7 +8486,7 @@ unblock_contacts_bulk_input_object = TextMagic::UnblockContactsBulkInputObject.n
 
 
 begin
-  #Unblock several contacts by blocked contact ids or unblock all contacts
+  #Unblock contacts (bulk)
   api_instance.unblock_contacts_bulk(unblock_contacts_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->unblock_contacts_bulk: #{e}"
@@ -8569,9 +8569,9 @@ nil (empty response body)
 # **unsubscribe_contact**
 > ResourceLinkResponse unsubscribe_contact(unsubscribe_contact_input_object)
 
-Unsubscribe contact from your communication by phone number.
+Manually unsubscribe a contact
 
-
+> Please note, if you unsubscribe a contact, this action cannot be reversed. 
 
 ### Example
 ```ruby
@@ -8590,7 +8590,7 @@ unsubscribe_contact_input_object = TextMagic::UnsubscribeContactInputObject.new 
 
 
 begin
-  #Unsubscribe contact from your communication by phone number.
+  #Manually unsubscribe a contact
   result = api_instance.unsubscribe_contact(unsubscribe_contact_input_object)
   p result
 rescue TextMagic::ApiError => e
@@ -8778,7 +8778,7 @@ nil (empty response body)
 # **update_contact**
 > ResourceLinkResponse update_contact(update_contact_input_object, id)
 
-Update existing contact.
+Edit a contact
 
 
 
@@ -8801,7 +8801,7 @@ id = 1 # Integer |
 
 
 begin
-  #Update existing contact.
+  #Edit a contact
   result = api_instance.update_contact(update_contact_input_object, id)
   p result
 rescue TextMagic::ApiError => e
@@ -8943,7 +8943,7 @@ Name | Type | Description  | Notes
 # **update_custom_field**
 > ResourceLinkResponse update_custom_field(update_custom_field_input_object, id)
 
-Update existing custom field.
+Edit a custom field
 
 
 
@@ -8966,7 +8966,7 @@ id = 1 # Integer |
 
 
 begin
-  #Update existing custom field.
+  #Edit a custom field
   result = api_instance.update_custom_field(update_custom_field_input_object, id)
   p result
 rescue TextMagic::ApiError => e
@@ -8999,7 +8999,7 @@ Name | Type | Description  | Notes
 # **update_custom_field_value**
 > ResourceLinkResponse update_custom_field_value(update_custom_field_value_input_object, id)
 
-Update contact's custom field value.
+Edit the custom field value of a specified contact
 
 
 
@@ -9022,7 +9022,7 @@ id = 'id_example' # String |
 
 
 begin
-  #Update contact's custom field value.
+  #Edit the custom field value of a specified contact
   result = api_instance.update_custom_field_value(update_custom_field_value_input_object, id)
   p result
 rescue TextMagic::ApiError => e
@@ -9107,7 +9107,7 @@ nil (empty response body)
 # **update_list**
 > ResourceLinkResponse update_list(id, opts)
 
-Update existing list
+Edit a list
 
 
 
@@ -9131,7 +9131,7 @@ opts = {
 }
 
 begin
-  #Update existing list
+  #Edit a list
   result = api_instance.update_list(id, opts)
   p result
 rescue TextMagic::ApiError => e
@@ -9488,7 +9488,7 @@ nil (empty response body)
 # **upload_contact_avatar**
 > ResourceLinkResponse upload_contact_avatar(image, id)
 
-Add an avatar for the contact.
+Upload an avatar
 
 
 
@@ -9511,7 +9511,7 @@ id = 56 # Integer |
 
 
 begin
-  #Add an avatar for the contact.
+  #Upload an avatar
   result = api_instance.upload_contact_avatar(image, id)
   p result
 rescue TextMagic::ApiError => e

@@ -34,8 +34,8 @@ describe 'TextMagicApi' do
 
   # unit tests for assign_contacts_to_list
   # Assign contacts to a list
-  # 
-  # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
+  # &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+  # @param assign_contacts_to_list_input_object 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -46,8 +46,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for block_contact
+  # Block contact by phone number
   # Block contact from inbound and outbound communication by phone number.
-  # 
   # @param block_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -166,7 +166,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for create_contact
-  # Create a new contact from the submitted data.
+  # Add a new contact
   # 
   # @param create_contact_input_object 
   # @param [Hash] opts the optional parameters
@@ -191,7 +191,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for create_custom_field
-  # Create a new custom field from the submitted data.
+  # Add a new custom field
   # 
   # @param create_custom_field_input_object 
   # @param [Hash] opts the optional parameters
@@ -264,7 +264,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_all_contacts
-  # Delete all contacts.
+  # Delete contacts (bulk)
   # 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -322,8 +322,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_contact
-  # Delete a single contact.
-  # 
+  # Delete a contact
+  # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -334,7 +334,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_contact_avatar
-  # Delete an avatar for the contact.
+  # Delete an avatar
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -371,7 +371,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_contacts_by_ids
-  # Delete contact by given ID(s) or delete all contacts.
+  # Delete contacts by IDs (bulk)
   # 
   # @param delete_contacts_by_ids_input_object 
   # @param [Hash] opts the optional parameters
@@ -384,8 +384,8 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_contacts_from_list
   # Unassign contacts from a list
-  # 
-  # @param delete_contacs_from_list_object Contact ID(s), separated by comma
+  # &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+  # @param delete_contacs_from_list_object 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -396,8 +396,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_custom_field
-  # Delete a single custom field.
-  # 
+  # Delete a custom field
+  # &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -444,8 +444,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_list
-  # Delete a single list
-  # 
+  # Delete a list
+  # &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -468,7 +468,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_list_contacts_bulk
-  # Delete contact from list by given ID(s) or all contacts from list
+  # Delete contacts from list (bulk)
   # 
   # @param delete_list_contacts_bulk_input_object 
   # @param id 
@@ -481,7 +481,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_lists_bulk
-  # Delete list by given ID(s) or delete all lists
+  # Delete lists (bulk)
   # 
   # @param delete_lists_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -494,7 +494,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_message_session
   # Delete a session
-  # 
+  # Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -506,7 +506,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_message_sessions_bulk
   # Delete sessions (bulk)
-  # 
+  # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
   # @param delete_message_sessions_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -627,7 +627,7 @@ describe 'TextMagicApi' do
 
   # unit tests for delete_templates_bulk
   # Delete templates (bulk)
-  # 
+  # Delete template by given ID(s) or delete all templates.
   # @param delete_templates_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -733,7 +733,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_all_message_sessions
   # Get all sessions
-  # 
+  # Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
@@ -836,7 +836,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_blocked_contacts
-  # Get blocked contacts.
+  # Get blocked contacts
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -931,7 +931,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contact
-  # Get a single contact.
+  # Get the details of a specific contact
   # 
   # @param id The contact id
   # @param [Hash] opts the optional parameters
@@ -943,7 +943,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contact_by_phone
-  # Get a single contact by phone number.
+  # Get the details of a specific contact by phone number
   # 
   # @param phone 
   # @param [Hash] opts the optional parameters
@@ -1005,7 +1005,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contacts
-  # Get all user contacts.
+  # Get all contacts
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1021,8 +1021,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contacts_autocomplete
-  # Get contacts autocomplete suggestions by given search term.
-  # 
+  # Get contacts autocomplete suggestions
+  # Get contacts autocomplete suggestions by given search term
   # @param query Find recipients by specified search query
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit The number of results per page.
@@ -1073,7 +1073,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_custom_field
-  # Get a single custom field.
+  # Get the details of a specific custom field
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1085,7 +1085,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_custom_fields
-  # Get all contact custom fields.
+  # Get all custom fields
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1121,7 +1121,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_favourites
-  # Get favorite contacts and lists.
+  # Get favorite contacts and lists
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1183,7 +1183,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_list_contacts_ids
-  # Fetch all contacts IDs belonging to the list with ID
+  # Get all contacts IDs in a list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1212,8 +1212,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_lists_of_contact
-  # Return lists which contact belongs to.
-  # 
+  # Get contact&#39;s lists
+  # Get all the lists in which the contact is included
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1284,7 +1284,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_message_session
   # Get a session details
-  # 
+  # Get a specific session’s details
   # @param id a session ID
   # @param [Hash] opts the optional parameters
   # @return [MessageSession]
@@ -1552,7 +1552,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_template
   # Get a template details
-  # 
+  # Get a single template.
   # @param id 
   # @param [Hash] opts the optional parameters
   # @return [MessageTemplate]
@@ -1586,7 +1586,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_unsubscribed_contact
-  # Get a single unsubscribed contact.
+  # Get the details of a specific unsubscribed contact
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1598,8 +1598,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_unsubscribers
-  # Get all contact have unsubscribed from your communication.
-  # 
+  # Get all unsubscribed contacts
+  # When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
@@ -1810,7 +1810,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_contacts
-  # Find user contacts by given parameters.
+  # Find contacts by given criteria
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1850,7 +1850,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_lists
-  # Find contact lists by given parameters
+  # Find lists by given criteria
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -1907,7 +1907,7 @@ describe 'TextMagicApi' do
 
   # unit tests for search_templates
   # Find templates by criteria
-  # 
+  # Find user templates by given parameters.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
@@ -2004,8 +2004,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for unblock_contacts_bulk
+  # Unblock contacts (bulk)
   # Unblock several contacts by blocked contact ids or unblock all contacts
-  # 
   # @param unblock_contacts_bulk_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]
@@ -2028,8 +2028,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for unsubscribe_contact
-  # Unsubscribe contact from your communication by phone number.
-  # 
+  # Manually unsubscribe a contact
+  # &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
   # @param unsubscribe_contact_input_object 
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
@@ -2076,7 +2076,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_contact
-  # Update existing contact.
+  # Edit a contact
   # 
   # @param update_contact_input_object 
   # @param id 
@@ -2114,7 +2114,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_custom_field
-  # Update existing custom field.
+  # Edit a custom field
   # 
   # @param update_custom_field_input_object 
   # @param id 
@@ -2127,7 +2127,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_custom_field_value
-  # Update contact&#39;s custom field value.
+  # Edit the custom field value of a specified contact
   # 
   # @param update_custom_field_value_input_object 
   # @param id 
@@ -2152,7 +2152,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_list
-  # Update existing list
+  # Edit a list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2240,7 +2240,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for upload_contact_avatar
-  # Add an avatar for the contact.
+  # Upload an avatar
   # 
   # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
   # @param id 

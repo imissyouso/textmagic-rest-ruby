@@ -14,20 +14,25 @@ require 'date'
 
 module TextMagic
   class List
+    # List ID.
     attr_accessor :id
 
+    # List name.
     attr_accessor :name
 
+    # List description.
     attr_accessor :description
 
     attr_accessor :favorited
 
+    # List members count.
     attr_accessor :members_count
 
     attr_accessor :user
 
     attr_accessor :service
 
+    # Is the list **shared** among all sub-accounts?
     attr_accessor :shared
 
     attr_accessor :avatar

@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**name** | **String** |  | 
-**description** | **String** |  | 
+**id** | **Integer** | List ID. | 
+**name** | **String** | List name. | 
+**description** | **String** | List description. | 
 **favorited** | **BOOLEAN** |  | 
-**members_count** | **Integer** |  | 
+**members_count** | **Integer** | List members count. | 
 **user** | [**User**](User.md) |  | 
 **service** | **BOOLEAN** |  | 
-**shared** | **BOOLEAN** |  | 
+**shared** | **BOOLEAN** | Is the list **shared** among all sub-accounts? | 
 **avatar** | [**ListImage**](ListImage.md) |  | 
 **is_default** | **BOOLEAN** |  | 
 

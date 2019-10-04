@@ -14,24 +14,32 @@ require 'date'
 
 module TextMagic
   class Contact
+    # Contact ID.
     attr_accessor :id
 
     attr_accessor :favorited
 
     attr_accessor :blocked
 
+    # Contact first name.
     attr_accessor :first_name
 
+    # Contact last name.
     attr_accessor :last_name
 
+    # Company name.
     attr_accessor :company_name
 
+    # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :phone
 
+    # Contact email address.
     attr_accessor :email
 
+    # Contact country.
     attr_accessor :country
 
+    # See [Custom Fields](/docs/api/custom-fields/) section.
     attr_accessor :custom_fields
 
     attr_accessor :user

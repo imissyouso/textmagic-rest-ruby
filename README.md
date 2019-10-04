@@ -11,7 +11,7 @@ For detailed documentation and more examples, please visit [http://docs.textmagi
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.480'
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.487'
 ```
 
 Run the bundler install command

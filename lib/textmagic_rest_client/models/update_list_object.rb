@@ -14,13 +14,13 @@ require 'date'
 
 module TextMagic
   class UpdateListObject
-    # List name
+    # List name.
     attr_accessor :name
 
-    # Should this list be shared with sub-accounts
+    # Make this list shared or not?
     attr_accessor :shared
 
-    # Is list favorited. Default is false
+    # Is list favorited.
     attr_accessor :favorited
 
     # Is list default for new contacts (web only).
@@ -60,6 +60,8 @@ module TextMagic
 
       if attributes.has_key?(:'shared')
         self.shared = attributes[:'shared']
+      else
+        self.shared = false
       end
 
       if attributes.has_key?(:'favorited')

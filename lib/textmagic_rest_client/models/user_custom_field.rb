@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class UserCustomField
+    # Custom field ID.
     attr_accessor :id
 
+    # Custom field name.
     attr_accessor :name
 
+    # Custom field creation time.
     attr_accessor :created_at
 
     # Attribute mapping from ruby-style variable name to JSON key.

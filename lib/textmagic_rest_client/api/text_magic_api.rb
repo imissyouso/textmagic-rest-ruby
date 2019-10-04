@@ -20,8 +20,8 @@ module TextMagic
       @api_client = api_client
     end
     # Assign contacts to a list
-    # 
-    # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
+    # > Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+    # @param assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -31,8 +31,8 @@ module TextMagic
     end
 
     # Assign contacts to a list
-    # 
-    # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
+    # &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+    # @param assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -79,8 +79,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Block contact by phone number
     # Block contact from inbound and outbound communication by phone number.
-    # 
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -89,8 +89,8 @@ module TextMagic
       data
     end
 
+    # Block contact by phone number
     # Block contact from inbound and outbound communication by phone number.
-    # 
     # @param block_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -606,7 +606,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Create a new contact from the submitted data.
+    # Add a new contact
     # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
@@ -616,7 +616,7 @@ module TextMagic
       data
     end
 
-    # Create a new contact from the submitted data.
+    # Add a new contact
     # 
     # @param create_contact_input_object 
     # @param [Hash] opts the optional parameters
@@ -720,7 +720,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Create a new custom field from the submitted data.
+    # Add a new custom field
     # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
@@ -730,7 +730,7 @@ module TextMagic
       data
     end
 
-    # Create a new custom field from the submitted data.
+    # Add a new custom field
     # 
     # @param create_custom_field_input_object 
     # @param [Hash] opts the optional parameters
@@ -1049,7 +1049,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete all contacts.
+    # Delete contacts (bulk)
     # 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1058,7 +1058,7 @@ module TextMagic
       nil
     end
 
-    # Delete all contacts.
+    # Delete contacts (bulk)
     # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1292,8 +1292,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a single contact.
-    # 
+    # Delete a contact
+    # > This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1302,8 +1302,8 @@ module TextMagic
       nil
     end
 
-    # Delete a single contact.
-    # 
+    # Delete a contact
+    # &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1343,7 +1343,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete an avatar for the contact.
+    # Delete an avatar
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1353,7 +1353,7 @@ module TextMagic
       nil
     end
 
-    # Delete an avatar for the contact.
+    # Delete an avatar
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1504,7 +1504,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete contact by given ID(s) or delete all contacts.
+    # Delete contacts by IDs (bulk)
     # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
@@ -1514,7 +1514,7 @@ module TextMagic
       nil
     end
 
-    # Delete contact by given ID(s) or delete all contacts.
+    # Delete contacts by IDs (bulk)
     # 
     # @param delete_contacts_by_ids_input_object 
     # @param [Hash] opts the optional parameters
@@ -1556,8 +1556,8 @@ module TextMagic
       return data, status_code, headers
     end
     # Unassign contacts from a list
-    # 
-    # @param delete_contacs_from_list_object Contact ID(s), separated by comma
+    # > When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+    # @param delete_contacs_from_list_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1567,8 +1567,8 @@ module TextMagic
     end
 
     # Unassign contacts from a list
-    # 
-    # @param delete_contacs_from_list_object Contact ID(s), separated by comma
+    # &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+    # @param delete_contacs_from_list_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1612,8 +1612,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a single custom field.
-    # 
+    # Delete a custom field
+    # > When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1622,8 +1622,8 @@ module TextMagic
       nil
     end
 
-    # Delete a single custom field.
-    # 
+    # Delete a custom field
+    # &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1816,8 +1816,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a single list
-    # 
+    # Delete a list
+    # > When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1826,8 +1826,8 @@ module TextMagic
       nil
     end
 
-    # Delete a single list
-    # 
+    # Delete a list
+    # &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -1920,7 +1920,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete contact from list by given ID(s) or all contacts from list
+    # Delete contacts from list (bulk)
     # 
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
@@ -1931,7 +1931,7 @@ module TextMagic
       nil
     end
 
-    # Delete contact from list by given ID(s) or all contacts from list
+    # Delete contacts from list (bulk)
     # 
     # @param delete_list_contacts_bulk_input_object 
     # @param id 
@@ -1977,7 +1977,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete list by given ID(s) or delete all lists
+    # Delete lists (bulk)
     # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -1987,7 +1987,7 @@ module TextMagic
       nil
     end
 
-    # Delete list by given ID(s) or delete all lists
+    # Delete lists (bulk)
     # 
     # @param delete_lists_bulk_input_object 
     # @param [Hash] opts the optional parameters
@@ -2029,7 +2029,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a session
-    # 
+    # Delete a message session, together with all nested messages. > You will not be refunded for any deleted sent sessions. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2039,7 +2039,7 @@ module TextMagic
     end
 
     # Delete a session
-    # 
+    # Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2080,7 +2080,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete sessions (bulk)
-    # 
+    # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2090,7 +2090,7 @@ module TextMagic
     end
 
     # Delete sessions (bulk)
-    # 
+    # Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
     # @param delete_message_sessions_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -2596,7 +2596,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete templates (bulk)
-    # 
+    # Delete template by given ID(s) or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -2606,7 +2606,7 @@ module TextMagic
     end
 
     # Delete templates (bulk)
-    # 
+    # Delete template by given ID(s) or delete all templates.
     # @param delete_templates_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -3058,7 +3058,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all sessions
-    # 
+    # Get all message sending sessions. > This list contains all of your sessions, including those which were sent but not via API 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -3069,7 +3069,7 @@ module TextMagic
     end
 
     # Get all sessions
-    # 
+    # Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -3502,7 +3502,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get blocked contacts.
+    # Get blocked contacts
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -3516,7 +3516,7 @@ module TextMagic
       data
     end
 
-    # Get blocked contacts.
+    # Get blocked contacts
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -3913,7 +3913,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single contact.
+    # Get the details of a specific contact
     # 
     # @param id The contact id
     # @param [Hash] opts the optional parameters
@@ -3923,7 +3923,7 @@ module TextMagic
       data
     end
 
-    # Get a single contact.
+    # Get the details of a specific contact
     # 
     # @param id The contact id
     # @param [Hash] opts the optional parameters
@@ -3967,7 +3967,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single contact by phone number.
+    # Get the details of a specific contact by phone number
     # 
     # @param phone 
     # @param [Hash] opts the optional parameters
@@ -3977,7 +3977,7 @@ module TextMagic
       data
     end
 
-    # Get a single contact by phone number.
+    # Get the details of a specific contact by phone number
     # 
     # @param phone 
     # @param [Hash] opts the optional parameters
@@ -4244,7 +4244,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all user contacts.
+    # Get all contacts
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4258,7 +4258,7 @@ module TextMagic
       data
     end
 
-    # Get all user contacts.
+    # Get all contacts
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -4313,8 +4313,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get contacts autocomplete suggestions by given search term.
-    # 
+    # Get contacts autocomplete suggestions
+    # Get contacts autocomplete suggestions by given search term
     # @param query Find recipients by specified search query
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -4325,8 +4325,8 @@ module TextMagic
       data
     end
 
-    # Get contacts autocomplete suggestions by given search term.
-    # 
+    # Get contacts autocomplete suggestions
+    # Get contacts autocomplete suggestions by given search term
     # @param query Find recipients by specified search query
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit The number of results per page.
@@ -4542,7 +4542,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single custom field.
+    # Get the details of a specific custom field
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -4552,7 +4552,7 @@ module TextMagic
       data
     end
 
-    # Get a single custom field.
+    # Get the details of a specific custom field
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -4596,7 +4596,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all contact custom fields.
+    # Get all custom fields
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4607,7 +4607,7 @@ module TextMagic
       data
     end
 
-    # Get all contact custom fields.
+    # Get all custom fields
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -4752,7 +4752,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get favorite contacts and lists.
+    # Get favorite contacts and lists
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -4764,7 +4764,7 @@ module TextMagic
       data
     end
 
-    # Get favorite contacts and lists.
+    # Get favorite contacts and lists
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -5019,7 +5019,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Fetch all contacts IDs belonging to the list with ID
+    # Get all contacts IDs in a list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -5029,7 +5029,7 @@ module TextMagic
       data
     end
 
-    # Fetch all contacts IDs belonging to the list with ID
+    # Get all contacts IDs in a list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -5145,8 +5145,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return lists which contact belongs to.
-    # 
+    # Get contact's lists
+    # Get all the lists in which the contact is included
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -5157,8 +5157,8 @@ module TextMagic
       data
     end
 
-    # Return lists which contact belongs to.
-    # 
+    # Get contact&#39;s lists
+    # Get all the lists in which the contact is included
     # @param id 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -5407,7 +5407,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a session details
-    # 
+    # Get a specific session’s details
     # @param id a session ID
     # @param [Hash] opts the optional parameters
     # @return [MessageSession]
@@ -5417,7 +5417,7 @@ module TextMagic
     end
 
     # Get a session details
-    # 
+    # Get a specific session’s details
     # @param id a session ID
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageSession, Fixnum, Hash)>] MessageSession data, response status code and response headers
@@ -6571,7 +6571,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get a template details
-    # 
+    # Get a single template.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [MessageTemplate]
@@ -6581,7 +6581,7 @@ module TextMagic
     end
 
     # Get a template details
-    # 
+    # Get a single template.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(MessageTemplate, Fixnum, Hash)>] MessageTemplate data, response status code and response headers
@@ -6723,7 +6723,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single unsubscribed contact.
+    # Get the details of a specific unsubscribed contact
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -6733,7 +6733,7 @@ module TextMagic
       data
     end
 
-    # Get a single unsubscribed contact.
+    # Get the details of a specific unsubscribed contact
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -6777,8 +6777,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all contact have unsubscribed from your communication.
-    # 
+    # Get all unsubscribed contacts
+    # When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6788,8 +6788,8 @@ module TextMagic
       data
     end
 
-    # Get all contact have unsubscribed from your communication.
-    # 
+    # Get all unsubscribed contacts
+    # When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -7687,7 +7687,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find user contacts by given parameters.
+    # Find contacts by given criteria
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -7707,7 +7707,7 @@ module TextMagic
       data
     end
 
-    # Find user contacts by given parameters.
+    # Find contacts by given criteria
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -7857,7 +7857,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Find contact lists by given parameters
+    # Find lists by given criteria
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -7874,7 +7874,7 @@ module TextMagic
       data
     end
 
-    # Find contact lists by given parameters
+    # Find lists by given criteria
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -8097,7 +8097,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Find templates by criteria
-    # 
+    # Find user templates by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -8111,7 +8111,7 @@ module TextMagic
     end
 
     # Find templates by criteria
-    # 
+    # Find user templates by given parameters.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
@@ -8520,8 +8520,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Unblock contacts (bulk)
     # Unblock several contacts by blocked contact ids or unblock all contacts
-    # 
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -8530,8 +8530,8 @@ module TextMagic
       nil
     end
 
+    # Unblock contacts (bulk)
     # Unblock several contacts by blocked contact ids or unblock all contacts
-    # 
     # @param unblock_contacts_bulk_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -8622,8 +8622,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Unsubscribe contact from your communication by phone number.
-    # 
+    # Manually unsubscribe a contact
+    # > Please note, if you unsubscribe a contact, this action cannot be reversed. 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -8632,8 +8632,8 @@ module TextMagic
       data
     end
 
-    # Unsubscribe contact from your communication by phone number.
-    # 
+    # Manually unsubscribe a contact
+    # &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
     # @param unsubscribe_contact_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -8833,7 +8833,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update existing contact.
+    # Edit a contact
     # 
     # @param update_contact_input_object 
     # @param id 
@@ -8844,7 +8844,7 @@ module TextMagic
       data
     end
 
-    # Update existing contact.
+    # Edit a contact
     # 
     # @param update_contact_input_object 
     # @param id 
@@ -9007,7 +9007,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update existing custom field.
+    # Edit a custom field
     # 
     # @param update_custom_field_input_object 
     # @param id 
@@ -9018,7 +9018,7 @@ module TextMagic
       data
     end
 
-    # Update existing custom field.
+    # Edit a custom field
     # 
     # @param update_custom_field_input_object 
     # @param id 
@@ -9067,7 +9067,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update contact's custom field value.
+    # Edit the custom field value of a specified contact
     # 
     # @param update_custom_field_value_input_object 
     # @param id 
@@ -9078,7 +9078,7 @@ module TextMagic
       data
     end
 
-    # Update contact&#39;s custom field value.
+    # Edit the custom field value of a specified contact
     # 
     # @param update_custom_field_value_input_object 
     # @param id 
@@ -9178,7 +9178,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update existing list
+    # Edit a list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9189,7 +9189,7 @@ module TextMagic
       data
     end
 
-    # Update existing list
+    # Edit a list
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -9570,7 +9570,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Add an avatar for the contact.
+    # Upload an avatar
     # 
     # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 
@@ -9581,7 +9581,7 @@ module TextMagic
       data
     end
 
-    # Add an avatar for the contact.
+    # Upload an avatar
     # 
     # @param image Contact avatar. Should be PNG or JPG file not more than 10 MB
     # @param id 

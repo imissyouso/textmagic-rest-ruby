@@ -14,6 +14,7 @@ require 'date'
 
 module TextMagic
   class AssignContactsToListInputObject
+    # Comma-separated array of [Contacts](/docs/api/contacts/) IDs.
     attr_accessor :contacts
 
     # Attribute mapping from ruby-style variable name to JSON key.

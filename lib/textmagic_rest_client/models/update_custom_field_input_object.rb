@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class UpdateCustomFieldInputObject
-    # Custom field name
+    # Custom field name.
     attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,22 +14,22 @@ require 'date'
 
 module TextMagic
   class CreateContactInputObject
-    # Contact first name
+    # Contact first name.
     attr_accessor :first_name
 
-    # Contact last name
+    # Contact last name.
     attr_accessor :last_name
 
-    # Contact phone number in E.164 (international) format without leading + or zeroes
+    # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :phone
 
-    # Contact email
+    # Contact email address.
     attr_accessor :email
 
-    # Contact company name
+    # Company name.
     attr_accessor :company_name
 
-    # Array of list resources id contact will be assigned to
+    # Contact [list](/docs/api/lists/) ID. Each contact must be assigned to at least one list.
     attr_accessor :lists
 
     # Is contact favorited

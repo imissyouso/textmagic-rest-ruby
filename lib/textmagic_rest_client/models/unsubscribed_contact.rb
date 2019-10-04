@@ -14,14 +14,19 @@ require 'date'
 
 module TextMagic
   class UnsubscribedContact
+    # Unsubscribed contact ID.
     attr_accessor :id
 
+    # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :phone
 
+    # Time when contact has been opted-out.
     attr_accessor :unsubscribe_time
 
+    # Unsubscribed contact first name.
     attr_accessor :first_name
 
+    # Unsubscribed contact last name.
     attr_accessor :last_name
 
     # Attribute mapping from ruby-style variable name to JSON key.

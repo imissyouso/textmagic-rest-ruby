@@ -17,13 +17,13 @@ module TextMagic
     # List name.
     attr_accessor :name
 
-    # Should new list be shared among all the sub-accounts? The default is 0 (false).
+    # Should new list be **shared** among all the sub-accounts?
     attr_accessor :shared
 
     # Is list favorited. Default is false.
     attr_accessor :favorited
 
-    # Is list default for new contacts (web only). Default is false.
+    # Is list default for new contacts (web only).
     attr_accessor :is_default
 
     # Attribute mapping from ruby-style variable name to JSON key.
