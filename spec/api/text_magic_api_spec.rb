@@ -1254,7 +1254,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_message_price
-  # Check price
+  # Check message price
   # Check pricing for a new outbound message.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :include_blocked Should we show pricing for the blocked contacts.

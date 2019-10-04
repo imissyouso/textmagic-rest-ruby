@@ -5304,7 +5304,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Check price
+    # Check message price
     # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show pricing for the blocked contacts. (default to 0)
@@ -5331,7 +5331,7 @@ module TextMagic
       data
     end
 
-    # Check price
+    # Check message price
     # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show pricing for the blocked contacts.
