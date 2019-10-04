@@ -6120,8 +6120,8 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  start: 1430438400, # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-  _end: '1431648000' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+  start: "2018-11-11 11:11", # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  _end: '\"2019-11-11 11:11\"' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
 
 begin

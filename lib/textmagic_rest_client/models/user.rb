@@ -17,6 +17,9 @@ module TextMagic
     # User ID.
     attr_accessor :id
 
+    # Format for representation of time
+    attr_accessor :display_time_format
+
     # Username.
     attr_accessor :username
 
@@ -81,6 +84,7 @@ module TextMagic
     def self.attribute_map
       {
         :'id' => :'id',
+        :'display_time_format' => :'displayTimeFormat',
         :'username' => :'username',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
@@ -103,6 +107,7 @@ module TextMagic
     def self.swagger_types
       {
         :'id' => :'Integer',
+        :'display_time_format' => :'String',
         :'username' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
@@ -131,6 +136,10 @@ module TextMagic
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'displayTimeFormat')
+        self.display_time_format = attributes[:'displayTimeFormat']
       end
 
       if attributes.has_key?(:'username')
@@ -317,6 +326,7 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          display_time_format == o.display_time_format &&
           username == o.username &&
           first_name == o.first_name &&
           last_name == o.last_name &&
@@ -343,7 +353,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, username, first_name, last_name, email, status, balance, phone, company, currency, country, timezone, subaccount_type, email_accepted, phone_accepted, avatar].hash
+      [id, display_time_format, username, first_name, last_name, email, status, balance, phone, company, currency, country, timezone, subaccount_type, email_accepted, phone_accepted, avatar].hash
     end
 
     # Builds the object from hash

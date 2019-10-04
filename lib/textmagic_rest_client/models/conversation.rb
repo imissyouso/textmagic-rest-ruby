@@ -197,7 +197,7 @@ module TextMagic
     def valid?
       return false if @id.nil?
       return false if @direction.nil?
-      direction_validator = EnumAttributeValidator.new('String', ['in', 'out'])
+      direction_validator = EnumAttributeValidator.new('String', ['in', 'out', 'o', 'i'])
       return false unless direction_validator.valid?(@direction)
       return false if @sender.nil?
       return false if @message_time.nil?
@@ -213,7 +213,7 @@ module TextMagic
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] direction Object to be assigned
     def direction=(direction)
-      validator = EnumAttributeValidator.new('String', ['in', 'out'])
+      validator = EnumAttributeValidator.new('String', ['in', 'out', 'o', 'i'])
       unless validator.valid?(direction)
         fail ArgumentError, 'invalid value for "direction", must be one of #{validator.allowable_values}.'
       end

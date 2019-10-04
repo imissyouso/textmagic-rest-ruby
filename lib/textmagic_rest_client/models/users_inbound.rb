@@ -17,6 +17,9 @@ module TextMagic
     # Dedicated number ID.
     attr_accessor :id
 
+    # Format for representation of time
+    attr_accessor :display_time_format
+
     # Dedicated phone number.
     attr_accessor :phone
 
@@ -59,6 +62,7 @@ module TextMagic
     def self.attribute_map
       {
         :'id' => :'id',
+        :'display_time_format' => :'displayTimeFormat',
         :'phone' => :'phone',
         :'user' => :'user',
         :'purchased_at' => :'purchasedAt',
@@ -72,6 +76,7 @@ module TextMagic
     def self.swagger_types
       {
         :'id' => :'Integer',
+        :'display_time_format' => :'String',
         :'phone' => :'String',
         :'user' => :'User',
         :'purchased_at' => :'DateTime',
@@ -91,6 +96,10 @@ module TextMagic
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'displayTimeFormat')
+        self.display_time_format = attributes[:'displayTimeFormat']
       end
 
       if attributes.has_key?(:'phone')
@@ -179,6 +188,7 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          display_time_format == o.display_time_format &&
           phone == o.phone &&
           user == o.user &&
           purchased_at == o.purchased_at &&
@@ -196,7 +206,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, phone, user, purchased_at, expire_at, status, country].hash
+      [id, display_time_format, phone, user, purchased_at, expire_at, status, country].hash
     end
 
     # Builds the object from hash

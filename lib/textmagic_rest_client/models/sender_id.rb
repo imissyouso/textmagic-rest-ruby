@@ -17,6 +17,9 @@ module TextMagic
     # Numeric sender ID.
     attr_accessor :id
 
+    # Format for representation of time
+    attr_accessor :display_time_format
+
     # Alphanumeric ID.
     attr_accessor :sender_id
 
@@ -51,6 +54,7 @@ module TextMagic
     def self.attribute_map
       {
         :'id' => :'id',
+        :'display_time_format' => :'displayTimeFormat',
         :'sender_id' => :'senderId',
         :'user' => :'user',
         :'status' => :'status'
@@ -61,6 +65,7 @@ module TextMagic
     def self.swagger_types
       {
         :'id' => :'Integer',
+        :'display_time_format' => :'String',
         :'sender_id' => :'String',
         :'user' => :'User',
         :'status' => :'String'
@@ -77,6 +82,10 @@ module TextMagic
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'displayTimeFormat')
+        self.display_time_format = attributes[:'displayTimeFormat']
       end
 
       if attributes.has_key?(:'senderId')
@@ -143,6 +152,7 @@ module TextMagic
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          display_time_format == o.display_time_format &&
           sender_id == o.sender_id &&
           user == o.user &&
           status == o.status
@@ -157,7 +167,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender_id, user, status].hash
+      [id, display_time_format, sender_id, user, status].hash
     end
 
     # Builds the object from hash
