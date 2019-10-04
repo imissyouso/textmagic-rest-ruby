@@ -1,3 +1,4 @@
+[comment]: <> (HEAD)
 # TextMagic Ruby SDK
 This library provides you with an easy way of sending SMS and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.
 
@@ -5,12 +6,12 @@ This library provides you with an easy way of sending SMS and receiving replies 
 TextMagic’s application programming interface (API) provides the communication link between your application and TextMagic’s SMS Gateway, allowing you to send and receive text messages and to check the delivery status of text messages you’ve already sent.
 
 For detailed documentation and more examples, please visit [http://docs.textmagictesting.com/](http://docs.textmagictesting.com/).
-
+[comment]: <> (/HEAD)
 ## Installation
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.473'
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.475'
 ```
 
 Run the bundler install command
@@ -76,6 +77,8 @@ Run the script:
 ```
 bundle exec ruby test.rb
 ```
-
+[comment]: <> (FOOTER)
 ## License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+[comment]: <> (/FOOTER)
