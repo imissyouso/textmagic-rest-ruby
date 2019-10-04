@@ -2178,7 +2178,7 @@ describe 'TextMagicApi' do
 
   # unit tests for update_sender_setting
   # Change sender settings
-  # @TODO
+  # 
   # @param update_sender_setting_input_object 
   # @param [Hash] opts the optional parameters
   # @return [nil]

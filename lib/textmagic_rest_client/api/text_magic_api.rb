@@ -9286,7 +9286,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Change sender settings
-    # @TODO
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -9296,7 +9296,7 @@ module TextMagic
     end
 
     # Change sender settings
-    # @TODO
+    # 
     # @param update_sender_setting_input_object 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
