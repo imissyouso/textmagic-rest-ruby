@@ -33,7 +33,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for assign_contacts_to_list
-  # Assign contacts to the specified list.
+  # Assign contacts to a list
   # 
   # @param assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
   # @param id 
@@ -118,7 +118,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for clear_and_assign_contacts_to_list
-  # Reset list members to the specified contacts.
+  # Reset list members to the specified contacts
   # 
   # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
   # @param id 
@@ -383,7 +383,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_contacts_from_list
-  # Unassign contacts from the specified list.
+  # Unassign contacts from a list
   # 
   # @param delete_contacs_from_list_object Contact ID(s), separated by comma
   # @param id 
@@ -444,7 +444,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_list
-  # Delete a single list.
+  # Delete a single list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -456,7 +456,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_list_avatar
-  # Delete an avatar for the list.
+  # Delete an avatar for the list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -468,7 +468,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_list_contacts_bulk
-  # Delete contact from list by given ID(s) or all contacts from list.
+  # Delete contact from list by given ID(s) or all contacts from list
   # 
   # @param delete_list_contacts_bulk_input_object 
   # @param id 
@@ -481,7 +481,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for delete_lists_bulk
-  # Delete list by given ID(s) or delete all lists.
+  # Delete list by given ID(s) or delete all lists
   # 
   # @param delete_lists_bulk_input_object 
   # @param [Hash] opts the optional parameters
@@ -1035,7 +1035,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_contacts_by_list_id
-  # Fetch user contacts by given group id.
+  # Get all contacts in a list
   # A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
   # @param id Given group Id.
   # @param [Hash] opts the optional parameters
@@ -1183,7 +1183,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_list_contacts_ids
-  # Fetch all contacts IDs belonging to the list with ID.
+  # Fetch all contacts IDs belonging to the list with ID
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -1426,7 +1426,7 @@ describe 'TextMagicApi' do
 
   # unit tests for get_sender_settings
   # Get current sender settings
-  # @TODO
+  # 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :country Return sender settings enabled for sending to specified country. Two upper case characters
   # @return [GetSenderSettingsResponse]
@@ -1850,7 +1850,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for search_lists
-  # Find contact lists by given parameters.
+  # Find contact lists by given parameters
   # 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
@@ -2152,7 +2152,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for update_list
-  # Update existing list.
+  # Update existing list
   # 
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2253,7 +2253,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for upload_list_avatar
-  # Add an avatar for the list.
+  # Add an avatar for the list
   # 
   # @param image List avatar. Should be PNG or JPG file not more than 10 MB
   # @param id 
