@@ -14,41 +14,58 @@ require 'date'
 
 module TextMagic
   class DoEmailLookupResponse
+    # The email address passed to the call.
     attr_accessor :address
 
-    attr_accessor :address_type
-
-    attr_accessor :email_role
-
-    attr_accessor :reason
-
+    # The email is `valid` or `invalid`.
     attr_accessor :status
 
+    # The delivery status of the email address is`deliverable`, `undeliverable`  or `unknown`.
     attr_accessor :deliverability
 
+    # The reason why the checked email is invalid/undeliverable.
+    attr_accessor :reason
+
+    # The risk score of the email is`high`, `medium`, `low` or `null`.
+    attr_accessor :risk
+
+    # The email address type (domain) is `free` or `corporate`.
+    attr_accessor :address_type
+
+    # This is be `true` if the domain is in the list of disposable email addresses, otherwise returns as `false`.
     attr_accessor :is_disposable_address
 
+    # Null if nothing is suggested, however, if there is a potential typo in the email address, the closest suggestion is provided.
+    attr_accessor :suggestion
+
+    # Checks the mailbox part of the email whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’)
+    attr_accessor :email_role
+
+    # The local part of the email address.
     attr_accessor :local_part
 
+    # The domain part of the email address.
     attr_accessor :domain_part
 
+    # Email exchange server domain name (MX record value).
     attr_accessor :exchange
 
+    # MX record preference.
+    attr_accessor :preference
+
+    # `true` if the email address exists in TextMagic whitelist. 
     attr_accessor :is_in_white_list
 
+    # `true` if the email address exists in TextMagic blacklist. 
     attr_accessor :is_in_black_list
 
+    # `true` if the email address domain has an MX record. 
     attr_accessor :has_mx
 
     attr_accessor :has_aa
 
+    # `true` if the email address domain has an AAAA record (IPv6). 
     attr_accessor :has_aaaa
-
-    attr_accessor :risk
-
-    attr_accessor :preference
-
-    attr_accessor :suggestion
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -76,23 +93,23 @@ module TextMagic
     def self.attribute_map
       {
         :'address' => :'address',
-        :'address_type' => :'addressType',
-        :'email_role' => :'emailRole',
-        :'reason' => :'reason',
         :'status' => :'status',
         :'deliverability' => :'deliverability',
+        :'reason' => :'reason',
+        :'risk' => :'risk',
+        :'address_type' => :'addressType',
         :'is_disposable_address' => :'isDisposableAddress',
+        :'suggestion' => :'suggestion',
+        :'email_role' => :'emailRole',
         :'local_part' => :'localPart',
         :'domain_part' => :'domainPart',
         :'exchange' => :'exchange',
+        :'preference' => :'preference',
         :'is_in_white_list' => :'isInWhiteList',
         :'is_in_black_list' => :'isInBlackList',
         :'has_mx' => :'hasMx',
         :'has_aa' => :'hasAa',
-        :'has_aaaa' => :'hasAaaa',
-        :'risk' => :'risk',
-        :'preference' => :'preference',
-        :'suggestion' => :'suggestion'
+        :'has_aaaa' => :'hasAaaa'
       }
     end
 
@@ -100,23 +117,23 @@ module TextMagic
     def self.swagger_types
       {
         :'address' => :'String',
-        :'address_type' => :'String',
-        :'email_role' => :'String',
-        :'reason' => :'String',
         :'status' => :'String',
         :'deliverability' => :'String',
+        :'reason' => :'String',
+        :'risk' => :'String',
+        :'address_type' => :'String',
         :'is_disposable_address' => :'BOOLEAN',
+        :'suggestion' => :'String',
+        :'email_role' => :'String',
         :'local_part' => :'String',
         :'domain_part' => :'String',
         :'exchange' => :'String',
+        :'preference' => :'Integer',
         :'is_in_white_list' => :'BOOLEAN',
         :'is_in_black_list' => :'BOOLEAN',
         :'has_mx' => :'BOOLEAN',
         :'has_aa' => :'BOOLEAN',
-        :'has_aaaa' => :'BOOLEAN',
-        :'risk' => :'String',
-        :'preference' => :'Integer',
-        :'suggestion' => :'String'
+        :'has_aaaa' => :'BOOLEAN'
       }
     end
 
@@ -132,18 +149,6 @@ module TextMagic
         self.address = attributes[:'address']
       end
 
-      if attributes.has_key?(:'addressType')
-        self.address_type = attributes[:'addressType']
-      end
-
-      if attributes.has_key?(:'emailRole')
-        self.email_role = attributes[:'emailRole']
-      end
-
-      if attributes.has_key?(:'reason')
-        self.reason = attributes[:'reason']
-      end
-
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
       end
@@ -152,8 +157,28 @@ module TextMagic
         self.deliverability = attributes[:'deliverability']
       end
 
+      if attributes.has_key?(:'reason')
+        self.reason = attributes[:'reason']
+      end
+
+      if attributes.has_key?(:'risk')
+        self.risk = attributes[:'risk']
+      end
+
+      if attributes.has_key?(:'addressType')
+        self.address_type = attributes[:'addressType']
+      end
+
       if attributes.has_key?(:'isDisposableAddress')
         self.is_disposable_address = attributes[:'isDisposableAddress']
+      end
+
+      if attributes.has_key?(:'suggestion')
+        self.suggestion = attributes[:'suggestion']
+      end
+
+      if attributes.has_key?(:'emailRole')
+        self.email_role = attributes[:'emailRole']
       end
 
       if attributes.has_key?(:'localPart')
@@ -166,6 +191,10 @@ module TextMagic
 
       if attributes.has_key?(:'exchange')
         self.exchange = attributes[:'exchange']
+      end
+
+      if attributes.has_key?(:'preference')
+        self.preference = attributes[:'preference']
       end
 
       if attributes.has_key?(:'isInWhiteList')
@@ -187,18 +216,6 @@ module TextMagic
       if attributes.has_key?(:'hasAaaa')
         self.has_aaaa = attributes[:'hasAaaa']
       end
-
-      if attributes.has_key?(:'risk')
-        self.risk = attributes[:'risk']
-      end
-
-      if attributes.has_key?(:'preference')
-        self.preference = attributes[:'preference']
-      end
-
-      if attributes.has_key?(:'suggestion')
-        self.suggestion = attributes[:'suggestion']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -209,18 +226,6 @@ module TextMagic
         invalid_properties.push('invalid value for "address", address cannot be nil.')
       end
 
-      if @address_type.nil?
-        invalid_properties.push('invalid value for "address_type", address_type cannot be nil.')
-      end
-
-      if @email_role.nil?
-        invalid_properties.push('invalid value for "email_role", email_role cannot be nil.')
-      end
-
-      if @reason.nil?
-        invalid_properties.push('invalid value for "reason", reason cannot be nil.')
-      end
-
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
@@ -229,8 +234,28 @@ module TextMagic
         invalid_properties.push('invalid value for "deliverability", deliverability cannot be nil.')
       end
 
+      if @reason.nil?
+        invalid_properties.push('invalid value for "reason", reason cannot be nil.')
+      end
+
+      if @risk.nil?
+        invalid_properties.push('invalid value for "risk", risk cannot be nil.')
+      end
+
+      if @address_type.nil?
+        invalid_properties.push('invalid value for "address_type", address_type cannot be nil.')
+      end
+
       if @is_disposable_address.nil?
         invalid_properties.push('invalid value for "is_disposable_address", is_disposable_address cannot be nil.')
+      end
+
+      if @suggestion.nil?
+        invalid_properties.push('invalid value for "suggestion", suggestion cannot be nil.')
+      end
+
+      if @email_role.nil?
+        invalid_properties.push('invalid value for "email_role", email_role cannot be nil.')
       end
 
       if @local_part.nil?
@@ -243,6 +268,10 @@ module TextMagic
 
       if @exchange.nil?
         invalid_properties.push('invalid value for "exchange", exchange cannot be nil.')
+      end
+
+      if @preference.nil?
+        invalid_properties.push('invalid value for "preference", preference cannot be nil.')
       end
 
       if @is_in_white_list.nil?
@@ -265,18 +294,6 @@ module TextMagic
         invalid_properties.push('invalid value for "has_aaaa", has_aaaa cannot be nil.')
       end
 
-      if @risk.nil?
-        invalid_properties.push('invalid value for "risk", risk cannot be nil.')
-      end
-
-      if @preference.nil?
-        invalid_properties.push('invalid value for "preference", preference cannot be nil.')
-      end
-
-      if @suggestion.nil?
-        invalid_properties.push('invalid value for "suggestion", suggestion cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -284,25 +301,29 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @address.nil?
-      return false if @address_type.nil?
-      return false if @email_role.nil?
-      return false if @reason.nil?
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ['valid', 'invalid'])
       return false unless status_validator.valid?(@status)
       return false if @deliverability.nil?
+      return false if @reason.nil?
+      return false if @risk.nil?
+      risk_validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low'])
+      return false unless risk_validator.valid?(@risk)
+      return false if @address_type.nil?
+      address_type_validator = EnumAttributeValidator.new('String', ['corporate', 'free'])
+      return false unless address_type_validator.valid?(@address_type)
       return false if @is_disposable_address.nil?
+      return false if @suggestion.nil?
+      return false if @email_role.nil?
       return false if @local_part.nil?
       return false if @domain_part.nil?
       return false if @exchange.nil?
+      return false if @preference.nil?
       return false if @is_in_white_list.nil?
       return false if @is_in_black_list.nil?
       return false if @has_mx.nil?
       return false if @has_aa.nil?
       return false if @has_aaaa.nil?
-      return false if @risk.nil?
-      return false if @preference.nil?
-      return false if @suggestion.nil?
       true
     end
 
@@ -316,29 +337,49 @@ module TextMagic
       @status = status
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] risk Object to be assigned
+    def risk=(risk)
+      validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low'])
+      unless validator.valid?(risk)
+        fail ArgumentError, 'invalid value for "risk", must be one of #{validator.allowable_values}.'
+      end
+      @risk = risk
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] address_type Object to be assigned
+    def address_type=(address_type)
+      validator = EnumAttributeValidator.new('String', ['corporate', 'free'])
+      unless validator.valid?(address_type)
+        fail ArgumentError, 'invalid value for "address_type", must be one of #{validator.allowable_values}.'
+      end
+      @address_type = address_type
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
-          address_type == o.address_type &&
-          email_role == o.email_role &&
-          reason == o.reason &&
           status == o.status &&
           deliverability == o.deliverability &&
+          reason == o.reason &&
+          risk == o.risk &&
+          address_type == o.address_type &&
           is_disposable_address == o.is_disposable_address &&
+          suggestion == o.suggestion &&
+          email_role == o.email_role &&
           local_part == o.local_part &&
           domain_part == o.domain_part &&
           exchange == o.exchange &&
+          preference == o.preference &&
           is_in_white_list == o.is_in_white_list &&
           is_in_black_list == o.is_in_black_list &&
           has_mx == o.has_mx &&
           has_aa == o.has_aa &&
-          has_aaaa == o.has_aaaa &&
-          risk == o.risk &&
-          preference == o.preference &&
-          suggestion == o.suggestion
+          has_aaaa == o.has_aaaa
     end
 
     # @see the `==` method
@@ -350,7 +391,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, address_type, email_role, reason, status, deliverability, is_disposable_address, local_part, domain_part, exchange, is_in_white_list, is_in_black_list, has_mx, has_aa, has_aaaa, risk, preference, suggestion].hash
+      [address, status, deliverability, reason, risk, address_type, is_disposable_address, suggestion, email_role, local_part, domain_part, exchange, preference, is_in_white_list, is_in_black_list, has_mx, has_aa, has_aaaa].hash
     end
 
     # Builds the object from hash

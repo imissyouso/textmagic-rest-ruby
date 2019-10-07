@@ -651,10 +651,10 @@ describe 'TextMagicApi' do
 
   # unit tests for do_carrier_lookup
   # Carrier Lookup
-  # 
-  # @param phone 
+  # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+  # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :country Country code for local formatted numbers
+  # @option opts [String] :country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
   # @return [DoCarrierLookupResponse]
   describe 'do_carrier_lookup test' do
     it 'should work' do
@@ -663,9 +663,9 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for do_email_lookup
-  # Validate Email address using Email Lookup tool
-  # 
-  # @param email 
+  # Email Lookup
+  # To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+  # @param email Email address.
   # @param [Hash] opts the optional parameters
   # @return [DoEmailLookupResponse]
   describe 'do_email_lookup test' do
@@ -1051,7 +1051,7 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_countries
-  # Return list of countries.
+  # Get countries
   # 
   # @param [Hash] opts the optional parameters
   # @return [GetCountriesResponse]
@@ -1563,8 +1563,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for get_timezones
-  # Return all available timezone IDs.
-  # 
+  # Get timezones
+  # Return all available timezone IDs
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
   # @return [GetTimezonesResponse]
@@ -1708,8 +1708,8 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for ping
-  # Just does a pong.
-  # 
+  # Ping
+  # Make a simple ping request
   # @param [Hash] opts the optional parameters
   # @return [PingResponse]
   describe 'ping test' do

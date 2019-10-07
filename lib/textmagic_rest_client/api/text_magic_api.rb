@@ -2701,10 +2701,10 @@ module TextMagic
       return data, status_code, headers
     end
     # Carrier Lookup
-    # 
-    # @param phone 
+    # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+    # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :country Country code for local formatted numbers (default to US)
+    # @option opts [String] :country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
     # @return [DoCarrierLookupResponse]
     def do_carrier_lookup(phone, opts = {})
       data, _status_code, _headers = do_carrier_lookup_with_http_info(phone, opts)
@@ -2712,10 +2712,10 @@ module TextMagic
     end
 
     # Carrier Lookup
-    # 
-    # @param phone 
+    # This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+    # @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :country Country code for local formatted numbers
+    # @option opts [String] :country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
     # @return [Array<(DoCarrierLookupResponse, Fixnum, Hash)>] DoCarrierLookupResponse data, response status code and response headers
     def do_carrier_lookup_with_http_info(phone, opts = {})
       if @api_client.config.debugging
@@ -2757,9 +2757,9 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Validate Email address using Email Lookup tool
-    # 
-    # @param email 
+    # Email Lookup
+    # To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+    # @param email Email address.
     # @param [Hash] opts the optional parameters
     # @return [DoEmailLookupResponse]
     def do_email_lookup(email, opts = {})
@@ -2767,9 +2767,9 @@ module TextMagic
       data
     end
 
-    # Validate Email address using Email Lookup tool
-    # 
-    # @param email 
+    # Email Lookup
+    # To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+    # @param email Email address.
     # @param [Hash] opts the optional parameters
     # @return [Array<(DoEmailLookupResponse, Fixnum, Hash)>] DoEmailLookupResponse data, response status code and response headers
     def do_email_lookup_with_http_info(email, opts = {})
@@ -4446,7 +4446,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return list of countries.
+    # Get countries
     # 
     # @param [Hash] opts the optional parameters
     # @return [GetCountriesResponse]
@@ -4455,7 +4455,7 @@ module TextMagic
       data
     end
 
-    # Return list of countries.
+    # Get countries
     # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetCountriesResponse, Fixnum, Hash)>] GetCountriesResponse data, response status code and response headers
@@ -6624,8 +6624,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Return all available timezone IDs.
-    # 
+    # Get timezones
+    # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0 (default to 0)
     # @return [GetTimezonesResponse]
@@ -6634,8 +6634,8 @@ module TextMagic
       data
     end
 
-    # Return all available timezone IDs.
-    # 
+    # Get timezones
+    # Return all available timezone IDs
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :full Return full info about timezones in array (0 or 1). Default is 0
     # @return [Array<(GetTimezonesResponse, Fixnum, Hash)>] GetTimezonesResponse data, response status code and response headers
@@ -7245,8 +7245,8 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Just does a pong.
-    # 
+    # Ping
+    # Make a simple ping request
     # @param [Hash] opts the optional parameters
     # @return [PingResponse]
     def ping(opts = {})
@@ -7254,8 +7254,8 @@ module TextMagic
       data
     end
 
-    # Just does a pong.
-    # 
+    # Ping
+    # Make a simple ping request
     # @param [Hash] opts the optional parameters
     # @return [Array<(PingResponse, Fixnum, Hash)>] PingResponse data, response status code and response headers
     def ping_with_http_info(opts = {})

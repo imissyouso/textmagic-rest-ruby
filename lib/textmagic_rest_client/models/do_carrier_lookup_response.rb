@@ -14,19 +14,48 @@ require 'date'
 
 module TextMagic
   class DoCarrierLookupResponse
+    # Cost to check one number is constant – 0.04 in your account currency.
     attr_accessor :cost
 
+    # Phone number country.
     attr_accessor :country
 
+    # Phone number in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).
     attr_accessor :local
 
+    # Phone number type.
     attr_accessor :type
 
+    # Carrier name.
     attr_accessor :carrier
 
+    # Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
     attr_accessor :number164
 
+    # The field shows if entered phone number is valid or not.
     attr_accessor :valid
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -128,10 +157,22 @@ module TextMagic
       return false if @cost.nil?
       return false if @local.nil?
       return false if @type.nil?
+      type_validator = EnumAttributeValidator.new('String', ['mobile', 'landline', 'voip'])
+      return false unless type_validator.valid?(@type)
       return false if @carrier.nil?
       return false if @number164.nil?
       return false if @valid.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['mobile', 'landline', 'voip'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
