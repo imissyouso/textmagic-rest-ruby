@@ -81,8 +81,6 @@ module TextMagic
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
-      else
-        self.status = ''
       end
     end
 
