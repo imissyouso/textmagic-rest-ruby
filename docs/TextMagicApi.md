@@ -1,6 +1,6 @@
 # TextMagic::TextMagicApi
 
-All URIs are relative to *http://rest.textmagic.com*
+All URIs are relative to *https://rest.textmagic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -3081,7 +3081,7 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  status: 'status_example', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats
+  status: '\"a\"', # String | Fetch only (a)ctive, (c)losed or (d)eleted chats
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
   order_by: 'id', # String | Order results by some field. Default is id

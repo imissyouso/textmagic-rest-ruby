@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **label** | **String** | Node label | [optional] 
 **body** | **String** | Node body | [optional] 
 **start_node** | **Integer** | Start node id | [optional] 
-**send_delay** | **Integer** | Define delay for sending question to recipients after previous answer. Default is 0 | [optional] 
+**send_delay** | **Integer** | Define delay for sending question to recipients after previous answer. | [optional] 
 
 
