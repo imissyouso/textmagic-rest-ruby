@@ -114,7 +114,6 @@ Method | HTTP request | Description
 [**get_sender_ids**](TextMagicApi.md#get_sender_ids) | **GET** /api/v2/senderids | Get all your approved Sender IDs
 [**get_sender_settings**](TextMagicApi.md#get_sender_settings) | **GET** /api/v2/sender/settings | Get current sender settings
 [**get_spending_stat**](TextMagicApi.md#get_spending_stat) | **GET** /api/v2/stats/spending | Get spending statistics
-[**get_state**](TextMagicApi.md#get_state) | **GET** /api/v2/state | Get current entities state
 [**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
 [**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get sub-accounts list
 [**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
@@ -128,14 +127,12 @@ Method | HTTP request | Description
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
 [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**get_versions**](TextMagicApi.md#get_versions) | **GET** /api/v2/versions | Get minimal valid apps versions
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
 [**merge_survey_nodes**](TextMagicApi.md#merge_survey_nodes) | **POST** /api/v2/surveys/nodes/merge | Merge two question nodes.
 [**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds
 [**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
-[**ping**](TextMagicApi.md#ping) | **GET** /api/v2/ping | Ping
 [**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
 [**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Apply for a new Sender ID
@@ -6157,53 +6154,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_state**
-> GetStateResponse get_state
-
-Get current entities state
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Get current entities state
-  result = api_instance.get_state
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_state: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetStateResponse**](GetStateResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **get_subaccount**
 > User get_subaccount(id)
 
@@ -6908,53 +6858,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_versions**
-> GetVersionsResponse get_versions
-
-Get minimal valid apps versions
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Get minimal valid apps versions
-  result = api_instance.get_versions
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_versions: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetVersionsResponse**](GetVersionsResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **invite_subaccount**
 > invite_subaccount(invite_subaccount_input_object)
 
@@ -7265,53 +7168,6 @@ nil (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
-
-
-
-# **ping**
-> PingResponse ping
-
-Ping
-
-Make a simple ping request
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Ping
-  result = api_instance.ping
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->ping: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**PingResponse**](PingResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 
 

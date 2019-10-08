@@ -1451,17 +1451,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_state
-  # Get current entities state
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [GetStateResponse]
-  describe 'get_state test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_subaccount
   # Get sub-account information
   # 
@@ -1624,17 +1613,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_versions
-  # Get minimal valid apps versions
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [GetVersionsResponse]
-  describe 'get_versions test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for invite_subaccount
   # Invite a new sub-account
   # 
@@ -1702,17 +1680,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'mute_chats_bulk test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for ping
-  # Ping
-  # Make a simple ping request
-  # @param [Hash] opts the optional parameters
-  # @return [PingResponse]
-  describe 'ping test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
