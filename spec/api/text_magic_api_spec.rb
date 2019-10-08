@@ -69,18 +69,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for cancel_survey
-  # Cancel a survey.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'cancel_survey test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for cancel_verification
   # Cancel verification process
   # You can cancel the verification not earlier than 30 seconds after the initial request.
@@ -88,18 +76,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'cancel_verification test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for check_phone_verification_code
-  # Check user phone verification code
-  # 
-  # @param check_phone_verification_code_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'check_phone_verification_code test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -209,43 +185,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
   describe 'create_list test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for create_push_token
-  # Add or update a device token.
-  # 
-  # @param create_push_token_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'create_push_token test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for create_survey
-  # Create a new survey from the submitted data.
-  # 
-  # @param create_survey_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'create_survey test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for create_survey_node
-  # Create a new node from the submitted data.
-  # 
-  # @param create_survey_node_input_object 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'create_survey_node test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -540,19 +479,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for delete_push_token
-  # Delete a push notification device token.
-  # 
-  # @param type 
-  # @param device_id 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_push_token test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for delete_scheduled_message
   # Delete a single scheduled message
   # 
@@ -589,30 +515,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for delete_survey
-  # Delete a survey.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_survey test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for delete_survey_node
-  # Delete a node.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_survey_node test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for delete_template
   # Delete a template
   # 
@@ -632,18 +534,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_templates_bulk test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for do_auth
-  # Authenticate user by given username and password.
-  # Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
-  # @param do_auth_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [DoAuthResponse]
-  describe 'do_auth test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -669,18 +559,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [DoEmailLookupResponse]
   describe 'do_email_lookup test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for duplicate_survey
-  # Duplicate a survey.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'duplicate_survey test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1353,17 +1231,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_push_tokens
-  # Get all device tokens assigned to the current account
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [GetPushTokensResponse]
-  describe 'get_push_tokens test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_scheduled_message
   # Get a single scheduled message
   # 
@@ -1462,55 +1329,6 @@ describe 'TextMagicApi' do
   # @option opts [Integer] :limit The number of results per page.
   # @return [GetSubaccountsWithTokensResponse]
   describe 'get_subaccounts_with_tokens test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_survey
-  # Get a survey by id.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [Survey]
-  describe 'get_survey test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_survey_node
-  # Get a node by id.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [SurveyNode]
-  describe 'get_survey_node test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_survey_nodes
-  # Fetch nodes by given survey id.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [GetSurveyNodesResponse]
-  describe 'get_survey_nodes test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_surveys
-  # Get all user surveys.
-  # 
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Fetch specified results page.
-  # @option opts [Integer] :limit The number of results per page.
-  # @return [GetSurveysPaginatedResponse]
-  describe 'get_surveys test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1626,18 +1444,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for merge_survey_nodes
-  # Merge two question nodes.
-  # 
-  # @param merge_survey_nodes_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'merge_survey_nodes test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for mute_chat
   # Mute chat sounds
   # 
@@ -1693,18 +1499,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
   describe 'request_sender_id test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for reset_survey
-  # Reset a survey flow.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'reset_survey test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1865,17 +1659,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for send_email_verification_code
-  # Send user email verification
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'send_email_verification_code test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for send_message
   # Send message
   # The main entrypoint to send messages. See examples above for the reference.
@@ -1883,17 +1666,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [SendMessageResponse]
   describe 'send_message test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for send_phone_verification_code
-  # Send user phone verification
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'send_phone_verification_code test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1918,18 +1690,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [ResourceLinkResponse]
   describe 'set_chat_status test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for start_survey
-  # Start a survey.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'start_survey test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2108,18 +1868,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for update_password
-  # Change user password.
-  # 
-  # @param update_password_input_object 
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'update_password test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for update_sender_setting
   # Change sender settings
   # 
@@ -2127,32 +1875,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update_sender_setting test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for update_survey
-  # Update existing survey.
-  # 
-  # @param update_survey_input_object 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'update_survey test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for update_survey_node
-  # Update existing node.
-  # 
-  # @param update_survey_node_input_object 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [ResourceLinkResponse]
-  describe 'update_survey_node test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

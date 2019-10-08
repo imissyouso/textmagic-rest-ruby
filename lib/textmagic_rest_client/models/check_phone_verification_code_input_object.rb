@@ -13,21 +13,26 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  # Confirmation code to check
   class CheckPhoneVerificationCodeInputObject
+    # Verification code that was received by the user and entered into the form field.
     attr_accessor :code
+
+    # VerifyId from Step 1 to match both requests together.
+    attr_accessor :verify_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'code' => :'code'
+        :'code' => :'code',
+        :'verify_id' => :'verifyId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'code' => :'Integer'
+        :'code' => :'Integer',
+        :'verify_id' => :'String'
       }
     end
 
@@ -42,6 +47,10 @@ module TextMagic
       if attributes.has_key?(:'code')
         self.code = attributes[:'code']
       end
+
+      if attributes.has_key?(:'verifyId')
+        self.verify_id = attributes[:'verifyId']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -52,6 +61,10 @@ module TextMagic
         invalid_properties.push('invalid value for "code", code cannot be nil.')
       end
 
+      if @verify_id.nil?
+        invalid_properties.push('invalid value for "verify_id", verify_id cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -59,6 +72,7 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @code.nil?
+      return false if @verify_id.nil?
       true
     end
 
@@ -67,7 +81,8 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          code == o.code
+          code == o.code &&
+          verify_id == o.verify_id
     end
 
     # @see the `==` method
@@ -79,7 +94,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code].hash
+      [code, verify_id].hash
     end
 
     # Builds the object from hash

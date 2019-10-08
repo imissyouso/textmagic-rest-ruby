@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**assign_contacts_to_list**](TextMagicApi.md#assign_contacts_to_list) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list
 [**block_contact**](TextMagicApi.md#block_contact) | **POST** /api/v2/contacts/block | Block contact by phone number
 [**buy_dedicated_number**](TextMagicApi.md#buy_dedicated_number) | **POST** /api/v2/numbers | Buy a dedicated number
-[**cancel_survey**](TextMagicApi.md#cancel_survey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancel_verification**](TextMagicApi.md#cancel_verification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
-[**check_phone_verification_code**](TextMagicApi.md#check_phone_verification_code) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
 [**check_phone_verification_code_tfa**](TextMagicApi.md#check_phone_verification_code_tfa) | **PUT** /api/v2/verify | Step 2: Check the verification code 
 [**clear_and_assign_contacts_to_list**](TextMagicApi.md#clear_and_assign_contacts_to_list) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts
 [**close_chats_bulk**](TextMagicApi.md#close_chats_bulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
@@ -19,9 +17,6 @@ Method | HTTP request | Description
 [**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
 [**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Add a new custom field
 [**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list
-[**create_push_token**](TextMagicApi.md#create_push_token) | **POST** /api/v2/push/tokens | Add or update a device token.
-[**create_survey**](TextMagicApi.md#create_survey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
-[**create_survey_node**](TextMagicApi.md#create_survey_node) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
 [**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template
 [**delete_all_contacts**](TextMagicApi.md#delete_all_contacts) | **DELETE** /api/v2/contact/all | Delete contacts (bulk)
 [**delete_all_outbound_messages**](TextMagicApi.md#delete_all_outbound_messages) | **DELETE** /api/v2/message/all | Delete all messages
@@ -46,18 +41,13 @@ Method | HTTP request | Description
 [**delete_message_sessions_bulk**](TextMagicApi.md#delete_message_sessions_bulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
 [**delete_outbound_message**](TextMagicApi.md#delete_outbound_message) | **DELETE** /api/v2/messages/{id} | Delete message
 [**delete_outbound_messages_bulk**](TextMagicApi.md#delete_outbound_messages_bulk) | **POST** /api/v2/messages/delete | Delete messages (bulk)
-[**delete_push_token**](TextMagicApi.md#delete_push_token) | **DELETE** /api/v2/push/tokens/{type}/{deviceId} | Delete a push notification device token.
 [**delete_scheduled_message**](TextMagicApi.md#delete_scheduled_message) | **DELETE** /api/v2/schedules/{id} | Delete a single scheduled message
 [**delete_scheduled_messages_bulk**](TextMagicApi.md#delete_scheduled_messages_bulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages (bulk)
 [**delete_sender_id**](TextMagicApi.md#delete_sender_id) | **DELETE** /api/v2/senderids/{id} | Delete a Sender ID
-[**delete_survey**](TextMagicApi.md#delete_survey) | **DELETE** /api/v2/surveys/{id} | Delete a survey.
-[**delete_survey_node**](TextMagicApi.md#delete_survey_node) | **DELETE** /api/v2/surveys/nodes/{id} | Delete a node.
 [**delete_template**](TextMagicApi.md#delete_template) | **DELETE** /api/v2/templates/{id} | Delete a template
 [**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete templates (bulk)
-[**do_auth**](TextMagicApi.md#do_auth) | **POST** /api/v2/auth | Authenticate user by given username and password.
 [**do_carrier_lookup**](TextMagicApi.md#do_carrier_lookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup
 [**do_email_lookup**](TextMagicApi.md#do_email_lookup) | **GET** /api/v2/email-lookups/{email} | Email Lookup
-[**duplicate_survey**](TextMagicApi.md#duplicate_survey) | **PUT** /api/v2/surveys/{id}/duplicate | Duplicate a survey.
 [**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sending sessions.
 [**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all chats
 [**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbound messages
@@ -106,7 +96,6 @@ Method | HTTP request | Description
 [**get_messaging_stat**](TextMagicApi.md#get_messaging_stat) | **GET** /api/v2/stats/messaging | Get messaging statistics
 [**get_outbound_message**](TextMagicApi.md#get_outbound_message) | **GET** /api/v2/messages/{id} | Get a single message
 [**get_outbound_messages_history**](TextMagicApi.md#get_outbound_messages_history) | **GET** /api/v2/history | Get history
-[**get_push_tokens**](TextMagicApi.md#get_push_tokens) | **GET** /api/v2/push/tokens | Get all device tokens assigned to the current account
 [**get_scheduled_message**](TextMagicApi.md#get_scheduled_message) | **GET** /api/v2/schedules/{id} | Get a single scheduled message
 [**get_sender_id**](TextMagicApi.md#get_sender_id) | **GET** /api/v2/senderids/{id} | Get the details of a specific Sender ID
 [**get_sender_ids**](TextMagicApi.md#get_sender_ids) | **GET** /api/v2/senderids | Get all your approved Sender IDs
@@ -115,10 +104,6 @@ Method | HTTP request | Description
 [**get_subaccount**](TextMagicApi.md#get_subaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
 [**get_subaccounts**](TextMagicApi.md#get_subaccounts) | **GET** /api/v2/subaccounts | Get sub-accounts list
 [**get_subaccounts_with_tokens**](TextMagicApi.md#get_subaccounts_with_tokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
-[**get_survey**](TextMagicApi.md#get_survey) | **GET** /api/v2/surveys/{id} | Get a survey by id.
-[**get_survey_node**](TextMagicApi.md#get_survey_node) | **GET** /api/v2/surveys/nodes/{id} | Get a node by id.
-[**get_survey_nodes**](TextMagicApi.md#get_survey_nodes) | **GET** /api/v2/surveys/{id}/nodes | Fetch nodes by given survey id.
-[**get_surveys**](TextMagicApi.md#get_surveys) | **GET** /api/v2/surveys | Get all user surveys.
 [**get_template**](TextMagicApi.md#get_template) | **GET** /api/v2/templates/{id} | Get a template details
 [**get_timezones**](TextMagicApi.md#get_timezones) | **GET** /api/v2/timezones | Get timezones
 [**get_unread_messages_total**](TextMagicApi.md#get_unread_messages_total) | **GET** /api/v2/chats/unread/count | Get unread messages number
@@ -128,13 +113,11 @@ Method | HTTP request | Description
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
-[**merge_survey_nodes**](TextMagicApi.md#merge_survey_nodes) | **POST** /api/v2/surveys/nodes/merge | Merge two question nodes.
 [**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds
 [**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
 [**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
 [**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Apply for a new Sender ID
-[**reset_survey**](TextMagicApi.md#reset_survey) | **PUT** /api/v2/surveys/{id}/reset | Reset a survey flow.
 [**search_chats**](TextMagicApi.md#search_chats) | **GET** /api/v2/chats/search | Find chats by message text
 [**search_chats_by_ids**](TextMagicApi.md#search_chats_by_ids) | **GET** /api/v2/chats/search/ids | Find chats (bulk)
 [**search_chats_by_receipent**](TextMagicApi.md#search_chats_by_receipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
@@ -144,12 +127,9 @@ Method | HTTP request | Description
 [**search_outbound_messages**](TextMagicApi.md#search_outbound_messages) | **GET** /api/v2/messages/search | Find messages
 [**search_scheduled_messages**](TextMagicApi.md#search_scheduled_messages) | **GET** /api/v2/schedules/search | Find scheduled messages
 [**search_templates**](TextMagicApi.md#search_templates) | **GET** /api/v2/templates/search | Find templates by criteria
-[**send_email_verification_code**](TextMagicApi.md#send_email_verification_code) | **GET** /api/v2/user/email/verification | Send user email verification
 [**send_message**](TextMagicApi.md#send_message) | **POST** /api/v2/messages | Send message
-[**send_phone_verification_code**](TextMagicApi.md#send_phone_verification_code) | **GET** /api/v2/user/phone/verification | Send user phone verification
 [**send_phone_verification_code_tfa**](TextMagicApi.md#send_phone_verification_code_tfa) | **POST** /api/v2/verify | Step 1: Send a verification code 
 [**set_chat_status**](TextMagicApi.md#set_chat_status) | **POST** /api/v2/chats/status | Change chat status
-[**start_survey**](TextMagicApi.md#start_survey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblock_contact**](TextMagicApi.md#unblock_contact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
 [**unblock_contacts_bulk**](TextMagicApi.md#unblock_contacts_bulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
 [**unmute_chats_bulk**](TextMagicApi.md#unmute_chats_bulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
@@ -164,10 +144,7 @@ Method | HTTP request | Description
 [**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact
 [**update_inbound_messages_notification_settings**](TextMagicApi.md#update_inbound_messages_notification_settings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings
 [**update_list**](TextMagicApi.md#update_list) | **PUT** /api/v2/lists/{id} | Edit a list
-[**update_password**](TextMagicApi.md#update_password) | **PUT** /api/v2/user/password/change | Change user password.
 [**update_sender_setting**](TextMagicApi.md#update_sender_setting) | **PUT** /api/v2/sender/settings | Change sender settings
-[**update_survey**](TextMagicApi.md#update_survey) | **PUT** /api/v2/surveys/{id} | Update existing survey.
-[**update_survey_node**](TextMagicApi.md#update_survey_node) | **PUT** /api/v2/surveys/nodes/{id} | Update existing node.
 [**update_template**](TextMagicApi.md#update_template) | **PUT** /api/v2/templates/{id} | Update a template
 [**upload_avatar**](TextMagicApi.md#upload_avatar) | **POST** /api/v2/user/avatar | Upload an avatar
 [**upload_contact_avatar**](TextMagicApi.md#upload_contact_avatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar
@@ -336,59 +313,6 @@ nil (empty response body)
 
 
 
-# **cancel_survey**
-> ResourceLinkResponse cancel_survey(id)
-
-Cancel a survey.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Cancel a survey.
-  result = api_instance.cancel_survey(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->cancel_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **cancel_verification**
 > cancel_verification(verify_id)
 
@@ -441,58 +365,6 @@ nil (empty response body)
 
 
 
-# **check_phone_verification_code**
-> check_phone_verification_code(check_phone_verification_code_input_object)
-
-Check user phone verification code
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
-
-
-begin
-  #Check user phone verification code
-  api_instance.check_phone_verification_code(check_phone_verification_code_input_object)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->check_phone_verification_code: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **check_phone_verification_code_tfa**
 > check_phone_verification_code_tfa(check_phone_verification_code_input_object)
 
@@ -513,7 +385,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject1.new # CheckPhoneVerificationCodeInputObject1 | 
+check_phone_verification_code_input_object = TextMagic::CheckPhoneVerificationCodeInputObject.new # CheckPhoneVerificationCodeInputObject | 
 
 
 begin
@@ -528,7 +400,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject1**](CheckPhoneVerificationCodeInputObject1.md)|  | 
+ **check_phone_verification_code_input_object** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  | 
 
 ### Return type
 
@@ -950,167 +822,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_list_input_object** | [**CreateListInputObject**](CreateListInputObject.md)|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **create_push_token**
-> create_push_token(create_push_token_input_object)
-
-Add or update a device token.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-create_push_token_input_object = TextMagic::CreatePushTokenInputObject.new # CreatePushTokenInputObject | 
-
-
-begin
-  #Add or update a device token.
-  api_instance.create_push_token(create_push_token_input_object)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->create_push_token: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_push_token_input_object** | [**CreatePushTokenInputObject**](CreatePushTokenInputObject.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **create_survey**
-> ResourceLinkResponse create_survey(create_survey_input_object)
-
-Create a new survey from the submitted data.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-create_survey_input_object = TextMagic::CreateSurveyInputObject.new # CreateSurveyInputObject | 
-
-
-begin
-  #Create a new survey from the submitted data.
-  result = api_instance.create_survey(create_survey_input_object)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->create_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_survey_input_object** | [**CreateSurveyInputObject**](CreateSurveyInputObject.md)|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **create_survey_node**
-> ResourceLinkResponse create_survey_node(create_survey_node_input_object, id)
-
-Create a new node from the submitted data.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-create_survey_node_input_object = TextMagic::CreateSurveyNodeInputObject.new # CreateSurveyNodeInputObject | 
-
-id = 1 # Integer | 
-
-
-begin
-  #Create a new node from the submitted data.
-  result = api_instance.create_survey_node(create_survey_node_input_object, id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->create_survey_node: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_survey_node_input_object** | [**CreateSurveyNodeInputObject**](CreateSurveyNodeInputObject.md)|  | 
- **id** | **Integer**|  | 
 
 ### Return type
 
@@ -2370,61 +2081,6 @@ nil (empty response body)
 
 
 
-# **delete_push_token**
-> delete_push_token(type, device_id)
-
-Delete a push notification device token.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-type = 'type_example' # String | 
-
-device_id = 56 # Integer | 
-
-
-begin
-  #Delete a push notification device token.
-  api_instance.delete_push_token(type, device_id)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->delete_push_token: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**|  | 
- **device_id** | **Integer**|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-
 # **delete_scheduled_message**
 > delete_scheduled_message(id)
 
@@ -2581,110 +2237,6 @@ nil (empty response body)
 
 
 
-# **delete_survey**
-> delete_survey(id)
-
-Delete a survey.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Delete a survey.
-  api_instance.delete_survey(id)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->delete_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-
-# **delete_survey_node**
-> delete_survey_node(id)
-
-Delete a node.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Delete a node.
-  api_instance.delete_survey_node(id)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->delete_survey_node: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-
 # **delete_template**
 > delete_template(id)
 
@@ -2789,53 +2341,6 @@ nil (empty response body)
 
 
 
-# **do_auth**
-> DoAuthResponse do_auth(do_auth_input_object)
-
-Authenticate user by given username and password.
-
-Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-
-api_instance = TextMagic::TextMagicApi.new
-
-do_auth_input_object = TextMagic::DoAuthInputObject.new # DoAuthInputObject | 
-
-
-begin
-  #Authenticate user by given username and password.
-  result = api_instance.do_auth(do_auth_input_object)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->do_auth: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **do_auth_input_object** | [**DoAuthInputObject**](DoAuthInputObject.md)|  | 
-
-### Return type
-
-[**DoAuthResponse**](DoAuthResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **do_carrier_lookup**
 > DoCarrierLookupResponse do_carrier_lookup(phone, opts)
 
@@ -2934,59 +2439,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DoEmailLookupResponse**](DoEmailLookupResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **duplicate_survey**
-> ResourceLinkResponse duplicate_survey(id)
-
-Duplicate a survey.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Duplicate a survey.
-  result = api_instance.duplicate_survey(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->duplicate_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
 
 ### Authorization
 
@@ -5729,53 +5181,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_push_tokens**
-> GetPushTokensResponse get_push_tokens
-
-Get all device tokens assigned to the current account
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Get all device tokens assigned to the current account
-  result = api_instance.get_push_tokens
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_push_tokens: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetPushTokensResponse**](GetPushTokensResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **get_scheduled_message**
 > MessagesIcs get_scheduled_message(id)
 
@@ -6208,221 +5613,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetSubaccountsWithTokensResponse**](GetSubaccountsWithTokensResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_survey**
-> Survey get_survey(id)
-
-Get a survey by id.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Get a survey by id.
-  result = api_instance.get_survey(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**Survey**](Survey.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_survey_node**
-> SurveyNode get_survey_node(id)
-
-Get a node by id.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Get a node by id.
-  result = api_instance.get_survey_node(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_survey_node: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**SurveyNode**](SurveyNode.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_survey_nodes**
-> GetSurveyNodesResponse get_survey_nodes(id)
-
-Fetch nodes by given survey id.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Fetch nodes by given survey id.
-  result = api_instance.get_survey_nodes(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_survey_nodes: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**GetSurveyNodesResponse**](GetSurveyNodesResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_surveys**
-> GetSurveysPaginatedResponse get_surveys(opts)
-
-Get all user surveys.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-opts = { 
-  page: 1, # Integer | Fetch specified results page.
-  limit: 10 # Integer | The number of results per page.
-}
-
-begin
-  #Get all user surveys.
-  result = api_instance.get_surveys(opts)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_surveys: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
- **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
-
-### Return type
-
-[**GetSurveysPaginatedResponse**](GetSurveysPaginatedResponse.md)
 
 ### Authorization
 
@@ -6912,58 +6102,6 @@ nil (empty response body)
 
 
 
-# **merge_survey_nodes**
-> merge_survey_nodes(merge_survey_nodes_input_object)
-
-Merge two question nodes.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-merge_survey_nodes_input_object = TextMagic::MergeSurveyNodesInputObject.new # MergeSurveyNodesInputObject | 
-
-
-begin
-  #Merge two question nodes.
-  api_instance.merge_survey_nodes(merge_survey_nodes_input_object)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->merge_survey_nodes: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merge_survey_nodes_input_object** | [**MergeSurveyNodesInputObject**](MergeSurveyNodesInputObject.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-
 # **mute_chat**
 > ResourceLinkResponse mute_chat(mute_chat_input_object)
 
@@ -7211,59 +6349,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request_sender_id_input_object** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md)|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **reset_survey**
-> ResourceLinkResponse reset_survey(id)
-
-Reset a survey flow.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Reset a survey flow.
-  result = api_instance.reset_survey(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->reset_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
 
 ### Return type
 
@@ -7860,52 +6945,6 @@ Name | Type | Description  | Notes
 
 
 
-# **send_email_verification_code**
-> send_email_verification_code
-
-Send user email verification
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Send user email verification
-  api_instance.send_email_verification_code
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->send_email_verification_code: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **send_message**
 > SendMessageResponse send_message(send_message_input_object)
 
@@ -7947,52 +6986,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendMessageResponse**](SendMessageResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **send_phone_verification_code**
-> send_phone_verification_code
-
-Send user phone verification
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Send user phone verification
-  api_instance.send_phone_verification_code
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->send_phone_verification_code: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
 
 ### Authorization
 
@@ -8095,59 +7088,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **set_chat_status_input_object** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md)|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **start_survey**
-> ResourceLinkResponse start_survey(id)
-
-Start a survey.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-id = 1 # Integer | 
-
-
-begin
-  #Start a survey.
-  result = api_instance.start_survey(id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->start_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
 
 ### Return type
 
@@ -8915,58 +7855,6 @@ Name | Type | Description  | Notes
 
 
 
-# **update_password**
-> update_password(update_password_input_object)
-
-Change user password.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-update_password_input_object = TextMagic::UpdatePasswordInputObject.new # UpdatePasswordInputObject | 
-
-
-begin
-  #Change user password.
-  api_instance.update_password(update_password_input_object)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->update_password: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **update_password_input_object** | [**UpdatePasswordInputObject**](UpdatePasswordInputObject.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
-
 # **update_sender_setting**
 > update_sender_setting(update_sender_setting_input_object)
 
@@ -9016,118 +7904,6 @@ nil (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
-
-
-
-# **update_survey**
-> ResourceLinkResponse update_survey(update_survey_input_object, id)
-
-Update existing survey.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-update_survey_input_object = TextMagic::UpdateSurveyInputObject.new # UpdateSurveyInputObject | 
-
-id = 1 # Integer | 
-
-
-begin
-  #Update existing survey.
-  result = api_instance.update_survey(update_survey_input_object, id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->update_survey: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **update_survey_input_object** | [**UpdateSurveyInputObject**](UpdateSurveyInputObject.md)|  | 
- **id** | **Integer**|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **update_survey_node**
-> ResourceLinkResponse update_survey_node(update_survey_node_input_object, id)
-
-Update existing node.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-update_survey_node_input_object = TextMagic::UpdateSurveyNodeInputObject.new # UpdateSurveyNodeInputObject | 
-
-id = 1 # Integer | 
-
-
-begin
-  #Update existing node.
-  result = api_instance.update_survey_node(update_survey_node_input_object, id)
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->update_survey_node: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **update_survey_node_input_object** | [**UpdateSurveyNodeInputObject**](UpdateSurveyNodeInputObject.md)|  | 
- **id** | **Integer**|  | 
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 
 
