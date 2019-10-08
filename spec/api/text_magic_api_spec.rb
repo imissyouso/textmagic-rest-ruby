@@ -874,17 +874,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_calls_prices
-  # Check pricing for a inbound/outbound call.
-  # 
-  # @param [Hash] opts the optional parameters
-  # @return [GetCallsPricesResponse]
-  describe 'get_calls_prices test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_chat
   # Get a single chat
   # 
@@ -961,18 +950,6 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @return [Contact]
   describe 'get_contact_if_blocked test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_contact_import_session_progress
-  # Get contact import session progress.
-  # 
-  # @param id 
-  # @param [Hash] opts the optional parameters
-  # @return [GetContactImportSessionProgressResponse]
-  describe 'get_contact_import_session_progress test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

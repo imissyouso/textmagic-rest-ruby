@@ -3673,54 +3673,6 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Check pricing for a inbound/outbound call.
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [GetCallsPricesResponse]
-    def get_calls_prices(opts = {})
-      data, _status_code, _headers = get_calls_prices_with_http_info(opts)
-      data
-    end
-
-    # Check pricing for a inbound/outbound call.
-    # 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(GetCallsPricesResponse, Fixnum, Hash)>] GetCallsPricesResponse data, response status code and response headers
-    def get_calls_prices_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_calls_prices ...'
-      end
-      # resource path
-      local_var_path = '/api/v2/calls/price'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetCallsPricesResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_calls_prices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Get a single chat
     # 
     # @param id 
@@ -4073,60 +4025,6 @@ module TextMagic
         :return_type => 'Contact')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#get_contact_if_blocked\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Get contact import session progress.
-    # 
-    # @param id 
-    # @param [Hash] opts the optional parameters
-    # @return [GetContactImportSessionProgressResponse]
-    def get_contact_import_session_progress(id, opts = {})
-      data, _status_code, _headers = get_contact_import_session_progress_with_http_info(id, opts)
-      data
-    end
-
-    # Get contact import session progress.
-    # 
-    # @param id 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(GetContactImportSessionProgressResponse, Fixnum, Hash)>] GetContactImportSessionProgressResponse data, response status code and response headers
-    def get_contact_import_session_progress_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contact_import_session_progress ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling TextMagicApi.get_contact_import_session_progress"
-      end
-      # resource path
-      local_var_path = '/api/v2/contacts/import/progress/{id}'.sub('{' + 'id' + '}', id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetContactImportSessionProgressResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_contact_import_session_progress\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
