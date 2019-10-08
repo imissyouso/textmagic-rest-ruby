@@ -6778,7 +6778,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Get all unsubscribed contacts
-    # When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
@@ -6789,7 +6789,7 @@ module TextMagic
     end
 
     # Get all unsubscribed contacts
-    # When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+    # When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
