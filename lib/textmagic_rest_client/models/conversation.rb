@@ -31,7 +31,7 @@ module TextMagic
     # Receiver phone number.
     attr_accessor :receiver
 
-    # Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/section#Delivery-status-codes) for details.
+    # Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details.
     attr_accessor :status
 
     # Contact first name.

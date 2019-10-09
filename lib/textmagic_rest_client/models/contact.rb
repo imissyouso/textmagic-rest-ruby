@@ -39,7 +39,7 @@ module TextMagic
     # Contact country.
     attr_accessor :country
 
-    # See [Custom Fields](http://docs.textmagictesting.com/tag#Custom-Fields) section.
+    # See [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields) section.
     attr_accessor :custom_fields
 
     attr_accessor :user

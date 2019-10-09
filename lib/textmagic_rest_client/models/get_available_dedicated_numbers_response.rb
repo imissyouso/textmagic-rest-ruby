@@ -17,7 +17,7 @@ module TextMagic
     # Array of phone number strings.
     attr_accessor :numbers
 
-    # Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/tag#User) currency.
+    # Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/#tag/User) currency.
     attr_accessor :price
 
     # Attribute mapping from ruby-style variable name to JSON key.

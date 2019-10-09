@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **deleted** | **BOOLEAN** |  | [optional] 
 **charset** | **String** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS  | 
 **charset_label** | **String** |  | 
-**first_name** | **String** | Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/tag#Contacts) (even if you submitted phone number instead of contact ID).  | 
+**first_name** | **String** | Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted phone number instead of contact ID).  | 
 **last_name** | **String** | Contact last name. | 
 **country** | **String** | Two-letter ISO country code of the recipient phone number.  | 
 **phone** | **String** |  | [optional] 
