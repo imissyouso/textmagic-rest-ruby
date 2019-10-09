@@ -14,22 +14,30 @@ require 'date'
 
 module TextMagic
   class SubaccountWithToken
+    # Sub-account ID.
     attr_accessor :id
 
+    # Username.
     attr_accessor :username
 
+    # Account first name.
     attr_accessor :first_name
 
+    # Account last name.
     attr_accessor :last_name
 
     attr_accessor :email
 
+    # Current account status: * **A** for Active * **T** for Trial. 
     attr_accessor :status
 
+    # Account balance (in account currency).
     attr_accessor :balance
 
+    # Contact phone number.
     attr_accessor :phone
 
+    # Account company name.
     attr_accessor :company
 
     attr_accessor :currency
@@ -38,15 +46,41 @@ module TextMagic
 
     attr_accessor :timezone
 
+    # Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
     attr_accessor :subaccount_type
 
+    # Is account has confirmed Email.
     attr_accessor :email_accepted
 
+    # Is account has confirmed Phone number.
     attr_accessor :phone_accepted
 
     attr_accessor :avatar
 
+    # Access token of account.
     attr_accessor :token
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -255,6 +289,8 @@ module TextMagic
       return false if @last_name.nil?
       return false if @email.nil?
       return false if @status.nil?
+      status_validator = EnumAttributeValidator.new('String', ['A', 'T'])
+      return false unless status_validator.valid?(@status)
       return false if @balance.nil?
       return false if @phone.nil?
       return false if @company.nil?
@@ -262,11 +298,33 @@ module TextMagic
       return false if @country.nil?
       return false if @timezone.nil?
       return false if @subaccount_type.nil?
+      subaccount_type_validator = EnumAttributeValidator.new('String', ['A', 'U'])
+      return false unless subaccount_type_validator.valid?(@subaccount_type)
       return false if @email_accepted.nil?
       return false if @phone_accepted.nil?
       return false if @avatar.nil?
       return false if @token.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ['A', 'T'])
+      unless validator.valid?(status)
+        fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
+      end
+      @status = status
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] subaccount_type Object to be assigned
+    def subaccount_type=(subaccount_type)
+      validator = EnumAttributeValidator.new('String', ['A', 'U'])
+      unless validator.valid?(subaccount_type)
+        fail ArgumentError, 'invalid value for "subaccount_type", must be one of #{validator.allowable_values}.'
+      end
+      @subaccount_type = subaccount_type
     end
 
     # Checks equality by comparing each attribute.
