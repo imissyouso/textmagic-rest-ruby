@@ -44,7 +44,7 @@ module TextMagic
 
     attr_accessor :charset_label
 
-    # TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
+    # Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/tag#Contacts) (even if you submitted phone number instead of contact ID). 
     attr_accessor :first_name
 
     # Contact last name.
