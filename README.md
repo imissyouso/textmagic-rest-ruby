@@ -10,7 +10,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 Add these lines into your Gemfile
 ```ruby
-gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.592'
+gem 'textmagic_rest_client', :git => 'https://github.com/imissyouso/textmagic-rest-ruby.git', :tag => 'v2.0.604'
 ```
 
 Run the bundler install command

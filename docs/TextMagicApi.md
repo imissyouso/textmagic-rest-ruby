@@ -115,6 +115,7 @@ Method | HTTP request | Description
 [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
 [**mute_chat**](TextMagicApi.md#mute_chat) | **POST** /api/v2/chats/mute | Mute chat sounds
 [**mute_chats_bulk**](TextMagicApi.md#mute_chats_bulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
+[**ping**](TextMagicApi.md#ping) | **GET** /api/v2/ping | Ping
 [**reopen_chats_bulk**](TextMagicApi.md#reopen_chats_bulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**request_new_subaccount_token**](TextMagicApi.md#request_new_subaccount_token) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
 [**request_sender_id**](TextMagicApi.md#request_sender_id) | **POST** /api/v2/senderids | Apply for a new Sender ID
@@ -6204,6 +6205,53 @@ nil (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+
+
+# **ping**
+> PingResponse ping
+
+Ping
+
+Make a simple ping request
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+begin
+  #Ping
+  result = api_instance.ping
+  p result
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->ping: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PingResponse**](PingResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 

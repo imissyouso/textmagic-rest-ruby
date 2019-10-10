@@ -26,6 +26,7 @@ module TextMagic
     # Account last name.
     attr_accessor :last_name
 
+    # Account Email address.
     attr_accessor :email
 
     # Current account status: * **A** for Active * **T** for Trial. 

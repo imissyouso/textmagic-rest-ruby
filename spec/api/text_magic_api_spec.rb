@@ -1468,6 +1468,17 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for ping
+  # Ping
+  # Make a simple ping request
+  # @param [Hash] opts the optional parameters
+  # @return [PingResponse]
+  describe 'ping test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for reopen_chats_bulk
   # Reopen chats (bulk)
   # Reopen chats by chat ids or reopen all chats

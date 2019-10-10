@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class MessagingStatItem
-    # the number of incoming messages divided by the number of total messages.
+    # The number of incoming messages divided by the number of total messages.
     attr_accessor :reply_rate
 
     # Time interval start, empty if the **by** parameter was set to **off**. 
