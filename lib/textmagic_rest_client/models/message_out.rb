@@ -25,11 +25,13 @@ module TextMagic
 
     attr_accessor :text
 
-    # Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
+    # Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
     attr_accessor :status
 
+    # Recipient contact ID.
     attr_accessor :contact_id
 
+    # Message Session ID of a Message.
     attr_accessor :session_id
 
     # Sending time.
@@ -37,6 +39,7 @@ module TextMagic
 
     attr_accessor :avatar
 
+    # Indicates that message has been deleted.
     attr_accessor :deleted
 
     # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
@@ -53,8 +56,10 @@ module TextMagic
     # Two-letter ISO country code of the recipient phone number. 
     attr_accessor :country
 
+    # Receipent phone number.
     attr_accessor :phone
 
+    # Message price.
     attr_accessor :price
 
     # Message parts (multiples of 160 characters) count.
@@ -62,6 +67,7 @@ module TextMagic
 
     attr_accessor :from_email
 
+    # Phone number which is used to send SMS.
     attr_accessor :from_number
 
     attr_accessor :smsc_id

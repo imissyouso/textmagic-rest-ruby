@@ -40,6 +40,7 @@ module TextMagic
     # Contact last name.
     attr_accessor :last_name
 
+    # Session ID of a message. See [message sessions](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions) for details.
     attr_accessor :session_id
 
     class EnumAttributeValidator

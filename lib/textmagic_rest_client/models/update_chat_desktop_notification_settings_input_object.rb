@@ -14,16 +14,16 @@ require 'date'
 
 module TextMagic
   class UpdateChatDesktopNotificationSettingsInputObject
-    # Notification sound is enable/disabled
+    # Enable notification sound?
     attr_accessor :play_sound
 
-    # Show desktop notifications about new messages
+    # Show desktop notifications about new messages.
     attr_accessor :show_notifications
 
     # Incoming message text will be displayed in desktop notifications.
     attr_accessor :show_text
 
-    # Sound Id of a notification
+    # Sound Id of a notification.
     attr_accessor :sound_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

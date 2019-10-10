@@ -14,13 +14,13 @@ require 'date'
 
 module TextMagic
   class MuteChatInputObject
-    # Chat ID
+    # Chat ID.
     attr_accessor :id
 
-    # Mute value
+    # Mute notifications sound.
     attr_accessor :mute
 
-    # Mute for N hours
+    # Mute for N hours.
     attr_accessor :_for
 
     # Attribute mapping from ruby-style variable name to JSON key.

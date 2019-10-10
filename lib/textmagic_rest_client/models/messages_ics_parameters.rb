@@ -14,6 +14,7 @@ require 'date'
 
 module TextMagic
   class MessagesIcsParameters
+    # Scheduled message text.
     attr_accessor :text
 
     attr_accessor :recipients

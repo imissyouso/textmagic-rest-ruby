@@ -20,7 +20,7 @@ module TextMagic
     # Template name.
     attr_accessor :name
 
-    # Template text. May contain the tags listed below TODO.
+    # Template text. May contain the tags. See [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
     attr_accessor :content
 
     # Time when template was last modified.

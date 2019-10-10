@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class CreateTemplateInputObject
-    # Template name
+    # Template name.
     attr_accessor :name
 
-    # Template text. May contain tags inside braces
+    # Template text. May contain tags inside braces. See [Get timezones](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
     attr_accessor :content
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,37 +14,37 @@ require 'date'
 
 module TextMagic
   class GetBalanceNotificationOptionsResponse
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_1
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_2
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_3
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_5
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_10
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_20
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_30
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_50
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_100
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_500
 
-    # Contains sign of currency in Unicode hex code
+    # Contains sign of currency in Unicode hex code.
     attr_accessor :_1000
 
     # Attribute mapping from ruby-style variable name to JSON key.

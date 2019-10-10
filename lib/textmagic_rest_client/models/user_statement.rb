@@ -14,9 +14,10 @@ require 'date'
 
 module TextMagic
   class UserStatement
+    # User statement ID.
     attr_accessor :id
 
-    # User statement ID.
+    # User ID.
     attr_accessor :user_id
 
     # User statement date.

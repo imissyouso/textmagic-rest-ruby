@@ -20,21 +20,22 @@ module TextMagic
     # 
     attr_accessor :entity_type
 
-    # Id of contact/list if entityType is contact/list OR phone number if entityType is reply
+    # Id of contact/list if entityType is contact/list OR phone number if entityType is reply.
     attr_accessor :value
 
-    # Name of the contact/list if entityType is contact/list OR phone number if entityType is reply
+    # Name of the contact/list if entityType is contact/list OR phone number if entityType is reply.
     attr_accessor :label
 
-    # If contact or list was shared by another user then name if this user will be shown
+    # If contact or list was shared by another user then name if this user will be shown.
     attr_accessor :shared_by
 
+    # Contact avatar URI.
     attr_accessor :avatar
 
-    # If contact was marked as favourited
+    # If contact has been marked as favorite.
     attr_accessor :favorited
 
-    # Owner id of the contact/list (if it was shared)
+    # Owner id of the contact/list (if it was shared).
     attr_accessor :user_id
 
     attr_accessor :country_name

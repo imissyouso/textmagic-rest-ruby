@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class GetMessagePriceResponse
+    # Total price of the mesasge.
     attr_accessor :total
 
+    # Message parts (multiples of 160 characters) count.
     attr_accessor :parts
 
+    # List of countries where message will be sent with pricing explanation.
     attr_accessor :countries
 
     # Attribute mapping from ruby-style variable name to JSON key.

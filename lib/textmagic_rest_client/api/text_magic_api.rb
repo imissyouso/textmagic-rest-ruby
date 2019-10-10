@@ -294,7 +294,7 @@ module TextMagic
     end
     # Reset list members to the specified contacts
     # 
-    # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
+    # @param clear_and_assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [ResourceLinkResponse]
@@ -305,7 +305,7 @@ module TextMagic
 
     # Reset list members to the specified contacts
     # 
-    # @param clear_and_assign_contacts_to_list_input_object Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
+    # @param clear_and_assign_contacts_to_list_input_object 
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
@@ -553,7 +553,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Create a new contact note.
+    # Create a new contact note
     # 
     # @param create_contact_note_input_object 
     # @param id 
@@ -564,7 +564,7 @@ module TextMagic
       data
     end
 
-    # Create a new contact note.
+    # Create a new contact note
     # 
     # @param create_contact_note_input_object 
     # @param id 
@@ -1122,7 +1122,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete a single contact note.
+    # Delete a contact note
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1132,7 +1132,7 @@ module TextMagic
       nil
     end
 
-    # Delete a single contact note.
+    # Delete a contact note
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -1173,7 +1173,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Delete contact note by given ID(s) or delete all contact notes.
+    # Delete contact notes (bulk)
     # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
@@ -1184,7 +1184,7 @@ module TextMagic
       nil
     end
 
-    # Delete contact note by given ID(s) or delete all contact notes.
+    # Delete contact notes (bulk)
     # 
     # @param id 
     # @param delete_contact_notes_bulk_input_object 
@@ -2324,7 +2324,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get all bulk sending sessions.
+    # Get all bulk sessions
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
@@ -2335,7 +2335,7 @@ module TextMagic
       data
     end
 
-    # Get all bulk sending sessions.
+    # Get all bulk sessions
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
@@ -3030,7 +3030,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get bulk message session status.
+    # Get bulk session status
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -3040,7 +3040,7 @@ module TextMagic
       data
     end
 
-    # Get bulk message session status.
+    # Get bulk session status
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -3487,7 +3487,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get a single contact note.
+    # Get a contact note
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -3497,7 +3497,7 @@ module TextMagic
       data
     end
 
-    # Get a single contact note.
+    # Get a contact note
     # 
     # @param id 
     # @param [Hash] opts the optional parameters
@@ -4565,23 +4565,23 @@ module TextMagic
     # Preview message
     # Get messages preview (with tags merged) up to 100 messages per session.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :text Message text. Required if template_id is not set
-    # @option opts [Integer] :template_id Template used instead of message text. Required if text is not set
-    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to
-    # @option opts [String] :lists Comma separated array of list resources id message will be sent to
-    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to
-    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (default to 0)
-    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (default to 6)
-    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure
-    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (default to 0)
-    # @option opts [Integer] :tts Send Text to Speech message. Default is 0 (default to 0)
-    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (default to 0)
-    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country
+    # @option opts [String] :text Message text. Required if **template_id** is not set.
+    # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
+    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to.
+    # @option opts [String] :lists Comma separated array of list resources id message will be sent to.
+    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to.
+    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (default to 0)
+    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (default to 6)
+    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
+    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. (default to 0)
+    # @option opts [Integer] :tts Send Text to Speech message. (default to 0)
+    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (default to 0)
+    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country.
     # @return [GetMessagePreviewResponse]
     def get_message_preview(opts = {})
       data, _status_code, _headers = get_message_preview_with_http_info(opts)
@@ -4591,23 +4591,23 @@ module TextMagic
     # Preview message
     # Get messages preview (with tags merged) up to 100 messages per session.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :text Message text. Required if template_id is not set
-    # @option opts [Integer] :template_id Template used instead of message text. Required if text is not set
-    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to
-    # @option opts [String] :lists Comma separated array of list resources id message will be sent to
-    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to
-    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
-    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
-    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure
-    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0
-    # @option opts [Integer] :tts Send Text to Speech message. Default is 0
-    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0
-    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country
+    # @option opts [String] :text Message text. Required if **template_id** is not set.
+    # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
+    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to.
+    # @option opts [String] :lists Comma separated array of list resources id message will be sent to.
+    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to.
+    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
+    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
+    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
+    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients.
+    # @option opts [Integer] :tts Send Text to Speech message.
+    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local.
+    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country.
     # @return [Array<(GetMessagePreviewResponse, Fixnum, Hash)>] GetMessagePreviewResponse data, response status code and response headers
     def get_message_preview_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -4665,23 +4665,23 @@ module TextMagic
     # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show pricing for the blocked contacts. (default to 0)
-    # @option opts [String] :text Message text. Required if template_id is not set
-    # @option opts [Integer] :template_id Template used instead of message text. Required if text is not set
-    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to
-    # @option opts [String] :lists Comma separated array of list resources id message will be sent to
-    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to
-    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (default to 0)
-    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (default to 6)
-    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure
-    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (default to 0)
-    # @option opts [Integer] :tts Send Text to Speech message. Default is 0 (default to 0)
-    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (default to 0)
-    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country
+    # @option opts [String] :text Message text. Required if **template_id** is not set.
+    # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
+    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to.
+    # @option opts [String] :lists Comma separated array of list resources id message will be sent to.
+    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to.
+    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (default to 0)
+    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (default to 6)
+    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
+    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. (default to 0)
+    # @option opts [Integer] :tts Send Text to Speech message. (default to 0)
+    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (default to 0)
+    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country.
     # @return [GetMessagePriceResponse]
     def get_message_price(opts = {})
       data, _status_code, _headers = get_message_price_with_http_info(opts)
@@ -4692,23 +4692,23 @@ module TextMagic
     # Check pricing for a new outbound message.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :include_blocked Should we show pricing for the blocked contacts.
-    # @option opts [String] :text Message text. Required if template_id is not set
-    # @option opts [Integer] :template_id Template used instead of message text. Required if text is not set
-    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to
-    # @option opts [String] :lists Comma separated array of list resources id message will be sent to
-    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to
-    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
-    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
-    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure
-    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0
-    # @option opts [Integer] :tts Send Text to Speech message. Default is 0
-    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0
-    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country
+    # @option opts [String] :text Message text. Required if **template_id** is not set.
+    # @option opts [Integer] :template_id Template used instead of message text. Required if **text** is not set.
+    # @option opts [Integer] :sending_time DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+    # @option opts [String] :sending_date_time Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+    # @option opts [String] :sending_timezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+    # @option opts [String] :contacts Comma separated array of contact resources id message will be sent to.
+    # @option opts [String] :lists Comma separated array of list resources id message will be sent to.
+    # @option opts [String] :phones Comma separated array of E.164 phone numbers message will be sent to.
+    # @option opts [Integer] :cut_extra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
+    # @option opts [Integer] :parts_count Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
+    # @option opts [Integer] :reference_id Custom message reference id which can be used in your application infrastructure.
+    # @option opts [String] :from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+    # @option opts [String] :rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+    # @option opts [Integer] :create_chat Should sending method try to create new Chat(if not exist) with specified recipients.
+    # @option opts [Integer] :tts Send Text to Speech message.
+    # @option opts [Integer] :local Treat phone numbers passed in \\&#39;phones\\&#39; field as local.
+    # @option opts [String] :local_country 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country.
     # @return [Array<(GetMessagePriceResponse, Fixnum, Hash)>] GetMessagePriceResponse data, response status code and response headers
     def get_message_price_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -7637,7 +7637,7 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Update existing contact note.
+    # Update a contact note
     # 
     # @param update_contact_note_input_object 
     # @param id 
@@ -7648,7 +7648,7 @@ module TextMagic
       data
     end
 
-    # Update existing contact note.
+    # Update a contact note
     # 
     # @param update_contact_note_input_object 
     # @param id 

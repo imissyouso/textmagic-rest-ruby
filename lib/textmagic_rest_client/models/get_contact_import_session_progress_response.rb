@@ -16,7 +16,7 @@ module TextMagic
   class GetContactImportSessionProgressResponse
     attr_accessor :status
 
-    # How many contacts have been imported
+    # How many contacts have been imported.
     attr_accessor :processed
 
     # Attribute mapping from ruby-style variable name to JSON key.

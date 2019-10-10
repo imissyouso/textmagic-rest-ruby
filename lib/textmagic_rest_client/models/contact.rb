@@ -17,8 +17,10 @@ module TextMagic
     # Contact ID.
     attr_accessor :id
 
+    # Is the Contact favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites).
     attr_accessor :favorited
 
+    # Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts).
     attr_accessor :blocked
 
     # Contact first name.

@@ -14,55 +14,55 @@ require 'date'
 
 module TextMagic
   class SendMessageInputObject
-    # Message text. Required if template_id is not set
+    # Message text. Required if **template_id** is not set.
     attr_accessor :text
 
-    # Template used instead of message text. Required if text is not set
+    # Template used instead of message text. Required if **text** is not set.
     attr_accessor :template_id
 
-    # DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
+    # DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
     attr_accessor :sending_time
 
-    # Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
+    # Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to **sendingTimezone**.
     attr_accessor :sending_date_time
 
-    # ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
+    # ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
     attr_accessor :sending_timezone
 
-    # Comma separated array of contact resources id message will be sent to
+    # Comma separated array of contact resources id message will be sent to.
     attr_accessor :contacts
 
-    # Comma separated array of list resources id message will be sent to
+    # Comma separated array of list resources id message will be sent to.
     attr_accessor :lists
 
-    # Comma separated array of E.164 phone numbers message will be sent to
+    # Comma separated array of E.164 phone numbers message will be sent to.
     attr_accessor :phones
 
-    # Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is false
+    # Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
     attr_accessor :cut_extra
 
-    # Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
+    # Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
     attr_accessor :parts_count
 
-    # Custom message reference id which can be used in your application infrastructure
+    # Custom message reference id which can be used in your application infrastructure.
     attr_accessor :reference_id
 
-    # One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
+    # One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
     attr_accessor :from
 
-    # iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
+    # iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
     attr_accessor :rule
 
-    # Should sending method try to create new Chat(if not exist) with specified recipients. Default is false
+    # Should sending method try to create new Chat(if not exist) with specified recipients.
     attr_accessor :create_chat
 
-    # Send Text to Speech message. Default is false
+    # Send Text to Speech message.
     attr_accessor :tts
 
-    # Treat phone numbers passed in \\'phones\\' field as local. Default is false
+    # Treat phone numbers passed in \\'phones\\' field as local.
     attr_accessor :local
 
-    # 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country
+    # 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.
     attr_accessor :local_country
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -153,6 +153,8 @@ module TextMagic
 
       if attributes.has_key?(:'cutExtra')
         self.cut_extra = attributes[:'cutExtra']
+      else
+        self.cut_extra = false
       end
 
       if attributes.has_key?(:'partsCount')
@@ -173,14 +175,20 @@ module TextMagic
 
       if attributes.has_key?(:'createChat')
         self.create_chat = attributes[:'createChat']
+      else
+        self.create_chat = false
       end
 
       if attributes.has_key?(:'tts')
         self.tts = attributes[:'tts']
+      else
+        self.tts = false
       end
 
       if attributes.has_key?(:'local')
         self.local = attributes[:'local']
+      else
+        self.local = false
       end
 
       if attributes.has_key?(:'localCountry')

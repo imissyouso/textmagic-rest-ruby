@@ -14,10 +14,10 @@ require 'date'
 
 module TextMagic
   class SetChatStatusInputObject
-    # Chat ID
+    # Chat ID.
     attr_accessor :id
 
-    # Status
+    # Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
     attr_accessor :status
 
     class EnumAttributeValidator

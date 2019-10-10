@@ -14,22 +14,22 @@ require 'date'
 
 module TextMagic
   class UpdateBalanceNotificationSettingsInputObject
-    # Should user receive low balance notification
+    # Should user receive low balance notification.
     attr_accessor :low_balance_notification
 
-    # If balance is below this value, user receive low balance notification
+    # If balance is below this value, user receive low balance notification.
     attr_accessor :alert_balance
 
-    # Low balance notification phone number
+    # Low balance notification phone number.
     attr_accessor :alert_phone
 
-    # Low balance notification email 1
+    # Low balance notification email 1.
     attr_accessor :alert_email1
 
-    # Low balance notification email 2
+    # Low balance notification email 2.
     attr_accessor :alert_email2
 
-    # Low balance notification email 3
+    # Low balance notification email 3.
     attr_accessor :alert_email3
 
     # Attribute mapping from ruby-style variable name to JSON key.

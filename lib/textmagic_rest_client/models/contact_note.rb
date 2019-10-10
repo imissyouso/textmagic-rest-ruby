@@ -14,10 +14,13 @@ require 'date'
 
 module TextMagic
   class ContactNote
+    # Contact note ID.
     attr_accessor :id
 
+    # Contact note creation time.
     attr_accessor :created_at
 
+    # Contact note text.
     attr_accessor :note
 
     attr_accessor :user

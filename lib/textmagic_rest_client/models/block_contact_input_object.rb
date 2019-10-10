@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class BlockContactInputObject
-    # Contact phone number
+    # Contact phone number.
     attr_accessor :phone
 
     # Attribute mapping from ruby-style variable name to JSON key.

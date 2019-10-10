@@ -24,29 +24,59 @@ module TextMagic
 
     attr_accessor :contact
 
+    # If this field has a value then it means that chat phone number has been unsubscribed from you and this value is a ID of a Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
     attr_accessor :unsubscribed_contact_id
 
-    # Unread incoming messages count.
+    # Total unread incoming messages.
     attr_accessor :unread
 
     # Time when last incoming message arrived at this chat.
     attr_accessor :updated_at
 
+    # Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
     attr_accessor :status
 
+    # Indicates when chat is muted.
     attr_accessor :mute
 
+    # The last message content of a chat.
     attr_accessor :last_message
 
+    # Last message type: * **ci** - incoming call * **co** - outgoing call * **i** - incoming message * **o** - outgoing message 
     attr_accessor :direction
 
+    # If filled then value will be used as a sender number for all outgoing messages of a chat.
     attr_accessor :from
 
+    # Date and time until chat will be mutted.
     attr_accessor :muted_until
 
+    # Time left till chat will be unmutted (seconds).
     attr_accessor :time_left_mute
 
     attr_accessor :country
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -84,7 +114,7 @@ module TextMagic
         :'last_message' => :'String',
         :'direction' => :'String',
         :'from' => :'String',
-        :'muted_until' => :'String',
+        :'muted_until' => :'DateTime',
         :'time_left_mute' => :'Integer',
         :'country' => :'Country'
       }
@@ -237,14 +267,38 @@ module TextMagic
       return false if @unread.nil?
       return false if @updated_at.nil?
       return false if @status.nil?
+      status_validator = EnumAttributeValidator.new('String', ['a', 'c', 'd'])
+      return false unless status_validator.valid?(@status)
       return false if @mute.nil?
       return false if @last_message.nil?
       return false if @direction.nil?
+      direction_validator = EnumAttributeValidator.new('String', ['ci', 'co', 'i', 'o'])
+      return false unless direction_validator.valid?(@direction)
       return false if @from.nil?
       return false if @muted_until.nil?
       return false if @time_left_mute.nil?
       return false if @country.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ['a', 'c', 'd'])
+      unless validator.valid?(status)
+        fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
+      end
+      @status = status
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] direction Object to be assigned
+    def direction=(direction)
+      validator = EnumAttributeValidator.new('String', ['ci', 'co', 'i', 'o'])
+      unless validator.valid?(direction)
+        fail ArgumentError, 'invalid value for "direction", must be one of #{validator.allowable_values}.'
+      end
+      @direction = direction
     end
 
     # Checks equality by comparing each attribute.

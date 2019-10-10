@@ -14,7 +14,7 @@ require 'date'
 
 module TextMagic
   class GetAvailableDedicatedNumbersResponse
-    # Array of phone number strings.
+    # Array of phone numbers.
     attr_accessor :numbers
 
     # Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/#tag/User) currency.

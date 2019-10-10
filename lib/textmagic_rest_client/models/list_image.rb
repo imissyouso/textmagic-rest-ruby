@@ -14,6 +14,7 @@ require 'date'
 
 module TextMagic
   class ListImage
+    # URI of a list avatar.
     attr_accessor :href
 
     # Attribute mapping from ruby-style variable name to JSON key.

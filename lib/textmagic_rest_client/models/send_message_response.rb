@@ -14,20 +14,26 @@ require 'date'
 
 module TextMagic
   class SendMessageResponse
+    # Message ID.
     attr_accessor :id
 
+    # URI of message session.
     attr_accessor :href
 
     attr_accessor :type
 
+    # Message session ID.
     attr_accessor :session_id
 
+    # Bulk Session ID. See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).
     attr_accessor :bulk_id
 
     attr_accessor :message_id
 
+    # Message Schedule ID.
     attr_accessor :schedule_id
 
+    # Message Chat ID.
     attr_accessor :chat_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

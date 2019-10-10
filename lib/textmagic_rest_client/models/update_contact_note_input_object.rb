@@ -14,6 +14,7 @@ require 'date'
 
 module TextMagic
   class UpdateContactNoteInputObject
+    # Contact Note text.
     attr_accessor :note
 
     # Attribute mapping from ruby-style variable name to JSON key.

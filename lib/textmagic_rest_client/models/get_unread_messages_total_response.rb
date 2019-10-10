@@ -14,6 +14,7 @@ require 'date'
 
 module TextMagic
   class GetUnreadMessagesTotalResponse
+    # Amount of unread messages.
     attr_accessor :total
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**close_read_chats**](TextMagicApi.md#close_read_chats) | **POST** /api/v2/chats/close/read | Close read chats
 [**close_subaccount**](TextMagicApi.md#close_subaccount) | **DELETE** /api/v2/subaccounts/{id} | Close sub-account
 [**create_contact**](TextMagicApi.md#create_contact) | **POST** /api/v2/contacts | Add a new contact
-[**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
+[**create_contact_note**](TextMagicApi.md#create_contact_note) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note
 [**create_custom_field**](TextMagicApi.md#create_custom_field) | **POST** /api/v2/customfields | Add a new custom field
 [**create_list**](TextMagicApi.md#create_list) | **POST** /api/v2/lists | Create a new list
 [**create_template**](TextMagicApi.md#create_template) | **POST** /api/v2/templates | Create a template
@@ -25,8 +25,8 @@ Method | HTTP request | Description
 [**delete_chats_bulk**](TextMagicApi.md#delete_chats_bulk) | **POST** /api/v2/chats/delete | Delete chats (bulk)
 [**delete_contact**](TextMagicApi.md#delete_contact) | **DELETE** /api/v2/contacts/{id} | Delete a contact
 [**delete_contact_avatar**](TextMagicApi.md#delete_contact_avatar) | **DELETE** /api/v2/contacts/{id}/avatar | Delete an avatar
-[**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a single contact note.
-[**delete_contact_notes_bulk**](TextMagicApi.md#delete_contact_notes_bulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact note by given ID(s) or delete all contact notes.
+[**delete_contact_note**](TextMagicApi.md#delete_contact_note) | **DELETE** /api/v2/notes/{id} | Delete a contact note
+[**delete_contact_notes_bulk**](TextMagicApi.md#delete_contact_notes_bulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact notes (bulk)
 [**delete_contacts_by_ids**](TextMagicApi.md#delete_contacts_by_ids) | **POST** /api/v2/contacts/delete | Delete contacts by IDs (bulk)
 [**delete_contacts_from_list**](TextMagicApi.md#delete_contacts_from_list) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list
 [**delete_custom_field**](TextMagicApi.md#delete_custom_field) | **DELETE** /api/v2/customfields/{id} | Delete a custom field
@@ -48,7 +48,7 @@ Method | HTTP request | Description
 [**delete_templates_bulk**](TextMagicApi.md#delete_templates_bulk) | **POST** /api/v2/templates/delete | Delete templates (bulk)
 [**do_carrier_lookup**](TextMagicApi.md#do_carrier_lookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup
 [**do_email_lookup**](TextMagicApi.md#do_email_lookup) | **GET** /api/v2/email-lookups/{email} | Email Lookup
-[**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sending sessions.
+[**get_all_bulk_sessions**](TextMagicApi.md#get_all_bulk_sessions) | **GET** /api/v2/bulks | Get all bulk sessions
 [**get_all_chats**](TextMagicApi.md#get_all_chats) | **GET** /api/v2/chats | Get all chats
 [**get_all_inbound_messages**](TextMagicApi.md#get_all_inbound_messages) | **GET** /api/v2/replies | Get all inbound messages
 [**get_all_message_sessions**](TextMagicApi.md#get_all_message_sessions) | **GET** /api/v2/sessions | Get all sessions
@@ -60,7 +60,7 @@ Method | HTTP request | Description
 [**get_balance_notification_options**](TextMagicApi.md#get_balance_notification_options) | **GET** /api/v2/user/notification/balance/bundles | Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
 [**get_balance_notification_settings**](TextMagicApi.md#get_balance_notification_settings) | **GET** /api/v2/user/notification/balance | Get balance notification settings
 [**get_blocked_contacts**](TextMagicApi.md#get_blocked_contacts) | **GET** /api/v2/contacts/block/list | Get blocked contacts
-[**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk message session status.
+[**get_bulk_session**](TextMagicApi.md#get_bulk_session) | **GET** /api/v2/bulks/{id} | Get bulk session status
 [**get_callback_settings**](TextMagicApi.md#get_callback_settings) | **GET** /api/v2/callback/settings | Fetch callback URL settings
 [**get_chat**](TextMagicApi.md#get_chat) | **GET** /api/v2/chats/{id} | Get a single chat
 [**get_chat_by_phone**](TextMagicApi.md#get_chat_by_phone) | **GET** /api/v2/chats/{phone}/by/phone | Find chats by phone
@@ -68,7 +68,7 @@ Method | HTTP request | Description
 [**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact
 [**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
 [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
-[**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a single contact note.
+[**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a contact note
 [**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
 [**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts
 [**get_contacts_autocomplete**](TextMagicApi.md#get_contacts_autocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions
@@ -139,7 +139,7 @@ Method | HTTP request | Description
 [**update_callback_settings**](TextMagicApi.md#update_callback_settings) | **PUT** /api/v2/callback/settings | Update callback URL settings
 [**update_chat_desktop_notification_settings**](TextMagicApi.md#update_chat_desktop_notification_settings) | **PUT** /api/v2/user/desktop/notification | Update chat desktop notification settings
 [**update_contact**](TextMagicApi.md#update_contact) | **PUT** /api/v2/contacts/{id} | Edit a contact
-[**update_contact_note**](TextMagicApi.md#update_contact_note) | **PUT** /api/v2/notes/{id} | Update existing contact note.
+[**update_contact_note**](TextMagicApi.md#update_contact_note) | **PUT** /api/v2/notes/{id} | Update a contact note
 [**update_current_user**](TextMagicApi.md#update_current_user) | **PUT** /api/v2/user | Edit current account info
 [**update_custom_field**](TextMagicApi.md#update_custom_field) | **PUT** /api/v2/customfields/{id} | Edit a custom field
 [**update_custom_field_value**](TextMagicApi.md#update_custom_field_value) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact
@@ -438,7 +438,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-clear_and_assign_contacts_to_list_input_object = TextMagic::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
+clear_and_assign_contacts_to_list_input_object = TextMagic::ClearAndAssignContactsToListInputObject.new # ClearAndAssignContactsToListInputObject | 
 
 id = 1 # Integer | 
 
@@ -456,7 +456,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clear_and_assign_contacts_to_list_input_object** | [**ClearAndAssignContactsToListInputObject**](ClearAndAssignContactsToListInputObject.md)| Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user | 
+ **clear_and_assign_contacts_to_list_input_object** | [**ClearAndAssignContactsToListInputObject**](ClearAndAssignContactsToListInputObject.md)|  | 
  **id** | **Integer**|  | 
 
 ### Return type
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 # **create_contact_note**
 > ResourceLinkResponse create_contact_note(create_contact_note_input_object, id)
 
-Create a new contact note.
+Create a new contact note
 
 
 
@@ -703,7 +703,7 @@ id = 56 # Integer |
 
 
 begin
-  #Create a new contact note.
+  #Create a new contact note
   result = api_instance.create_contact_note(create_contact_note_input_object, id)
   p result
 rescue TextMagic::ApiError => e
@@ -1244,7 +1244,7 @@ nil (empty response body)
 # **delete_contact_note**
 > delete_contact_note(id)
 
-Delete a single contact note.
+Delete a contact note
 
 
 
@@ -1265,7 +1265,7 @@ id = 1 # Integer |
 
 
 begin
-  #Delete a single contact note.
+  #Delete a contact note
   api_instance.delete_contact_note(id)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_note: #{e}"
@@ -1296,7 +1296,7 @@ nil (empty response body)
 # **delete_contact_notes_bulk**
 > delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 
-Delete contact note by given ID(s) or delete all contact notes.
+Delete contact notes (bulk)
 
 
 
@@ -1319,7 +1319,7 @@ delete_contact_notes_bulk_input_object = TextMagic::DeleteContactNotesBulkInputO
 
 
 begin
-  #Delete contact note by given ID(s) or delete all contact notes.
+  #Delete contact notes (bulk)
   api_instance.delete_contact_notes_bulk(id, delete_contact_notes_bulk_input_object)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->delete_contact_notes_bulk: #{e}"
@@ -2455,7 +2455,7 @@ Name | Type | Description  | Notes
 # **get_all_bulk_sessions**
 > GetAllBulkSessionsPaginatedResponse get_all_bulk_sessions(opts)
 
-Get all bulk sending sessions.
+Get all bulk sessions
 
 
 
@@ -2478,7 +2478,7 @@ opts = {
 }
 
 begin
-  #Get all bulk sending sessions.
+  #Get all bulk sessions
   result = api_instance.get_all_bulk_sessions(opts)
   p result
 rescue TextMagic::ApiError => e
@@ -3136,7 +3136,7 @@ Name | Type | Description  | Notes
 # **get_bulk_session**
 > BulkSession get_bulk_session(id)
 
-Get bulk message session status.
+Get bulk session status
 
 
 
@@ -3157,7 +3157,7 @@ id = 1 # Integer |
 
 
 begin
-  #Get bulk message session status.
+  #Get bulk session status
   result = api_instance.get_bulk_session(id)
   p result
 rescue TextMagic::ApiError => e
@@ -3576,7 +3576,7 @@ Name | Type | Description  | Notes
 # **get_contact_note**
 > ContactNote get_contact_note(id)
 
-Get a single contact note.
+Get a contact note
 
 
 
@@ -3597,7 +3597,7 @@ id = 56 # Integer |
 
 
 begin
-  #Get a single contact note.
+  #Get a contact note
   result = api_instance.get_contact_note(id)
   p result
 rescue TextMagic::ApiError => e
@@ -4636,23 +4636,23 @@ end
 api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
-  text: '\"Test message test\"', # String | Message text. Required if template_id is not set
-  template_id: 1, # Integer | Template used instead of message text. Required if text is not set
-  sending_time: 1565606455, # Integer | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-  sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-  contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to
-  lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to
-  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to
-  cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
-  parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
-  reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure
-  from: '\"Testid1\"', # String | One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-  create_chat: 0, # Integer | Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0
-  tts: 0, # Integer | Send Text to Speech message. Default is 0
-  local: 0, # Integer | Treat phone numbers passed in \\'phones\\' field as local. Default is 0
-  local_country: '\"US\"' # String | 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country
+  text: '\"Test message test\"', # String | Message text. Required if **template_id** is not set.
+  template_id: 1, # Integer | Template used instead of message text. Required if **text** is not set.
+  sending_time: 1565606455, # Integer | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+  sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+  contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to.
+  lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to.
+  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to.
+  cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
+  parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
+  reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure.
+  from: '\"Test Sender ID\"', # String | One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+  create_chat: 0, # Integer | Should sending method try to create new Chat(if not exist) with specified recipients.
+  tts: 0, # Integer | Send Text to Speech message.
+  local: 0, # Integer | Treat phone numbers passed in \\'phones\\' field as local.
+  local_country: '\"US\"' # String | 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.
 }
 
 begin
@@ -4668,23 +4668,23 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **String**| Message text. Required if template_id is not set | [optional] 
- **template_id** | **Integer**| Template used instead of message text. Required if text is not set | [optional] 
- **sending_time** | **Integer**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now | [optional] 
- **sending_date_time** | **String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone | [optional] 
- **sending_timezone** | **String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone | [optional] 
- **contacts** | **String**| Comma separated array of contact resources id message will be sent to | [optional] 
- **lists** | **String**| Comma separated array of list resources id message will be sent to | [optional] 
- **phones** | **String**| Comma separated array of E.164 phone numbers message will be sent to | [optional] 
- **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 | [optional] [default to 0]
- **parts_count** | **Integer**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 | [optional] [default to 6]
- **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure | [optional] 
- **from** | **String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery | [optional] 
- **rule** | **String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details | [optional] 
- **create_chat** | **Integer**| Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 | [optional] [default to 0]
- **tts** | **Integer**| Send Text to Speech message. Default is 0 | [optional] [default to 0]
- **local** | **Integer**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 | [optional] [default to 0]
- **local_country** | **String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country | [optional] 
+ **text** | **String**| Message text. Required if **template_id** is not set. | [optional] 
+ **template_id** | **Integer**| Template used instead of message text. Required if **text** is not set. | [optional] 
+ **sending_time** | **Integer**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. | [optional] 
+ **sending_date_time** | **String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. | [optional] 
+ **sending_timezone** | **String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. | [optional] 
+ **contacts** | **String**| Comma separated array of contact resources id message will be sent to. | [optional] 
+ **lists** | **String**| Comma separated array of list resources id message will be sent to. | [optional] 
+ **phones** | **String**| Comma separated array of E.164 phone numbers message will be sent to. | [optional] 
+ **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional] [default to 0]
+ **parts_count** | **Integer**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). | [optional] [default to 6]
+ **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure. | [optional] 
+ **from** | **String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | [optional] 
+ **rule** | **String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
+ **create_chat** | **Integer**| Should sending method try to create new Chat(if not exist) with specified recipients. | [optional] [default to 0]
+ **tts** | **Integer**| Send Text to Speech message. | [optional] [default to 0]
+ **local** | **Integer**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
+ **local_country** | **String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. | [optional] 
 
 ### Return type
 
@@ -4723,23 +4723,23 @@ api_instance = TextMagic::TextMagicApi.new
 
 opts = { 
   include_blocked: 0, # Integer | Should we show pricing for the blocked contacts.
-  text: '\"Test message test\"', # String | Message text. Required if template_id is not set
-  template_id: 1, # Integer | Template used instead of message text. Required if text is not set
-  sending_time: 1565606455, # Integer | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
-  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
-  sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
-  contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to
-  lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to
-  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to
-  cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0
-  parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
-  reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure
-  from: '\"Testid1\"', # String | One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
-  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
-  create_chat: 0, # Integer | Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0
-  tts: 0, # Integer | Send Text to Speech message. Default is 0
-  local: 0, # Integer | Treat phone numbers passed in \\'phones\\' field as local. Default is 0
-  local_country: '\"US\"' # String | 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country
+  text: '\"Test message test\"', # String | Message text. Required if **template_id** is not set.
+  template_id: 1, # Integer | Template used instead of message text. Required if **text** is not set.
+  sending_time: 1565606455, # Integer | DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
+  sending_date_time: '\"2020-05-27 13:02:33\"', # String | Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone.
+  sending_timezone: '\"America/Buenos_Aires\"', # String | ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
+  contacts: '\"1,2,3,4\"', # String | Comma separated array of contact resources id message will be sent to.
+  lists: '\"1,2,3,4\"', # String | Comma separated array of list resources id message will be sent to.
+  phones: '\"447860021130,447860021131\"', # String | Comma separated array of E.164 phone numbers message will be sent to.
+  cut_extra: 0, # Integer | Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
+  parts_count: 6, # Integer | Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
+  reference_id: 1, # Integer | Custom message reference id which can be used in your application infrastructure.
+  from: '\"Test Sender ID\"', # String | One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
+  rule: '\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"', # String | iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
+  create_chat: 0, # Integer | Should sending method try to create new Chat(if not exist) with specified recipients.
+  tts: 0, # Integer | Send Text to Speech message.
+  local: 0, # Integer | Treat phone numbers passed in \\'phones\\' field as local.
+  local_country: '\"US\"' # String | 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.
 }
 
 begin
@@ -4756,23 +4756,23 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **include_blocked** | **Integer**| Should we show pricing for the blocked contacts. | [optional] [default to 0]
- **text** | **String**| Message text. Required if template_id is not set | [optional] 
- **template_id** | **Integer**| Template used instead of message text. Required if text is not set | [optional] 
- **sending_time** | **Integer**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now | [optional] 
- **sending_date_time** | **String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone | [optional] 
- **sending_timezone** | **String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone | [optional] 
- **contacts** | **String**| Comma separated array of contact resources id message will be sent to | [optional] 
- **lists** | **String**| Comma separated array of list resources id message will be sent to | [optional] 
- **phones** | **String**| Comma separated array of E.164 phone numbers message will be sent to | [optional] 
- **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 | [optional] [default to 0]
- **parts_count** | **Integer**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 | [optional] [default to 6]
- **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure | [optional] 
- **from** | **String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery | [optional] 
- **rule** | **String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details | [optional] 
- **create_chat** | **Integer**| Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 | [optional] [default to 0]
- **tts** | **Integer**| Send Text to Speech message. Default is 0 | [optional] [default to 0]
- **local** | **Integer**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 | [optional] [default to 0]
- **local_country** | **String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country | [optional] 
+ **text** | **String**| Message text. Required if **template_id** is not set. | [optional] 
+ **template_id** | **Integer**| Template used instead of message text. Required if **text** is not set. | [optional] 
+ **sending_time** | **Integer**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. | [optional] 
+ **sending_date_time** | **String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. | [optional] 
+ **sending_timezone** | **String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. | [optional] 
+ **contacts** | **String**| Comma separated array of contact resources id message will be sent to. | [optional] 
+ **lists** | **String**| Comma separated array of list resources id message will be sent to. | [optional] 
+ **phones** | **String**| Comma separated array of E.164 phone numbers message will be sent to. | [optional] 
+ **cut_extra** | **Integer**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [optional] [default to 0]
+ **parts_count** | **Integer**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). | [optional] [default to 6]
+ **reference_id** | **Integer**| Custom message reference id which can be used in your application infrastructure. | [optional] 
+ **from** | **String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | [optional] 
+ **rule** | **String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] 
+ **create_chat** | **Integer**| Should sending method try to create new Chat(if not exist) with specified recipients. | [optional] [default to 0]
+ **tts** | **Integer**| Send Text to Speech message. | [optional] [default to 0]
+ **local** | **Integer**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. | [optional] [default to 0]
+ **local_country** | **String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. | [optional] 
 
 ### Return type
 
@@ -7576,7 +7576,7 @@ Name | Type | Description  | Notes
 # **update_contact_note**
 > ResourceLinkResponse update_contact_note(update_contact_note_input_object, id)
 
-Update existing contact note.
+Update a contact note
 
 
 
@@ -7599,7 +7599,7 @@ id = 1 # Integer |
 
 
 begin
-  #Update existing contact note.
+  #Update a contact note
   result = api_instance.update_contact_note(update_contact_note_input_object, id)
   p result
 rescue TextMagic::ApiError => e

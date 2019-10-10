@@ -29,10 +29,13 @@ module TextMagic
     # The text from the received message.
     attr_accessor :text
 
+    # Sender contact ID.
     attr_accessor :contact_id
 
+    # Sender contact first name.
     attr_accessor :first_name
 
+    # Sender contact last name.
     attr_accessor :last_name
 
     attr_accessor :avatar

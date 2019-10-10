@@ -32,13 +32,13 @@ module TextMagic
     # Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
     attr_accessor :lists
 
-    # Is contact favorited
+    # Is contact marked as favorite.
     attr_accessor :favorited
 
-    # Is contact blocked for outgoing and incoming messaging
+    # Is contact blocked for outgoing and incoming messaging.
     attr_accessor :blocked
 
-    # Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection)
+    # Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).
     attr_accessor :type
 
     attr_accessor :custom_field_values

@@ -14,17 +14,42 @@ require 'date'
 
 module TextMagic
   class MessagesIcsTextParameters
+    # Cost to check one number is constant – 0.04 in your account currency.
     attr_accessor :cost
 
+    # Message parts (multiples of 160 characters) count.
     attr_accessor :parts
 
     attr_accessor :chars
 
+    # Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS 
     attr_accessor :encoding
 
     attr_accessor :countries
 
     attr_accessor :charset_label
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -123,9 +148,21 @@ module TextMagic
       return false if @parts.nil?
       return false if @chars.nil?
       return false if @encoding.nil?
+      encoding_validator = EnumAttributeValidator.new('String', ['ISO-8859-1', 'UTF-16BE'])
+      return false unless encoding_validator.valid?(@encoding)
       return false if @countries.nil?
       return false if @charset_label.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] encoding Object to be assigned
+    def encoding=(encoding)
+      validator = EnumAttributeValidator.new('String', ['ISO-8859-1', 'UTF-16BE'])
+      unless validator.valid?(encoding)
+        fail ArgumentError, 'invalid value for "encoding", must be one of #{validator.allowable_values}.'
+      end
+      @encoding = encoding
     end
 
     # Checks equality by comparing each attribute.

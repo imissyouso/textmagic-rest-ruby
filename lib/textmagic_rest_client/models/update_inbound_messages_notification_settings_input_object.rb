@@ -14,22 +14,22 @@ require 'date'
 
 module TextMagic
   class UpdateInboundMessagesNotificationSettingsInputObject
-    # Should user receive notification about new incoming messages
+    # Should user receive notification about new incoming messages.
     attr_accessor :inbound_message_notification
 
-    # Include SMS history into notification Email
+    # Include SMS history into notification Email.
     attr_accessor :include_sms_history
 
-    # Send Email notification in HTML format
+    # Send Email notification in HTML format.
     attr_accessor :send_in_html_format
 
-    # New message notification email 2
+    # New message notification email 2.
     attr_accessor :alert_email1
 
-    # New message notification email 2
+    # New message notification email 2.
     attr_accessor :alert_email2
 
-    # New message notification email 3
+    # New message notification email 3.
     attr_accessor :alert_email3
 
     # Attribute mapping from ruby-style variable name to JSON key.

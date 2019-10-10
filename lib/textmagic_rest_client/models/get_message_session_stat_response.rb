@@ -14,18 +14,24 @@ require 'date'
 
 module TextMagic
   class GetMessageSessionStatResponse
+    # Amount of failed messages.
     attr_accessor :failed
 
+    # Amount of delivered messages.
     attr_accessor :delivered
 
+    # Amount of accepted messages.
     attr_accessor :accepted
 
+    # Amount of rejected messages.
     attr_accessor :rejected
 
+    # Amount of schedules messages.
     attr_accessor :scheduled
 
     attr_accessor :all
 
+    # Total sent messages.
     attr_accessor :sent
 
     # Attribute mapping from ruby-style variable name to JSON key.

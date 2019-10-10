@@ -14,19 +14,47 @@ require 'date'
 
 module TextMagic
   class BulkSession
+    # Bulk Session ID.
     attr_accessor :id
 
+    # * **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
     attr_accessor :status
 
+    # Amount of messages which is already processed.
     attr_accessor :items_processed
 
+    # Total amount of messages to be processed.
     attr_accessor :items_total
 
+    # Creation date and time of a Bulk Session.
     attr_accessor :created_at
 
     attr_accessor :session
 
+    # Message text of a Bulk Session.
     attr_accessor :text
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -131,12 +159,24 @@ module TextMagic
     def valid?
       return false if @id.nil?
       return false if @status.nil?
+      status_validator = EnumAttributeValidator.new('String', ['n', 'w', 'f', 'c', 's'])
+      return false unless status_validator.valid?(@status)
       return false if @items_processed.nil?
       return false if @items_total.nil?
       return false if @created_at.nil?
       return false if @session.nil?
       return false if @text.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ['n', 'w', 'f', 'c', 's'])
+      unless validator.valid?(status)
+        fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.

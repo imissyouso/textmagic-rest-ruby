@@ -25,6 +25,7 @@ module TextMagic
 
     attr_accessor :session
 
+    # Date and time when last message has been sent.
     attr_accessor :last_sent
 
     attr_accessor :contact_name
@@ -41,14 +42,19 @@ module TextMagic
 
     attr_accessor :last_occurrence
 
+    # Amount of actual recipients.
     attr_accessor :recipients_count
 
+    # User-friendly timezone name (with spaces replaced by underscores).
     attr_accessor :timezone
 
+    # Indicates that schedling has been completed.
     attr_accessor :completed
 
+    # null
     attr_accessor :avatar
 
+    # Scheduling creation time.
     attr_accessor :created_at
 
     # Attribute mapping from ruby-style variable name to JSON key.

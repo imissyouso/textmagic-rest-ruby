@@ -17,7 +17,7 @@ module TextMagic
     # User ID.
     attr_accessor :id
 
-    # Format for representation of time
+    # User's prefered format of time display * *12h* - AM/PM format * *24h* - 24 hour clock format 
     attr_accessor :display_time_format
 
     # Username.
@@ -38,6 +38,7 @@ module TextMagic
     # Account balance (in account currency).
     attr_accessor :balance
 
+    # User phone number
     attr_accessor :phone
 
     # Account company name.
@@ -52,8 +53,10 @@ module TextMagic
     # Type of account: * **P** for Parent User * **A** for Administrator Sub-Account * **U** for Regular User 
     attr_accessor :subaccount_type
 
+    # Is account has confirmed Email.
     attr_accessor :email_accepted
 
+    # Is account has confirmed Phone number.
     attr_accessor :phone_accepted
 
     attr_accessor :avatar
@@ -278,6 +281,8 @@ module TextMagic
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
+      display_time_format_validator = EnumAttributeValidator.new('String', ['12h', '24h'])
+      return false unless display_time_format_validator.valid?(@display_time_format)
       return false if @username.nil?
       return false if @first_name.nil?
       return false if @last_name.nil?
@@ -298,6 +303,16 @@ module TextMagic
       return false if @phone_accepted.nil?
       return false if @avatar.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] display_time_format Object to be assigned
+    def display_time_format=(display_time_format)
+      validator = EnumAttributeValidator.new('String', ['12h', '24h'])
+      unless validator.valid?(display_time_format)
+        fail ArgumentError, 'invalid value for "display_time_format", must be one of #{validator.allowable_values}.'
+      end
+      @display_time_format = display_time_format
     end
 
     # Custom attribute writer method checking allowed values (enum).
