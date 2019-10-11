@@ -79,7 +79,7 @@ module TextMagic
         :'favorited' => :'BOOLEAN',
         :'blocked' => :'BOOLEAN',
         :'type' => :'Integer',
-        :'custom_field_values' => :'Object',
+        :'custom_field_values' => :'Array<CustomFieldListItem>',
         :'local' => :'Integer',
         :'country' => :'String'
       }
@@ -130,7 +130,9 @@ module TextMagic
       end
 
       if attributes.has_key?(:'customFieldValues')
-        self.custom_field_values = attributes[:'customFieldValues']
+        if (value = attributes[:'customFieldValues']).is_a?(Array)
+          self.custom_field_values = value
+        end
       end
 
       if attributes.has_key?(:'local')

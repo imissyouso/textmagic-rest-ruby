@@ -13,28 +13,31 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GetSenderSettingsResponse
-    attr_accessor :user
+  class MessagePriceItem
+    # Country name.
+    attr_accessor :name
 
-    attr_accessor :special
+    # Price to send message to desired country.
+    attr_accessor :price
 
-    attr_accessor :other
+    # Two-letter ISO country code of the recipient phone number.
+    attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user' => :'user',
-        :'special' => :'special',
-        :'other' => :'other'
+        :'name' => :'name',
+        :'price' => :'price',
+        :'country' => :'country'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user' => :'Array<SenderSettingsItem>',
-        :'special' => :'Array<SenderSettingsItem>',
-        :'other' => :'Array<SenderSettingsItem>'
+        :'name' => :'String',
+        :'price' => :'String',
+        :'country' => :'String'
       }
     end
 
@@ -46,22 +49,16 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'user')
-        if (value = attributes[:'user']).is_a?(Array)
-          self.user = value
-        end
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'special')
-        if (value = attributes[:'special']).is_a?(Array)
-          self.special = value
-        end
+      if attributes.has_key?(:'price')
+        self.price = attributes[:'price']
       end
 
-      if attributes.has_key?(:'other')
-        if (value = attributes[:'other']).is_a?(Array)
-          self.other = value
-        end
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
       end
     end
 
@@ -69,16 +66,16 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user.nil?
-        invalid_properties.push('invalid value for "user", user cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @special.nil?
-        invalid_properties.push('invalid value for "special", special cannot be nil.')
+      if @price.nil?
+        invalid_properties.push('invalid value for "price", price cannot be nil.')
       end
 
-      if @other.nil?
-        invalid_properties.push('invalid value for "other", other cannot be nil.')
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
       invalid_properties
@@ -87,9 +84,9 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user.nil?
-      return false if @special.nil?
-      return false if @other.nil?
+      return false if @name.nil?
+      return false if @price.nil?
+      return false if @country.nil?
       true
     end
 
@@ -98,9 +95,9 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          user == o.user &&
-          special == o.special &&
-          other == o.other
+          name == o.name &&
+          price == o.price &&
+          country == o.country
     end
 
     # @see the `==` method
@@ -112,7 +109,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user, special, other].hash
+      [name, price, country].hash
     end
 
     # Builds the object from hash

@@ -523,7 +523,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'create_contact_input_object' when calling TextMagicApi.create_contact"
       end
       # resource path
-      local_var_path = '/api/v2/contacts'
+      local_var_path = '/api/v2/contacts/normalized'
 
       # query parameters
       query_params = {}
@@ -1543,7 +1543,7 @@ module TextMagic
       return data, status_code, headers
     end
     # Delete a list
-    # > When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
+    # This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -1553,7 +1553,7 @@ module TextMagic
     end
 
     # Delete a list
-    # &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
+    # This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
@@ -4715,7 +4715,7 @@ module TextMagic
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_message_price ...'
       end
       # resource path
-      local_var_path = '/api/v2/messages/price'
+      local_var_path = '/api/v2/messages/price/normalized'
 
       # query parameters
       query_params = {}
@@ -5356,7 +5356,7 @@ module TextMagic
         @api_client.config.logger.debug 'Calling API: TextMagicApi.get_sender_settings ...'
       end
       # resource path
-      local_var_path = '/api/v2/sender/settings'
+      local_var_path = '/api/v2/sender/settings/normalized'
 
       # query parameters
       query_params = {}
@@ -7607,7 +7607,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'id' when calling TextMagicApi.update_contact"
       end
       # resource path
-      local_var_path = '/api/v2/contacts/{id}'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/api/v2/contact/{id}/normalized'.sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
@@ -8002,7 +8002,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'update_sender_setting_input_object' when calling TextMagicApi.update_sender_setting"
       end
       # resource path
-      local_var_path = '/api/v2/sender/settings'
+      local_var_path = '/api/v2/sender/settings/normalized'
 
       # query parameters
       query_params = {}

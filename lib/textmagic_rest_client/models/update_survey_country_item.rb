@@ -13,28 +13,26 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GetSenderSettingsResponse
-    attr_accessor :user
+  class UpdateSurveyCountryItem
+    # Two-letter ISO country code
+    attr_accessor :country
 
-    attr_accessor :special
-
-    attr_accessor :other
+    # User inbound phone ID
+    attr_accessor :user_inbound_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user' => :'user',
-        :'special' => :'special',
-        :'other' => :'other'
+        :'country' => :'country',
+        :'user_inbound_id' => :'user_inbound_id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user' => :'Array<SenderSettingsItem>',
-        :'special' => :'Array<SenderSettingsItem>',
-        :'other' => :'Array<SenderSettingsItem>'
+        :'country' => :'String',
+        :'user_inbound_id' => :'Integer'
       }
     end
 
@@ -46,22 +44,12 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'user')
-        if (value = attributes[:'user']).is_a?(Array)
-          self.user = value
-        end
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
       end
 
-      if attributes.has_key?(:'special')
-        if (value = attributes[:'special']).is_a?(Array)
-          self.special = value
-        end
-      end
-
-      if attributes.has_key?(:'other')
-        if (value = attributes[:'other']).is_a?(Array)
-          self.other = value
-        end
+      if attributes.has_key?(:'user_inbound_id')
+        self.user_inbound_id = attributes[:'user_inbound_id']
       end
     end
 
@@ -69,16 +57,12 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user.nil?
-        invalid_properties.push('invalid value for "user", user cannot be nil.')
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
-      if @special.nil?
-        invalid_properties.push('invalid value for "special", special cannot be nil.')
-      end
-
-      if @other.nil?
-        invalid_properties.push('invalid value for "other", other cannot be nil.')
+      if @user_inbound_id.nil?
+        invalid_properties.push('invalid value for "user_inbound_id", user_inbound_id cannot be nil.')
       end
 
       invalid_properties
@@ -87,9 +71,8 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user.nil?
-      return false if @special.nil?
-      return false if @other.nil?
+      return false if @country.nil?
+      return false if @user_inbound_id.nil?
       true
     end
 
@@ -98,9 +81,8 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          user == o.user &&
-          special == o.special &&
-          other == o.other
+          country == o.country &&
+          user_inbound_id == o.user_inbound_id
     end
 
     # @see the `==` method
@@ -112,7 +94,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user, special, other].hash
+      [country, user_inbound_id].hash
     end
 
     # Builds the object from hash

@@ -20,7 +20,6 @@ module TextMagic
     # Message parts (multiples of 160 characters) count.
     attr_accessor :parts
 
-    # List of countries where message will be sent with pricing explanation.
     attr_accessor :countries
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -37,7 +36,7 @@ module TextMagic
       {
         :'total' => :'Float',
         :'parts' => :'Integer',
-        :'countries' => :'Object'
+        :'countries' => :'Array<GetMessagePriceResponseCountriesItem>'
       }
     end
 
@@ -58,7 +57,9 @@ module TextMagic
       end
 
       if attributes.has_key?(:'countries')
-        self.countries = attributes[:'countries']
+        if (value = attributes[:'countries']).is_a?(Array)
+          self.countries = value
+        end
       end
     end
 

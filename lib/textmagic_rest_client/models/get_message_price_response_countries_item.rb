@@ -13,28 +13,51 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class GetSenderSettingsResponse
-    attr_accessor :user
+  class GetMessagePriceResponseCountriesItem
+    # Two-letter ISO country code
+    attr_accessor :country
 
-    attr_accessor :special
+    # Country name
+    attr_accessor :country_name
 
-    attr_accessor :other
+    # Is allow to use dedicated number
+    attr_accessor :allow_dedicated
+
+    # Parts count to send
+    attr_accessor :count
+
+    # Maximum parts to send
+    attr_accessor :max
+
+    # Total price to send
+    attr_accessor :sum
+
+    # Is this landline number?
+    attr_accessor :landline
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'user' => :'user',
-        :'special' => :'special',
-        :'other' => :'other'
+        :'country' => :'country',
+        :'country_name' => :'country_name',
+        :'allow_dedicated' => :'allow_dedicated',
+        :'count' => :'count',
+        :'max' => :'max',
+        :'sum' => :'sum',
+        :'landline' => :'landline'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'user' => :'Array<SenderSettingsItem>',
-        :'special' => :'Array<SenderSettingsItem>',
-        :'other' => :'Array<SenderSettingsItem>'
+        :'country' => :'String',
+        :'country_name' => :'String',
+        :'allow_dedicated' => :'BOOLEAN',
+        :'count' => :'Float',
+        :'max' => :'Float',
+        :'sum' => :'String',
+        :'landline' => :'Float'
       }
     end
 
@@ -46,22 +69,32 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'user')
-        if (value = attributes[:'user']).is_a?(Array)
-          self.user = value
-        end
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
       end
 
-      if attributes.has_key?(:'special')
-        if (value = attributes[:'special']).is_a?(Array)
-          self.special = value
-        end
+      if attributes.has_key?(:'country_name')
+        self.country_name = attributes[:'country_name']
       end
 
-      if attributes.has_key?(:'other')
-        if (value = attributes[:'other']).is_a?(Array)
-          self.other = value
-        end
+      if attributes.has_key?(:'allow_dedicated')
+        self.allow_dedicated = attributes[:'allow_dedicated']
+      end
+
+      if attributes.has_key?(:'count')
+        self.count = attributes[:'count']
+      end
+
+      if attributes.has_key?(:'max')
+        self.max = attributes[:'max']
+      end
+
+      if attributes.has_key?(:'sum')
+        self.sum = attributes[:'sum']
+      end
+
+      if attributes.has_key?(:'landline')
+        self.landline = attributes[:'landline']
       end
     end
 
@@ -69,16 +102,32 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @user.nil?
-        invalid_properties.push('invalid value for "user", user cannot be nil.')
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
-      if @special.nil?
-        invalid_properties.push('invalid value for "special", special cannot be nil.')
+      if @country_name.nil?
+        invalid_properties.push('invalid value for "country_name", country_name cannot be nil.')
       end
 
-      if @other.nil?
-        invalid_properties.push('invalid value for "other", other cannot be nil.')
+      if @allow_dedicated.nil?
+        invalid_properties.push('invalid value for "allow_dedicated", allow_dedicated cannot be nil.')
+      end
+
+      if @count.nil?
+        invalid_properties.push('invalid value for "count", count cannot be nil.')
+      end
+
+      if @max.nil?
+        invalid_properties.push('invalid value for "max", max cannot be nil.')
+      end
+
+      if @sum.nil?
+        invalid_properties.push('invalid value for "sum", sum cannot be nil.')
+      end
+
+      if @landline.nil?
+        invalid_properties.push('invalid value for "landline", landline cannot be nil.')
       end
 
       invalid_properties
@@ -87,9 +136,13 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @user.nil?
-      return false if @special.nil?
-      return false if @other.nil?
+      return false if @country.nil?
+      return false if @country_name.nil?
+      return false if @allow_dedicated.nil?
+      return false if @count.nil?
+      return false if @max.nil?
+      return false if @sum.nil?
+      return false if @landline.nil?
       true
     end
 
@@ -98,9 +151,13 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          user == o.user &&
-          special == o.special &&
-          other == o.other
+          country == o.country &&
+          country_name == o.country_name &&
+          allow_dedicated == o.allow_dedicated &&
+          count == o.count &&
+          max == o.max &&
+          sum == o.sum &&
+          landline == o.landline
     end
 
     # @see the `==` method
@@ -112,7 +169,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [user, special, other].hash
+      [country, country_name, allow_dedicated, count, max, sum, landline].hash
     end
 
     # Builds the object from hash
