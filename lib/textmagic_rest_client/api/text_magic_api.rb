@@ -5963,7 +5963,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'file' when calling TextMagicApi.import_contacts"
       end
       # resource path
-      local_var_path = '/api/v2/contacts/import'
+      local_var_path = '/api/v2/contacts/import/normalized'
 
       # query parameters
       query_params = {}
