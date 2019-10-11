@@ -62,6 +62,7 @@ module TextMagic
     # `true` if the email address domain has an MX record. 
     attr_accessor :has_mx
 
+    # `true` if the email address domain has an A record (IPv4). 
     attr_accessor :has_aa
 
     # `true` if the email address domain has an AAAA record (IPv6). 
