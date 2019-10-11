@@ -7607,7 +7607,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'id' when calling TextMagicApi.update_contact"
       end
       # resource path
-      local_var_path = '/api/v2/contact/{id}/normalized'.sub('{' + 'id' + '}', id.to_s)
+      local_var_path = '/api/v2/contacts/{id}/normalized'.sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
