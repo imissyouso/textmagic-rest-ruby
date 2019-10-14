@@ -5949,7 +5949,7 @@ Name | Type | Description  | Notes
 
 
 # **import_contacts**
-> import_contacts(file, column)
+> import_contacts(file, column, opts)
 
 Import contacts from the CSV, XLS or XLSX file.
 
@@ -5970,12 +5970,16 @@ api_instance = TextMagic::TextMagicApi.new
 
 file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats
 
-column = [TextMagic::ImportColumnMappingItem.new] # Array<ImportColumnMappingItem> | 
+column = 'column_example' # String | 
 
+opts = { 
+  list_name: 'list_name_example', # String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
+  list_id: 56 # Integer | List ID contacts will be imported to.
+}
 
 begin
   #Import contacts from the CSV, XLS or XLSX file.
-  api_instance.import_contacts(file, column)
+  api_instance.import_contacts(file, column, opts)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->import_contacts: #{e}"
 end
@@ -5986,7 +5990,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats | 
- **column** | [**Array&lt;ImportColumnMappingItem&gt;**](ImportColumnMappingItem.md)|  | 
+ **column** | **String**|  | 
+ **list_name** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. | [optional] 
+ **list_id** | **Integer**| List ID contacts will be imported to. | [optional] 
 
 ### Return type
 

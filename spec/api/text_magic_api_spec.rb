@@ -1414,6 +1414,8 @@ describe 'TextMagicApi' do
   # @param file File containing contacts in csv or xls(x) formats
   # @param column 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
+  # @option opts [Integer] :list_id List ID contacts will be imported to.
   # @return [nil]
   describe 'import_contacts test' do
     it 'should work' do

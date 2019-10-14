@@ -5938,6 +5938,8 @@ module TextMagic
     # @param file File containing contacts in csv or xls(x) formats
     # @param column 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
+    # @option opts [Integer] :list_id List ID contacts will be imported to.
     # @return [nil]
     def import_contacts(file, column, opts = {})
       import_contacts_with_http_info(file, column, opts)
@@ -5949,6 +5951,8 @@ module TextMagic
     # @param file File containing contacts in csv or xls(x) formats
     # @param column 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
+    # @option opts [Integer] :list_id List ID contacts will be imported to.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def import_contacts_with_http_info(file, column, opts = {})
       if @api_client.config.debugging
@@ -5967,6 +5971,9 @@ module TextMagic
 
       # query parameters
       query_params = {}
+      query_params[:'column'] = column
+      query_params[:'listName'] = opts[:'list_name'] if !opts[:'list_name'].nil?
+      query_params[:'listId'] = opts[:'list_id'] if !opts[:'list_id'].nil?
 
       # header parameters
       header_params = {}
@@ -5978,7 +5985,6 @@ module TextMagic
       # form parameters
       form_params = {}
       form_params['file'] = file
-      form_params['column'] = @api_client.build_collection_param(column, :csv)
 
       # http body (model)
       post_body = nil
