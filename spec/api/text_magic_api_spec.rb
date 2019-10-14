@@ -1408,6 +1408,19 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for import_contacts
+  # Import contacts from the CSV, XLS or XLSX file.
+  # 
+  # @param file File containing contacts in csv or xls(x) formats
+  # @param import_contacts_input_object 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'import_contacts test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for invite_subaccount
   # Invite a new sub-account
   # 
