@@ -110,7 +110,6 @@ Method | HTTP request | Description
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
 [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**import_contacts**](TextMagicApi.md#import_contacts) | **POST** /api/v2/contacts/import/normalized | Import contacts from the CSV, XLS or XLSX file.
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
@@ -5944,61 +5943,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **import_contacts**
-> import_contacts(import_contacts_input_object, file)
-
-Import contacts from the CSV, XLS or XLSX file.
-
-
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-import_contacts_input_object = TextMagic::ImportContactsInputObject.new # ImportContactsInputObject | 
-
-file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats
-
-
-begin
-  #Import contacts from the CSV, XLS or XLSX file.
-  api_instance.import_contacts(import_contacts_input_object, file)
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->import_contacts: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **import_contacts_input_object** | [**ImportContactsInputObject**](ImportContactsInputObject.md)|  | 
- **file** | **File**| File containing contacts in csv or xls(x) formats | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

@@ -5933,66 +5933,6 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Import contacts from the CSV, XLS or XLSX file.
-    # 
-    # @param import_contacts_input_object 
-    # @param file File containing contacts in csv or xls(x) formats
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def import_contacts(import_contacts_input_object, file, opts = {})
-      import_contacts_with_http_info(import_contacts_input_object, file, opts)
-      nil
-    end
-
-    # Import contacts from the CSV, XLS or XLSX file.
-    # 
-    # @param import_contacts_input_object 
-    # @param file File containing contacts in csv or xls(x) formats
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def import_contacts_with_http_info(import_contacts_input_object, file, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.import_contacts ...'
-      end
-      # verify the required parameter 'import_contacts_input_object' is set
-      if @api_client.config.client_side_validation && import_contacts_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'import_contacts_input_object' when calling TextMagicApi.import_contacts"
-      end
-      # verify the required parameter 'file' is set
-      if @api_client.config.client_side_validation && file.nil?
-        fail ArgumentError, "Missing the required parameter 'file' when calling TextMagicApi.import_contacts"
-      end
-      # resource path
-      local_var_path = '/api/v2/contacts/import/normalized'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
-
-      # form parameters
-      form_params = {}
-      form_params['file'] = file
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(import_contacts_input_object)
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#import_contacts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Invite a new sub-account
     # 
     # @param invite_subaccount_input_object 
