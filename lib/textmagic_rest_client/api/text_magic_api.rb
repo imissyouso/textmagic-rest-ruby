@@ -5936,25 +5936,25 @@ module TextMagic
     # Import contacts from the CSV, XLS or XLSX file.
     # 
     # @param file File containing contacts in csv or xls(x) formats
-    # @param column 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :column 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
     # @option opts [Integer] :list_id List ID contacts will be imported to.
     # @return [nil]
-    def import_contacts(file, column, opts = {})
-      import_contacts_with_http_info(file, column, opts)
+    def import_contacts(file, opts = {})
+      import_contacts_with_http_info(file, opts)
       nil
     end
 
     # Import contacts from the CSV, XLS or XLSX file.
     # 
     # @param file File containing contacts in csv or xls(x) formats
-    # @param column 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :column 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
     # @option opts [Integer] :list_id List ID contacts will be imported to.
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def import_contacts_with_http_info(file, column, opts = {})
+    def import_contacts_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.import_contacts ...'
       end
@@ -5962,16 +5962,12 @@ module TextMagic
       if @api_client.config.client_side_validation && file.nil?
         fail ArgumentError, "Missing the required parameter 'file' when calling TextMagicApi.import_contacts"
       end
-      # verify the required parameter 'column' is set
-      if @api_client.config.client_side_validation && column.nil?
-        fail ArgumentError, "Missing the required parameter 'column' when calling TextMagicApi.import_contacts"
-      end
       # resource path
       local_var_path = '/api/v2/contacts/import/normalized'
 
       # query parameters
       query_params = {}
-      query_params[:'column'] = column
+      query_params[:'column'] = opts[:'column'] if !opts[:'column'].nil?
       query_params[:'listName'] = opts[:'list_name'] if !opts[:'list_name'].nil?
       query_params[:'listId'] = opts[:'list_id'] if !opts[:'list_id'].nil?
 
