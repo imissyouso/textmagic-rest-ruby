@@ -5949,7 +5949,7 @@ Name | Type | Description  | Notes
 
 
 # **import_contacts**
-> import_contacts(file, import_contacts_input_object)
+> import_contacts(file, column)
 
 Import contacts from the CSV, XLS or XLSX file.
 
@@ -5970,12 +5970,12 @@ api_instance = TextMagic::TextMagicApi.new
 
 file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats
 
-import_contacts_input_object = TextMagic::ImportContactsInputObject.new # ImportContactsInputObject | 
+column = [TextMagic::ImportColumnMappingItem.new] # Array<ImportColumnMappingItem> | 
 
 
 begin
   #Import contacts from the CSV, XLS or XLSX file.
-  api_instance.import_contacts(file, import_contacts_input_object)
+  api_instance.import_contacts(file, column)
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->import_contacts: #{e}"
 end
@@ -5986,7 +5986,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats | 
- **import_contacts_input_object** | [**ImportContactsInputObject**](ImportContactsInputObject.md)|  | 
+ **column** | [**Array&lt;ImportColumnMappingItem&gt;**](ImportColumnMappingItem.md)|  | 
 
 ### Return type
 

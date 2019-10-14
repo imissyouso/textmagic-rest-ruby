@@ -5936,21 +5936,21 @@ module TextMagic
     # Import contacts from the CSV, XLS or XLSX file.
     # 
     # @param file File containing contacts in csv or xls(x) formats
-    # @param import_contacts_input_object 
+    # @param column 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def import_contacts(file, import_contacts_input_object, opts = {})
-      import_contacts_with_http_info(file, import_contacts_input_object, opts)
+    def import_contacts(file, column, opts = {})
+      import_contacts_with_http_info(file, column, opts)
       nil
     end
 
     # Import contacts from the CSV, XLS or XLSX file.
     # 
     # @param file File containing contacts in csv or xls(x) formats
-    # @param import_contacts_input_object 
+    # @param column 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def import_contacts_with_http_info(file, import_contacts_input_object, opts = {})
+    def import_contacts_with_http_info(file, column, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.import_contacts ...'
       end
@@ -5958,9 +5958,9 @@ module TextMagic
       if @api_client.config.client_side_validation && file.nil?
         fail ArgumentError, "Missing the required parameter 'file' when calling TextMagicApi.import_contacts"
       end
-      # verify the required parameter 'import_contacts_input_object' is set
-      if @api_client.config.client_side_validation && import_contacts_input_object.nil?
-        fail ArgumentError, "Missing the required parameter 'import_contacts_input_object' when calling TextMagicApi.import_contacts"
+      # verify the required parameter 'column' is set
+      if @api_client.config.client_side_validation && column.nil?
+        fail ArgumentError, "Missing the required parameter 'column' when calling TextMagicApi.import_contacts"
       end
       # resource path
       local_var_path = '/api/v2/contacts/import/normalized'
@@ -5978,9 +5978,10 @@ module TextMagic
       # form parameters
       form_params = {}
       form_params['file'] = file
+      form_params['column'] = @api_client.build_collection_param(column, :csv)
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(import_contacts_input_object)
+      post_body = nil
       auth_names = ['BasicAuth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,

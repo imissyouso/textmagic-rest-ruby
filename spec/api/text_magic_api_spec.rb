@@ -1412,7 +1412,7 @@ describe 'TextMagicApi' do
   # Import contacts from the CSV, XLS or XLSX file.
   # 
   # @param file File containing contacts in csv or xls(x) formats
-  # @param import_contacts_input_object 
+  # @param column 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'import_contacts test' do
