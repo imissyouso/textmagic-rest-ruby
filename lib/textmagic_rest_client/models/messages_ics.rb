@@ -51,7 +51,7 @@ module TextMagic
     # Indicates that schedling has been completed.
     attr_accessor :completed
 
-    # null
+    # TODO
     attr_accessor :avatar
 
     # Scheduling creation time.

@@ -24,7 +24,7 @@ module TextMagic
     def self.attribute_map
       {
         :'country' => :'country',
-        :'user_inbound_id' => :'user_inbound_id'
+        :'user_inbound_id' => :'userInboundId'
       }
     end
 
@@ -48,8 +48,8 @@ module TextMagic
         self.country = attributes[:'country']
       end
 
-      if attributes.has_key?(:'user_inbound_id')
-        self.user_inbound_id = attributes[:'user_inbound_id']
+      if attributes.has_key?(:'userInboundId')
+        self.user_inbound_id = attributes[:'userInboundId']
       end
     end
 

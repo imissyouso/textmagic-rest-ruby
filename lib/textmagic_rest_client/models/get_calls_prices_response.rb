@@ -14,15 +14,35 @@ require 'date'
 
 module TextMagic
   class GetCallsPricesResponse
+    # Price for outbound message
+    attr_accessor :outbound
+
+    # Price for inbound message
+    attr_accessor :inbound
+
+    # Price for forward
+    attr_accessor :forward
+
+    # 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+    attr_accessor :country
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'outbound' => :'outbound',
+        :'inbound' => :'inbound',
+        :'forward' => :'forward',
+        :'country' => :'country'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'outbound' => :'Float',
+        :'inbound' => :'Float',
+        :'forward' => :'Float',
+        :'country' => :'String'
       }
     end
 
@@ -33,18 +53,54 @@ module TextMagic
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'outbound')
+        self.outbound = attributes[:'outbound']
+      end
+
+      if attributes.has_key?(:'inbound')
+        self.inbound = attributes[:'inbound']
+      end
+
+      if attributes.has_key?(:'forward')
+        self.forward = attributes[:'forward']
+      end
+
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @outbound.nil?
+        invalid_properties.push('invalid value for "outbound", outbound cannot be nil.')
+      end
+
+      if @inbound.nil?
+        invalid_properties.push('invalid value for "inbound", inbound cannot be nil.')
+      end
+
+      if @forward.nil?
+        invalid_properties.push('invalid value for "forward", forward cannot be nil.')
+      end
+
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @outbound.nil?
+      return false if @inbound.nil?
+      return false if @forward.nil?
+      return false if @country.nil?
       true
     end
 
@@ -52,7 +108,11 @@ module TextMagic
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class
+      self.class == o.class &&
+          outbound == o.outbound &&
+          inbound == o.inbound &&
+          forward == o.forward &&
+          country == o.country
     end
 
     # @see the `==` method
@@ -64,7 +124,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [].hash
+      [outbound, inbound, forward, country].hash
     end
 
     # Builds the object from hash

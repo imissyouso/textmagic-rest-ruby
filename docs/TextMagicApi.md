@@ -68,6 +68,7 @@ Method | HTTP request | Description
 [**get_contact**](TextMagicApi.md#get_contact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact
 [**get_contact_by_phone**](TextMagicApi.md#get_contact_by_phone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
 [**get_contact_if_blocked**](TextMagicApi.md#get_contact_if_blocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
+[**get_contact_import_session_progress**](TextMagicApi.md#get_contact_import_session_progress) | **GET** /api/v2/contacts/import/progress/{id} | Check import progress
 [**get_contact_note**](TextMagicApi.md#get_contact_note) | **GET** /api/v2/notes/{id} | Get a contact note
 [**get_contact_notes**](TextMagicApi.md#get_contact_notes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
 [**get_contacts**](TextMagicApi.md#get_contacts) | **GET** /api/v2/contacts | Get all contacts
@@ -110,7 +111,7 @@ Method | HTTP request | Description
 [**get_unsubscribed_contact**](TextMagicApi.md#get_unsubscribed_contact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
 [**get_unsubscribers**](TextMagicApi.md#get_unsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**get_user_dedicated_numbers**](TextMagicApi.md#get_user_dedicated_numbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**import_contacts**](TextMagicApi.md#import_contacts) | **POST** /api/v2/contacts/import/normalized | Import contacts from the CSV, XLS or XLSX file.
+[**import_contacts**](TextMagicApi.md#import_contacts) | **POST** /api/v2/contacts/import/normalized | Import contacts
 [**invite_subaccount**](TextMagicApi.md#invite_subaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**mark_chats_read_bulk**](TextMagicApi.md#mark_chats_read_bulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**mark_chats_unread_bulk**](TextMagicApi.md#mark_chats_unread_bulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
@@ -700,7 +701,7 @@ api_instance = TextMagic::TextMagicApi.new
 
 create_contact_note_input_object = TextMagic::CreateContactNoteInputObject.new # CreateContactNoteInputObject | 
 
-id = 56 # Integer | 
+id = 1 # Integer | 
 
 
 begin
@@ -1210,7 +1211,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 56 # Integer | 
+id = 1 # Integer | 
 
 
 begin
@@ -2888,7 +2889,7 @@ api_instance = TextMagic::TextMagicApi.new
 country = '\"GB\"' # String | Two-letter dedicated number country ISO code.
 
 opts = { 
-  prefix: 1, # Integer | Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+  prefix: 447155, # Integer | Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
   tollfree: 0 # Integer | Should we show only tollfree numbers (tollfree available only for US).
 }
 
@@ -2906,7 +2907,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **country** | **String**| Two-letter dedicated number country ISO code. | 
- **prefix** | **Integer**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] [default to 1]
+ **prefix** | **Integer**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] 
  **tollfree** | **Integer**| Should we show only tollfree numbers (tollfree available only for US). | [optional] [default to 0]
 
 ### Return type
@@ -3307,7 +3308,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-phone = 'phone_example' # String | 
+phone = '\"447860021130\"' # String | 
 
 opts = { 
   upsert: 0, # Integer | Create a new chat if not found
@@ -3488,7 +3489,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-phone = 'phone_example' # String | 
+phone = '\"447860021130\"' # String | 
 
 
 begin
@@ -3541,7 +3542,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-phone = '447860021130' # String | Phone number to check
+phone = '\"447860021130\"' # String | Phone number to check
 
 
 begin
@@ -3574,6 +3575,59 @@ Name | Type | Description  | Notes
 
 
 
+# **get_contact_import_session_progress**
+> GetContactImportSessionProgressResponse get_contact_import_session_progress(id)
+
+Check import progress
+
+Get contact import session progress.
+
+### Example
+```ruby
+# load the gem
+require 'textmagic_rest_client'
+# setup authorization
+TextMagic.configure do |config|
+  # Configure HTTP basic authorization: BasicAuth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TextMagic::TextMagicApi.new
+
+id = 1 # Integer | 
+
+
+begin
+  #Check import progress
+  result = api_instance.get_contact_import_session_progress(id)
+  p result
+rescue TextMagic::ApiError => e
+  puts "Exception when calling TextMagicApi->get_contact_import_session_progress: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  | 
+
+### Return type
+
+[**GetContactImportSessionProgressResponse**](GetContactImportSessionProgressResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_contact_note**
 > ContactNote get_contact_note(id)
 
@@ -3594,7 +3648,7 @@ end
 
 api_instance = TextMagic::TextMagicApi.new
 
-id = 56 # Integer | 
+id = 1 # Integer | 
 
 
 begin
@@ -4196,7 +4250,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  query: 'A' # String | Find contacts or lists by specified search query
+  query: '\"A\"' # String | Find contacts or lists by specified search query
 }
 
 begin
@@ -4214,7 +4268,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find contacts or lists by specified search query | [optional] [default to A]
+ **query** | **String**| Find contacts or lists by specified search query | [optional] 
 
 ### Return type
 
@@ -5033,7 +5087,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   by: 'off', # String | *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
   start: 1430438400, # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-  _end: '1431648000' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+  _end: 1431648000 # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
 
 begin
@@ -5051,7 +5105,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **by** | **String**| *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  | [optional] [default to off]
  **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
- **_end** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
+ **_end** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
 
 ### Return type
 
@@ -5422,7 +5476,7 @@ api_instance = TextMagic::TextMagicApi.new
 opts = { 
   page: 1, # Integer | Fetch specified results page.
   limit: 10, # Integer | The number of results per page.
-  start: "2018-11-11 11:11", # Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  start: '\"2018-11-11 11:11\"', # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
   _end: '\"2019-11-11 11:11\"' # String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 }
 
@@ -5441,7 +5495,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
+ **start** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional] 
  **_end** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional] 
 
 ### Return type
@@ -5949,11 +6003,11 @@ Name | Type | Description  | Notes
 
 
 # **import_contacts**
-> import_contacts(file, opts)
+> ResourceLinkResponse import_contacts(file, opts)
+
+Import contacts
 
 Import contacts from the CSV, XLS or XLSX file.
-
-
 
 ### Example
 ```ruby
@@ -5971,14 +6025,15 @@ api_instance = TextMagic::TextMagicApi.new
 file = File.new('/path/to/file.txt') # File | File containing contacts in csv or xls(x) formats
 
 opts = { 
-  column: 'column_example', # String | 
-  list_name: 'list_name_example', # String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
-  list_id: 56 # Integer | List ID contacts will be imported to.
+  column: '\"0:firstName;1:lastName;3:phone;4:email\"', # String | Import file column mapping. String must contain substrings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where value before `:` is a number of column in file, value after `:` is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
+  list_id: 364, # Integer | List ID contacts will be imported to. Ignored if `listName` is specified. 
+  list_name: '\"A new list\"' # String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if `listId` is specified. 
 }
 
 begin
-  #Import contacts from the CSV, XLS or XLSX file.
-  api_instance.import_contacts(file, opts)
+  #Import contacts
+  result = api_instance.import_contacts(file, opts)
+  p result
 rescue TextMagic::ApiError => e
   puts "Exception when calling TextMagicApi->import_contacts: #{e}"
 end
@@ -5989,13 +6044,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats | 
- **column** | **String**|  | [optional] 
- **list_name** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. | [optional] 
- **list_id** | **Integer**| List ID contacts will be imported to. | [optional] 
+ **column** | **String**| Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  | [optional] 
+ **list_id** | **Integer**| List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  | [optional] 
+ **list_name** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  | [optional] 
 
 ### Return type
 
-nil (empty response body)
+[**ResourceLinkResponse**](ResourceLinkResponse.md)
 
 ### Authorization
 
@@ -7821,7 +7876,7 @@ api_instance = TextMagic::TextMagicApi.new
 
 update_custom_field_value_input_object = TextMagic::UpdateCustomFieldValueInputObject.new # UpdateCustomFieldValueInputObject | 
 
-id = 'id_example' # String | 
+id = 554 # Integer | 
 
 
 begin
@@ -7838,7 +7893,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_custom_field_value_input_object** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md)|  | 
- **id** | **String**|  | 
+ **id** | **Integer**|  | 
 
 ### Return type
 
@@ -8146,7 +8201,7 @@ api_instance = TextMagic::TextMagicApi.new
 
 image = File.new('/path/to/file.txt') # File | Contact avatar. Should be PNG or JPG file not more than 10 MB
 
-id = 56 # Integer | 
+id = 1 # Integer | 
 
 
 begin

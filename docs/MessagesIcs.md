@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **recipients_count** | **Integer** | Amount of actual recipients. | 
 **timezone** | **String** | User-friendly timezone name (with spaces replaced by underscores). | 
 **completed** | **BOOLEAN** | Indicates that schedling has been completed. | 
-**avatar** | **String** | null | 
+**avatar** | **String** | TODO | 
 **created_at** | **DateTime** | Scheduling creation time. | 
 
 

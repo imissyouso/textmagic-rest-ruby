@@ -39,8 +39,8 @@ module TextMagic
     def self.attribute_map
       {
         :'country' => :'country',
-        :'country_name' => :'country_name',
-        :'allow_dedicated' => :'allow_dedicated',
+        :'country_name' => :'countryName',
+        :'allow_dedicated' => :'allowDedicated',
         :'count' => :'count',
         :'max' => :'max',
         :'sum' => :'sum',
@@ -73,12 +73,12 @@ module TextMagic
         self.country = attributes[:'country']
       end
 
-      if attributes.has_key?(:'country_name')
-        self.country_name = attributes[:'country_name']
+      if attributes.has_key?(:'countryName')
+        self.country_name = attributes[:'countryName']
       end
 
-      if attributes.has_key?(:'allow_dedicated')
-        self.allow_dedicated = attributes[:'allow_dedicated']
+      if attributes.has_key?(:'allowDedicated')
+        self.allow_dedicated = attributes[:'allowDedicated']
       end
 
       if attributes.has_key?(:'count')

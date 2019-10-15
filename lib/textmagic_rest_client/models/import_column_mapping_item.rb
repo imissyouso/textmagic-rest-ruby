@@ -23,8 +23,8 @@ module TextMagic
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'column_position_in_file' => :'column_position_in_file',
-        :'field_or_custom_field_id' => :'field_or_custom_field_id'
+        :'column_position_in_file' => :'columnPositionInFile',
+        :'field_or_custom_field_id' => :'fieldOrCustomFieldId'
       }
     end
 
@@ -44,12 +44,12 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'column_position_in_file')
-        self.column_position_in_file = attributes[:'column_position_in_file']
+      if attributes.has_key?(:'columnPositionInFile')
+        self.column_position_in_file = attributes[:'columnPositionInFile']
       end
 
-      if attributes.has_key?(:'field_or_custom_field_id')
-        self.field_or_custom_field_id = attributes[:'field_or_custom_field_id']
+      if attributes.has_key?(:'fieldOrCustomFieldId')
+        self.field_or_custom_field_id = attributes[:'fieldOrCustomFieldId']
       end
     end
 
@@ -57,12 +57,22 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @column_position_in_file.nil?
+        invalid_properties.push('invalid value for "column_position_in_file", column_position_in_file cannot be nil.')
+      end
+
+      if @field_or_custom_field_id.nil?
+        invalid_properties.push('invalid value for "field_or_custom_field_id", field_or_custom_field_id cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @column_position_in_file.nil?
+      return false if @field_or_custom_field_id.nil?
       true
     end
 

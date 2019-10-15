@@ -2757,7 +2757,7 @@ module TextMagic
     # 
     # @param country Two-letter dedicated number country ISO code.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (default to 1)
+    # @option opts [Integer] :prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
     # @option opts [Integer] :tollfree Should we show only tollfree numbers (tollfree available only for US). (default to 0)
     # @return [GetAvailableDedicatedNumbersResponse]
     def get_available_dedicated_numbers(country, opts = {})
@@ -3487,6 +3487,60 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Check import progress
+    # Get contact import session progress.
+    # @param id 
+    # @param [Hash] opts the optional parameters
+    # @return [GetContactImportSessionProgressResponse]
+    def get_contact_import_session_progress(id, opts = {})
+      data, _status_code, _headers = get_contact_import_session_progress_with_http_info(id, opts)
+      data
+    end
+
+    # Check import progress
+    # Get contact import session progress.
+    # @param id 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetContactImportSessionProgressResponse, Fixnum, Hash)>] GetContactImportSessionProgressResponse data, response status code and response headers
+    def get_contact_import_session_progress_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_contact_import_session_progress ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling TextMagicApi.get_contact_import_session_progress"
+      end
+      # resource path
+      local_var_path = '/api/v2/contacts/import/progress/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['BasicAuth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetContactImportSessionProgressResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TextMagicApi#get_contact_import_session_progress\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get a contact note
     # 
     # @param id 
@@ -4114,7 +4168,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [String] :query Find contacts or lists by specified search query (default to A)
+    # @option opts [String] :query Find contacts or lists by specified search query
     # @return [GetFavouritesPaginatedResponse]
     def get_favourites(opts = {})
       data, _status_code, _headers = get_favourites_with_http_info(opts)
@@ -4996,7 +5050,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  (default to off)
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+    # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [GetMessagingStatResponse]
     def get_messaging_stat(opts = {})
       data, _status_code, _headers = get_messaging_stat_with_http_info(opts)
@@ -5008,7 +5062,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
     # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-    # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+    # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [Array<(GetMessagingStatResponse, Fixnum, Hash)>] GetMessagingStatResponse data, response status code and response headers
     def get_messaging_stat_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -5392,7 +5446,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page. (default to 1)
     # @option opts [Integer] :limit The number of results per page. (default to 10)
-    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
     # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [GetSpendingStatPaginatedResponse]
     def get_spending_stat(opts = {})
@@ -5405,7 +5459,7 @@ module TextMagic
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Fetch specified results page.
     # @option opts [Integer] :limit The number of results per page.
-    # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+    # @option opts [String] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
     # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
     # @return [Array<(GetSpendingStatPaginatedResponse, Fixnum, Hash)>] GetSpendingStatPaginatedResponse data, response status code and response headers
     def get_spending_stat_with_http_info(opts = {})
@@ -5933,27 +5987,27 @@ module TextMagic
       end
       return data, status_code, headers
     end
+    # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
-    # 
     # @param file File containing contacts in csv or xls(x) formats
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :column 
-    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
-    # @option opts [Integer] :list_id List ID contacts will be imported to.
-    # @return [nil]
+    # @option opts [String] :column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
+    # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
+    # @return [ResourceLinkResponse]
     def import_contacts(file, opts = {})
-      import_contacts_with_http_info(file, opts)
-      nil
+      data, _status_code, _headers = import_contacts_with_http_info(file, opts)
+      data
     end
 
+    # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
-    # 
     # @param file File containing contacts in csv or xls(x) formats
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :column 
-    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
-    # @option opts [Integer] :list_id List ID contacts will be imported to.
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @option opts [String] :column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
+    # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+    # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
+    # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
     def import_contacts_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.import_contacts ...'
@@ -5968,8 +6022,8 @@ module TextMagic
       # query parameters
       query_params = {}
       query_params[:'column'] = opts[:'column'] if !opts[:'column'].nil?
-      query_params[:'listName'] = opts[:'list_name'] if !opts[:'list_name'].nil?
       query_params[:'listId'] = opts[:'list_id'] if !opts[:'list_id'].nil?
+      query_params[:'listName'] = opts[:'list_name'] if !opts[:'list_name'].nil?
 
       # header parameters
       header_params = {}
@@ -5990,7 +6044,8 @@ module TextMagic
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'ResourceLinkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TextMagicApi#import_contacts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

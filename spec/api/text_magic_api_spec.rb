@@ -833,6 +833,18 @@ describe 'TextMagicApi' do
     end
   end
 
+  # unit tests for get_contact_import_session_progress
+  # Check import progress
+  # Get contact import session progress.
+  # @param id 
+  # @param [Hash] opts the optional parameters
+  # @return [GetContactImportSessionProgressResponse]
+  describe 'get_contact_import_session_progress test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_contact_note
   # Get a contact note
   # 
@@ -1195,7 +1207,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :by *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
   # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-  # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+  # @option opts [Integer] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
   # @return [GetMessagingStatResponse]
   describe 'get_messaging_stat test' do
     it 'should work' do
@@ -1286,7 +1298,7 @@ describe 'TextMagicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Fetch specified results page.
   # @option opts [Integer] :limit The number of results per page.
-  # @option opts [Integer] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+  # @option opts [String] :start Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
   # @option opts [String] :_end Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
   # @return [GetSpendingStatPaginatedResponse]
   describe 'get_spending_stat test' do
@@ -1409,14 +1421,14 @@ describe 'TextMagicApi' do
   end
 
   # unit tests for import_contacts
+  # Import contacts
   # Import contacts from the CSV, XLS or XLSX file.
-  # 
   # @param file File containing contacts in csv or xls(x) formats
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :column 
-  # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
-  # @option opts [Integer] :list_id List ID contacts will be imported to.
-  # @return [nil]
+  # @option opts [String] :column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
+  # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
+  # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
+  # @return [ResourceLinkResponse]
   describe 'import_contacts test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
