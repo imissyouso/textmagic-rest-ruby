@@ -13,26 +13,36 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  class ImportColumnMappingItem
-    # Column position in file (indexed from 0)
-    attr_accessor :column_position_in_file
+  class CallPriceResponse
+    # Price for outbound message
+    attr_accessor :outbound
 
-    # Field or custom field id
-    attr_accessor :field_or_custom_field_id
+    # Price for inbound message
+    attr_accessor :inbound
+
+    # Price for forward
+    attr_accessor :forward
+
+    # 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+    attr_accessor :country
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'column_position_in_file' => :'columnPositionInFile',
-        :'field_or_custom_field_id' => :'fieldOrCustomFieldId'
+        :'outbound' => :'outbound',
+        :'inbound' => :'inbound',
+        :'forward' => :'forward',
+        :'country' => :'country'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'column_position_in_file' => :'String',
-        :'field_or_custom_field_id' => :'String'
+        :'outbound' => :'Float',
+        :'inbound' => :'Float',
+        :'forward' => :'Float',
+        :'country' => :'String'
       }
     end
 
@@ -44,12 +54,20 @@ module TextMagic
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'columnPositionInFile')
-        self.column_position_in_file = attributes[:'columnPositionInFile']
+      if attributes.has_key?(:'outbound')
+        self.outbound = attributes[:'outbound']
       end
 
-      if attributes.has_key?(:'fieldOrCustomFieldId')
-        self.field_or_custom_field_id = attributes[:'fieldOrCustomFieldId']
+      if attributes.has_key?(:'inbound')
+        self.inbound = attributes[:'inbound']
+      end
+
+      if attributes.has_key?(:'forward')
+        self.forward = attributes[:'forward']
+      end
+
+      if attributes.has_key?(:'country')
+        self.country = attributes[:'country']
       end
     end
 
@@ -57,12 +75,20 @@ module TextMagic
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @column_position_in_file.nil?
-        invalid_properties.push('invalid value for "column_position_in_file", column_position_in_file cannot be nil.')
+      if @outbound.nil?
+        invalid_properties.push('invalid value for "outbound", outbound cannot be nil.')
       end
 
-      if @field_or_custom_field_id.nil?
-        invalid_properties.push('invalid value for "field_or_custom_field_id", field_or_custom_field_id cannot be nil.')
+      if @inbound.nil?
+        invalid_properties.push('invalid value for "inbound", inbound cannot be nil.')
+      end
+
+      if @forward.nil?
+        invalid_properties.push('invalid value for "forward", forward cannot be nil.')
+      end
+
+      if @country.nil?
+        invalid_properties.push('invalid value for "country", country cannot be nil.')
       end
 
       invalid_properties
@@ -71,8 +97,10 @@ module TextMagic
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @column_position_in_file.nil?
-      return false if @field_or_custom_field_id.nil?
+      return false if @outbound.nil?
+      return false if @inbound.nil?
+      return false if @forward.nil?
+      return false if @country.nil?
       true
     end
 
@@ -81,8 +109,10 @@ module TextMagic
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          column_position_in_file == o.column_position_in_file &&
-          field_or_custom_field_id == o.field_or_custom_field_id
+          outbound == o.outbound &&
+          inbound == o.inbound &&
+          forward == o.forward &&
+          country == o.country
     end
 
     # @see the `==` method
@@ -94,7 +124,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [column_position_in_file, field_or_custom_field_id].hash
+      [outbound, inbound, forward, country].hash
     end
 
     # Builds the object from hash

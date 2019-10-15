@@ -8124,7 +8124,7 @@ module TextMagic
         fail ArgumentError, "Missing the required parameter 'update_sender_setting_input_object' when calling TextMagicApi.update_sender_setting"
       end
       # resource path
-      local_var_path = '/api/v2/sender/settings/normalized'
+      local_var_path = '/api/v2/sender/settings'
 
       # query parameters
       query_params = {}

@@ -308,7 +308,7 @@ module TextMagic
       return false if @deliverability.nil?
       return false if @reason.nil?
       return false if @risk.nil?
-      risk_validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low'])
+      risk_validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low', 'unknown'])
       return false unless risk_validator.valid?(@risk)
       return false if @address_type.nil?
       address_type_validator = EnumAttributeValidator.new('String', ['corporate', 'free'])
@@ -341,7 +341,7 @@ module TextMagic
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] risk Object to be assigned
     def risk=(risk)
-      validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low'])
+      validator = EnumAttributeValidator.new('String', ['high', 'medium', 'low', 'unknown'])
       unless validator.valid?(risk)
         fail ArgumentError, 'invalid value for "risk", must be one of #{validator.allowable_values}.'
       end
