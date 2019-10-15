@@ -5990,25 +5990,25 @@ module TextMagic
     # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
     # @param file File containing contacts in csv or xls(x) formats
+    # @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
     # @return [ResourceLinkResponse]
-    def import_contacts(file, opts = {})
-      data, _status_code, _headers = import_contacts_with_http_info(file, opts)
+    def import_contacts(file, column, opts = {})
+      data, _status_code, _headers = import_contacts_with_http_info(file, column, opts)
       data
     end
 
     # Import contacts
     # Import contacts from the CSV, XLS or XLSX file.
     # @param file File containing contacts in csv or xls(x) formats
+    # @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required. 
     # @option opts [Integer] :list_id List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified. 
     # @option opts [String] :list_name List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified. 
     # @return [Array<(ResourceLinkResponse, Fixnum, Hash)>] ResourceLinkResponse data, response status code and response headers
-    def import_contacts_with_http_info(file, opts = {})
+    def import_contacts_with_http_info(file, column, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TextMagicApi.import_contacts ...'
       end
@@ -6016,12 +6016,16 @@ module TextMagic
       if @api_client.config.client_side_validation && file.nil?
         fail ArgumentError, "Missing the required parameter 'file' when calling TextMagicApi.import_contacts"
       end
+      # verify the required parameter 'column' is set
+      if @api_client.config.client_side_validation && column.nil?
+        fail ArgumentError, "Missing the required parameter 'column' when calling TextMagicApi.import_contacts"
+      end
       # resource path
       local_var_path = '/api/v2/contacts/import/normalized'
 
       # query parameters
       query_params = {}
-      query_params[:'column'] = opts[:'column'] if !opts[:'column'].nil?
+      query_params[:'column'] = column
       query_params[:'listId'] = opts[:'list_id'] if !opts[:'list_id'].nil?
       query_params[:'listName'] = opts[:'list_name'] if !opts[:'list_name'].nil?
 
