@@ -55,28 +55,6 @@ module TextMagic
 
     attr_accessor :notes
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -277,21 +255,9 @@ module TextMagic
       return false if @user.nil?
       return false if @lists.nil?
       return false if @phone_type.nil?
-      phone_type_validator = EnumAttributeValidator.new('String', ['-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
-      return false unless phone_type_validator.valid?(@phone_type)
       return false if @avatar.nil?
       return false if @notes.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] phone_type Object to be assigned
-    def phone_type=(phone_type)
-      validator = EnumAttributeValidator.new('String', ['-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
-      unless validator.valid?(phone_type)
-        fail ArgumentError, 'invalid value for "phone_type", must be one of #{validator.allowable_values}.'
-      end
-      @phone_type = phone_type
     end
 
     # Checks equality by comparing each attribute.
