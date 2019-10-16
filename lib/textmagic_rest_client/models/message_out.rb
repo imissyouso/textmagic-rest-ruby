@@ -45,6 +45,7 @@ module TextMagic
     # Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
     attr_accessor :charset
 
+    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
     attr_accessor :charset_label
 
     # Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted phone number instead of contact ID). 
@@ -65,6 +66,7 @@ module TextMagic
     # Message parts (multiples of 160 characters) count.
     attr_accessor :parts_count
 
+    # User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address.
     attr_accessor :from_email
 
     # Phone number which is used to send SMS.

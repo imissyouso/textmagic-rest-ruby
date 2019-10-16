@@ -20,6 +20,7 @@ module TextMagic
     # URI of message session.
     attr_accessor :href
 
+    # Message response type: * **message** when message sent to a single recipient * **session** when message sent to multiple recipients * **schedule** when message has been scheduled for sending * **bulk** when message sent to multiple recipient and the number of recipients requires asynchronous processiong See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session). 
     attr_accessor :type
 
     # Message session ID.
@@ -28,6 +29,7 @@ module TextMagic
     # Bulk Session ID. See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).
     attr_accessor :bulk_id
 
+    # Message ID.
     attr_accessor :message_id
 
     # Message Schedule ID.
@@ -35,6 +37,28 @@ module TextMagic
 
     # Message Chat ID.
     attr_accessor :chat_id
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -150,12 +174,24 @@ module TextMagic
       return false if @id.nil?
       return false if @href.nil?
       return false if @type.nil?
+      type_validator = EnumAttributeValidator.new('String', ['message', 'session', 'schedule', 'bulk'])
+      return false unless type_validator.valid?(@type)
       return false if @session_id.nil?
       return false if @bulk_id.nil?
       return false if @message_id.nil?
       return false if @schedule_id.nil?
       return false if @chat_id.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['message', 'session', 'schedule', 'bulk'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.

@@ -41,7 +41,7 @@ describe 'GetContactsAutocompleteResponseItem' do
   describe 'test attribute "entity_type"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["list", "contact", "reply"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["reply", "contact", "list"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.entity_type = value }.not_to raise_error
       # end

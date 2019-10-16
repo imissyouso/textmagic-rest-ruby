@@ -26,12 +26,13 @@ module TextMagic
     # Amount of rejected messages.
     attr_accessor :rejected
 
-    # Amount of schedules messages.
+    # Amount of scheduled messages.
     attr_accessor :scheduled
 
+    # Total amount of messages.
     attr_accessor :all
 
-    # Total sent messages.
+    # Amount of sent but not yet delivered messages.
     attr_accessor :sent
 
     # Attribute mapping from ruby-style variable name to JSON key.

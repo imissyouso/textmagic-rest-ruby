@@ -17,7 +17,7 @@ module TextMagic
     # Id of entity. 0 if object is a Reply
     attr_accessor :entity_id
 
-    # 
+    # Entry type: * **contact** if it is related to a contact * **list** if it is related to a contact list * **reply** if it is related to an incoming message 
     attr_accessor :entity_type
 
     # Id of contact/list if entityType is contact/list OR phone number if entityType is reply.
@@ -26,7 +26,7 @@ module TextMagic
     # Name of the contact/list if entityType is contact/list OR phone number if entityType is reply.
     attr_accessor :label
 
-    # If contact or list was shared by another user then name if this user will be shown.
+    # If contact or list was shared by another sub-account then name if this user will be shown.
     attr_accessor :shared_by
 
     # Contact avatar URI.
@@ -209,7 +209,7 @@ module TextMagic
     def valid?
       return false if @entity_id.nil?
       return false if @entity_type.nil?
-      entity_type_validator = EnumAttributeValidator.new('String', ['list', 'contact', 'reply'])
+      entity_type_validator = EnumAttributeValidator.new('String', ['reply', 'contact', 'list'])
       return false unless entity_type_validator.valid?(@entity_type)
       return false if @value.nil?
       return false if @label.nil?
@@ -226,7 +226,7 @@ module TextMagic
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] entity_type Object to be assigned
     def entity_type=(entity_type)
-      validator = EnumAttributeValidator.new('String', ['list', 'contact', 'reply'])
+      validator = EnumAttributeValidator.new('String', ['reply', 'contact', 'list'])
       unless validator.valid?(entity_type)
         fail ArgumentError, 'invalid value for "entity_type", must be one of #{validator.allowable_values}.'
       end

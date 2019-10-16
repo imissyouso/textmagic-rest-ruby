@@ -20,6 +20,7 @@ module TextMagic
     # Message parts (multiples of 160 characters) count.
     attr_accessor :parts
 
+    # Characters count.
     attr_accessor :chars
 
     # Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS 
@@ -27,6 +28,7 @@ module TextMagic
 
     attr_accessor :countries
 
+    # Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
     attr_accessor :charset_label
 
     class EnumAttributeValidator

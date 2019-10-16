@@ -26,7 +26,7 @@ module TextMagic
     # Send Email notification in HTML format.
     attr_accessor :send_in_html_format
 
-    # New message notification email 2.
+    # New message notification email 1.
     attr_accessor :alert_email1
 
     # New message notification email 2.

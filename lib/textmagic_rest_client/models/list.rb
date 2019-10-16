@@ -31,6 +31,7 @@ module TextMagic
 
     attr_accessor :user
 
+    # Internal service field.
     attr_accessor :service
 
     # Is the list **shared** among all sub-accounts?
@@ -38,7 +39,7 @@ module TextMagic
 
     attr_accessor :avatar
 
-    # Indicates that List is used as a default. All new contacts will be added in this List by default.
+    # Indicates that List is used as a default. All new contacts that added via Web-app will be added in this List by default.
     attr_accessor :is_default
 
     # Attribute mapping from ruby-style variable name to JSON key.

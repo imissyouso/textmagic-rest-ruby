@@ -28,18 +28,22 @@ module TextMagic
     # Date and time when last message has been sent.
     attr_accessor :last_sent
 
+    # Aggregated contact information. If the message scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount contacts will be returned.
     attr_accessor :contact_name
 
     attr_accessor :parameters
 
     attr_accessor :type
 
+    # A human-readable summary of the sending schedule.
     attr_accessor :summary
 
     attr_accessor :text_parameters
 
+    # First occurence date.
     attr_accessor :first_occurrence
 
+    # Last occurence date (could be `null` if the schedule is endless).
     attr_accessor :last_occurrence
 
     # Amount of actual recipients.
@@ -51,11 +55,33 @@ module TextMagic
     # Indicates that schedling has been completed.
     attr_accessor :completed
 
-    # TODO
+    # A relative link to the contact avatar.
     attr_accessor :avatar
 
     # Scheduling creation time.
     attr_accessor :created_at
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -266,6 +292,8 @@ module TextMagic
       return false if @contact_name.nil?
       return false if @parameters.nil?
       return false if @type.nil?
+      type_validator = EnumAttributeValidator.new('String', ['Once', 'Hourly', 'Daily', 'Weekly', 'Monthly', 'Yearly'])
+      return false unless type_validator.valid?(@type)
       return false if @summary.nil?
       return false if @text_parameters.nil?
       return false if @first_occurrence.nil?
@@ -276,6 +304,16 @@ module TextMagic
       return false if @avatar.nil?
       return false if @created_at.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['Once', 'Hourly', 'Daily', 'Weekly', 'Monthly', 'Yearly'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
