@@ -13,9 +13,12 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
+  # Returned when request has been denied in reason of access problems.
   class UnauthorizedResponse
+    # Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
     attr_accessor :code
 
+    # Brief error message. You could display this message to your user or save it in a log.
     attr_accessor :message
 
     # Attribute mapping from ruby-style variable name to JSON key.

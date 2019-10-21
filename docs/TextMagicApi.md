@@ -79,7 +79,6 @@ Method | HTTP request | Description
 [**get_custom_field**](TextMagicApi.md#get_custom_field) | **GET** /api/v2/customfields/{id} | Get the details of a specific custom field
 [**get_custom_fields**](TextMagicApi.md#get_custom_fields) | **GET** /api/v2/customfields | Get all custom fields
 [**get_dedicated_number**](TextMagicApi.md#get_dedicated_number) | **GET** /api/v2/numbers/{id} | Get the details of a specific dedicated number
-[**get_disallowed_rules**](TextMagicApi.md#get_disallowed_rules) | **GET** /api/v2/user/disallowed-rules | Get disallowed permissions
 [**get_favourites**](TextMagicApi.md#get_favourites) | **GET** /api/v2/contacts/favorite | Get favorite contacts and lists
 [**get_inbound_message**](TextMagicApi.md#get_inbound_message) | **GET** /api/v2/replies/{id} | Get a single inbound message
 [**get_inbound_messages_notification_settings**](TextMagicApi.md#get_inbound_messages_notification_settings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
@@ -4168,53 +4167,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsersInbound**](UsersInbound.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_disallowed_rules**
-> GetDisallowedRulesResponse get_disallowed_rules
-
-Get disallowed permissions
-
-Get an array of all rules that are disallowed to the current account.
-
-### Example
-```ruby
-# load the gem
-require 'textmagic_rest_client'
-# setup authorization
-TextMagic.configure do |config|
-  # Configure HTTP basic authorization: BasicAuth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TextMagic::TextMagicApi.new
-
-begin
-  #Get disallowed permissions
-  result = api_instance.get_disallowed_rules
-  p result
-rescue TextMagic::ApiError => e
-  puts "Exception when calling TextMagicApi->get_disallowed_rules: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetDisallowedRulesResponse**](GetDisallowedRulesResponse.md)
 
 ### Authorization
 

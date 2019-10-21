@@ -976,17 +976,6 @@ describe 'TextMagicApi' do
     end
   end
 
-  # unit tests for get_disallowed_rules
-  # Get disallowed permissions
-  # Get an array of all rules that are disallowed to the current account.
-  # @param [Hash] opts the optional parameters
-  # @return [GetDisallowedRulesResponse]
-  describe 'get_disallowed_rules test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_favourites
   # Get favorite contacts and lists
   # 

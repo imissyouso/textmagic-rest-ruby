@@ -4115,54 +4115,6 @@ module TextMagic
       end
       return data, status_code, headers
     end
-    # Get disallowed permissions
-    # Get an array of all rules that are disallowed to the current account.
-    # @param [Hash] opts the optional parameters
-    # @return [GetDisallowedRulesResponse]
-    def get_disallowed_rules(opts = {})
-      data, _status_code, _headers = get_disallowed_rules_with_http_info(opts)
-      data
-    end
-
-    # Get disallowed permissions
-    # Get an array of all rules that are disallowed to the current account.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(GetDisallowedRulesResponse, Fixnum, Hash)>] GetDisallowedRulesResponse data, response status code and response headers
-    def get_disallowed_rules_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TextMagicApi.get_disallowed_rules ...'
-      end
-      # resource path
-      local_var_path = '/api/v2/user/disallowed-rules'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['BasicAuth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'GetDisallowedRulesResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TextMagicApi#get_disallowed_rules\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Get favorite contacts and lists
     # 
     # @param [Hash] opts the optional parameters

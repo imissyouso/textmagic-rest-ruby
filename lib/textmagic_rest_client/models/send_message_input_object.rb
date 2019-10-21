@@ -51,7 +51,7 @@ module TextMagic
     attr_accessor :from
 
     # iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
-    attr_accessor :rule
+    attr_accessor :rrule
 
     # Should sending method try to create new Chat(if not exist) with specified recipients.
     attr_accessor :create_chat
@@ -80,7 +80,7 @@ module TextMagic
         :'parts_count' => :'partsCount',
         :'reference_id' => :'referenceId',
         :'from' => :'from',
-        :'rule' => :'rule',
+        :'rrule' => :'rrule',
         :'create_chat' => :'createChat',
         :'tts' => :'tts',
         :'local' => :'local',
@@ -103,7 +103,7 @@ module TextMagic
         :'parts_count' => :'Integer',
         :'reference_id' => :'Integer',
         :'from' => :'String',
-        :'rule' => :'String',
+        :'rrule' => :'String',
         :'create_chat' => :'BOOLEAN',
         :'tts' => :'BOOLEAN',
         :'local' => :'BOOLEAN',
@@ -169,8 +169,8 @@ module TextMagic
         self.from = attributes[:'from']
       end
 
-      if attributes.has_key?(:'rule')
-        self.rule = attributes[:'rule']
+      if attributes.has_key?(:'rrule')
+        self.rrule = attributes[:'rrule']
       end
 
       if attributes.has_key?(:'createChat')
@@ -236,7 +236,7 @@ module TextMagic
           parts_count == o.parts_count &&
           reference_id == o.reference_id &&
           from == o.from &&
-          rule == o.rule &&
+          rrule == o.rrule &&
           create_chat == o.create_chat &&
           tts == o.tts &&
           local == o.local &&
@@ -252,7 +252,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text, template_id, sending_time, sending_date_time, sending_timezone, contacts, lists, phones, cut_extra, parts_count, reference_id, from, rule, create_chat, tts, local, local_country].hash
+      [text, template_id, sending_time, sending_date_time, sending_timezone, contacts, lists, phones, cut_extra, parts_count, reference_id, from, rrule, create_chat, tts, local, local_country].hash
     end
 
     # Builds the object from hash

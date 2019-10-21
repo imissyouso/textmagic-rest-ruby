@@ -104,7 +104,7 @@ describe 'SendMessageInputObject' do
     end
   end
 
-  describe 'test attribute "rule"' do
+  describe 'test attribute "rrule"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

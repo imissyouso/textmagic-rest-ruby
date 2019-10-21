@@ -23,13 +23,5 @@ Name | Type | Description | Notes
 **parts_count** | **Integer** | Message parts (multiples of 160 characters) count. | 
 **from_email** | **String** | User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address. | [optional] 
 **from_number** | **String** | Phone number which is used to send SMS. | [optional] 
-**smsc_id** | **String** |  | [optional] 
-**contact** | **String** |  | [optional] 
-**source** | **String** |  | [optional] 
-**delivered_count** | **Integer** |  | [optional] 
-**numbers_count** | **Integer** |  | [optional] 
-**user_id** | **Integer** |  | [optional] 
-**credits_price** | **String** |  | [optional] 
-**chars** | **Integer** |  | [optional] 
 
 

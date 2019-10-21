@@ -72,22 +72,6 @@ module TextMagic
     # Phone number which is used to send SMS.
     attr_accessor :from_number
 
-    attr_accessor :smsc_id
-
-    attr_accessor :contact
-
-    attr_accessor :source
-
-    attr_accessor :delivered_count
-
-    attr_accessor :numbers_count
-
-    attr_accessor :user_id
-
-    attr_accessor :credits_price
-
-    attr_accessor :chars
-
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -132,15 +116,7 @@ module TextMagic
         :'price' => :'price',
         :'parts_count' => :'partsCount',
         :'from_email' => :'fromEmail',
-        :'from_number' => :'fromNumber',
-        :'smsc_id' => :'smscId',
-        :'contact' => :'contact',
-        :'source' => :'source',
-        :'delivered_count' => :'deliveredCount',
-        :'numbers_count' => :'numbersCount',
-        :'user_id' => :'userId',
-        :'credits_price' => :'creditsPrice',
-        :'chars' => :'chars'
+        :'from_number' => :'fromNumber'
       }
     end
 
@@ -166,15 +142,7 @@ module TextMagic
         :'price' => :'Float',
         :'parts_count' => :'Integer',
         :'from_email' => :'String',
-        :'from_number' => :'String',
-        :'smsc_id' => :'String',
-        :'contact' => :'String',
-        :'source' => :'String',
-        :'delivered_count' => :'Integer',
-        :'numbers_count' => :'Integer',
-        :'user_id' => :'Integer',
-        :'credits_price' => :'String',
-        :'chars' => :'Integer'
+        :'from_number' => :'String'
       }
     end
 
@@ -264,38 +232,6 @@ module TextMagic
 
       if attributes.has_key?(:'fromNumber')
         self.from_number = attributes[:'fromNumber']
-      end
-
-      if attributes.has_key?(:'smscId')
-        self.smsc_id = attributes[:'smscId']
-      end
-
-      if attributes.has_key?(:'contact')
-        self.contact = attributes[:'contact']
-      end
-
-      if attributes.has_key?(:'source')
-        self.source = attributes[:'source']
-      end
-
-      if attributes.has_key?(:'deliveredCount')
-        self.delivered_count = attributes[:'deliveredCount']
-      end
-
-      if attributes.has_key?(:'numbersCount')
-        self.numbers_count = attributes[:'numbersCount']
-      end
-
-      if attributes.has_key?(:'userId')
-        self.user_id = attributes[:'userId']
-      end
-
-      if attributes.has_key?(:'creditsPrice')
-        self.credits_price = attributes[:'creditsPrice']
-      end
-
-      if attributes.has_key?(:'chars')
-        self.chars = attributes[:'chars']
       end
     end
 
@@ -413,15 +349,7 @@ module TextMagic
           price == o.price &&
           parts_count == o.parts_count &&
           from_email == o.from_email &&
-          from_number == o.from_number &&
-          smsc_id == o.smsc_id &&
-          contact == o.contact &&
-          source == o.source &&
-          delivered_count == o.delivered_count &&
-          numbers_count == o.numbers_count &&
-          user_id == o.user_id &&
-          credits_price == o.credits_price &&
-          chars == o.chars
+          from_number == o.from_number
     end
 
     # @see the `==` method
@@ -433,7 +361,7 @@ module TextMagic
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender, receiver, text, status, contact_id, session_id, message_time, avatar, deleted, charset, charset_label, first_name, last_name, country, phone, price, parts_count, from_email, from_number, smsc_id, contact, source, delivered_count, numbers_count, user_id, credits_price, chars].hash
+      [id, sender, receiver, text, status, contact_id, session_id, message_time, avatar, deleted, charset, charset_label, first_name, last_name, country, phone, price, parts_count, from_email, from_number].hash
     end
 
     # Builds the object from hash

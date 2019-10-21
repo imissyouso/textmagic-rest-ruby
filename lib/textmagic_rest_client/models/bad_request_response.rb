@@ -13,9 +13,9 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
-  # Returned when the form has errors
+  # Returned when input data validation process has been failed.
   class BadRequestResponse
-    # HTTP error code.
+    # Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
     attr_accessor :code
 
     # Brief error message. You could display this message to your user or save it in a log.

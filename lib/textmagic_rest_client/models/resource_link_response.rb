@@ -13,6 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module TextMagic
+  # Response contains paginated list of data items.
   class ResourceLinkResponse
     # Resource ID.
     attr_accessor :id
